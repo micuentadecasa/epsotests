@@ -56,8 +56,19 @@ class VisualAbstractGeneratorTests(unittest.TestCase):
         horizontal = apply_rule(base, Rule("reflection", {"axis": "horizontal"}))
         both = apply_rule(base, Rule("reflection", {"axis": "diagonal"}))
         self.assertAlmostEqual(vertical.elements[0].marker_position, 0.75)
-        self.assertAlmostEqual(horizontal.elements[0].marker_position, 0.25)
-        self.assertAlmostEqual(both.elements[0].marker_position, 0.75)
+        self.assertAlmostEqual(horizontal.elements[0].marker_position, 0.75)
+        self.assertAlmostEqual(both.elements[0].marker_position, 0.25)
+        self.assertEqual(vertical.elements[0].rotation, 0)
+        self.assertEqual(horizontal.elements[0].rotation, 180)
+        self.assertEqual(both.elements[0].rotation, 180)
+
+    def test_reflection_transforms_nested_children(self):
+        child = Element("inner", x=0.2, y=0.3, shape="triangle")
+        base = Scene((Element("one", children=(child,)),))
+        reflected = apply_rule(base, Rule("reflection", {"axis": "horizontal"}))
+        reflected_child = reflected.elements[0].children[0]
+        self.assertAlmostEqual(reflected_child.y, 0.7)
+        self.assertEqual(reflected_child.rotation, 180)
 
     def test_colour_changes_remain_visible_when_initially_unshaded(self):
         base = Scene((Element("one", shaded=False),))

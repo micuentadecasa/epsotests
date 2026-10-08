@@ -269,34 +269,39 @@ def _apply_translation(
     return scene
 
 
+def _reflected_element(element: Element, axis: str) -> Element:
+    children = tuple(_reflected_element(child, axis) for child in element.children)
+    if axis in ("vertical", "y"):
+        return replace(
+            element,
+            x=_clamp(1 - element.x),
+            rotation=_wrap_angle(-element.rotation),
+            marker_position=(1 - element.marker_position) % 1,
+            children=children,
+        )
+    if axis in ("horizontal", "x"):
+        return replace(
+            element,
+            y=_clamp(1 - element.y),
+            rotation=_wrap_angle(180 - element.rotation),
+            marker_position=(1 - element.marker_position) % 1,
+            children=children,
+        )
+    return replace(
+        element,
+        x=_clamp(1 - element.x),
+        y=_clamp(1 - element.y),
+        rotation=_wrap_angle(element.rotation + 180),
+        children=children,
+    )
+
+
 def _apply_reflection(scene: Scene, axis: str, parameters: Mapping[str, Any], frame_index: int) -> Scene:
     if frame_index == 0 or frame_index % 2 == 0:
         return scene
     axis = axis.lower()
     for index in _target_indices(scene, parameters):
-        element = scene.elements[index]
-        if axis in ("vertical", "y"):
-            changed = replace(
-                element,
-                x=_clamp(1 - element.x),
-                rotation=_wrap_angle(-element.rotation),
-                marker_position=(1 - element.marker_position) % 1,
-            )
-        elif axis in ("horizontal", "x"):
-            changed = replace(
-                element,
-                y=_clamp(1 - element.y),
-                rotation=_wrap_angle(-element.rotation),
-                marker_position=(0.5 - element.marker_position) % 1,
-            )
-        else:
-            changed = replace(
-                element,
-                x=_clamp(1 - element.x),
-                y=_clamp(1 - element.y),
-                marker_position=(element.marker_position + 0.5) % 1,
-            )
-        scene = _with_element(scene, index, changed)
+        scene = _with_element(scene, index, _reflected_element(scene.elements[index], axis))
     return scene
 
 
