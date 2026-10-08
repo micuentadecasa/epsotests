@@ -1,0 +1,1126 @@
+[
+  {
+    "json": "permit-reading.json",
+    "svg": "permit-reading.svg",
+    "questionType": "reading-comprehension",
+    "format": "reading-comprehension",
+    "examProfile": "five-option",
+    "itemNumber": 1,
+    "seed": 5,
+    "difficulty": "medium",
+    "correctOption": "E",
+    "answerEvidence": [
+      {
+        "id": "evidence-1",
+        "start": 143,
+        "end": 220,
+        "text": "but an officer still verifies original identity documents at the appointment.",
+        "paragraph": 1,
+        "source": "passage"
+      }
+    ],
+    "explanation": "Option E is correct. Evidence evidence-1 states “but an officer still verifies original identity documents at the appointment.”. This is an explicit fact stated in the passage, so no extra assumption is needed. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+    "explainLogic": {
+      "id": "explain-logic",
+      "type": "button",
+      "label": "Explain logic",
+      "localizedLabel": "Ver solución",
+      "labels": {
+        "en": "Explain Logic",
+        "es": "Ver solución"
+      },
+      "ariaLabel": "Explain Logic / Ver solución",
+      "initiallyVisible": false,
+      "revealsAnswer": true,
+      "solutionView": {
+        "initiallyVisible": false,
+        "hideAction": {
+          "id": "hide-solution",
+          "type": "button",
+          "label": "Hide solution",
+          "localizedLabel": "Ocultar solución",
+          "visibleAfterReveal": true
+        }
+      },
+      "result": {
+        "optionCount": 5,
+        "questionType": "reading-comprehension",
+        "explanation": "Option E is correct. Evidence evidence-1 states “but an officer still verifies original identity documents at the appointment.”. This is an explicit fact stated in the passage, so no extra assumption is needed. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+        "explanationDetails": {
+          "text": "Option E is correct. Evidence evidence-1 states “but an officer still verifies original identity documents at the appointment.”. This is an explicit fact stated in the passage, so no extra assumption is needed. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+          "reasoningSteps": [
+            "Identify the claim tested by option E: Present original identity documents for verification.",
+            "Cite evidence evidence-1: “but an officer still verifies original identity documents at the appointment.”",
+            "This is an explicit fact stated in the passage, so no extra assumption is needed.",
+            "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+          ],
+          "evidence": [
+            "evidence-1"
+          ],
+          "explicitFacts": [
+            "Present original identity documents for verification."
+          ],
+          "invalidInferences": [
+            "Option A: confuses the staffing change with an extension of opening hours.",
+            "Option B: treats online form upload as removal of the appointment and identity check.",
+            "Option C: uses the earlier average as if it were the current one.",
+            "Option D: reverses the passage's permission to upload forms before the visit."
+          ],
+          "conclusion": "Present original identity documents for verification."
+        },
+        "reasoningSteps": [
+          "Identify the claim tested by option E: Present original identity documents for verification.",
+          "Cite evidence evidence-1: “but an officer still verifies original identity documents at the appointment.”",
+          "This is an explicit fact stated in the passage, so no extra assumption is needed.",
+          "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+        ],
+        "evidenceSpans": [
+          {
+            "id": "evidence-1",
+            "start": 143,
+            "end": 220,
+            "text": "but an officer still verifies original identity documents at the appointment.",
+            "paragraph": 1,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-2",
+            "start": 98,
+            "end": 141,
+            "text": "Applicants may upload forms before visiting",
+            "paragraph": 1,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-3",
+            "start": 384,
+            "end": 423,
+            "text": "The office did not extend opening hours",
+            "paragraph": 3,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-4",
+            "start": 250,
+            "end": 305,
+            "text": "average counter time fell from 18 minutes to 11 minutes",
+            "paragraph": 2,
+            "source": "passage"
+          }
+        ],
+        "claims": [
+          {
+            "id": "claim-1",
+            "text": "Present original identity documents for verification.",
+            "claimType": "explicit-fact",
+            "status": "supported",
+            "evidence": [
+              "evidence-1"
+            ],
+            "reasoning": "The passage directly states this requirement.",
+            "explicit": true
+          },
+          {
+            "id": "claim-2",
+            "text": "Upload every form at the office rather than online.",
+            "claimType": "contradicted",
+            "status": "contradicted",
+            "evidence": [
+              "evidence-2"
+            ],
+            "reasoning": "The passage allows online upload before the visit.",
+            "explicit": false
+          },
+          {
+            "id": "claim-3",
+            "text": "Attend an office that has extended its opening hours.",
+            "claimType": "contradicted",
+            "status": "contradicted",
+            "evidence": [
+              "evidence-3"
+            ],
+            "reasoning": "The passage explicitly says opening hours did not change.",
+            "explicit": false
+          },
+          {
+            "id": "claim-4",
+            "text": "Wait at the counter for 18 minutes on average.",
+            "claimType": "contradicted",
+            "status": "contradicted",
+            "evidence": [
+              "evidence-4"
+            ],
+            "reasoning": "The later average is 11 minutes, not 18.",
+            "explicit": false
+          },
+          {
+            "id": "claim-5",
+            "text": "Skip the appointment because the pre-check replaces identity checks.",
+            "claimType": "invalid-inference",
+            "status": "not-stated",
+            "evidence": [
+              "evidence-2"
+            ],
+            "reasoning": "The passage separates online form upload from the identity check at the appointment.",
+            "explicit": false
+          }
+        ],
+        "answerEvaluation": [
+          {
+            "option": "A",
+            "optionId": "A",
+            "claimId": "claim-3",
+            "status": "contradicted",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-3"
+            ],
+            "reasoning": "The passage explicitly says opening hours did not change.",
+            "rationale": "confuses the staffing change with an extension of opening hours"
+          },
+          {
+            "option": "B",
+            "optionId": "B",
+            "claimId": "claim-5",
+            "status": "not-stated",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-2"
+            ],
+            "reasoning": "The passage separates online form upload from the identity check at the appointment.",
+            "rationale": "treats online form upload as removal of the appointment and identity check"
+          },
+          {
+            "option": "C",
+            "optionId": "C",
+            "claimId": "claim-4",
+            "status": "contradicted",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-4"
+            ],
+            "reasoning": "The later average is 11 minutes, not 18.",
+            "rationale": "uses the earlier average as if it were the current one"
+          },
+          {
+            "option": "D",
+            "optionId": "D",
+            "claimId": "claim-2",
+            "status": "contradicted",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-2"
+            ],
+            "reasoning": "The passage allows online upload before the visit.",
+            "rationale": "reverses the passage's permission to upload forms before the visit"
+          },
+          {
+            "option": "E",
+            "optionId": "E",
+            "claimId": "claim-1",
+            "status": "supported",
+            "verdict": "correct",
+            "isCorrect": true,
+            "evidence": [
+              "evidence-1"
+            ],
+            "reasoning": "The passage directly states this requirement.",
+            "rationale": ""
+          }
+        ],
+        "correctOption": "E",
+        "correctReason": "Option E is correct because it is supported by the cited passage evidence.",
+        "distractors": [
+          {
+            "option": "A",
+            "reason": "confuses the staffing change with an extension of opening hours",
+            "rationale": "confuses the staffing change with an extension of opening hours",
+            "status": "contradicted",
+            "claimId": "claim-3",
+            "evidence": [
+              "evidence-3"
+            ]
+          },
+          {
+            "option": "B",
+            "reason": "treats online form upload as removal of the appointment and identity check",
+            "rationale": "treats online form upload as removal of the appointment and identity check",
+            "status": "not-stated",
+            "claimId": "claim-5",
+            "evidence": [
+              "evidence-2"
+            ]
+          },
+          {
+            "option": "C",
+            "reason": "uses the earlier average as if it were the current one",
+            "rationale": "uses the earlier average as if it were the current one",
+            "status": "contradicted",
+            "claimId": "claim-4",
+            "evidence": [
+              "evidence-4"
+            ]
+          },
+          {
+            "option": "D",
+            "reason": "reverses the passage's permission to upload forms before the visit",
+            "rationale": "reverses the passage's permission to upload forms before the visit",
+            "status": "contradicted",
+            "claimId": "claim-2",
+            "evidence": [
+              "evidence-2"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "json": "river-inference.json",
+    "svg": "river-inference.svg",
+    "questionType": "inference",
+    "format": "inference",
+    "examProfile": "five-option",
+    "itemNumber": 1,
+    "seed": 10,
+    "difficulty": "hard",
+    "correctOption": "C",
+    "answerEvidence": [
+      {
+        "id": "evidence-1",
+        "start": 415,
+        "end": 489,
+        "text": "neither led to a closure because the water level receded within four hours",
+        "paragraph": 3,
+        "source": "passage"
+      }
+    ],
+    "explanation": "Option C is correct. Evidence evidence-1 states “neither led to a closure because the water level receded within four hours”. The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+    "explainLogic": {
+      "id": "explain-logic",
+      "type": "button",
+      "label": "Explain logic",
+      "localizedLabel": "Ver solución",
+      "labels": {
+        "en": "Explain Logic",
+        "es": "Ver solución"
+      },
+      "ariaLabel": "Explain Logic / Ver solución",
+      "initiallyVisible": false,
+      "revealsAnswer": true,
+      "solutionView": {
+        "initiallyVisible": false,
+        "hideAction": {
+          "id": "hide-solution",
+          "type": "button",
+          "label": "Hide solution",
+          "localizedLabel": "Ocultar solución",
+          "visibleAfterReveal": true
+        }
+      },
+      "result": {
+        "optionCount": 5,
+        "questionType": "inference",
+        "explanation": "Option C is correct. Evidence evidence-1 states “neither led to a closure because the water level receded within four hours”. The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+        "explanationDetails": {
+          "text": "Option C is correct. Evidence evidence-1 states “neither led to a closure because the water level receded within four hours”. The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+          "reasoningSteps": [
+            "Identify the claim tested by option C: An alert does not automatically result in a river closure.",
+            "Cite evidence evidence-1: “neither led to a closure because the water level receded within four hours”",
+            "The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide.",
+            "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+          ],
+          "evidence": [
+            "evidence-1"
+          ],
+          "explicitFacts": [],
+          "invalidInferences": [
+            "Option A: extends one gauge's duration to every gauge and calls it the drought duration.",
+            "Option B: reverses the order of review and bulletin.",
+            "Option D: generalises from two September alerts and omits the review process.",
+            "Option E: contradicts the stated limitation."
+          ],
+          "conclusion": "An alert does not automatically result in a river closure."
+        },
+        "reasoningSteps": [
+          "Identify the claim tested by option C: An alert does not automatically result in a river closure.",
+          "Cite evidence evidence-1: “neither led to a closure because the water level receded within four hours”",
+          "The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide.",
+          "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+        ],
+        "evidenceSpans": [
+          {
+            "id": "evidence-1",
+            "start": 415,
+            "end": 489,
+            "text": "neither led to a closure because the water level receded within four hours",
+            "paragraph": 3,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-2",
+            "start": 291,
+            "end": 349,
+            "text": "Staff reviewed an alert before issuing any public bulletin",
+            "paragraph": 2,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-3",
+            "start": 526,
+            "end": 554,
+            "text": "they do not predict rainfall",
+            "paragraph": 3,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-4",
+            "start": 204,
+            "end": 289,
+            "text": "the level at the Willow gauge stayed below the agency's alert threshold for nine days",
+            "paragraph": 2,
+            "source": "passage"
+          }
+        ],
+        "claims": [
+          {
+            "id": "claim-1",
+            "text": "An alert does not automatically result in a river closure.",
+            "claimType": "supported-inference",
+            "status": "supported",
+            "evidence": [
+              "evidence-1"
+            ],
+            "reasoning": "The passage gives two alerts that did not lead to closure, so an alert alone is not an automatic closure decision.",
+            "explicit": false
+          },
+          {
+            "id": "claim-2",
+            "text": "Every alert is ignored when water recedes within four hours.",
+            "claimType": "invalid-inference",
+            "status": "not-stated",
+            "evidence": [
+              "evidence-2"
+            ],
+            "reasoning": "The passage does not say alerts are ignored; staff review them.",
+            "explicit": false
+          },
+          {
+            "id": "claim-3",
+            "text": "The sensors can predict whether rainfall will occur.",
+            "claimType": "contradicted",
+            "status": "contradicted",
+            "evidence": [
+              "evidence-3"
+            ],
+            "reasoning": "The sensors report current levels only.",
+            "explicit": false
+          },
+          {
+            "id": "claim-4",
+            "text": "A public bulletin is issued before staff review an alert.",
+            "claimType": "contradicted",
+            "status": "contradicted",
+            "evidence": [
+              "evidence-2"
+            ],
+            "reasoning": "The passage states that review comes first.",
+            "explicit": false
+          },
+          {
+            "id": "claim-5",
+            "text": "The drought lasted exactly nine days across all three gauges.",
+            "claimType": "invalid-inference",
+            "status": "not-stated",
+            "evidence": [
+              "evidence-4"
+            ],
+            "reasoning": "Only the Willow gauge and its below-threshold period are specified.",
+            "explicit": false
+          }
+        ],
+        "answerEvaluation": [
+          {
+            "option": "A",
+            "optionId": "A",
+            "claimId": "claim-5",
+            "status": "not-stated",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-4"
+            ],
+            "reasoning": "Only the Willow gauge and its below-threshold period are specified.",
+            "rationale": "extends one gauge's duration to every gauge and calls it the drought duration"
+          },
+          {
+            "option": "B",
+            "optionId": "B",
+            "claimId": "claim-4",
+            "status": "contradicted",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-2"
+            ],
+            "reasoning": "The passage states that review comes first.",
+            "rationale": "reverses the order of review and bulletin"
+          },
+          {
+            "option": "C",
+            "optionId": "C",
+            "claimId": "claim-1",
+            "status": "supported",
+            "verdict": "correct",
+            "isCorrect": true,
+            "evidence": [
+              "evidence-1"
+            ],
+            "reasoning": "The passage gives two alerts that did not lead to closure, so an alert alone is not an automatic closure decision.",
+            "rationale": ""
+          },
+          {
+            "option": "D",
+            "optionId": "D",
+            "claimId": "claim-2",
+            "status": "not-stated",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-2"
+            ],
+            "reasoning": "The passage does not say alerts are ignored; staff review them.",
+            "rationale": "generalises from two September alerts and omits the review process"
+          },
+          {
+            "option": "E",
+            "optionId": "E",
+            "claimId": "claim-3",
+            "status": "contradicted",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-3"
+            ],
+            "reasoning": "The sensors report current levels only.",
+            "rationale": "contradicts the stated limitation"
+          }
+        ],
+        "correctOption": "C",
+        "correctReason": "Option C is correct because it is supported by the cited passage evidence.",
+        "distractors": [
+          {
+            "option": "A",
+            "reason": "extends one gauge's duration to every gauge and calls it the drought duration",
+            "rationale": "extends one gauge's duration to every gauge and calls it the drought duration",
+            "status": "not-stated",
+            "claimId": "claim-5",
+            "evidence": [
+              "evidence-4"
+            ]
+          },
+          {
+            "option": "B",
+            "reason": "reverses the order of review and bulletin",
+            "rationale": "reverses the order of review and bulletin",
+            "status": "contradicted",
+            "claimId": "claim-4",
+            "evidence": [
+              "evidence-2"
+            ]
+          },
+          {
+            "option": "D",
+            "reason": "generalises from two September alerts and omits the review process",
+            "rationale": "generalises from two September alerts and omits the review process",
+            "status": "not-stated",
+            "claimId": "claim-2",
+            "evidence": [
+              "evidence-2"
+            ]
+          },
+          {
+            "option": "E",
+            "reason": "contradicts the stated limitation",
+            "rationale": "contradicts the stated limitation",
+            "status": "contradicted",
+            "claimId": "claim-3",
+            "evidence": [
+              "evidence-3"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "json": "archive-true-false.json",
+    "svg": "archive-true-false.svg",
+    "questionType": "true-false",
+    "format": "true-false",
+    "examProfile": "five-option",
+    "itemNumber": 1,
+    "seed": 9,
+    "difficulty": "easy",
+    "correctOption": "D",
+    "answerEvidence": [
+      {
+        "id": "evidence-1",
+        "start": 234,
+        "end": 296,
+        "text": "Volunteers transcribed handwritten labels for 90 of those maps",
+        "paragraph": 2,
+        "source": "passage"
+      }
+    ],
+    "explanation": "Option D is correct. Evidence evidence-1 states “Volunteers transcribed handwritten labels for 90 of those maps”. Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+    "explainLogic": {
+      "id": "explain-logic",
+      "type": "button",
+      "label": "Explain logic",
+      "localizedLabel": "Ver solución",
+      "labels": {
+        "en": "Explain Logic",
+        "es": "Ver solución"
+      },
+      "ariaLabel": "Explain Logic / Ver solución",
+      "initiallyVisible": false,
+      "revealsAnswer": true,
+      "solutionView": {
+        "initiallyVisible": false,
+        "hideAction": {
+          "id": "hide-solution",
+          "type": "button",
+          "label": "Hide solution",
+          "localizedLabel": "Ocultar solución",
+          "visibleAfterReveal": true
+        }
+      },
+      "result": {
+        "optionCount": 5,
+        "questionType": "true-false",
+        "explanation": "Option D is correct. Evidence evidence-1 states “Volunteers transcribed handwritten labels for 90 of those maps”. Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+        "explanationDetails": {
+          "text": "Option D is correct. Evidence evidence-1 states “Volunteers transcribed handwritten labels for 90 of those maps”. Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+          "reasoningSteps": [
+            "Identify the claim tested by option D: Volunteers transcribed handwritten labels for 90 maps.",
+            "Cite evidence evidence-1: “Volunteers transcribed handwritten labels for 90 of those maps”",
+            "Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated.",
+            "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+          ],
+          "evidence": [
+            "evidence-1"
+          ],
+          "explicitFacts": [
+            "Volunteers transcribed handwritten labels for 90 maps."
+          ],
+          "invalidInferences": [
+            "Option A: contradicts where originals remain.",
+            "Option B: expands a subset to the entire project.",
+            "Option C: adds a zero to the reported count.",
+            "Option E: contradicts the passage."
+          ],
+          "conclusion": "Volunteers transcribed handwritten labels for 90 maps."
+        },
+        "reasoningSteps": [
+          "Identify the claim tested by option D: Volunteers transcribed handwritten labels for 90 maps.",
+          "Cite evidence evidence-1: “Volunteers transcribed handwritten labels for 90 of those maps”",
+          "Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated.",
+          "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+        ],
+        "evidenceSpans": [
+          {
+            "id": "evidence-1",
+            "start": 234,
+            "end": 296,
+            "text": "Volunteers transcribed handwritten labels for 90 of those maps",
+            "paragraph": 2,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-2",
+            "start": 298,
+            "end": 341,
+            "text": "the volunteers did not operate the scanners",
+            "paragraph": 2,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-3",
+            "start": 396,
+            "end": 444,
+            "text": "original maps remain in the archive reading room",
+            "paragraph": 3,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-4",
+            "start": 207,
+            "end": 232,
+            "text": "the team scanned 320 maps",
+            "paragraph": 2,
+            "source": "passage"
+          }
+        ],
+        "claims": [
+          {
+            "id": "claim-1",
+            "text": "Volunteers transcribed handwritten labels for 90 maps.",
+            "claimType": "explicit-fact",
+            "status": "supported",
+            "evidence": [
+              "evidence-1"
+            ],
+            "reasoning": "This fact is stated directly.",
+            "explicit": true
+          },
+          {
+            "id": "claim-2",
+            "text": "Volunteers operated the scanners.",
+            "claimType": "contradicted",
+            "status": "contradicted",
+            "evidence": [
+              "evidence-2"
+            ],
+            "reasoning": "The passage explicitly excludes scanner operation from the volunteer role.",
+            "explicit": false
+          },
+          {
+            "id": "claim-3",
+            "text": "Original maps were moved out of the reading room.",
+            "claimType": "contradicted",
+            "status": "contradicted",
+            "evidence": [
+              "evidence-3"
+            ],
+            "reasoning": "The passage says the originals remain in the reading room.",
+            "explicit": false
+          },
+          {
+            "id": "claim-4",
+            "text": "The team scanned 3,200 maps in May.",
+            "claimType": "contradicted",
+            "status": "contradicted",
+            "evidence": [
+              "evidence-4"
+            ],
+            "reasoning": "The reported count is 320.",
+            "explicit": false
+          },
+          {
+            "id": "claim-5",
+            "text": "Every map received a volunteer transcription.",
+            "claimType": "invalid-inference",
+            "status": "not-stated",
+            "evidence": [
+              "evidence-1"
+            ],
+            "reasoning": "Only 90 maps are identified as having volunteer transcriptions.",
+            "explicit": false
+          }
+        ],
+        "answerEvaluation": [
+          {
+            "option": "A",
+            "optionId": "A",
+            "claimId": "claim-3",
+            "status": "contradicted",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-3"
+            ],
+            "reasoning": "The passage says the originals remain in the reading room.",
+            "rationale": "contradicts where originals remain"
+          },
+          {
+            "option": "B",
+            "optionId": "B",
+            "claimId": "claim-5",
+            "status": "not-stated",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-1"
+            ],
+            "reasoning": "Only 90 maps are identified as having volunteer transcriptions.",
+            "rationale": "expands a subset to the entire project"
+          },
+          {
+            "option": "C",
+            "optionId": "C",
+            "claimId": "claim-4",
+            "status": "contradicted",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-4"
+            ],
+            "reasoning": "The reported count is 320.",
+            "rationale": "adds a zero to the reported count"
+          },
+          {
+            "option": "D",
+            "optionId": "D",
+            "claimId": "claim-1",
+            "status": "supported",
+            "verdict": "correct",
+            "isCorrect": true,
+            "evidence": [
+              "evidence-1"
+            ],
+            "reasoning": "This fact is stated directly.",
+            "rationale": ""
+          },
+          {
+            "option": "E",
+            "optionId": "E",
+            "claimId": "claim-2",
+            "status": "contradicted",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-2"
+            ],
+            "reasoning": "The passage explicitly excludes scanner operation from the volunteer role.",
+            "rationale": "contradicts the passage"
+          }
+        ],
+        "correctOption": "D",
+        "correctReason": "Option D is correct because it is supported by the cited passage evidence.",
+        "distractors": [
+          {
+            "option": "A",
+            "reason": "contradicts where originals remain",
+            "rationale": "contradicts where originals remain",
+            "status": "contradicted",
+            "claimId": "claim-3",
+            "evidence": [
+              "evidence-3"
+            ]
+          },
+          {
+            "option": "B",
+            "reason": "expands a subset to the entire project",
+            "rationale": "expands a subset to the entire project",
+            "status": "not-stated",
+            "claimId": "claim-5",
+            "evidence": [
+              "evidence-1"
+            ]
+          },
+          {
+            "option": "C",
+            "reason": "adds a zero to the reported count",
+            "rationale": "adds a zero to the reported count",
+            "status": "contradicted",
+            "claimId": "claim-4",
+            "evidence": [
+              "evidence-4"
+            ]
+          },
+          {
+            "option": "E",
+            "reason": "contradicts the passage",
+            "rationale": "contradicts the passage",
+            "status": "contradicted",
+            "claimId": "claim-2",
+            "evidence": [
+              "evidence-2"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "json": "queue-inference.json",
+    "svg": "queue-inference.svg",
+    "questionType": "inference",
+    "format": "inference",
+    "examProfile": "five-option",
+    "itemNumber": 1,
+    "seed": 0,
+    "difficulty": "hard",
+    "correctOption": "C",
+    "answerEvidence": [
+      {
+        "id": "evidence-1",
+        "start": 388,
+        "end": 441,
+        "text": "The cap applies to all requests, not only urgent ones",
+        "paragraph": 3,
+        "source": "passage"
+      }
+    ],
+    "explanation": "Option C is correct. Evidence evidence-1 states “The cap applies to all requests, not only urgent ones”. The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+    "explainLogic": {
+      "id": "explain-logic",
+      "type": "button",
+      "label": "Explain logic",
+      "localizedLabel": "Ver solución",
+      "labels": {
+        "en": "Explain Logic",
+        "es": "Ver solución"
+      },
+      "ariaLabel": "Explain Logic / Ver solución",
+      "initiallyVisible": false,
+      "revealsAnswer": true,
+      "solutionView": {
+        "initiallyVisible": false,
+        "hideAction": {
+          "id": "hide-solution",
+          "type": "button",
+          "label": "Hide solution",
+          "localizedLabel": "Ocultar solución",
+          "visibleAfterReveal": true
+        }
+      },
+      "result": {
+        "optionCount": 5,
+        "questionType": "inference",
+        "explanation": "Option C is correct. Evidence evidence-1 states “The cap applies to all requests, not only urgent ones”. The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+        "explanationDetails": {
+          "text": "Option C is correct. Evidence evidence-1 states “The cap applies to all requests, not only urgent ones”. The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+          "reasoningSteps": [
+            "Identify the claim tested by option C: The capacity cap applies beyond urgent requests.",
+            "Cite evidence evidence-1: “The cap applies to all requests, not only urgent ones”",
+            "The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide.",
+            "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+          ],
+          "evidence": [
+            "evidence-1"
+          ],
+          "explicitFacts": [],
+          "invalidInferences": [
+            "Option A: reverses the stated purpose of the cap.",
+            "Option B: reverses the process order.",
+            "Option D: turns one reported delay reason into a complete causal account.",
+            "Option E: ignores the requests that waited longer."
+          ],
+          "conclusion": "The capacity cap applies beyond urgent requests."
+        },
+        "reasoningSteps": [
+          "Identify the claim tested by option C: The capacity cap applies beyond urgent requests.",
+          "Cite evidence evidence-1: “The cap applies to all requests, not only urgent ones”",
+          "The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide.",
+          "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+        ],
+        "evidenceSpans": [
+          {
+            "id": "evidence-1",
+            "start": 388,
+            "end": 441,
+            "text": "The cap applies to all requests, not only urgent ones",
+            "paragraph": 3,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-2",
+            "start": 213,
+            "end": 275,
+            "text": "35 were assigned within two working days. The remainder waited",
+            "paragraph": 2,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-3",
+            "start": 255,
+            "end": 306,
+            "text": "The remainder waited for a specialist language pair",
+            "paragraph": 2,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-4",
+            "start": 318,
+            "end": 386,
+            "text": "introduced a daily capacity cap of 18 assignments to protect quality",
+            "paragraph": 3,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-5",
+            "start": 79,
+            "end": 163,
+            "text": "Requests marked urgent are reviewed by a coordinator before translators are assigned",
+            "paragraph": 1,
+            "source": "passage"
+          }
+        ],
+        "claims": [
+          {
+            "id": "claim-1",
+            "text": "The capacity cap applies beyond urgent requests.",
+            "claimType": "supported-inference",
+            "status": "supported",
+            "evidence": [
+              "evidence-1"
+            ],
+            "reasoning": "The final sentence explicitly supports this conclusion.",
+            "explicit": false
+          },
+          {
+            "id": "claim-2",
+            "text": "Every urgent request is assigned within two working days.",
+            "claimType": "contradicted",
+            "status": "contradicted",
+            "evidence": [
+              "evidence-2"
+            ],
+            "reasoning": "Only 35 of 42 urgent requests met that timing.",
+            "explicit": false
+          },
+          {
+            "id": "claim-3",
+            "text": "The specialist language pair caused all queue delays.",
+            "claimType": "invalid-inference",
+            "status": "not-stated",
+            "evidence": [
+              "evidence-3"
+            ],
+            "reasoning": "The passage does not establish that it caused all delays.",
+            "explicit": false
+          },
+          {
+            "id": "claim-4",
+            "text": "The daily cap was designed to increase the number of assignments.",
+            "claimType": "contradicted",
+            "status": "contradicted",
+            "evidence": [
+              "evidence-4"
+            ],
+            "reasoning": "The stated purpose is to protect quality.",
+            "explicit": false
+          },
+          {
+            "id": "claim-5",
+            "text": "Urgent requests bypass coordinator review.",
+            "claimType": "contradicted",
+            "status": "contradicted",
+            "evidence": [
+              "evidence-5"
+            ],
+            "reasoning": "Urgent requests are reviewed before assignment.",
+            "explicit": false
+          }
+        ],
+        "answerEvaluation": [
+          {
+            "option": "A",
+            "optionId": "A",
+            "claimId": "claim-4",
+            "status": "contradicted",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-4"
+            ],
+            "reasoning": "The stated purpose is to protect quality.",
+            "rationale": "reverses the stated purpose of the cap"
+          },
+          {
+            "option": "B",
+            "optionId": "B",
+            "claimId": "claim-5",
+            "status": "contradicted",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-5"
+            ],
+            "reasoning": "Urgent requests are reviewed before assignment.",
+            "rationale": "reverses the process order"
+          },
+          {
+            "option": "C",
+            "optionId": "C",
+            "claimId": "claim-1",
+            "status": "supported",
+            "verdict": "correct",
+            "isCorrect": true,
+            "evidence": [
+              "evidence-1"
+            ],
+            "reasoning": "The final sentence explicitly supports this conclusion.",
+            "rationale": ""
+          },
+          {
+            "option": "D",
+            "optionId": "D",
+            "claimId": "claim-3",
+            "status": "not-stated",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-3"
+            ],
+            "reasoning": "The passage does not establish that it caused all delays.",
+            "rationale": "turns one reported delay reason into a complete causal account"
+          },
+          {
+            "option": "E",
+            "optionId": "E",
+            "claimId": "claim-2",
+            "status": "contradicted",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-2"
+            ],
+            "reasoning": "Only 35 of 42 urgent requests met that timing.",
+            "rationale": "ignores the requests that waited longer"
+          }
+        ],
+        "correctOption": "C",
+        "correctReason": "Option C is correct because it is supported by the cited passage evidence.",
+        "distractors": [
+          {
+            "option": "A",
+            "reason": "reverses the stated purpose of the cap",
+            "rationale": "reverses the stated purpose of the cap",
+            "status": "contradicted",
+            "claimId": "claim-4",
+            "evidence": [
+              "evidence-4"
+            ]
+          },
+          {
+            "option": "B",
+            "reason": "reverses the process order",
+            "rationale": "reverses the process order",
+            "status": "contradicted",
+            "claimId": "claim-5",
+            "evidence": [
+              "evidence-5"
+            ]
+          },
+          {
+            "option": "D",
+            "reason": "turns one reported delay reason into a complete causal account",
+            "rationale": "turns one reported delay reason into a complete causal account",
+            "status": "not-stated",
+            "claimId": "claim-3",
+            "evidence": [
+              "evidence-3"
+            ]
+          },
+          {
+            "option": "E",
+            "reason": "ignores the requests that waited longer",
+            "rationale": "ignores the requests that waited longer",
+            "status": "contradicted",
+            "claimId": "claim-2",
+            "evidence": [
+              "evidence-2"
+            ]
+          }
+        ]
+      }
+    }
+  }
+]

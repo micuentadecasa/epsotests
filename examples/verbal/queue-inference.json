@@ -1,0 +1,947 @@
+{
+  "id": "verbal-inference-translation-queue-0-hard",
+  "itemNumber": 1,
+  "exam": "verbal",
+  "examProfile": "five-option",
+  "optionCount": 5,
+  "format": "inference",
+  "questionType": "inference",
+  "difficulty": "hard",
+  "passage": {
+    "id": "translation-queue",
+    "title": "Managing an urgent translation queue",
+    "text": "The Commission's translation unit schedules urgent requests in a shared queue. Requests marked urgent are reviewed by a coordinator before translators are assigned.\n\nIn June, 42 urgent requests entered the queue; 35 were assigned within two working days. The remainder waited for a specialist language pair.\n\nThe unit introduced a daily capacity cap of 18 assignments to protect quality. The cap applies to all requests, not only urgent ones.",
+    "paragraphs": [
+      "The Commission's translation unit schedules urgent requests in a shared queue. Requests marked urgent are reviewed by a coordinator before translators are assigned.",
+      "In June, 42 urgent requests entered the queue; 35 were assigned within two working days. The remainder waited for a specialist language pair.",
+      "The unit introduced a daily capacity cap of 18 assignments to protect quality. The cap applies to all requests, not only urgent ones."
+    ],
+    "source": "original"
+  },
+  "sourcePassage": {
+    "id": "translation-queue",
+    "title": "Managing an urgent translation queue",
+    "text": "The Commission's translation unit schedules urgent requests in a shared queue. Requests marked urgent are reviewed by a coordinator before translators are assigned.\n\nIn June, 42 urgent requests entered the queue; 35 were assigned within two working days. The remainder waited for a specialist language pair.\n\nThe unit introduced a daily capacity cap of 18 assignments to protect quality. The cap applies to all requests, not only urgent ones.",
+    "paragraphs": [
+      "The Commission's translation unit schedules urgent requests in a shared queue. Requests marked urgent are reviewed by a coordinator before translators are assigned.",
+      "In June, 42 urgent requests entered the queue; 35 were assigned within two working days. The remainder waited for a specialist language pair.",
+      "The unit introduced a daily capacity cap of 18 assignments to protect quality. The cap applies to all requests, not only urgent ones."
+    ],
+    "source": "original"
+  },
+  "passageText": "The Commission's translation unit schedules urgent requests in a shared queue. Requests marked urgent are reviewed by a coordinator before translators are assigned.\n\nIn June, 42 urgent requests entered the queue; 35 were assigned within two working days. The remainder waited for a specialist language pair.\n\nThe unit introduced a daily capacity cap of 18 assignments to protect quality. The cap applies to all requests, not only urgent ones.",
+  "stimulus": {
+    "type": "passage",
+    "title": "Managing an urgent translation queue",
+    "passage": {
+      "id": "translation-queue",
+      "title": "Managing an urgent translation queue",
+      "text": "The Commission's translation unit schedules urgent requests in a shared queue. Requests marked urgent are reviewed by a coordinator before translators are assigned.\n\nIn June, 42 urgent requests entered the queue; 35 were assigned within two working days. The remainder waited for a specialist language pair.\n\nThe unit introduced a daily capacity cap of 18 assignments to protect quality. The cap applies to all requests, not only urgent ones.",
+      "paragraphs": [
+        "The Commission's translation unit schedules urgent requests in a shared queue. Requests marked urgent are reviewed by a coordinator before translators are assigned.",
+        "In June, 42 urgent requests entered the queue; 35 were assigned within two working days. The remainder waited for a specialist language pair.",
+        "The unit introduced a daily capacity cap of 18 assignments to protect quality. The cap applies to all requests, not only urgent ones."
+      ],
+      "source": "original"
+    },
+    "text": "The Commission's translation unit schedules urgent requests in a shared queue. Requests marked urgent are reviewed by a coordinator before translators are assigned.\n\nIn June, 42 urgent requests entered the queue; 35 were assigned within two working days. The remainder waited for a specialist language pair.\n\nThe unit introduced a daily capacity cap of 18 assignments to protect quality. The cap applies to all requests, not only urgent ones.",
+    "evidenceSpans": [
+      {
+        "id": "evidence-1",
+        "start": 388,
+        "end": 441,
+        "text": "The cap applies to all requests, not only urgent ones",
+        "paragraph": 3,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-2",
+        "start": 213,
+        "end": 275,
+        "text": "35 were assigned within two working days. The remainder waited",
+        "paragraph": 2,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-3",
+        "start": 255,
+        "end": 306,
+        "text": "The remainder waited for a specialist language pair",
+        "paragraph": 2,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-4",
+        "start": 318,
+        "end": 386,
+        "text": "introduced a daily capacity cap of 18 assignments to protect quality",
+        "paragraph": 3,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-5",
+        "start": 79,
+        "end": 163,
+        "text": "Requests marked urgent are reviewed by a coordinator before translators are assigned",
+        "paragraph": 1,
+        "source": "passage"
+      }
+    ]
+  },
+  "question": "Which conclusion is best supported by the passage?",
+  "claims": [
+    {
+      "id": "claim-1",
+      "text": "The capacity cap applies beyond urgent requests.",
+      "claimType": "supported-inference",
+      "status": "supported",
+      "evidence": [
+        "evidence-1"
+      ],
+      "reasoning": "The final sentence explicitly supports this conclusion.",
+      "explicit": false
+    },
+    {
+      "id": "claim-2",
+      "text": "Every urgent request is assigned within two working days.",
+      "claimType": "contradicted",
+      "status": "contradicted",
+      "evidence": [
+        "evidence-2"
+      ],
+      "reasoning": "Only 35 of 42 urgent requests met that timing.",
+      "explicit": false
+    },
+    {
+      "id": "claim-3",
+      "text": "The specialist language pair caused all queue delays.",
+      "claimType": "invalid-inference",
+      "status": "not-stated",
+      "evidence": [
+        "evidence-3"
+      ],
+      "reasoning": "The passage does not establish that it caused all delays.",
+      "explicit": false
+    },
+    {
+      "id": "claim-4",
+      "text": "The daily cap was designed to increase the number of assignments.",
+      "claimType": "contradicted",
+      "status": "contradicted",
+      "evidence": [
+        "evidence-4"
+      ],
+      "reasoning": "The stated purpose is to protect quality.",
+      "explicit": false
+    },
+    {
+      "id": "claim-5",
+      "text": "Urgent requests bypass coordinator review.",
+      "claimType": "contradicted",
+      "status": "contradicted",
+      "evidence": [
+        "evidence-5"
+      ],
+      "reasoning": "Urgent requests are reviewed before assignment.",
+      "explicit": false
+    }
+  ],
+  "evidenceSpans": [
+    {
+      "id": "evidence-1",
+      "start": 388,
+      "end": 441,
+      "text": "The cap applies to all requests, not only urgent ones",
+      "paragraph": 3,
+      "source": "passage"
+    },
+    {
+      "id": "evidence-2",
+      "start": 213,
+      "end": 275,
+      "text": "35 were assigned within two working days. The remainder waited",
+      "paragraph": 2,
+      "source": "passage"
+    },
+    {
+      "id": "evidence-3",
+      "start": 255,
+      "end": 306,
+      "text": "The remainder waited for a specialist language pair",
+      "paragraph": 2,
+      "source": "passage"
+    },
+    {
+      "id": "evidence-4",
+      "start": 318,
+      "end": 386,
+      "text": "introduced a daily capacity cap of 18 assignments to protect quality",
+      "paragraph": 3,
+      "source": "passage"
+    },
+    {
+      "id": "evidence-5",
+      "start": 79,
+      "end": 163,
+      "text": "Requests marked urgent are reviewed by a coordinator before translators are assigned",
+      "paragraph": 1,
+      "source": "passage"
+    }
+  ],
+  "options": [
+    {
+      "id": "A",
+      "label": "The daily cap was designed to increase the number of assignments.",
+      "text": "The daily cap was designed to increase the number of assignments.",
+      "claimId": "claim-4",
+      "claimType": "contradicted",
+      "evaluationStatus": "contradicted",
+      "evidence": [
+        "evidence-4"
+      ],
+      "distractorRationale": "reverses the stated purpose of the cap",
+      "mutation": {
+        "kind": "verbal-misreading",
+        "description": "reverses the stated purpose of the cap"
+      }
+    },
+    {
+      "id": "B",
+      "label": "Urgent requests bypass coordinator review.",
+      "text": "Urgent requests bypass coordinator review.",
+      "claimId": "claim-5",
+      "claimType": "contradicted",
+      "evaluationStatus": "contradicted",
+      "evidence": [
+        "evidence-5"
+      ],
+      "distractorRationale": "reverses the process order",
+      "mutation": {
+        "kind": "verbal-misreading",
+        "description": "reverses the process order"
+      }
+    },
+    {
+      "id": "C",
+      "label": "The capacity cap applies beyond urgent requests.",
+      "text": "The capacity cap applies beyond urgent requests.",
+      "claimId": "claim-1",
+      "claimType": "supported-inference",
+      "evaluationStatus": "supported",
+      "evidence": [
+        "evidence-1"
+      ],
+      "distractorRationale": "",
+      "mutation": {
+        "kind": "correct",
+        "description": "matches the passage and question"
+      }
+    },
+    {
+      "id": "D",
+      "label": "The specialist language pair caused all queue delays.",
+      "text": "The specialist language pair caused all queue delays.",
+      "claimId": "claim-3",
+      "claimType": "invalid-inference",
+      "evaluationStatus": "not-stated",
+      "evidence": [
+        "evidence-3"
+      ],
+      "distractorRationale": "turns one reported delay reason into a complete causal account",
+      "mutation": {
+        "kind": "verbal-misreading",
+        "description": "turns one reported delay reason into a complete causal account"
+      }
+    },
+    {
+      "id": "E",
+      "label": "Every urgent request is assigned within two working days.",
+      "text": "Every urgent request is assigned within two working days.",
+      "claimId": "claim-2",
+      "claimType": "contradicted",
+      "evaluationStatus": "contradicted",
+      "evidence": [
+        "evidence-2"
+      ],
+      "distractorRationale": "ignores the requests that waited longer",
+      "mutation": {
+        "kind": "verbal-misreading",
+        "description": "ignores the requests that waited longer"
+      }
+    }
+  ],
+  "correctOption": "C",
+  "answerEvaluation": [
+    {
+      "option": "A",
+      "optionId": "A",
+      "claimId": "claim-4",
+      "status": "contradicted",
+      "verdict": "distractor",
+      "isCorrect": false,
+      "evidence": [
+        "evidence-4"
+      ],
+      "reasoning": "The stated purpose is to protect quality.",
+      "rationale": "reverses the stated purpose of the cap"
+    },
+    {
+      "option": "B",
+      "optionId": "B",
+      "claimId": "claim-5",
+      "status": "contradicted",
+      "verdict": "distractor",
+      "isCorrect": false,
+      "evidence": [
+        "evidence-5"
+      ],
+      "reasoning": "Urgent requests are reviewed before assignment.",
+      "rationale": "reverses the process order"
+    },
+    {
+      "option": "C",
+      "optionId": "C",
+      "claimId": "claim-1",
+      "status": "supported",
+      "verdict": "correct",
+      "isCorrect": true,
+      "evidence": [
+        "evidence-1"
+      ],
+      "reasoning": "The final sentence explicitly supports this conclusion.",
+      "rationale": ""
+    },
+    {
+      "option": "D",
+      "optionId": "D",
+      "claimId": "claim-3",
+      "status": "not-stated",
+      "verdict": "distractor",
+      "isCorrect": false,
+      "evidence": [
+        "evidence-3"
+      ],
+      "reasoning": "The passage does not establish that it caused all delays.",
+      "rationale": "turns one reported delay reason into a complete causal account"
+    },
+    {
+      "option": "E",
+      "optionId": "E",
+      "claimId": "claim-2",
+      "status": "contradicted",
+      "verdict": "distractor",
+      "isCorrect": false,
+      "evidence": [
+        "evidence-2"
+      ],
+      "reasoning": "Only 35 of 42 urgent requests met that timing.",
+      "rationale": "ignores the requests that waited longer"
+    }
+  ],
+  "explanation": "Option C is correct. Evidence evidence-1 states “The cap applies to all requests, not only urgent ones”. The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+  "explanationDetails": {
+    "text": "Option C is correct. Evidence evidence-1 states “The cap applies to all requests, not only urgent ones”. The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+    "reasoningSteps": [
+      "Identify the claim tested by option C: The capacity cap applies beyond urgent requests.",
+      "Cite evidence evidence-1: “The cap applies to all requests, not only urgent ones”",
+      "The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide.",
+      "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+    ],
+    "evidence": [
+      "evidence-1"
+    ],
+    "explicitFacts": [],
+    "invalidInferences": [
+      "Option A: reverses the stated purpose of the cap.",
+      "Option B: reverses the process order.",
+      "Option D: turns one reported delay reason into a complete causal account.",
+      "Option E: ignores the requests that waited longer."
+    ],
+    "conclusion": "The capacity cap applies beyond urgent requests."
+  },
+  "explanationFragments": [
+    "Identify the claim tested by option C: The capacity cap applies beyond urgent requests.",
+    "Cite evidence evidence-1: “The cap applies to all requests, not only urgent ones”",
+    "The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide.",
+    "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+  ],
+  "actions": {
+    "explainLogic": {
+      "id": "explain-logic",
+      "type": "button",
+      "label": "Explain logic",
+      "localizedLabel": "Ver solución",
+      "labels": {
+        "en": "Explain Logic",
+        "es": "Ver solución"
+      },
+      "ariaLabel": "Explain Logic / Ver solución",
+      "initiallyVisible": false,
+      "revealsAnswer": true,
+      "solutionView": {
+        "initiallyVisible": false,
+        "hideAction": {
+          "id": "hide-solution",
+          "type": "button",
+          "label": "Hide solution",
+          "localizedLabel": "Ocultar solución",
+          "visibleAfterReveal": true
+        }
+      },
+      "result": {
+        "optionCount": 5,
+        "questionType": "inference",
+        "explanation": "Option C is correct. Evidence evidence-1 states “The cap applies to all requests, not only urgent ones”. The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+        "explanationDetails": {
+          "text": "Option C is correct. Evidence evidence-1 states “The cap applies to all requests, not only urgent ones”. The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+          "reasoningSteps": [
+            "Identify the claim tested by option C: The capacity cap applies beyond urgent requests.",
+            "Cite evidence evidence-1: “The cap applies to all requests, not only urgent ones”",
+            "The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide.",
+            "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+          ],
+          "evidence": [
+            "evidence-1"
+          ],
+          "explicitFacts": [],
+          "invalidInferences": [
+            "Option A: reverses the stated purpose of the cap.",
+            "Option B: reverses the process order.",
+            "Option D: turns one reported delay reason into a complete causal account.",
+            "Option E: ignores the requests that waited longer."
+          ],
+          "conclusion": "The capacity cap applies beyond urgent requests."
+        },
+        "reasoningSteps": [
+          "Identify the claim tested by option C: The capacity cap applies beyond urgent requests.",
+          "Cite evidence evidence-1: “The cap applies to all requests, not only urgent ones”",
+          "The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide.",
+          "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+        ],
+        "evidenceSpans": [
+          {
+            "id": "evidence-1",
+            "start": 388,
+            "end": 441,
+            "text": "The cap applies to all requests, not only urgent ones",
+            "paragraph": 3,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-2",
+            "start": 213,
+            "end": 275,
+            "text": "35 were assigned within two working days. The remainder waited",
+            "paragraph": 2,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-3",
+            "start": 255,
+            "end": 306,
+            "text": "The remainder waited for a specialist language pair",
+            "paragraph": 2,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-4",
+            "start": 318,
+            "end": 386,
+            "text": "introduced a daily capacity cap of 18 assignments to protect quality",
+            "paragraph": 3,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-5",
+            "start": 79,
+            "end": 163,
+            "text": "Requests marked urgent are reviewed by a coordinator before translators are assigned",
+            "paragraph": 1,
+            "source": "passage"
+          }
+        ],
+        "claims": [
+          {
+            "id": "claim-1",
+            "text": "The capacity cap applies beyond urgent requests.",
+            "claimType": "supported-inference",
+            "status": "supported",
+            "evidence": [
+              "evidence-1"
+            ],
+            "reasoning": "The final sentence explicitly supports this conclusion.",
+            "explicit": false
+          },
+          {
+            "id": "claim-2",
+            "text": "Every urgent request is assigned within two working days.",
+            "claimType": "contradicted",
+            "status": "contradicted",
+            "evidence": [
+              "evidence-2"
+            ],
+            "reasoning": "Only 35 of 42 urgent requests met that timing.",
+            "explicit": false
+          },
+          {
+            "id": "claim-3",
+            "text": "The specialist language pair caused all queue delays.",
+            "claimType": "invalid-inference",
+            "status": "not-stated",
+            "evidence": [
+              "evidence-3"
+            ],
+            "reasoning": "The passage does not establish that it caused all delays.",
+            "explicit": false
+          },
+          {
+            "id": "claim-4",
+            "text": "The daily cap was designed to increase the number of assignments.",
+            "claimType": "contradicted",
+            "status": "contradicted",
+            "evidence": [
+              "evidence-4"
+            ],
+            "reasoning": "The stated purpose is to protect quality.",
+            "explicit": false
+          },
+          {
+            "id": "claim-5",
+            "text": "Urgent requests bypass coordinator review.",
+            "claimType": "contradicted",
+            "status": "contradicted",
+            "evidence": [
+              "evidence-5"
+            ],
+            "reasoning": "Urgent requests are reviewed before assignment.",
+            "explicit": false
+          }
+        ],
+        "answerEvaluation": [
+          {
+            "option": "A",
+            "optionId": "A",
+            "claimId": "claim-4",
+            "status": "contradicted",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-4"
+            ],
+            "reasoning": "The stated purpose is to protect quality.",
+            "rationale": "reverses the stated purpose of the cap"
+          },
+          {
+            "option": "B",
+            "optionId": "B",
+            "claimId": "claim-5",
+            "status": "contradicted",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-5"
+            ],
+            "reasoning": "Urgent requests are reviewed before assignment.",
+            "rationale": "reverses the process order"
+          },
+          {
+            "option": "C",
+            "optionId": "C",
+            "claimId": "claim-1",
+            "status": "supported",
+            "verdict": "correct",
+            "isCorrect": true,
+            "evidence": [
+              "evidence-1"
+            ],
+            "reasoning": "The final sentence explicitly supports this conclusion.",
+            "rationale": ""
+          },
+          {
+            "option": "D",
+            "optionId": "D",
+            "claimId": "claim-3",
+            "status": "not-stated",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-3"
+            ],
+            "reasoning": "The passage does not establish that it caused all delays.",
+            "rationale": "turns one reported delay reason into a complete causal account"
+          },
+          {
+            "option": "E",
+            "optionId": "E",
+            "claimId": "claim-2",
+            "status": "contradicted",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-2"
+            ],
+            "reasoning": "Only 35 of 42 urgent requests met that timing.",
+            "rationale": "ignores the requests that waited longer"
+          }
+        ],
+        "correctOption": "C",
+        "correctReason": "Option C is correct because it is supported by the cited passage evidence.",
+        "distractors": [
+          {
+            "option": "A",
+            "reason": "reverses the stated purpose of the cap",
+            "rationale": "reverses the stated purpose of the cap",
+            "status": "contradicted",
+            "claimId": "claim-4",
+            "evidence": [
+              "evidence-4"
+            ]
+          },
+          {
+            "option": "B",
+            "reason": "reverses the process order",
+            "rationale": "reverses the process order",
+            "status": "contradicted",
+            "claimId": "claim-5",
+            "evidence": [
+              "evidence-5"
+            ]
+          },
+          {
+            "option": "D",
+            "reason": "turns one reported delay reason into a complete causal account",
+            "rationale": "turns one reported delay reason into a complete causal account",
+            "status": "not-stated",
+            "claimId": "claim-3",
+            "evidence": [
+              "evidence-3"
+            ]
+          },
+          {
+            "option": "E",
+            "reason": "ignores the requests that waited longer",
+            "rationale": "ignores the requests that waited longer",
+            "status": "contradicted",
+            "claimId": "claim-2",
+            "evidence": [
+              "evidence-2"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "seed": 0,
+    "examProfile": "five-option",
+    "optionCount": 5,
+    "questionType": "inference",
+    "scenario": "translation-queue",
+    "sourcePassage": {
+      "id": "translation-queue",
+      "title": "Managing an urgent translation queue",
+      "text": "The Commission's translation unit schedules urgent requests in a shared queue. Requests marked urgent are reviewed by a coordinator before translators are assigned.\n\nIn June, 42 urgent requests entered the queue; 35 were assigned within two working days. The remainder waited for a specialist language pair.\n\nThe unit introduced a daily capacity cap of 18 assignments to protect quality. The cap applies to all requests, not only urgent ones.",
+      "paragraphs": [
+        "The Commission's translation unit schedules urgent requests in a shared queue. Requests marked urgent are reviewed by a coordinator before translators are assigned.",
+        "In June, 42 urgent requests entered the queue; 35 were assigned within two working days. The remainder waited for a specialist language pair.",
+        "The unit introduced a daily capacity cap of 18 assignments to protect quality. The cap applies to all requests, not only urgent ones."
+      ],
+      "source": "original"
+    },
+    "passage": {
+      "id": "translation-queue",
+      "title": "Managing an urgent translation queue",
+      "text": "The Commission's translation unit schedules urgent requests in a shared queue. Requests marked urgent are reviewed by a coordinator before translators are assigned.\n\nIn June, 42 urgent requests entered the queue; 35 were assigned within two working days. The remainder waited for a specialist language pair.\n\nThe unit introduced a daily capacity cap of 18 assignments to protect quality. The cap applies to all requests, not only urgent ones.",
+      "paragraphs": [
+        "The Commission's translation unit schedules urgent requests in a shared queue. Requests marked urgent are reviewed by a coordinator before translators are assigned.",
+        "In June, 42 urgent requests entered the queue; 35 were assigned within two working days. The remainder waited for a specialist language pair.",
+        "The unit introduced a daily capacity cap of 18 assignments to protect quality. The cap applies to all requests, not only urgent ones."
+      ],
+      "source": "original"
+    },
+    "claims": [
+      {
+        "id": "claim-1",
+        "text": "The capacity cap applies beyond urgent requests.",
+        "claimType": "supported-inference",
+        "status": "supported",
+        "evidence": [
+          "evidence-1"
+        ],
+        "reasoning": "The final sentence explicitly supports this conclusion.",
+        "explicit": false
+      },
+      {
+        "id": "claim-2",
+        "text": "Every urgent request is assigned within two working days.",
+        "claimType": "contradicted",
+        "status": "contradicted",
+        "evidence": [
+          "evidence-2"
+        ],
+        "reasoning": "Only 35 of 42 urgent requests met that timing.",
+        "explicit": false
+      },
+      {
+        "id": "claim-3",
+        "text": "The specialist language pair caused all queue delays.",
+        "claimType": "invalid-inference",
+        "status": "not-stated",
+        "evidence": [
+          "evidence-3"
+        ],
+        "reasoning": "The passage does not establish that it caused all delays.",
+        "explicit": false
+      },
+      {
+        "id": "claim-4",
+        "text": "The daily cap was designed to increase the number of assignments.",
+        "claimType": "contradicted",
+        "status": "contradicted",
+        "evidence": [
+          "evidence-4"
+        ],
+        "reasoning": "The stated purpose is to protect quality.",
+        "explicit": false
+      },
+      {
+        "id": "claim-5",
+        "text": "Urgent requests bypass coordinator review.",
+        "claimType": "contradicted",
+        "status": "contradicted",
+        "evidence": [
+          "evidence-5"
+        ],
+        "reasoning": "Urgent requests are reviewed before assignment.",
+        "explicit": false
+      }
+    ],
+    "evidenceSpans": [
+      {
+        "id": "evidence-1",
+        "start": 388,
+        "end": 441,
+        "text": "The cap applies to all requests, not only urgent ones",
+        "paragraph": 3,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-2",
+        "start": 213,
+        "end": 275,
+        "text": "35 were assigned within two working days. The remainder waited",
+        "paragraph": 2,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-3",
+        "start": 255,
+        "end": 306,
+        "text": "The remainder waited for a specialist language pair",
+        "paragraph": 2,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-4",
+        "start": 318,
+        "end": 386,
+        "text": "introduced a daily capacity cap of 18 assignments to protect quality",
+        "paragraph": 3,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-5",
+        "start": 79,
+        "end": 163,
+        "text": "Requests marked urgent are reviewed by a coordinator before translators are assigned",
+        "paragraph": 1,
+        "source": "passage"
+      }
+    ],
+    "answerEvaluation": [
+      {
+        "option": "A",
+        "optionId": "A",
+        "claimId": "claim-4",
+        "status": "contradicted",
+        "verdict": "distractor",
+        "isCorrect": false,
+        "evidence": [
+          "evidence-4"
+        ],
+        "reasoning": "The stated purpose is to protect quality.",
+        "rationale": "reverses the stated purpose of the cap"
+      },
+      {
+        "option": "B",
+        "optionId": "B",
+        "claimId": "claim-5",
+        "status": "contradicted",
+        "verdict": "distractor",
+        "isCorrect": false,
+        "evidence": [
+          "evidence-5"
+        ],
+        "reasoning": "Urgent requests are reviewed before assignment.",
+        "rationale": "reverses the process order"
+      },
+      {
+        "option": "C",
+        "optionId": "C",
+        "claimId": "claim-1",
+        "status": "supported",
+        "verdict": "correct",
+        "isCorrect": true,
+        "evidence": [
+          "evidence-1"
+        ],
+        "reasoning": "The final sentence explicitly supports this conclusion.",
+        "rationale": ""
+      },
+      {
+        "option": "D",
+        "optionId": "D",
+        "claimId": "claim-3",
+        "status": "not-stated",
+        "verdict": "distractor",
+        "isCorrect": false,
+        "evidence": [
+          "evidence-3"
+        ],
+        "reasoning": "The passage does not establish that it caused all delays.",
+        "rationale": "turns one reported delay reason into a complete causal account"
+      },
+      {
+        "option": "E",
+        "optionId": "E",
+        "claimId": "claim-2",
+        "status": "contradicted",
+        "verdict": "distractor",
+        "isCorrect": false,
+        "evidence": [
+          "evidence-2"
+        ],
+        "reasoning": "Only 35 of 42 urgent requests met that timing.",
+        "rationale": "ignores the requests that waited longer"
+      }
+    ],
+    "distractors": [
+      {
+        "option": "A",
+        "reason": "reverses the stated purpose of the cap",
+        "description": "reverses the stated purpose of the cap",
+        "status": "contradicted",
+        "claimId": "claim-4",
+        "evidence": [
+          "evidence-4"
+        ]
+      },
+      {
+        "option": "B",
+        "reason": "reverses the process order",
+        "description": "reverses the process order",
+        "status": "contradicted",
+        "claimId": "claim-5",
+        "evidence": [
+          "evidence-5"
+        ]
+      },
+      {
+        "option": "D",
+        "reason": "turns one reported delay reason into a complete causal account",
+        "description": "turns one reported delay reason into a complete causal account",
+        "status": "not-stated",
+        "claimId": "claim-3",
+        "evidence": [
+          "evidence-3"
+        ]
+      },
+      {
+        "option": "E",
+        "reason": "ignores the requests that waited longer",
+        "description": "ignores the requests that waited longer",
+        "status": "contradicted",
+        "claimId": "claim-2",
+        "evidence": [
+          "evidence-2"
+        ]
+      }
+    ],
+    "distractorRationale": [
+      {
+        "option": "A",
+        "reason": "reverses the stated purpose of the cap",
+        "description": "reverses the stated purpose of the cap",
+        "status": "contradicted",
+        "claimId": "claim-4",
+        "evidence": [
+          "evidence-4"
+        ]
+      },
+      {
+        "option": "B",
+        "reason": "reverses the process order",
+        "description": "reverses the process order",
+        "status": "contradicted",
+        "claimId": "claim-5",
+        "evidence": [
+          "evidence-5"
+        ]
+      },
+      {
+        "option": "D",
+        "reason": "turns one reported delay reason into a complete causal account",
+        "description": "turns one reported delay reason into a complete causal account",
+        "status": "not-stated",
+        "claimId": "claim-3",
+        "evidence": [
+          "evidence-3"
+        ]
+      },
+      {
+        "option": "E",
+        "reason": "ignores the requests that waited longer",
+        "description": "ignores the requests that waited longer",
+        "status": "contradicted",
+        "claimId": "claim-2",
+        "evidence": [
+          "evidence-2"
+        ]
+      }
+    ],
+    "explanationFragments": [
+      "Identify the claim tested by option C: The capacity cap applies beyond urgent requests.",
+      "Cite evidence evidence-1: “The cap applies to all requests, not only urgent ones”",
+      "The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide.",
+      "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+    ],
+    "reasoningSteps": [
+      "Identify the claim tested by option C: The capacity cap applies beyond urgent requests.",
+      "Cite evidence evidence-1: “The cap applies to all requests, not only urgent ones”",
+      "The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide.",
+      "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+    ],
+    "answerClaim": {
+      "id": "claim-1",
+      "text": "The capacity cap applies beyond urgent requests.",
+      "claimType": "supported-inference",
+      "status": "supported",
+      "evidence": [
+        "evidence-1"
+      ],
+      "reasoning": "The final sentence explicitly supports this conclusion.",
+      "explicit": false
+    },
+    "answerEvidence": [
+      {
+        "id": "evidence-1",
+        "start": 388,
+        "end": 441,
+        "text": "The cap applies to all requests, not only urgent ones",
+        "paragraph": 3,
+        "source": "passage"
+      }
+    ],
+    "answerSignature": "claim-1"
+  }
+}

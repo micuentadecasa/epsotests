@@ -15,3 +15,4 @@ When updating this file, preserve this bar for all agents and keep entries conci
 
 - The learner/review contract is implemented in `epsotests/visual_abstract.py`: generated items expose `actions.explainLogic`; `standard` uses four options and the checked-in fixtures use `five-option` (`A`–`E`); regenerate JSON/SVG examples with `python examples/visual/generate_examples.py`.
 - Numerical items are implemented in `epsotests/numerical.py`: calculations, source table/chart models, renderers, and review payloads are kept separate; regenerate fixed fixtures with `python examples/numerical/generate_examples.py`.
+- Verbal items are implemented in `epsotests/verbal.py`: passage, claims, evidence spans, answer evaluations, and explanations are typed separately; regenerate fixed fixtures with `python examples/verbal/generate_examples.py`.

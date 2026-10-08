@@ -11,6 +11,10 @@ from .numerical import (
     SUPPORTED_NUMERICAL_OPERATIONS,
     generate_numerical_question,
 )
+from .verbal import (
+    SUPPORTED_VERBAL_QUESTION_TYPES,
+    generate_verbal_question,
+)
 from .visual_abstract import (
     SUPPORTED_DIFFICULTIES,
     SUPPORTED_EXAM_PROFILES,
@@ -23,18 +27,18 @@ def build_parser() -> argparse.ArgumentParser:
     """Build the CLI parser from the same contract as the Python API."""
 
     parser = argparse.ArgumentParser(
-        description="Generate a deterministic EPSO visual abstract or numerical question"
+        description="Generate a deterministic EPSO visual abstract, numerical, or verbal question"
     )
     parser.add_argument(
         "format",
-        choices=SUPPORTED_FORMATS + SUPPORTED_NUMERICAL_OPERATIONS + ("numerical",),
-        help="visual format, numerical operation, or 'numerical' followed by an operation",
+        choices=SUPPORTED_FORMATS + SUPPORTED_NUMERICAL_OPERATIONS + SUPPORTED_VERBAL_QUESTION_TYPES + ("numerical", "verbal"),
+        help="visual format, numerical operation, verbal type, or a family followed by its operation/type",
     )
     parser.add_argument(
         "operation",
         nargs="?",
-        choices=SUPPORTED_NUMERICAL_OPERATIONS,
-        help="numerical operation when the format is 'numerical'",
+        choices=SUPPORTED_NUMERICAL_OPERATIONS + SUPPORTED_VERBAL_QUESTION_TYPES,
+        help="numerical operation or verbal type when the family is explicit",
     )
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument(
@@ -76,6 +80,16 @@ def main(argv: Sequence[str] | None = None) -> None:
             difficulty=args.difficulty,
             exam_profile=args.exam_profile,
             representation=args.representation,
+        )
+    elif args.format == "verbal" or args.format in SUPPORTED_VERBAL_QUESTION_TYPES:
+        question_type = args.operation or (args.format if args.format != "verbal" else None)
+        if question_type is None:
+            raise SystemExit("the verbal command needs a question type")
+        question = generate_verbal_question(
+            question_type,
+            seed=args.seed,
+            difficulty=args.difficulty,
+            exam_profile=args.exam_profile,
         )
     else:
         question = generate_question(

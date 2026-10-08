@@ -1,8 +1,8 @@
 # epsotests
 
-`epsotests` generates deterministic EPSO-style visual abstract-reasoning and
-numerical-reasoning items. It uses dependency-free vector scenes/charts and
-portable JSON; no browser, image runtime, verbal logic, or remote service is
+`epsotests` generates deterministic EPSO-style visual abstract-, numerical-,
+and verbal-reasoning items. It uses dependency-free vector scenes, charts, and
+passages with portable JSON; no browser, image runtime, or remote service is
 required.
 
 ## Generate an item in Python
@@ -75,6 +75,33 @@ HTML-friendly `<table>`. Fixed-seed JSON and exam-style SVG panels are in
 python examples/numerical/generate_examples.py
 ```
 
+## Verbal reasoning
+
+Verbal questions preserve an original reading-comprehension passage, candidate
+claims, exact character-addressable evidence spans, answer evaluations, and
+specific distractor rationales. Supported types are `reading-comprehension`,
+`inference`, and `true-false`; they use the same four-option `standard` and
+five-option `five-option` profiles and hidden `Explain Logic` / `Ver solución`
+action contract:
+
+```python
+from epsotests import generate_verbal_question
+
+question = generate_verbal_question(
+    "inference", seed=42, difficulty="hard", exam_profile="five-option"
+)
+print(question["correctOption"], question["metadata"]["answerEvidence"])
+```
+
+Evidence spans point back into `passage.text`, while claims and explanation
+steps distinguish explicit facts from unsupported inferences. Fixed-seed JSON
+and exam-style SVG panels are in [`examples/verbal/`](examples/verbal/),
+regenerated with:
+
+```sh
+python examples/verbal/generate_examples.py
+```
+
 ## Command line
 
 The installed `epsotests-visual` command and the module form emit one complete
@@ -86,6 +113,8 @@ python -m epsotests.cli matrix-3x3 --seed 42 --difficulty hard
 python -m epsotests.cli analogy --seed 42 --difficulty hard \
   --exam-profile five-option --review
 python -m epsotests.cli numerical percentage-change --seed 42 --representation bar-chart
+epsotests-verbal inference --seed 42 --difficulty hard --exam-profile five-option
+python -m epsotests.cli verbal true-false --seed 42
 ```
 
 Use one of the four canonical format names and one of `easy`, `medium`, or

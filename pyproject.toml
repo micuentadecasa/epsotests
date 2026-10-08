@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "epsotests"
 version = "0.1.0"
-description = "Deterministic EPSO visual abstract reasoning generator"
+description = "Deterministic EPSO visual abstract, numerical, and verbal reasoning generators"
 requires-python = ">=3.10"
 
 [tool.setuptools.packages.find]
@@ -14,3 +14,4 @@ include = ["epsotests*"]
 [project.scripts]
 epsotests-visual = "epsotests.cli:main"
 epsotests-numerical = "epsotests.cli:main"
+epsotests-verbal = "epsotests.cli:main"

@@ -1,0 +1,915 @@
+{
+  "id": "verbal-inference-river-sensors-10-hard",
+  "itemNumber": 1,
+  "exam": "verbal",
+  "examProfile": "five-option",
+  "optionCount": 5,
+  "format": "inference",
+  "questionType": "inference",
+  "difficulty": "hard",
+  "passage": {
+    "id": "river-sensors",
+    "title": "What the river sensors can show",
+    "text": "The regional environment agency installed sensors at three river gauges in May. Each sensor records water level every 15 minutes and sends the readings to a central dashboard.\n\nDuring the summer drought, the level at the Willow gauge stayed below the agency's alert threshold for nine days. Staff reviewed an alert before issuing any public bulletin.\n\nHeavy rain in September produced two alerts in three days, but neither led to a closure because the water level receded within four hours. The sensors report current levels; they do not predict rainfall.",
+    "paragraphs": [
+      "The regional environment agency installed sensors at three river gauges in May. Each sensor records water level every 15 minutes and sends the readings to a central dashboard.",
+      "During the summer drought, the level at the Willow gauge stayed below the agency's alert threshold for nine days. Staff reviewed an alert before issuing any public bulletin.",
+      "Heavy rain in September produced two alerts in three days, but neither led to a closure because the water level receded within four hours. The sensors report current levels; they do not predict rainfall."
+    ],
+    "source": "original"
+  },
+  "sourcePassage": {
+    "id": "river-sensors",
+    "title": "What the river sensors can show",
+    "text": "The regional environment agency installed sensors at three river gauges in May. Each sensor records water level every 15 minutes and sends the readings to a central dashboard.\n\nDuring the summer drought, the level at the Willow gauge stayed below the agency's alert threshold for nine days. Staff reviewed an alert before issuing any public bulletin.\n\nHeavy rain in September produced two alerts in three days, but neither led to a closure because the water level receded within four hours. The sensors report current levels; they do not predict rainfall.",
+    "paragraphs": [
+      "The regional environment agency installed sensors at three river gauges in May. Each sensor records water level every 15 minutes and sends the readings to a central dashboard.",
+      "During the summer drought, the level at the Willow gauge stayed below the agency's alert threshold for nine days. Staff reviewed an alert before issuing any public bulletin.",
+      "Heavy rain in September produced two alerts in three days, but neither led to a closure because the water level receded within four hours. The sensors report current levels; they do not predict rainfall."
+    ],
+    "source": "original"
+  },
+  "passageText": "The regional environment agency installed sensors at three river gauges in May. Each sensor records water level every 15 minutes and sends the readings to a central dashboard.\n\nDuring the summer drought, the level at the Willow gauge stayed below the agency's alert threshold for nine days. Staff reviewed an alert before issuing any public bulletin.\n\nHeavy rain in September produced two alerts in three days, but neither led to a closure because the water level receded within four hours. The sensors report current levels; they do not predict rainfall.",
+  "stimulus": {
+    "type": "passage",
+    "title": "What the river sensors can show",
+    "passage": {
+      "id": "river-sensors",
+      "title": "What the river sensors can show",
+      "text": "The regional environment agency installed sensors at three river gauges in May. Each sensor records water level every 15 minutes and sends the readings to a central dashboard.\n\nDuring the summer drought, the level at the Willow gauge stayed below the agency's alert threshold for nine days. Staff reviewed an alert before issuing any public bulletin.\n\nHeavy rain in September produced two alerts in three days, but neither led to a closure because the water level receded within four hours. The sensors report current levels; they do not predict rainfall.",
+      "paragraphs": [
+        "The regional environment agency installed sensors at three river gauges in May. Each sensor records water level every 15 minutes and sends the readings to a central dashboard.",
+        "During the summer drought, the level at the Willow gauge stayed below the agency's alert threshold for nine days. Staff reviewed an alert before issuing any public bulletin.",
+        "Heavy rain in September produced two alerts in three days, but neither led to a closure because the water level receded within four hours. The sensors report current levels; they do not predict rainfall."
+      ],
+      "source": "original"
+    },
+    "text": "The regional environment agency installed sensors at three river gauges in May. Each sensor records water level every 15 minutes and sends the readings to a central dashboard.\n\nDuring the summer drought, the level at the Willow gauge stayed below the agency's alert threshold for nine days. Staff reviewed an alert before issuing any public bulletin.\n\nHeavy rain in September produced two alerts in three days, but neither led to a closure because the water level receded within four hours. The sensors report current levels; they do not predict rainfall.",
+    "evidenceSpans": [
+      {
+        "id": "evidence-1",
+        "start": 415,
+        "end": 489,
+        "text": "neither led to a closure because the water level receded within four hours",
+        "paragraph": 3,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-2",
+        "start": 291,
+        "end": 349,
+        "text": "Staff reviewed an alert before issuing any public bulletin",
+        "paragraph": 2,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-3",
+        "start": 526,
+        "end": 554,
+        "text": "they do not predict rainfall",
+        "paragraph": 3,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-4",
+        "start": 204,
+        "end": 289,
+        "text": "the level at the Willow gauge stayed below the agency's alert threshold for nine days",
+        "paragraph": 2,
+        "source": "passage"
+      }
+    ]
+  },
+  "question": "Which conclusion is best supported by the passage?",
+  "claims": [
+    {
+      "id": "claim-1",
+      "text": "An alert does not automatically result in a river closure.",
+      "claimType": "supported-inference",
+      "status": "supported",
+      "evidence": [
+        "evidence-1"
+      ],
+      "reasoning": "The passage gives two alerts that did not lead to closure, so an alert alone is not an automatic closure decision.",
+      "explicit": false
+    },
+    {
+      "id": "claim-2",
+      "text": "Every alert is ignored when water recedes within four hours.",
+      "claimType": "invalid-inference",
+      "status": "not-stated",
+      "evidence": [
+        "evidence-2"
+      ],
+      "reasoning": "The passage does not say alerts are ignored; staff review them.",
+      "explicit": false
+    },
+    {
+      "id": "claim-3",
+      "text": "The sensors can predict whether rainfall will occur.",
+      "claimType": "contradicted",
+      "status": "contradicted",
+      "evidence": [
+        "evidence-3"
+      ],
+      "reasoning": "The sensors report current levels only.",
+      "explicit": false
+    },
+    {
+      "id": "claim-4",
+      "text": "A public bulletin is issued before staff review an alert.",
+      "claimType": "contradicted",
+      "status": "contradicted",
+      "evidence": [
+        "evidence-2"
+      ],
+      "reasoning": "The passage states that review comes first.",
+      "explicit": false
+    },
+    {
+      "id": "claim-5",
+      "text": "The drought lasted exactly nine days across all three gauges.",
+      "claimType": "invalid-inference",
+      "status": "not-stated",
+      "evidence": [
+        "evidence-4"
+      ],
+      "reasoning": "Only the Willow gauge and its below-threshold period are specified.",
+      "explicit": false
+    }
+  ],
+  "evidenceSpans": [
+    {
+      "id": "evidence-1",
+      "start": 415,
+      "end": 489,
+      "text": "neither led to a closure because the water level receded within four hours",
+      "paragraph": 3,
+      "source": "passage"
+    },
+    {
+      "id": "evidence-2",
+      "start": 291,
+      "end": 349,
+      "text": "Staff reviewed an alert before issuing any public bulletin",
+      "paragraph": 2,
+      "source": "passage"
+    },
+    {
+      "id": "evidence-3",
+      "start": 526,
+      "end": 554,
+      "text": "they do not predict rainfall",
+      "paragraph": 3,
+      "source": "passage"
+    },
+    {
+      "id": "evidence-4",
+      "start": 204,
+      "end": 289,
+      "text": "the level at the Willow gauge stayed below the agency's alert threshold for nine days",
+      "paragraph": 2,
+      "source": "passage"
+    }
+  ],
+  "options": [
+    {
+      "id": "A",
+      "label": "The drought lasted exactly nine days across all three gauges.",
+      "text": "The drought lasted exactly nine days across all three gauges.",
+      "claimId": "claim-5",
+      "claimType": "invalid-inference",
+      "evaluationStatus": "not-stated",
+      "evidence": [
+        "evidence-4"
+      ],
+      "distractorRationale": "extends one gauge's duration to every gauge and calls it the drought duration",
+      "mutation": {
+        "kind": "verbal-misreading",
+        "description": "extends one gauge's duration to every gauge and calls it the drought duration"
+      }
+    },
+    {
+      "id": "B",
+      "label": "A public bulletin is issued before staff review an alert.",
+      "text": "A public bulletin is issued before staff review an alert.",
+      "claimId": "claim-4",
+      "claimType": "contradicted",
+      "evaluationStatus": "contradicted",
+      "evidence": [
+        "evidence-2"
+      ],
+      "distractorRationale": "reverses the order of review and bulletin",
+      "mutation": {
+        "kind": "verbal-misreading",
+        "description": "reverses the order of review and bulletin"
+      }
+    },
+    {
+      "id": "C",
+      "label": "An alert does not automatically result in a river closure.",
+      "text": "An alert does not automatically result in a river closure.",
+      "claimId": "claim-1",
+      "claimType": "supported-inference",
+      "evaluationStatus": "supported",
+      "evidence": [
+        "evidence-1"
+      ],
+      "distractorRationale": "",
+      "mutation": {
+        "kind": "correct",
+        "description": "matches the passage and question"
+      }
+    },
+    {
+      "id": "D",
+      "label": "Every alert is ignored when water recedes within four hours.",
+      "text": "Every alert is ignored when water recedes within four hours.",
+      "claimId": "claim-2",
+      "claimType": "invalid-inference",
+      "evaluationStatus": "not-stated",
+      "evidence": [
+        "evidence-2"
+      ],
+      "distractorRationale": "generalises from two September alerts and omits the review process",
+      "mutation": {
+        "kind": "verbal-misreading",
+        "description": "generalises from two September alerts and omits the review process"
+      }
+    },
+    {
+      "id": "E",
+      "label": "The sensors can predict whether rainfall will occur.",
+      "text": "The sensors can predict whether rainfall will occur.",
+      "claimId": "claim-3",
+      "claimType": "contradicted",
+      "evaluationStatus": "contradicted",
+      "evidence": [
+        "evidence-3"
+      ],
+      "distractorRationale": "contradicts the stated limitation",
+      "mutation": {
+        "kind": "verbal-misreading",
+        "description": "contradicts the stated limitation"
+      }
+    }
+  ],
+  "correctOption": "C",
+  "answerEvaluation": [
+    {
+      "option": "A",
+      "optionId": "A",
+      "claimId": "claim-5",
+      "status": "not-stated",
+      "verdict": "distractor",
+      "isCorrect": false,
+      "evidence": [
+        "evidence-4"
+      ],
+      "reasoning": "Only the Willow gauge and its below-threshold period are specified.",
+      "rationale": "extends one gauge's duration to every gauge and calls it the drought duration"
+    },
+    {
+      "option": "B",
+      "optionId": "B",
+      "claimId": "claim-4",
+      "status": "contradicted",
+      "verdict": "distractor",
+      "isCorrect": false,
+      "evidence": [
+        "evidence-2"
+      ],
+      "reasoning": "The passage states that review comes first.",
+      "rationale": "reverses the order of review and bulletin"
+    },
+    {
+      "option": "C",
+      "optionId": "C",
+      "claimId": "claim-1",
+      "status": "supported",
+      "verdict": "correct",
+      "isCorrect": true,
+      "evidence": [
+        "evidence-1"
+      ],
+      "reasoning": "The passage gives two alerts that did not lead to closure, so an alert alone is not an automatic closure decision.",
+      "rationale": ""
+    },
+    {
+      "option": "D",
+      "optionId": "D",
+      "claimId": "claim-2",
+      "status": "not-stated",
+      "verdict": "distractor",
+      "isCorrect": false,
+      "evidence": [
+        "evidence-2"
+      ],
+      "reasoning": "The passage does not say alerts are ignored; staff review them.",
+      "rationale": "generalises from two September alerts and omits the review process"
+    },
+    {
+      "option": "E",
+      "optionId": "E",
+      "claimId": "claim-3",
+      "status": "contradicted",
+      "verdict": "distractor",
+      "isCorrect": false,
+      "evidence": [
+        "evidence-3"
+      ],
+      "reasoning": "The sensors report current levels only.",
+      "rationale": "contradicts the stated limitation"
+    }
+  ],
+  "explanation": "Option C is correct. Evidence evidence-1 states “neither led to a closure because the water level receded within four hours”. The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+  "explanationDetails": {
+    "text": "Option C is correct. Evidence evidence-1 states “neither led to a closure because the water level receded within four hours”. The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+    "reasoningSteps": [
+      "Identify the claim tested by option C: An alert does not automatically result in a river closure.",
+      "Cite evidence evidence-1: “neither led to a closure because the water level receded within four hours”",
+      "The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide.",
+      "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+    ],
+    "evidence": [
+      "evidence-1"
+    ],
+    "explicitFacts": [],
+    "invalidInferences": [
+      "Option A: extends one gauge's duration to every gauge and calls it the drought duration.",
+      "Option B: reverses the order of review and bulletin.",
+      "Option D: generalises from two September alerts and omits the review process.",
+      "Option E: contradicts the stated limitation."
+    ],
+    "conclusion": "An alert does not automatically result in a river closure."
+  },
+  "explanationFragments": [
+    "Identify the claim tested by option C: An alert does not automatically result in a river closure.",
+    "Cite evidence evidence-1: “neither led to a closure because the water level receded within four hours”",
+    "The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide.",
+    "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+  ],
+  "actions": {
+    "explainLogic": {
+      "id": "explain-logic",
+      "type": "button",
+      "label": "Explain logic",
+      "localizedLabel": "Ver solución",
+      "labels": {
+        "en": "Explain Logic",
+        "es": "Ver solución"
+      },
+      "ariaLabel": "Explain Logic / Ver solución",
+      "initiallyVisible": false,
+      "revealsAnswer": true,
+      "solutionView": {
+        "initiallyVisible": false,
+        "hideAction": {
+          "id": "hide-solution",
+          "type": "button",
+          "label": "Hide solution",
+          "localizedLabel": "Ocultar solución",
+          "visibleAfterReveal": true
+        }
+      },
+      "result": {
+        "optionCount": 5,
+        "questionType": "inference",
+        "explanation": "Option C is correct. Evidence evidence-1 states “neither led to a closure because the water level receded within four hours”. The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+        "explanationDetails": {
+          "text": "Option C is correct. Evidence evidence-1 states “neither led to a closure because the water level receded within four hours”. The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+          "reasoningSteps": [
+            "Identify the claim tested by option C: An alert does not automatically result in a river closure.",
+            "Cite evidence evidence-1: “neither led to a closure because the water level receded within four hours”",
+            "The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide.",
+            "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+          ],
+          "evidence": [
+            "evidence-1"
+          ],
+          "explicitFacts": [],
+          "invalidInferences": [
+            "Option A: extends one gauge's duration to every gauge and calls it the drought duration.",
+            "Option B: reverses the order of review and bulletin.",
+            "Option D: generalises from two September alerts and omits the review process.",
+            "Option E: contradicts the stated limitation."
+          ],
+          "conclusion": "An alert does not automatically result in a river closure."
+        },
+        "reasoningSteps": [
+          "Identify the claim tested by option C: An alert does not automatically result in a river closure.",
+          "Cite evidence evidence-1: “neither led to a closure because the water level receded within four hours”",
+          "The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide.",
+          "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+        ],
+        "evidenceSpans": [
+          {
+            "id": "evidence-1",
+            "start": 415,
+            "end": 489,
+            "text": "neither led to a closure because the water level receded within four hours",
+            "paragraph": 3,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-2",
+            "start": 291,
+            "end": 349,
+            "text": "Staff reviewed an alert before issuing any public bulletin",
+            "paragraph": 2,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-3",
+            "start": 526,
+            "end": 554,
+            "text": "they do not predict rainfall",
+            "paragraph": 3,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-4",
+            "start": 204,
+            "end": 289,
+            "text": "the level at the Willow gauge stayed below the agency's alert threshold for nine days",
+            "paragraph": 2,
+            "source": "passage"
+          }
+        ],
+        "claims": [
+          {
+            "id": "claim-1",
+            "text": "An alert does not automatically result in a river closure.",
+            "claimType": "supported-inference",
+            "status": "supported",
+            "evidence": [
+              "evidence-1"
+            ],
+            "reasoning": "The passage gives two alerts that did not lead to closure, so an alert alone is not an automatic closure decision.",
+            "explicit": false
+          },
+          {
+            "id": "claim-2",
+            "text": "Every alert is ignored when water recedes within four hours.",
+            "claimType": "invalid-inference",
+            "status": "not-stated",
+            "evidence": [
+              "evidence-2"
+            ],
+            "reasoning": "The passage does not say alerts are ignored; staff review them.",
+            "explicit": false
+          },
+          {
+            "id": "claim-3",
+            "text": "The sensors can predict whether rainfall will occur.",
+            "claimType": "contradicted",
+            "status": "contradicted",
+            "evidence": [
+              "evidence-3"
+            ],
+            "reasoning": "The sensors report current levels only.",
+            "explicit": false
+          },
+          {
+            "id": "claim-4",
+            "text": "A public bulletin is issued before staff review an alert.",
+            "claimType": "contradicted",
+            "status": "contradicted",
+            "evidence": [
+              "evidence-2"
+            ],
+            "reasoning": "The passage states that review comes first.",
+            "explicit": false
+          },
+          {
+            "id": "claim-5",
+            "text": "The drought lasted exactly nine days across all three gauges.",
+            "claimType": "invalid-inference",
+            "status": "not-stated",
+            "evidence": [
+              "evidence-4"
+            ],
+            "reasoning": "Only the Willow gauge and its below-threshold period are specified.",
+            "explicit": false
+          }
+        ],
+        "answerEvaluation": [
+          {
+            "option": "A",
+            "optionId": "A",
+            "claimId": "claim-5",
+            "status": "not-stated",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-4"
+            ],
+            "reasoning": "Only the Willow gauge and its below-threshold period are specified.",
+            "rationale": "extends one gauge's duration to every gauge and calls it the drought duration"
+          },
+          {
+            "option": "B",
+            "optionId": "B",
+            "claimId": "claim-4",
+            "status": "contradicted",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-2"
+            ],
+            "reasoning": "The passage states that review comes first.",
+            "rationale": "reverses the order of review and bulletin"
+          },
+          {
+            "option": "C",
+            "optionId": "C",
+            "claimId": "claim-1",
+            "status": "supported",
+            "verdict": "correct",
+            "isCorrect": true,
+            "evidence": [
+              "evidence-1"
+            ],
+            "reasoning": "The passage gives two alerts that did not lead to closure, so an alert alone is not an automatic closure decision.",
+            "rationale": ""
+          },
+          {
+            "option": "D",
+            "optionId": "D",
+            "claimId": "claim-2",
+            "status": "not-stated",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-2"
+            ],
+            "reasoning": "The passage does not say alerts are ignored; staff review them.",
+            "rationale": "generalises from two September alerts and omits the review process"
+          },
+          {
+            "option": "E",
+            "optionId": "E",
+            "claimId": "claim-3",
+            "status": "contradicted",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-3"
+            ],
+            "reasoning": "The sensors report current levels only.",
+            "rationale": "contradicts the stated limitation"
+          }
+        ],
+        "correctOption": "C",
+        "correctReason": "Option C is correct because it is supported by the cited passage evidence.",
+        "distractors": [
+          {
+            "option": "A",
+            "reason": "extends one gauge's duration to every gauge and calls it the drought duration",
+            "rationale": "extends one gauge's duration to every gauge and calls it the drought duration",
+            "status": "not-stated",
+            "claimId": "claim-5",
+            "evidence": [
+              "evidence-4"
+            ]
+          },
+          {
+            "option": "B",
+            "reason": "reverses the order of review and bulletin",
+            "rationale": "reverses the order of review and bulletin",
+            "status": "contradicted",
+            "claimId": "claim-4",
+            "evidence": [
+              "evidence-2"
+            ]
+          },
+          {
+            "option": "D",
+            "reason": "generalises from two September alerts and omits the review process",
+            "rationale": "generalises from two September alerts and omits the review process",
+            "status": "not-stated",
+            "claimId": "claim-2",
+            "evidence": [
+              "evidence-2"
+            ]
+          },
+          {
+            "option": "E",
+            "reason": "contradicts the stated limitation",
+            "rationale": "contradicts the stated limitation",
+            "status": "contradicted",
+            "claimId": "claim-3",
+            "evidence": [
+              "evidence-3"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "seed": 10,
+    "examProfile": "five-option",
+    "optionCount": 5,
+    "questionType": "inference",
+    "scenario": "river-sensors",
+    "sourcePassage": {
+      "id": "river-sensors",
+      "title": "What the river sensors can show",
+      "text": "The regional environment agency installed sensors at three river gauges in May. Each sensor records water level every 15 minutes and sends the readings to a central dashboard.\n\nDuring the summer drought, the level at the Willow gauge stayed below the agency's alert threshold for nine days. Staff reviewed an alert before issuing any public bulletin.\n\nHeavy rain in September produced two alerts in three days, but neither led to a closure because the water level receded within four hours. The sensors report current levels; they do not predict rainfall.",
+      "paragraphs": [
+        "The regional environment agency installed sensors at three river gauges in May. Each sensor records water level every 15 minutes and sends the readings to a central dashboard.",
+        "During the summer drought, the level at the Willow gauge stayed below the agency's alert threshold for nine days. Staff reviewed an alert before issuing any public bulletin.",
+        "Heavy rain in September produced two alerts in three days, but neither led to a closure because the water level receded within four hours. The sensors report current levels; they do not predict rainfall."
+      ],
+      "source": "original"
+    },
+    "passage": {
+      "id": "river-sensors",
+      "title": "What the river sensors can show",
+      "text": "The regional environment agency installed sensors at three river gauges in May. Each sensor records water level every 15 minutes and sends the readings to a central dashboard.\n\nDuring the summer drought, the level at the Willow gauge stayed below the agency's alert threshold for nine days. Staff reviewed an alert before issuing any public bulletin.\n\nHeavy rain in September produced two alerts in three days, but neither led to a closure because the water level receded within four hours. The sensors report current levels; they do not predict rainfall.",
+      "paragraphs": [
+        "The regional environment agency installed sensors at three river gauges in May. Each sensor records water level every 15 minutes and sends the readings to a central dashboard.",
+        "During the summer drought, the level at the Willow gauge stayed below the agency's alert threshold for nine days. Staff reviewed an alert before issuing any public bulletin.",
+        "Heavy rain in September produced two alerts in three days, but neither led to a closure because the water level receded within four hours. The sensors report current levels; they do not predict rainfall."
+      ],
+      "source": "original"
+    },
+    "claims": [
+      {
+        "id": "claim-1",
+        "text": "An alert does not automatically result in a river closure.",
+        "claimType": "supported-inference",
+        "status": "supported",
+        "evidence": [
+          "evidence-1"
+        ],
+        "reasoning": "The passage gives two alerts that did not lead to closure, so an alert alone is not an automatic closure decision.",
+        "explicit": false
+      },
+      {
+        "id": "claim-2",
+        "text": "Every alert is ignored when water recedes within four hours.",
+        "claimType": "invalid-inference",
+        "status": "not-stated",
+        "evidence": [
+          "evidence-2"
+        ],
+        "reasoning": "The passage does not say alerts are ignored; staff review them.",
+        "explicit": false
+      },
+      {
+        "id": "claim-3",
+        "text": "The sensors can predict whether rainfall will occur.",
+        "claimType": "contradicted",
+        "status": "contradicted",
+        "evidence": [
+          "evidence-3"
+        ],
+        "reasoning": "The sensors report current levels only.",
+        "explicit": false
+      },
+      {
+        "id": "claim-4",
+        "text": "A public bulletin is issued before staff review an alert.",
+        "claimType": "contradicted",
+        "status": "contradicted",
+        "evidence": [
+          "evidence-2"
+        ],
+        "reasoning": "The passage states that review comes first.",
+        "explicit": false
+      },
+      {
+        "id": "claim-5",
+        "text": "The drought lasted exactly nine days across all three gauges.",
+        "claimType": "invalid-inference",
+        "status": "not-stated",
+        "evidence": [
+          "evidence-4"
+        ],
+        "reasoning": "Only the Willow gauge and its below-threshold period are specified.",
+        "explicit": false
+      }
+    ],
+    "evidenceSpans": [
+      {
+        "id": "evidence-1",
+        "start": 415,
+        "end": 489,
+        "text": "neither led to a closure because the water level receded within four hours",
+        "paragraph": 3,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-2",
+        "start": 291,
+        "end": 349,
+        "text": "Staff reviewed an alert before issuing any public bulletin",
+        "paragraph": 2,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-3",
+        "start": 526,
+        "end": 554,
+        "text": "they do not predict rainfall",
+        "paragraph": 3,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-4",
+        "start": 204,
+        "end": 289,
+        "text": "the level at the Willow gauge stayed below the agency's alert threshold for nine days",
+        "paragraph": 2,
+        "source": "passage"
+      }
+    ],
+    "answerEvaluation": [
+      {
+        "option": "A",
+        "optionId": "A",
+        "claimId": "claim-5",
+        "status": "not-stated",
+        "verdict": "distractor",
+        "isCorrect": false,
+        "evidence": [
+          "evidence-4"
+        ],
+        "reasoning": "Only the Willow gauge and its below-threshold period are specified.",
+        "rationale": "extends one gauge's duration to every gauge and calls it the drought duration"
+      },
+      {
+        "option": "B",
+        "optionId": "B",
+        "claimId": "claim-4",
+        "status": "contradicted",
+        "verdict": "distractor",
+        "isCorrect": false,
+        "evidence": [
+          "evidence-2"
+        ],
+        "reasoning": "The passage states that review comes first.",
+        "rationale": "reverses the order of review and bulletin"
+      },
+      {
+        "option": "C",
+        "optionId": "C",
+        "claimId": "claim-1",
+        "status": "supported",
+        "verdict": "correct",
+        "isCorrect": true,
+        "evidence": [
+          "evidence-1"
+        ],
+        "reasoning": "The passage gives two alerts that did not lead to closure, so an alert alone is not an automatic closure decision.",
+        "rationale": ""
+      },
+      {
+        "option": "D",
+        "optionId": "D",
+        "claimId": "claim-2",
+        "status": "not-stated",
+        "verdict": "distractor",
+        "isCorrect": false,
+        "evidence": [
+          "evidence-2"
+        ],
+        "reasoning": "The passage does not say alerts are ignored; staff review them.",
+        "rationale": "generalises from two September alerts and omits the review process"
+      },
+      {
+        "option": "E",
+        "optionId": "E",
+        "claimId": "claim-3",
+        "status": "contradicted",
+        "verdict": "distractor",
+        "isCorrect": false,
+        "evidence": [
+          "evidence-3"
+        ],
+        "reasoning": "The sensors report current levels only.",
+        "rationale": "contradicts the stated limitation"
+      }
+    ],
+    "distractors": [
+      {
+        "option": "A",
+        "reason": "extends one gauge's duration to every gauge and calls it the drought duration",
+        "description": "extends one gauge's duration to every gauge and calls it the drought duration",
+        "status": "not-stated",
+        "claimId": "claim-5",
+        "evidence": [
+          "evidence-4"
+        ]
+      },
+      {
+        "option": "B",
+        "reason": "reverses the order of review and bulletin",
+        "description": "reverses the order of review and bulletin",
+        "status": "contradicted",
+        "claimId": "claim-4",
+        "evidence": [
+          "evidence-2"
+        ]
+      },
+      {
+        "option": "D",
+        "reason": "generalises from two September alerts and omits the review process",
+        "description": "generalises from two September alerts and omits the review process",
+        "status": "not-stated",
+        "claimId": "claim-2",
+        "evidence": [
+          "evidence-2"
+        ]
+      },
+      {
+        "option": "E",
+        "reason": "contradicts the stated limitation",
+        "description": "contradicts the stated limitation",
+        "status": "contradicted",
+        "claimId": "claim-3",
+        "evidence": [
+          "evidence-3"
+        ]
+      }
+    ],
+    "distractorRationale": [
+      {
+        "option": "A",
+        "reason": "extends one gauge's duration to every gauge and calls it the drought duration",
+        "description": "extends one gauge's duration to every gauge and calls it the drought duration",
+        "status": "not-stated",
+        "claimId": "claim-5",
+        "evidence": [
+          "evidence-4"
+        ]
+      },
+      {
+        "option": "B",
+        "reason": "reverses the order of review and bulletin",
+        "description": "reverses the order of review and bulletin",
+        "status": "contradicted",
+        "claimId": "claim-4",
+        "evidence": [
+          "evidence-2"
+        ]
+      },
+      {
+        "option": "D",
+        "reason": "generalises from two September alerts and omits the review process",
+        "description": "generalises from two September alerts and omits the review process",
+        "status": "not-stated",
+        "claimId": "claim-2",
+        "evidence": [
+          "evidence-2"
+        ]
+      },
+      {
+        "option": "E",
+        "reason": "contradicts the stated limitation",
+        "description": "contradicts the stated limitation",
+        "status": "contradicted",
+        "claimId": "claim-3",
+        "evidence": [
+          "evidence-3"
+        ]
+      }
+    ],
+    "explanationFragments": [
+      "Identify the claim tested by option C: An alert does not automatically result in a river closure.",
+      "Cite evidence evidence-1: “neither led to a closure because the water level receded within four hours”",
+      "The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide.",
+      "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+    ],
+    "reasoningSteps": [
+      "Identify the claim tested by option C: An alert does not automatically result in a river closure.",
+      "Cite evidence evidence-1: “neither led to a closure because the water level receded within four hours”",
+      "The conclusion follows from the cited facts without adding a cause, scope, or certainty that the passage does not provide.",
+      "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+    ],
+    "answerClaim": {
+      "id": "claim-1",
+      "text": "An alert does not automatically result in a river closure.",
+      "claimType": "supported-inference",
+      "status": "supported",
+      "evidence": [
+        "evidence-1"
+      ],
+      "reasoning": "The passage gives two alerts that did not lead to closure, so an alert alone is not an automatic closure decision.",
+      "explicit": false
+    },
+    "answerEvidence": [
+      {
+        "id": "evidence-1",
+        "start": 415,
+        "end": 489,
+        "text": "neither led to a closure because the water level receded within four hours",
+        "paragraph": 3,
+        "source": "passage"
+      }
+    ],
+    "answerSignature": "claim-1"
+  }
+}

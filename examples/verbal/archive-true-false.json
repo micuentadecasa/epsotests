@@ -1,0 +1,919 @@
+{
+  "id": "verbal-true-false-archive-maps-9-easy",
+  "itemNumber": 1,
+  "exam": "verbal",
+  "examProfile": "five-option",
+  "optionCount": 5,
+  "format": "true-false",
+  "questionType": "true-false",
+  "difficulty": "easy",
+  "passage": {
+    "id": "archive-maps",
+    "title": "The archive's first digitisation phase",
+    "text": "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.\n\nIn May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.\n\nThe project creates digital access copies while the original maps remain in the archive reading room.",
+    "paragraphs": [
+      "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.",
+      "In May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.",
+      "The project creates digital access copies while the original maps remain in the archive reading room."
+    ],
+    "source": "original"
+  },
+  "sourcePassage": {
+    "id": "archive-maps",
+    "title": "The archive's first digitisation phase",
+    "text": "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.\n\nIn May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.\n\nThe project creates digital access copies while the original maps remain in the archive reading room.",
+    "paragraphs": [
+      "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.",
+      "In May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.",
+      "The project creates digital access copies while the original maps remain in the archive reading room."
+    ],
+    "source": "original"
+  },
+  "passageText": "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.\n\nIn May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.\n\nThe project creates digital access copies while the original maps remain in the archive reading room.",
+  "stimulus": {
+    "type": "passage",
+    "title": "The archive's first digitisation phase",
+    "passage": {
+      "id": "archive-maps",
+      "title": "The archive's first digitisation phase",
+      "text": "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.\n\nIn May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.\n\nThe project creates digital access copies while the original maps remain in the archive reading room.",
+      "paragraphs": [
+        "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.",
+        "In May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.",
+        "The project creates digital access copies while the original maps remain in the archive reading room."
+      ],
+      "source": "original"
+    },
+    "text": "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.\n\nIn May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.\n\nThe project creates digital access copies while the original maps remain in the archive reading room.",
+    "evidenceSpans": [
+      {
+        "id": "evidence-1",
+        "start": 234,
+        "end": 296,
+        "text": "Volunteers transcribed handwritten labels for 90 of those maps",
+        "paragraph": 2,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-2",
+        "start": 298,
+        "end": 341,
+        "text": "the volunteers did not operate the scanners",
+        "paragraph": 2,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-3",
+        "start": 396,
+        "end": 444,
+        "text": "original maps remain in the archive reading room",
+        "paragraph": 3,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-4",
+        "start": 207,
+        "end": 232,
+        "text": "the team scanned 320 maps",
+        "paragraph": 2,
+        "source": "passage"
+      }
+    ]
+  },
+  "question": "Which statement is true according to the passage?",
+  "claims": [
+    {
+      "id": "claim-1",
+      "text": "Volunteers transcribed handwritten labels for 90 maps.",
+      "claimType": "explicit-fact",
+      "status": "supported",
+      "evidence": [
+        "evidence-1"
+      ],
+      "reasoning": "This fact is stated directly.",
+      "explicit": true
+    },
+    {
+      "id": "claim-2",
+      "text": "Volunteers operated the scanners.",
+      "claimType": "contradicted",
+      "status": "contradicted",
+      "evidence": [
+        "evidence-2"
+      ],
+      "reasoning": "The passage explicitly excludes scanner operation from the volunteer role.",
+      "explicit": false
+    },
+    {
+      "id": "claim-3",
+      "text": "Original maps were moved out of the reading room.",
+      "claimType": "contradicted",
+      "status": "contradicted",
+      "evidence": [
+        "evidence-3"
+      ],
+      "reasoning": "The passage says the originals remain in the reading room.",
+      "explicit": false
+    },
+    {
+      "id": "claim-4",
+      "text": "The team scanned 3,200 maps in May.",
+      "claimType": "contradicted",
+      "status": "contradicted",
+      "evidence": [
+        "evidence-4"
+      ],
+      "reasoning": "The reported count is 320.",
+      "explicit": false
+    },
+    {
+      "id": "claim-5",
+      "text": "Every map received a volunteer transcription.",
+      "claimType": "invalid-inference",
+      "status": "not-stated",
+      "evidence": [
+        "evidence-1"
+      ],
+      "reasoning": "Only 90 maps are identified as having volunteer transcriptions.",
+      "explicit": false
+    }
+  ],
+  "evidenceSpans": [
+    {
+      "id": "evidence-1",
+      "start": 234,
+      "end": 296,
+      "text": "Volunteers transcribed handwritten labels for 90 of those maps",
+      "paragraph": 2,
+      "source": "passage"
+    },
+    {
+      "id": "evidence-2",
+      "start": 298,
+      "end": 341,
+      "text": "the volunteers did not operate the scanners",
+      "paragraph": 2,
+      "source": "passage"
+    },
+    {
+      "id": "evidence-3",
+      "start": 396,
+      "end": 444,
+      "text": "original maps remain in the archive reading room",
+      "paragraph": 3,
+      "source": "passage"
+    },
+    {
+      "id": "evidence-4",
+      "start": 207,
+      "end": 232,
+      "text": "the team scanned 320 maps",
+      "paragraph": 2,
+      "source": "passage"
+    }
+  ],
+  "options": [
+    {
+      "id": "A",
+      "label": "Original maps were moved out of the reading room.",
+      "text": "Original maps were moved out of the reading room.",
+      "claimId": "claim-3",
+      "claimType": "contradicted",
+      "evaluationStatus": "contradicted",
+      "evidence": [
+        "evidence-3"
+      ],
+      "distractorRationale": "contradicts where originals remain",
+      "mutation": {
+        "kind": "verbal-misreading",
+        "description": "contradicts where originals remain"
+      }
+    },
+    {
+      "id": "B",
+      "label": "Every map received a volunteer transcription.",
+      "text": "Every map received a volunteer transcription.",
+      "claimId": "claim-5",
+      "claimType": "invalid-inference",
+      "evaluationStatus": "not-stated",
+      "evidence": [
+        "evidence-1"
+      ],
+      "distractorRationale": "expands a subset to the entire project",
+      "mutation": {
+        "kind": "verbal-misreading",
+        "description": "expands a subset to the entire project"
+      }
+    },
+    {
+      "id": "C",
+      "label": "The team scanned 3,200 maps in May.",
+      "text": "The team scanned 3,200 maps in May.",
+      "claimId": "claim-4",
+      "claimType": "contradicted",
+      "evaluationStatus": "contradicted",
+      "evidence": [
+        "evidence-4"
+      ],
+      "distractorRationale": "adds a zero to the reported count",
+      "mutation": {
+        "kind": "verbal-misreading",
+        "description": "adds a zero to the reported count"
+      }
+    },
+    {
+      "id": "D",
+      "label": "Volunteers transcribed handwritten labels for 90 maps.",
+      "text": "Volunteers transcribed handwritten labels for 90 maps.",
+      "claimId": "claim-1",
+      "claimType": "explicit-fact",
+      "evaluationStatus": "supported",
+      "evidence": [
+        "evidence-1"
+      ],
+      "distractorRationale": "",
+      "mutation": {
+        "kind": "correct",
+        "description": "matches the passage and question"
+      }
+    },
+    {
+      "id": "E",
+      "label": "Volunteers operated the scanners.",
+      "text": "Volunteers operated the scanners.",
+      "claimId": "claim-2",
+      "claimType": "contradicted",
+      "evaluationStatus": "contradicted",
+      "evidence": [
+        "evidence-2"
+      ],
+      "distractorRationale": "contradicts the passage",
+      "mutation": {
+        "kind": "verbal-misreading",
+        "description": "contradicts the passage"
+      }
+    }
+  ],
+  "correctOption": "D",
+  "answerEvaluation": [
+    {
+      "option": "A",
+      "optionId": "A",
+      "claimId": "claim-3",
+      "status": "contradicted",
+      "verdict": "distractor",
+      "isCorrect": false,
+      "evidence": [
+        "evidence-3"
+      ],
+      "reasoning": "The passage says the originals remain in the reading room.",
+      "rationale": "contradicts where originals remain"
+    },
+    {
+      "option": "B",
+      "optionId": "B",
+      "claimId": "claim-5",
+      "status": "not-stated",
+      "verdict": "distractor",
+      "isCorrect": false,
+      "evidence": [
+        "evidence-1"
+      ],
+      "reasoning": "Only 90 maps are identified as having volunteer transcriptions.",
+      "rationale": "expands a subset to the entire project"
+    },
+    {
+      "option": "C",
+      "optionId": "C",
+      "claimId": "claim-4",
+      "status": "contradicted",
+      "verdict": "distractor",
+      "isCorrect": false,
+      "evidence": [
+        "evidence-4"
+      ],
+      "reasoning": "The reported count is 320.",
+      "rationale": "adds a zero to the reported count"
+    },
+    {
+      "option": "D",
+      "optionId": "D",
+      "claimId": "claim-1",
+      "status": "supported",
+      "verdict": "correct",
+      "isCorrect": true,
+      "evidence": [
+        "evidence-1"
+      ],
+      "reasoning": "This fact is stated directly.",
+      "rationale": ""
+    },
+    {
+      "option": "E",
+      "optionId": "E",
+      "claimId": "claim-2",
+      "status": "contradicted",
+      "verdict": "distractor",
+      "isCorrect": false,
+      "evidence": [
+        "evidence-2"
+      ],
+      "reasoning": "The passage explicitly excludes scanner operation from the volunteer role.",
+      "rationale": "contradicts the passage"
+    }
+  ],
+  "explanation": "Option D is correct. Evidence evidence-1 states “Volunteers transcribed handwritten labels for 90 of those maps”. Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+  "explanationDetails": {
+    "text": "Option D is correct. Evidence evidence-1 states “Volunteers transcribed handwritten labels for 90 of those maps”. Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+    "reasoningSteps": [
+      "Identify the claim tested by option D: Volunteers transcribed handwritten labels for 90 maps.",
+      "Cite evidence evidence-1: “Volunteers transcribed handwritten labels for 90 of those maps”",
+      "Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated.",
+      "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+    ],
+    "evidence": [
+      "evidence-1"
+    ],
+    "explicitFacts": [
+      "Volunteers transcribed handwritten labels for 90 maps."
+    ],
+    "invalidInferences": [
+      "Option A: contradicts where originals remain.",
+      "Option B: expands a subset to the entire project.",
+      "Option C: adds a zero to the reported count.",
+      "Option E: contradicts the passage."
+    ],
+    "conclusion": "Volunteers transcribed handwritten labels for 90 maps."
+  },
+  "explanationFragments": [
+    "Identify the claim tested by option D: Volunteers transcribed handwritten labels for 90 maps.",
+    "Cite evidence evidence-1: “Volunteers transcribed handwritten labels for 90 of those maps”",
+    "Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated.",
+    "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+  ],
+  "actions": {
+    "explainLogic": {
+      "id": "explain-logic",
+      "type": "button",
+      "label": "Explain logic",
+      "localizedLabel": "Ver solución",
+      "labels": {
+        "en": "Explain Logic",
+        "es": "Ver solución"
+      },
+      "ariaLabel": "Explain Logic / Ver solución",
+      "initiallyVisible": false,
+      "revealsAnswer": true,
+      "solutionView": {
+        "initiallyVisible": false,
+        "hideAction": {
+          "id": "hide-solution",
+          "type": "button",
+          "label": "Hide solution",
+          "localizedLabel": "Ocultar solución",
+          "visibleAfterReveal": true
+        }
+      },
+      "result": {
+        "optionCount": 5,
+        "questionType": "true-false",
+        "explanation": "Option D is correct. Evidence evidence-1 states “Volunteers transcribed handwritten labels for 90 of those maps”. Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+        "explanationDetails": {
+          "text": "Option D is correct. Evidence evidence-1 states “Volunteers transcribed handwritten labels for 90 of those maps”. Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+          "reasoningSteps": [
+            "Identify the claim tested by option D: Volunteers transcribed handwritten labels for 90 maps.",
+            "Cite evidence evidence-1: “Volunteers transcribed handwritten labels for 90 of those maps”",
+            "Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated.",
+            "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+          ],
+          "evidence": [
+            "evidence-1"
+          ],
+          "explicitFacts": [
+            "Volunteers transcribed handwritten labels for 90 maps."
+          ],
+          "invalidInferences": [
+            "Option A: contradicts where originals remain.",
+            "Option B: expands a subset to the entire project.",
+            "Option C: adds a zero to the reported count.",
+            "Option E: contradicts the passage."
+          ],
+          "conclusion": "Volunteers transcribed handwritten labels for 90 maps."
+        },
+        "reasoningSteps": [
+          "Identify the claim tested by option D: Volunteers transcribed handwritten labels for 90 maps.",
+          "Cite evidence evidence-1: “Volunteers transcribed handwritten labels for 90 of those maps”",
+          "Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated.",
+          "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+        ],
+        "evidenceSpans": [
+          {
+            "id": "evidence-1",
+            "start": 234,
+            "end": 296,
+            "text": "Volunteers transcribed handwritten labels for 90 of those maps",
+            "paragraph": 2,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-2",
+            "start": 298,
+            "end": 341,
+            "text": "the volunteers did not operate the scanners",
+            "paragraph": 2,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-3",
+            "start": 396,
+            "end": 444,
+            "text": "original maps remain in the archive reading room",
+            "paragraph": 3,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-4",
+            "start": 207,
+            "end": 232,
+            "text": "the team scanned 320 maps",
+            "paragraph": 2,
+            "source": "passage"
+          }
+        ],
+        "claims": [
+          {
+            "id": "claim-1",
+            "text": "Volunteers transcribed handwritten labels for 90 maps.",
+            "claimType": "explicit-fact",
+            "status": "supported",
+            "evidence": [
+              "evidence-1"
+            ],
+            "reasoning": "This fact is stated directly.",
+            "explicit": true
+          },
+          {
+            "id": "claim-2",
+            "text": "Volunteers operated the scanners.",
+            "claimType": "contradicted",
+            "status": "contradicted",
+            "evidence": [
+              "evidence-2"
+            ],
+            "reasoning": "The passage explicitly excludes scanner operation from the volunteer role.",
+            "explicit": false
+          },
+          {
+            "id": "claim-3",
+            "text": "Original maps were moved out of the reading room.",
+            "claimType": "contradicted",
+            "status": "contradicted",
+            "evidence": [
+              "evidence-3"
+            ],
+            "reasoning": "The passage says the originals remain in the reading room.",
+            "explicit": false
+          },
+          {
+            "id": "claim-4",
+            "text": "The team scanned 3,200 maps in May.",
+            "claimType": "contradicted",
+            "status": "contradicted",
+            "evidence": [
+              "evidence-4"
+            ],
+            "reasoning": "The reported count is 320.",
+            "explicit": false
+          },
+          {
+            "id": "claim-5",
+            "text": "Every map received a volunteer transcription.",
+            "claimType": "invalid-inference",
+            "status": "not-stated",
+            "evidence": [
+              "evidence-1"
+            ],
+            "reasoning": "Only 90 maps are identified as having volunteer transcriptions.",
+            "explicit": false
+          }
+        ],
+        "answerEvaluation": [
+          {
+            "option": "A",
+            "optionId": "A",
+            "claimId": "claim-3",
+            "status": "contradicted",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-3"
+            ],
+            "reasoning": "The passage says the originals remain in the reading room.",
+            "rationale": "contradicts where originals remain"
+          },
+          {
+            "option": "B",
+            "optionId": "B",
+            "claimId": "claim-5",
+            "status": "not-stated",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-1"
+            ],
+            "reasoning": "Only 90 maps are identified as having volunteer transcriptions.",
+            "rationale": "expands a subset to the entire project"
+          },
+          {
+            "option": "C",
+            "optionId": "C",
+            "claimId": "claim-4",
+            "status": "contradicted",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-4"
+            ],
+            "reasoning": "The reported count is 320.",
+            "rationale": "adds a zero to the reported count"
+          },
+          {
+            "option": "D",
+            "optionId": "D",
+            "claimId": "claim-1",
+            "status": "supported",
+            "verdict": "correct",
+            "isCorrect": true,
+            "evidence": [
+              "evidence-1"
+            ],
+            "reasoning": "This fact is stated directly.",
+            "rationale": ""
+          },
+          {
+            "option": "E",
+            "optionId": "E",
+            "claimId": "claim-2",
+            "status": "contradicted",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-2"
+            ],
+            "reasoning": "The passage explicitly excludes scanner operation from the volunteer role.",
+            "rationale": "contradicts the passage"
+          }
+        ],
+        "correctOption": "D",
+        "correctReason": "Option D is correct because it is supported by the cited passage evidence.",
+        "distractors": [
+          {
+            "option": "A",
+            "reason": "contradicts where originals remain",
+            "rationale": "contradicts where originals remain",
+            "status": "contradicted",
+            "claimId": "claim-3",
+            "evidence": [
+              "evidence-3"
+            ]
+          },
+          {
+            "option": "B",
+            "reason": "expands a subset to the entire project",
+            "rationale": "expands a subset to the entire project",
+            "status": "not-stated",
+            "claimId": "claim-5",
+            "evidence": [
+              "evidence-1"
+            ]
+          },
+          {
+            "option": "C",
+            "reason": "adds a zero to the reported count",
+            "rationale": "adds a zero to the reported count",
+            "status": "contradicted",
+            "claimId": "claim-4",
+            "evidence": [
+              "evidence-4"
+            ]
+          },
+          {
+            "option": "E",
+            "reason": "contradicts the passage",
+            "rationale": "contradicts the passage",
+            "status": "contradicted",
+            "claimId": "claim-2",
+            "evidence": [
+              "evidence-2"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "seed": 9,
+    "examProfile": "five-option",
+    "optionCount": 5,
+    "questionType": "true-false",
+    "scenario": "archive-maps",
+    "sourcePassage": {
+      "id": "archive-maps",
+      "title": "The archive's first digitisation phase",
+      "text": "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.\n\nIn May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.\n\nThe project creates digital access copies while the original maps remain in the archive reading room.",
+      "paragraphs": [
+        "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.",
+        "In May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.",
+        "The project creates digital access copies while the original maps remain in the archive reading room."
+      ],
+      "source": "original"
+    },
+    "passage": {
+      "id": "archive-maps",
+      "title": "The archive's first digitisation phase",
+      "text": "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.\n\nIn May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.\n\nThe project creates digital access copies while the original maps remain in the archive reading room.",
+      "paragraphs": [
+        "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.",
+        "In May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.",
+        "The project creates digital access copies while the original maps remain in the archive reading room."
+      ],
+      "source": "original"
+    },
+    "claims": [
+      {
+        "id": "claim-1",
+        "text": "Volunteers transcribed handwritten labels for 90 maps.",
+        "claimType": "explicit-fact",
+        "status": "supported",
+        "evidence": [
+          "evidence-1"
+        ],
+        "reasoning": "This fact is stated directly.",
+        "explicit": true
+      },
+      {
+        "id": "claim-2",
+        "text": "Volunteers operated the scanners.",
+        "claimType": "contradicted",
+        "status": "contradicted",
+        "evidence": [
+          "evidence-2"
+        ],
+        "reasoning": "The passage explicitly excludes scanner operation from the volunteer role.",
+        "explicit": false
+      },
+      {
+        "id": "claim-3",
+        "text": "Original maps were moved out of the reading room.",
+        "claimType": "contradicted",
+        "status": "contradicted",
+        "evidence": [
+          "evidence-3"
+        ],
+        "reasoning": "The passage says the originals remain in the reading room.",
+        "explicit": false
+      },
+      {
+        "id": "claim-4",
+        "text": "The team scanned 3,200 maps in May.",
+        "claimType": "contradicted",
+        "status": "contradicted",
+        "evidence": [
+          "evidence-4"
+        ],
+        "reasoning": "The reported count is 320.",
+        "explicit": false
+      },
+      {
+        "id": "claim-5",
+        "text": "Every map received a volunteer transcription.",
+        "claimType": "invalid-inference",
+        "status": "not-stated",
+        "evidence": [
+          "evidence-1"
+        ],
+        "reasoning": "Only 90 maps are identified as having volunteer transcriptions.",
+        "explicit": false
+      }
+    ],
+    "evidenceSpans": [
+      {
+        "id": "evidence-1",
+        "start": 234,
+        "end": 296,
+        "text": "Volunteers transcribed handwritten labels for 90 of those maps",
+        "paragraph": 2,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-2",
+        "start": 298,
+        "end": 341,
+        "text": "the volunteers did not operate the scanners",
+        "paragraph": 2,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-3",
+        "start": 396,
+        "end": 444,
+        "text": "original maps remain in the archive reading room",
+        "paragraph": 3,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-4",
+        "start": 207,
+        "end": 232,
+        "text": "the team scanned 320 maps",
+        "paragraph": 2,
+        "source": "passage"
+      }
+    ],
+    "answerEvaluation": [
+      {
+        "option": "A",
+        "optionId": "A",
+        "claimId": "claim-3",
+        "status": "contradicted",
+        "verdict": "distractor",
+        "isCorrect": false,
+        "evidence": [
+          "evidence-3"
+        ],
+        "reasoning": "The passage says the originals remain in the reading room.",
+        "rationale": "contradicts where originals remain"
+      },
+      {
+        "option": "B",
+        "optionId": "B",
+        "claimId": "claim-5",
+        "status": "not-stated",
+        "verdict": "distractor",
+        "isCorrect": false,
+        "evidence": [
+          "evidence-1"
+        ],
+        "reasoning": "Only 90 maps are identified as having volunteer transcriptions.",
+        "rationale": "expands a subset to the entire project"
+      },
+      {
+        "option": "C",
+        "optionId": "C",
+        "claimId": "claim-4",
+        "status": "contradicted",
+        "verdict": "distractor",
+        "isCorrect": false,
+        "evidence": [
+          "evidence-4"
+        ],
+        "reasoning": "The reported count is 320.",
+        "rationale": "adds a zero to the reported count"
+      },
+      {
+        "option": "D",
+        "optionId": "D",
+        "claimId": "claim-1",
+        "status": "supported",
+        "verdict": "correct",
+        "isCorrect": true,
+        "evidence": [
+          "evidence-1"
+        ],
+        "reasoning": "This fact is stated directly.",
+        "rationale": ""
+      },
+      {
+        "option": "E",
+        "optionId": "E",
+        "claimId": "claim-2",
+        "status": "contradicted",
+        "verdict": "distractor",
+        "isCorrect": false,
+        "evidence": [
+          "evidence-2"
+        ],
+        "reasoning": "The passage explicitly excludes scanner operation from the volunteer role.",
+        "rationale": "contradicts the passage"
+      }
+    ],
+    "distractors": [
+      {
+        "option": "A",
+        "reason": "contradicts where originals remain",
+        "description": "contradicts where originals remain",
+        "status": "contradicted",
+        "claimId": "claim-3",
+        "evidence": [
+          "evidence-3"
+        ]
+      },
+      {
+        "option": "B",
+        "reason": "expands a subset to the entire project",
+        "description": "expands a subset to the entire project",
+        "status": "not-stated",
+        "claimId": "claim-5",
+        "evidence": [
+          "evidence-1"
+        ]
+      },
+      {
+        "option": "C",
+        "reason": "adds a zero to the reported count",
+        "description": "adds a zero to the reported count",
+        "status": "contradicted",
+        "claimId": "claim-4",
+        "evidence": [
+          "evidence-4"
+        ]
+      },
+      {
+        "option": "E",
+        "reason": "contradicts the passage",
+        "description": "contradicts the passage",
+        "status": "contradicted",
+        "claimId": "claim-2",
+        "evidence": [
+          "evidence-2"
+        ]
+      }
+    ],
+    "distractorRationale": [
+      {
+        "option": "A",
+        "reason": "contradicts where originals remain",
+        "description": "contradicts where originals remain",
+        "status": "contradicted",
+        "claimId": "claim-3",
+        "evidence": [
+          "evidence-3"
+        ]
+      },
+      {
+        "option": "B",
+        "reason": "expands a subset to the entire project",
+        "description": "expands a subset to the entire project",
+        "status": "not-stated",
+        "claimId": "claim-5",
+        "evidence": [
+          "evidence-1"
+        ]
+      },
+      {
+        "option": "C",
+        "reason": "adds a zero to the reported count",
+        "description": "adds a zero to the reported count",
+        "status": "contradicted",
+        "claimId": "claim-4",
+        "evidence": [
+          "evidence-4"
+        ]
+      },
+      {
+        "option": "E",
+        "reason": "contradicts the passage",
+        "description": "contradicts the passage",
+        "status": "contradicted",
+        "claimId": "claim-2",
+        "evidence": [
+          "evidence-2"
+        ]
+      }
+    ],
+    "explanationFragments": [
+      "Identify the claim tested by option D: Volunteers transcribed handwritten labels for 90 maps.",
+      "Cite evidence evidence-1: “Volunteers transcribed handwritten labels for 90 of those maps”",
+      "Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated.",
+      "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+    ],
+    "reasoningSteps": [
+      "Identify the claim tested by option D: Volunteers transcribed handwritten labels for 90 maps.",
+      "Cite evidence evidence-1: “Volunteers transcribed handwritten labels for 90 of those maps”",
+      "Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated.",
+      "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+    ],
+    "answerClaim": {
+      "id": "claim-1",
+      "text": "Volunteers transcribed handwritten labels for 90 maps.",
+      "claimType": "explicit-fact",
+      "status": "supported",
+      "evidence": [
+        "evidence-1"
+      ],
+      "reasoning": "This fact is stated directly.",
+      "explicit": true
+    },
+    "answerEvidence": [
+      {
+        "id": "evidence-1",
+        "start": 234,
+        "end": 296,
+        "text": "Volunteers transcribed handwritten labels for 90 of those maps",
+        "paragraph": 2,
+        "source": "passage"
+      }
+    ],
+    "answerSignature": "claim-1"
+  }
+}

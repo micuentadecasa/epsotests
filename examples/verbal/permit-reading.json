@@ -1,0 +1,919 @@
+{
+  "id": "verbal-reading-comprehension-permit-precheck-5-medium",
+  "itemNumber": 1,
+  "exam": "verbal",
+  "examProfile": "five-option",
+  "optionCount": 5,
+  "format": "reading-comprehension",
+  "questionType": "reading-comprehension",
+  "difficulty": "medium",
+  "passage": {
+    "id": "permit-precheck",
+    "title": "A shorter visit to the permit office",
+    "text": "To reduce waiting time, the North District permit office introduced an online pre-check in April. Applicants may upload forms before visiting, but an officer still verifies original identity documents at the appointment.\n\nDuring the first six weeks, average counter time fell from 18 minutes to 11 minutes. The office handled 14% more applications than in the same period last year.\n\nThe office did not extend opening hours; it reassigned two clerks from filing to pre-checks.",
+    "paragraphs": [
+      "To reduce waiting time, the North District permit office introduced an online pre-check in April. Applicants may upload forms before visiting, but an officer still verifies original identity documents at the appointment.",
+      "During the first six weeks, average counter time fell from 18 minutes to 11 minutes. The office handled 14% more applications than in the same period last year.",
+      "The office did not extend opening hours; it reassigned two clerks from filing to pre-checks."
+    ],
+    "source": "original"
+  },
+  "sourcePassage": {
+    "id": "permit-precheck",
+    "title": "A shorter visit to the permit office",
+    "text": "To reduce waiting time, the North District permit office introduced an online pre-check in April. Applicants may upload forms before visiting, but an officer still verifies original identity documents at the appointment.\n\nDuring the first six weeks, average counter time fell from 18 minutes to 11 minutes. The office handled 14% more applications than in the same period last year.\n\nThe office did not extend opening hours; it reassigned two clerks from filing to pre-checks.",
+    "paragraphs": [
+      "To reduce waiting time, the North District permit office introduced an online pre-check in April. Applicants may upload forms before visiting, but an officer still verifies original identity documents at the appointment.",
+      "During the first six weeks, average counter time fell from 18 minutes to 11 minutes. The office handled 14% more applications than in the same period last year.",
+      "The office did not extend opening hours; it reassigned two clerks from filing to pre-checks."
+    ],
+    "source": "original"
+  },
+  "passageText": "To reduce waiting time, the North District permit office introduced an online pre-check in April. Applicants may upload forms before visiting, but an officer still verifies original identity documents at the appointment.\n\nDuring the first six weeks, average counter time fell from 18 minutes to 11 minutes. The office handled 14% more applications than in the same period last year.\n\nThe office did not extend opening hours; it reassigned two clerks from filing to pre-checks.",
+  "stimulus": {
+    "type": "passage",
+    "title": "A shorter visit to the permit office",
+    "passage": {
+      "id": "permit-precheck",
+      "title": "A shorter visit to the permit office",
+      "text": "To reduce waiting time, the North District permit office introduced an online pre-check in April. Applicants may upload forms before visiting, but an officer still verifies original identity documents at the appointment.\n\nDuring the first six weeks, average counter time fell from 18 minutes to 11 minutes. The office handled 14% more applications than in the same period last year.\n\nThe office did not extend opening hours; it reassigned two clerks from filing to pre-checks.",
+      "paragraphs": [
+        "To reduce waiting time, the North District permit office introduced an online pre-check in April. Applicants may upload forms before visiting, but an officer still verifies original identity documents at the appointment.",
+        "During the first six weeks, average counter time fell from 18 minutes to 11 minutes. The office handled 14% more applications than in the same period last year.",
+        "The office did not extend opening hours; it reassigned two clerks from filing to pre-checks."
+      ],
+      "source": "original"
+    },
+    "text": "To reduce waiting time, the North District permit office introduced an online pre-check in April. Applicants may upload forms before visiting, but an officer still verifies original identity documents at the appointment.\n\nDuring the first six weeks, average counter time fell from 18 minutes to 11 minutes. The office handled 14% more applications than in the same period last year.\n\nThe office did not extend opening hours; it reassigned two clerks from filing to pre-checks.",
+    "evidenceSpans": [
+      {
+        "id": "evidence-1",
+        "start": 143,
+        "end": 220,
+        "text": "but an officer still verifies original identity documents at the appointment.",
+        "paragraph": 1,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-2",
+        "start": 98,
+        "end": 141,
+        "text": "Applicants may upload forms before visiting",
+        "paragraph": 1,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-3",
+        "start": 384,
+        "end": 423,
+        "text": "The office did not extend opening hours",
+        "paragraph": 3,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-4",
+        "start": 250,
+        "end": 305,
+        "text": "average counter time fell from 18 minutes to 11 minutes",
+        "paragraph": 2,
+        "source": "passage"
+      }
+    ]
+  },
+  "question": "What must applicants still do at their appointment?",
+  "claims": [
+    {
+      "id": "claim-1",
+      "text": "Present original identity documents for verification.",
+      "claimType": "explicit-fact",
+      "status": "supported",
+      "evidence": [
+        "evidence-1"
+      ],
+      "reasoning": "The passage directly states this requirement.",
+      "explicit": true
+    },
+    {
+      "id": "claim-2",
+      "text": "Upload every form at the office rather than online.",
+      "claimType": "contradicted",
+      "status": "contradicted",
+      "evidence": [
+        "evidence-2"
+      ],
+      "reasoning": "The passage allows online upload before the visit.",
+      "explicit": false
+    },
+    {
+      "id": "claim-3",
+      "text": "Attend an office that has extended its opening hours.",
+      "claimType": "contradicted",
+      "status": "contradicted",
+      "evidence": [
+        "evidence-3"
+      ],
+      "reasoning": "The passage explicitly says opening hours did not change.",
+      "explicit": false
+    },
+    {
+      "id": "claim-4",
+      "text": "Wait at the counter for 18 minutes on average.",
+      "claimType": "contradicted",
+      "status": "contradicted",
+      "evidence": [
+        "evidence-4"
+      ],
+      "reasoning": "The later average is 11 minutes, not 18.",
+      "explicit": false
+    },
+    {
+      "id": "claim-5",
+      "text": "Skip the appointment because the pre-check replaces identity checks.",
+      "claimType": "invalid-inference",
+      "status": "not-stated",
+      "evidence": [
+        "evidence-2"
+      ],
+      "reasoning": "The passage separates online form upload from the identity check at the appointment.",
+      "explicit": false
+    }
+  ],
+  "evidenceSpans": [
+    {
+      "id": "evidence-1",
+      "start": 143,
+      "end": 220,
+      "text": "but an officer still verifies original identity documents at the appointment.",
+      "paragraph": 1,
+      "source": "passage"
+    },
+    {
+      "id": "evidence-2",
+      "start": 98,
+      "end": 141,
+      "text": "Applicants may upload forms before visiting",
+      "paragraph": 1,
+      "source": "passage"
+    },
+    {
+      "id": "evidence-3",
+      "start": 384,
+      "end": 423,
+      "text": "The office did not extend opening hours",
+      "paragraph": 3,
+      "source": "passage"
+    },
+    {
+      "id": "evidence-4",
+      "start": 250,
+      "end": 305,
+      "text": "average counter time fell from 18 minutes to 11 minutes",
+      "paragraph": 2,
+      "source": "passage"
+    }
+  ],
+  "options": [
+    {
+      "id": "A",
+      "label": "Attend an office that has extended its opening hours.",
+      "text": "Attend an office that has extended its opening hours.",
+      "claimId": "claim-3",
+      "claimType": "contradicted",
+      "evaluationStatus": "contradicted",
+      "evidence": [
+        "evidence-3"
+      ],
+      "distractorRationale": "confuses the staffing change with an extension of opening hours",
+      "mutation": {
+        "kind": "verbal-misreading",
+        "description": "confuses the staffing change with an extension of opening hours"
+      }
+    },
+    {
+      "id": "B",
+      "label": "Skip the appointment because the pre-check replaces identity checks.",
+      "text": "Skip the appointment because the pre-check replaces identity checks.",
+      "claimId": "claim-5",
+      "claimType": "invalid-inference",
+      "evaluationStatus": "not-stated",
+      "evidence": [
+        "evidence-2"
+      ],
+      "distractorRationale": "treats online form upload as removal of the appointment and identity check",
+      "mutation": {
+        "kind": "verbal-misreading",
+        "description": "treats online form upload as removal of the appointment and identity check"
+      }
+    },
+    {
+      "id": "C",
+      "label": "Wait at the counter for 18 minutes on average.",
+      "text": "Wait at the counter for 18 minutes on average.",
+      "claimId": "claim-4",
+      "claimType": "contradicted",
+      "evaluationStatus": "contradicted",
+      "evidence": [
+        "evidence-4"
+      ],
+      "distractorRationale": "uses the earlier average as if it were the current one",
+      "mutation": {
+        "kind": "verbal-misreading",
+        "description": "uses the earlier average as if it were the current one"
+      }
+    },
+    {
+      "id": "D",
+      "label": "Upload every form at the office rather than online.",
+      "text": "Upload every form at the office rather than online.",
+      "claimId": "claim-2",
+      "claimType": "contradicted",
+      "evaluationStatus": "contradicted",
+      "evidence": [
+        "evidence-2"
+      ],
+      "distractorRationale": "reverses the passage's permission to upload forms before the visit",
+      "mutation": {
+        "kind": "verbal-misreading",
+        "description": "reverses the passage's permission to upload forms before the visit"
+      }
+    },
+    {
+      "id": "E",
+      "label": "Present original identity documents for verification.",
+      "text": "Present original identity documents for verification.",
+      "claimId": "claim-1",
+      "claimType": "explicit-fact",
+      "evaluationStatus": "supported",
+      "evidence": [
+        "evidence-1"
+      ],
+      "distractorRationale": "",
+      "mutation": {
+        "kind": "correct",
+        "description": "matches the passage and question"
+      }
+    }
+  ],
+  "correctOption": "E",
+  "answerEvaluation": [
+    {
+      "option": "A",
+      "optionId": "A",
+      "claimId": "claim-3",
+      "status": "contradicted",
+      "verdict": "distractor",
+      "isCorrect": false,
+      "evidence": [
+        "evidence-3"
+      ],
+      "reasoning": "The passage explicitly says opening hours did not change.",
+      "rationale": "confuses the staffing change with an extension of opening hours"
+    },
+    {
+      "option": "B",
+      "optionId": "B",
+      "claimId": "claim-5",
+      "status": "not-stated",
+      "verdict": "distractor",
+      "isCorrect": false,
+      "evidence": [
+        "evidence-2"
+      ],
+      "reasoning": "The passage separates online form upload from the identity check at the appointment.",
+      "rationale": "treats online form upload as removal of the appointment and identity check"
+    },
+    {
+      "option": "C",
+      "optionId": "C",
+      "claimId": "claim-4",
+      "status": "contradicted",
+      "verdict": "distractor",
+      "isCorrect": false,
+      "evidence": [
+        "evidence-4"
+      ],
+      "reasoning": "The later average is 11 minutes, not 18.",
+      "rationale": "uses the earlier average as if it were the current one"
+    },
+    {
+      "option": "D",
+      "optionId": "D",
+      "claimId": "claim-2",
+      "status": "contradicted",
+      "verdict": "distractor",
+      "isCorrect": false,
+      "evidence": [
+        "evidence-2"
+      ],
+      "reasoning": "The passage allows online upload before the visit.",
+      "rationale": "reverses the passage's permission to upload forms before the visit"
+    },
+    {
+      "option": "E",
+      "optionId": "E",
+      "claimId": "claim-1",
+      "status": "supported",
+      "verdict": "correct",
+      "isCorrect": true,
+      "evidence": [
+        "evidence-1"
+      ],
+      "reasoning": "The passage directly states this requirement.",
+      "rationale": ""
+    }
+  ],
+  "explanation": "Option E is correct. Evidence evidence-1 states “but an officer still verifies original identity documents at the appointment.”. This is an explicit fact stated in the passage, so no extra assumption is needed. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+  "explanationDetails": {
+    "text": "Option E is correct. Evidence evidence-1 states “but an officer still verifies original identity documents at the appointment.”. This is an explicit fact stated in the passage, so no extra assumption is needed. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+    "reasoningSteps": [
+      "Identify the claim tested by option E: Present original identity documents for verification.",
+      "Cite evidence evidence-1: “but an officer still verifies original identity documents at the appointment.”",
+      "This is an explicit fact stated in the passage, so no extra assumption is needed.",
+      "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+    ],
+    "evidence": [
+      "evidence-1"
+    ],
+    "explicitFacts": [
+      "Present original identity documents for verification."
+    ],
+    "invalidInferences": [
+      "Option A: confuses the staffing change with an extension of opening hours.",
+      "Option B: treats online form upload as removal of the appointment and identity check.",
+      "Option C: uses the earlier average as if it were the current one.",
+      "Option D: reverses the passage's permission to upload forms before the visit."
+    ],
+    "conclusion": "Present original identity documents for verification."
+  },
+  "explanationFragments": [
+    "Identify the claim tested by option E: Present original identity documents for verification.",
+    "Cite evidence evidence-1: “but an officer still verifies original identity documents at the appointment.”",
+    "This is an explicit fact stated in the passage, so no extra assumption is needed.",
+    "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+  ],
+  "actions": {
+    "explainLogic": {
+      "id": "explain-logic",
+      "type": "button",
+      "label": "Explain logic",
+      "localizedLabel": "Ver solución",
+      "labels": {
+        "en": "Explain Logic",
+        "es": "Ver solución"
+      },
+      "ariaLabel": "Explain Logic / Ver solución",
+      "initiallyVisible": false,
+      "revealsAnswer": true,
+      "solutionView": {
+        "initiallyVisible": false,
+        "hideAction": {
+          "id": "hide-solution",
+          "type": "button",
+          "label": "Hide solution",
+          "localizedLabel": "Ocultar solución",
+          "visibleAfterReveal": true
+        }
+      },
+      "result": {
+        "optionCount": 5,
+        "questionType": "reading-comprehension",
+        "explanation": "Option E is correct. Evidence evidence-1 states “but an officer still verifies original identity documents at the appointment.”. This is an explicit fact stated in the passage, so no extra assumption is needed. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+        "explanationDetails": {
+          "text": "Option E is correct. Evidence evidence-1 states “but an officer still verifies original identity documents at the appointment.”. This is an explicit fact stated in the passage, so no extra assumption is needed. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+          "reasoningSteps": [
+            "Identify the claim tested by option E: Present original identity documents for verification.",
+            "Cite evidence evidence-1: “but an officer still verifies original identity documents at the appointment.”",
+            "This is an explicit fact stated in the passage, so no extra assumption is needed.",
+            "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+          ],
+          "evidence": [
+            "evidence-1"
+          ],
+          "explicitFacts": [
+            "Present original identity documents for verification."
+          ],
+          "invalidInferences": [
+            "Option A: confuses the staffing change with an extension of opening hours.",
+            "Option B: treats online form upload as removal of the appointment and identity check.",
+            "Option C: uses the earlier average as if it were the current one.",
+            "Option D: reverses the passage's permission to upload forms before the visit."
+          ],
+          "conclusion": "Present original identity documents for verification."
+        },
+        "reasoningSteps": [
+          "Identify the claim tested by option E: Present original identity documents for verification.",
+          "Cite evidence evidence-1: “but an officer still verifies original identity documents at the appointment.”",
+          "This is an explicit fact stated in the passage, so no extra assumption is needed.",
+          "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+        ],
+        "evidenceSpans": [
+          {
+            "id": "evidence-1",
+            "start": 143,
+            "end": 220,
+            "text": "but an officer still verifies original identity documents at the appointment.",
+            "paragraph": 1,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-2",
+            "start": 98,
+            "end": 141,
+            "text": "Applicants may upload forms before visiting",
+            "paragraph": 1,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-3",
+            "start": 384,
+            "end": 423,
+            "text": "The office did not extend opening hours",
+            "paragraph": 3,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-4",
+            "start": 250,
+            "end": 305,
+            "text": "average counter time fell from 18 minutes to 11 minutes",
+            "paragraph": 2,
+            "source": "passage"
+          }
+        ],
+        "claims": [
+          {
+            "id": "claim-1",
+            "text": "Present original identity documents for verification.",
+            "claimType": "explicit-fact",
+            "status": "supported",
+            "evidence": [
+              "evidence-1"
+            ],
+            "reasoning": "The passage directly states this requirement.",
+            "explicit": true
+          },
+          {
+            "id": "claim-2",
+            "text": "Upload every form at the office rather than online.",
+            "claimType": "contradicted",
+            "status": "contradicted",
+            "evidence": [
+              "evidence-2"
+            ],
+            "reasoning": "The passage allows online upload before the visit.",
+            "explicit": false
+          },
+          {
+            "id": "claim-3",
+            "text": "Attend an office that has extended its opening hours.",
+            "claimType": "contradicted",
+            "status": "contradicted",
+            "evidence": [
+              "evidence-3"
+            ],
+            "reasoning": "The passage explicitly says opening hours did not change.",
+            "explicit": false
+          },
+          {
+            "id": "claim-4",
+            "text": "Wait at the counter for 18 minutes on average.",
+            "claimType": "contradicted",
+            "status": "contradicted",
+            "evidence": [
+              "evidence-4"
+            ],
+            "reasoning": "The later average is 11 minutes, not 18.",
+            "explicit": false
+          },
+          {
+            "id": "claim-5",
+            "text": "Skip the appointment because the pre-check replaces identity checks.",
+            "claimType": "invalid-inference",
+            "status": "not-stated",
+            "evidence": [
+              "evidence-2"
+            ],
+            "reasoning": "The passage separates online form upload from the identity check at the appointment.",
+            "explicit": false
+          }
+        ],
+        "answerEvaluation": [
+          {
+            "option": "A",
+            "optionId": "A",
+            "claimId": "claim-3",
+            "status": "contradicted",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-3"
+            ],
+            "reasoning": "The passage explicitly says opening hours did not change.",
+            "rationale": "confuses the staffing change with an extension of opening hours"
+          },
+          {
+            "option": "B",
+            "optionId": "B",
+            "claimId": "claim-5",
+            "status": "not-stated",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-2"
+            ],
+            "reasoning": "The passage separates online form upload from the identity check at the appointment.",
+            "rationale": "treats online form upload as removal of the appointment and identity check"
+          },
+          {
+            "option": "C",
+            "optionId": "C",
+            "claimId": "claim-4",
+            "status": "contradicted",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-4"
+            ],
+            "reasoning": "The later average is 11 minutes, not 18.",
+            "rationale": "uses the earlier average as if it were the current one"
+          },
+          {
+            "option": "D",
+            "optionId": "D",
+            "claimId": "claim-2",
+            "status": "contradicted",
+            "verdict": "distractor",
+            "isCorrect": false,
+            "evidence": [
+              "evidence-2"
+            ],
+            "reasoning": "The passage allows online upload before the visit.",
+            "rationale": "reverses the passage's permission to upload forms before the visit"
+          },
+          {
+            "option": "E",
+            "optionId": "E",
+            "claimId": "claim-1",
+            "status": "supported",
+            "verdict": "correct",
+            "isCorrect": true,
+            "evidence": [
+              "evidence-1"
+            ],
+            "reasoning": "The passage directly states this requirement.",
+            "rationale": ""
+          }
+        ],
+        "correctOption": "E",
+        "correctReason": "Option E is correct because it is supported by the cited passage evidence.",
+        "distractors": [
+          {
+            "option": "A",
+            "reason": "confuses the staffing change with an extension of opening hours",
+            "rationale": "confuses the staffing change with an extension of opening hours",
+            "status": "contradicted",
+            "claimId": "claim-3",
+            "evidence": [
+              "evidence-3"
+            ]
+          },
+          {
+            "option": "B",
+            "reason": "treats online form upload as removal of the appointment and identity check",
+            "rationale": "treats online form upload as removal of the appointment and identity check",
+            "status": "not-stated",
+            "claimId": "claim-5",
+            "evidence": [
+              "evidence-2"
+            ]
+          },
+          {
+            "option": "C",
+            "reason": "uses the earlier average as if it were the current one",
+            "rationale": "uses the earlier average as if it were the current one",
+            "status": "contradicted",
+            "claimId": "claim-4",
+            "evidence": [
+              "evidence-4"
+            ]
+          },
+          {
+            "option": "D",
+            "reason": "reverses the passage's permission to upload forms before the visit",
+            "rationale": "reverses the passage's permission to upload forms before the visit",
+            "status": "contradicted",
+            "claimId": "claim-2",
+            "evidence": [
+              "evidence-2"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "seed": 5,
+    "examProfile": "five-option",
+    "optionCount": 5,
+    "questionType": "reading-comprehension",
+    "scenario": "permit-precheck",
+    "sourcePassage": {
+      "id": "permit-precheck",
+      "title": "A shorter visit to the permit office",
+      "text": "To reduce waiting time, the North District permit office introduced an online pre-check in April. Applicants may upload forms before visiting, but an officer still verifies original identity documents at the appointment.\n\nDuring the first six weeks, average counter time fell from 18 minutes to 11 minutes. The office handled 14% more applications than in the same period last year.\n\nThe office did not extend opening hours; it reassigned two clerks from filing to pre-checks.",
+      "paragraphs": [
+        "To reduce waiting time, the North District permit office introduced an online pre-check in April. Applicants may upload forms before visiting, but an officer still verifies original identity documents at the appointment.",
+        "During the first six weeks, average counter time fell from 18 minutes to 11 minutes. The office handled 14% more applications than in the same period last year.",
+        "The office did not extend opening hours; it reassigned two clerks from filing to pre-checks."
+      ],
+      "source": "original"
+    },
+    "passage": {
+      "id": "permit-precheck",
+      "title": "A shorter visit to the permit office",
+      "text": "To reduce waiting time, the North District permit office introduced an online pre-check in April. Applicants may upload forms before visiting, but an officer still verifies original identity documents at the appointment.\n\nDuring the first six weeks, average counter time fell from 18 minutes to 11 minutes. The office handled 14% more applications than in the same period last year.\n\nThe office did not extend opening hours; it reassigned two clerks from filing to pre-checks.",
+      "paragraphs": [
+        "To reduce waiting time, the North District permit office introduced an online pre-check in April. Applicants may upload forms before visiting, but an officer still verifies original identity documents at the appointment.",
+        "During the first six weeks, average counter time fell from 18 minutes to 11 minutes. The office handled 14% more applications than in the same period last year.",
+        "The office did not extend opening hours; it reassigned two clerks from filing to pre-checks."
+      ],
+      "source": "original"
+    },
+    "claims": [
+      {
+        "id": "claim-1",
+        "text": "Present original identity documents for verification.",
+        "claimType": "explicit-fact",
+        "status": "supported",
+        "evidence": [
+          "evidence-1"
+        ],
+        "reasoning": "The passage directly states this requirement.",
+        "explicit": true
+      },
+      {
+        "id": "claim-2",
+        "text": "Upload every form at the office rather than online.",
+        "claimType": "contradicted",
+        "status": "contradicted",
+        "evidence": [
+          "evidence-2"
+        ],
+        "reasoning": "The passage allows online upload before the visit.",
+        "explicit": false
+      },
+      {
+        "id": "claim-3",
+        "text": "Attend an office that has extended its opening hours.",
+        "claimType": "contradicted",
+        "status": "contradicted",
+        "evidence": [
+          "evidence-3"
+        ],
+        "reasoning": "The passage explicitly says opening hours did not change.",
+        "explicit": false
+      },
+      {
+        "id": "claim-4",
+        "text": "Wait at the counter for 18 minutes on average.",
+        "claimType": "contradicted",
+        "status": "contradicted",
+        "evidence": [
+          "evidence-4"
+        ],
+        "reasoning": "The later average is 11 minutes, not 18.",
+        "explicit": false
+      },
+      {
+        "id": "claim-5",
+        "text": "Skip the appointment because the pre-check replaces identity checks.",
+        "claimType": "invalid-inference",
+        "status": "not-stated",
+        "evidence": [
+          "evidence-2"
+        ],
+        "reasoning": "The passage separates online form upload from the identity check at the appointment.",
+        "explicit": false
+      }
+    ],
+    "evidenceSpans": [
+      {
+        "id": "evidence-1",
+        "start": 143,
+        "end": 220,
+        "text": "but an officer still verifies original identity documents at the appointment.",
+        "paragraph": 1,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-2",
+        "start": 98,
+        "end": 141,
+        "text": "Applicants may upload forms before visiting",
+        "paragraph": 1,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-3",
+        "start": 384,
+        "end": 423,
+        "text": "The office did not extend opening hours",
+        "paragraph": 3,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-4",
+        "start": 250,
+        "end": 305,
+        "text": "average counter time fell from 18 minutes to 11 minutes",
+        "paragraph": 2,
+        "source": "passage"
+      }
+    ],
+    "answerEvaluation": [
+      {
+        "option": "A",
+        "optionId": "A",
+        "claimId": "claim-3",
+        "status": "contradicted",
+        "verdict": "distractor",
+        "isCorrect": false,
+        "evidence": [
+          "evidence-3"
+        ],
+        "reasoning": "The passage explicitly says opening hours did not change.",
+        "rationale": "confuses the staffing change with an extension of opening hours"
+      },
+      {
+        "option": "B",
+        "optionId": "B",
+        "claimId": "claim-5",
+        "status": "not-stated",
+        "verdict": "distractor",
+        "isCorrect": false,
+        "evidence": [
+          "evidence-2"
+        ],
+        "reasoning": "The passage separates online form upload from the identity check at the appointment.",
+        "rationale": "treats online form upload as removal of the appointment and identity check"
+      },
+      {
+        "option": "C",
+        "optionId": "C",
+        "claimId": "claim-4",
+        "status": "contradicted",
+        "verdict": "distractor",
+        "isCorrect": false,
+        "evidence": [
+          "evidence-4"
+        ],
+        "reasoning": "The later average is 11 minutes, not 18.",
+        "rationale": "uses the earlier average as if it were the current one"
+      },
+      {
+        "option": "D",
+        "optionId": "D",
+        "claimId": "claim-2",
+        "status": "contradicted",
+        "verdict": "distractor",
+        "isCorrect": false,
+        "evidence": [
+          "evidence-2"
+        ],
+        "reasoning": "The passage allows online upload before the visit.",
+        "rationale": "reverses the passage's permission to upload forms before the visit"
+      },
+      {
+        "option": "E",
+        "optionId": "E",
+        "claimId": "claim-1",
+        "status": "supported",
+        "verdict": "correct",
+        "isCorrect": true,
+        "evidence": [
+          "evidence-1"
+        ],
+        "reasoning": "The passage directly states this requirement.",
+        "rationale": ""
+      }
+    ],
+    "distractors": [
+      {
+        "option": "A",
+        "reason": "confuses the staffing change with an extension of opening hours",
+        "description": "confuses the staffing change with an extension of opening hours",
+        "status": "contradicted",
+        "claimId": "claim-3",
+        "evidence": [
+          "evidence-3"
+        ]
+      },
+      {
+        "option": "B",
+        "reason": "treats online form upload as removal of the appointment and identity check",
+        "description": "treats online form upload as removal of the appointment and identity check",
+        "status": "not-stated",
+        "claimId": "claim-5",
+        "evidence": [
+          "evidence-2"
+        ]
+      },
+      {
+        "option": "C",
+        "reason": "uses the earlier average as if it were the current one",
+        "description": "uses the earlier average as if it were the current one",
+        "status": "contradicted",
+        "claimId": "claim-4",
+        "evidence": [
+          "evidence-4"
+        ]
+      },
+      {
+        "option": "D",
+        "reason": "reverses the passage's permission to upload forms before the visit",
+        "description": "reverses the passage's permission to upload forms before the visit",
+        "status": "contradicted",
+        "claimId": "claim-2",
+        "evidence": [
+          "evidence-2"
+        ]
+      }
+    ],
+    "distractorRationale": [
+      {
+        "option": "A",
+        "reason": "confuses the staffing change with an extension of opening hours",
+        "description": "confuses the staffing change with an extension of opening hours",
+        "status": "contradicted",
+        "claimId": "claim-3",
+        "evidence": [
+          "evidence-3"
+        ]
+      },
+      {
+        "option": "B",
+        "reason": "treats online form upload as removal of the appointment and identity check",
+        "description": "treats online form upload as removal of the appointment and identity check",
+        "status": "not-stated",
+        "claimId": "claim-5",
+        "evidence": [
+          "evidence-2"
+        ]
+      },
+      {
+        "option": "C",
+        "reason": "uses the earlier average as if it were the current one",
+        "description": "uses the earlier average as if it were the current one",
+        "status": "contradicted",
+        "claimId": "claim-4",
+        "evidence": [
+          "evidence-4"
+        ]
+      },
+      {
+        "option": "D",
+        "reason": "reverses the passage's permission to upload forms before the visit",
+        "description": "reverses the passage's permission to upload forms before the visit",
+        "status": "contradicted",
+        "claimId": "claim-2",
+        "evidence": [
+          "evidence-2"
+        ]
+      }
+    ],
+    "explanationFragments": [
+      "Identify the claim tested by option E: Present original identity documents for verification.",
+      "Cite evidence evidence-1: “but an officer still verifies original identity documents at the appointment.”",
+      "This is an explicit fact stated in the passage, so no extra assumption is needed.",
+      "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+    ],
+    "reasoningSteps": [
+      "Identify the claim tested by option E: Present original identity documents for verification.",
+      "Cite evidence evidence-1: “but an officer still verifies original identity documents at the appointment.”",
+      "This is an explicit fact stated in the passage, so no extra assumption is needed.",
+      "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
+    ],
+    "answerClaim": {
+      "id": "claim-1",
+      "text": "Present original identity documents for verification.",
+      "claimType": "explicit-fact",
+      "status": "supported",
+      "evidence": [
+        "evidence-1"
+      ],
+      "reasoning": "The passage directly states this requirement.",
+      "explicit": true
+    },
+    "answerEvidence": [
+      {
+        "id": "evidence-1",
+        "start": 143,
+        "end": 220,
+        "text": "but an officer still verifies original identity documents at the appointment.",
+        "paragraph": 1,
+        "source": "passage"
+      }
+    ],
+    "answerSignature": "claim-1"
+  }
+}
