@@ -36,6 +36,21 @@ class VisualAbstractGeneratorTests(unittest.TestCase):
             rotated = apply_rule(base, Rule("rotation", {"degrees": 90}))
             self.assertNotEqual(render_svg(base), render_svg(rotated))
 
+    def test_colour_changes_remain_visible_when_initially_unshaded(self):
+        base = Scene((Element("one", shaded=False),))
+        colored = apply_rule(base, Rule("color-change", {"colors": ["#dc2626"]}))
+        alternated = apply_rule(base, Rule("alternation", {"property": "fill"}))
+        self.assertTrue(colored.elements[0].shaded)
+        self.assertTrue(alternated.elements[0].shaded)
+        self.assertNotEqual(render_svg(base), render_svg(colored))
+        self.assertNotEqual(render_svg(base), render_svg(alternated))
+
+    def test_symmetry_preserves_nested_rendering(self):
+        base = Scene((Element("one"),))
+        nested = apply_rule(base, Rule("nesting"))
+        symmetric = apply_rule(nested, Rule("symmetry", {"order": 2}))
+        self.assertEqual(render_svg(symmetric).count("data-element-id="), 4)
+
     def test_matrix_rejects_unassigned_extra_rules(self):
         with self.assertRaises(ValueError):
             generate_matrix(
