@@ -180,3 +180,35 @@ SVG and checks option uniqueness, metadata, explanations, and CLI output:
 ```sh
 python -m unittest discover -v
 ```
+
+## Learner web app
+
+A local learner-facing app serves the same deterministic Python generators
+through a thin JSON API. The browser never reimplements question rules: it
+requests a sanitized question, submits the selected option, and asks the
+server for the Explain Logic / Ver solución review payload.
+
+Install the package and start the app from the repository root:
+
+```sh
+python -m pip install --editable .
+python -m epsotests.web_server --host 127.0.0.1 --port 8000
+```
+
+Open <http://127.0.0.1:8000>. Choose visual abstract, numerical, or verbal
+reasoning, then set the format, difficulty, seed, and standard/five-option
+profile. The solution toggle is session-persistent: enabling it automatically
+opens the solution for each Next Question until Hide Solution / Ocultar
+solución is selected.
+
+Run the browser behavior and accessibility tests with Playwright:
+
+```sh
+cd web
+npm install
+npx playwright install chromium
+npm test
+```
+
+The Playwright configuration starts the local server automatically on port
+8765. The API can also be checked directly at `/api/health`.

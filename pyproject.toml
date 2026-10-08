@@ -11,6 +11,9 @@ requires-python = ">=3.10"
 [tool.setuptools.packages.find]
 include = ["epsotests*"]
 
+[tool.setuptools.package-data]
+epsotests = ["web/*.html", "web/*.css", "web/*.js"]
+
 [project.scripts]
 epsotests-visual = "epsotests.cli:main"
 epsotests-numerical = "epsotests.cli:main"

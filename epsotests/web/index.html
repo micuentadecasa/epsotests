@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Practice deterministic EPSO visual, numerical, and verbal reasoning questions.">
+    <title>EPSO Reasoning Lab</title>
+    <link rel="stylesheet" href="/app.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#question">Skip to question</a>
+    <header class="site-header">
+      <div class="brand-mark" aria-hidden="true">E</div>
+      <div>
+        <p class="eyebrow">EPSO practice environment</p>
+        <h1>Reasoning Lab</h1>
+      </div>
+      <p class="header-note">Learn the rule. Check the evidence. Build confidence.</p>
+    </header>
+
+    <main class="page-shell">
+      <section class="control-panel framed-panel" aria-labelledby="controls-heading">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Question setup</p>
+            <h2 id="controls-heading">Choose your reasoning exercise</h2>
+          </div>
+          <p class="muted">Every question is reproducible from its seed.</p>
+        </div>
+        <form id="controls-form" class="controls-grid">
+          <label>
+            <span>Reasoning family</span>
+            <select id="family" name="family">
+              <option value="visual">Visual abstract</option>
+              <option value="numerical">Numerical</option>
+              <option value="verbal">Verbal</option>
+            </select>
+          </label>
+          <label>
+            <span id="variant-label">Question format</span>
+            <select id="variant" name="variant"></select>
+          </label>
+          <label id="representation-field">
+            <span>Stimulus view</span>
+            <select id="representation" name="representation">
+              <option value="table">Table</option>
+              <option value="bar-chart">Bar chart</option>
+              <option value="line-chart">Line chart</option>
+            </select>
+          </label>
+          <label>
+            <span>Difficulty</span>
+            <select id="difficulty" name="difficulty">
+              <option value="easy">Easy</option>
+              <option value="medium" selected>Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </label>
+          <label>
+            <span>Option profile</span>
+            <select id="profile" name="profile">
+              <option value="standard">Standard · A–D</option>
+              <option value="five-option">Five option · A–E</option>
+            </select>
+          </label>
+          <label>
+            <span>Seed</span>
+            <input id="seed" name="seed" type="number" value="42" step="1" inputmode="numeric">
+          </label>
+          <button class="primary-button generate-button" type="submit">Generate question</button>
+        </form>
+      </section>
+
+      <div id="status" class="status" role="status" aria-live="polite">Loading a deterministic question…</div>
+
+      <section id="question" class="exam-shell framed-panel" aria-labelledby="question-heading">
+        <header class="question-header">
+          <div>
+            <p id="item-meta" class="eyebrow">Question</p>
+            <h2 id="question-heading">Your question</h2>
+          </div>
+          <span id="difficulty-badge" class="badge">Medium</span>
+        </header>
+        <p id="question-prompt" class="question-prompt"></p>
+
+        <div class="exam-columns">
+          <section class="stimulus-column" aria-labelledby="stimulus-heading">
+            <div class="section-label" id="stimulus-heading">Stimulus</div>
+            <div id="stimulus" class="stimulus-panel" data-stimulus tabindex="-1"></div>
+          </section>
+
+          <section class="response-column" aria-labelledby="response-heading">
+            <div class="section-label" id="response-heading">Response</div>
+            <form id="answer-form">
+              <fieldset id="answer-options" class="answer-options">
+                <legend>Select one answer</legend>
+              </fieldset>
+              <div class="answer-actions">
+                <button id="explain-button" class="primary-button" type="submit" disabled>
+                  Explain Logic <span aria-hidden="true">/</span> Ver solución
+                </button>
+                <button id="hide-button" class="secondary-button" type="button" hidden>
+                  Hide Solution <span aria-hidden="true">/</span> Ocultar solución
+                </button>
+                <button id="next-button" class="secondary-button" type="button">Next Question</button>
+              </div>
+              <p id="answer-feedback" class="answer-feedback" role="status" aria-live="polite"></p>
+            </form>
+          </section>
+        </div>
+
+        <section id="solution" class="solution-panel" aria-labelledby="solution-heading" hidden>
+          <div class="solution-heading-row">
+            <div>
+              <div class="section-label">Review</div>
+              <h3 id="solution-heading">Solution and logic</h3>
+            </div>
+            <span id="solution-result" class="result-badge"></span>
+          </div>
+          <div id="solution-content"></div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Local learner app for epsotests</span>
+      <span>Questions are generated deterministically on the server.</span>
+    </footer>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
