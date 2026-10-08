@@ -302,7 +302,7 @@ def _apply_alternation(scene: Scene, parameters: Mapping[str, Any], frame_index:
             changed = replace(element, shaded=bool(value))
         elif property_name == "fill":
             fill_value = value if isinstance(value, str) else PALETTE[frame_index % len(PALETTE)]
-            changed = replace(element, fill=fill_value)
+            changed = replace(element, fill=fill_value, shaded=True)
         elif property_name == "shape":
             changed = replace(element, shape=str(value))
         elif property_name in ("rotation", "orientation"):
@@ -368,7 +368,11 @@ def _apply_color(scene: Scene, parameters: Mapping[str, Any], frame_index: int) 
     colors = tuple(str(color) for color in parameters.get("colors", PALETTE)) or PALETTE
     for index in _target_indices(scene, parameters):
         element = scene.elements[index]
-        scene = _with_element(scene, index, replace(element, fill=colors[frame_index % len(colors)]))
+        scene = _with_element(
+            scene,
+            index,
+            replace(element, fill=colors[frame_index % len(colors)], shaded=True),
+        )
     return scene
 
 
@@ -587,7 +591,7 @@ def _element_svg(
         else:
             pieces.append(f'<circle data-marker="{marker_name}" cx="{marker_x:.3f}" cy="{marker_y:.3f}" r="3" fill="{stroke_value}"/>')
     for child in element.children:
-        pieces.append(_element_svg(child, width, height, (cx, cy, size), "-nested"))
+        pieces.append(_element_svg(child, width, height, (cx, cy, size), id_suffix + "-nested"))
     if element.symmetry > 1 and parent is None:
         # Symmetry is a scene-visible property, not only metadata.  Mirror
         # copies are rendered around the element while retaining stable IDs.
@@ -595,7 +599,7 @@ def _element_svg(
             angle = 2 * math.pi * copy_index / element.symmetry
             copy_x = _clamp(element.x + math.cos(angle) * element.size * 0.65) * width
             copy_y = _clamp(element.y + math.sin(angle) * element.size * 0.65) * height
-            copy = replace(element, x=copy_x / width, y=copy_y / height, symmetry=1, children=())
+            copy = replace(element, x=copy_x / width, y=copy_y / height, symmetry=1)
             pieces.append(_element_svg(copy, width, height, None, f"-symmetry-{copy_index}"))
     return "".join(pieces)
 
