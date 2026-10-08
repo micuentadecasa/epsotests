@@ -546,7 +546,7 @@ def _element_svg(
             offset = (line_index - (element.line_count - 1) / 2) * size * 0.12
             pieces.append(
                 f'<line data-element-id="{element_id}-{line_index}" x1="{cx - radius:.3f}" y1="{cy + offset:.3f}" '
-                f'x2="{cx + radius:.3f}" y2="{cy + offset:.3f}" {common}/>'
+                f'x2="{cx + radius:.3f}" y2="{cy + offset:.3f}" transform="rotate({element.rotation:.3f} {cx:.3f} {cy:.3f})" {common}/>'
             )
     elif shape == "square":
         pieces.append(
@@ -556,6 +556,14 @@ def _element_svg(
     else:
         points = _points_for_shape(shape, cx, cy, radius, element.rotation)
         pieces.append(f'<polygon data-element-id="{element_id}" points="{points}" {common}/>')
+    if shape in ("circle", "square", "diamond"):
+        orientation_angle = math.radians(element.rotation - 90)
+        orientation_x = cx + radius * 0.62 * math.cos(orientation_angle)
+        orientation_y = cy + radius * 0.62 * math.sin(orientation_angle)
+        pieces.append(
+            f'<line data-orientation="{element_id}" x1="{cx:.3f}" y1="{cy:.3f}" '
+            f'x2="{orientation_x:.3f}" y2="{orientation_y:.3f}" stroke="{stroke_value}" stroke-width="1"/>'
+        )
     if shape != "line" and element.line_count > 1:
         # Line-count is visible for every primitive, not only for an explicit
         # line shape, so a line-count rule cannot become metadata-only.
@@ -922,6 +930,8 @@ def generate_matrix(
         if not rules:
             raise ValueError("matrix rules cannot be empty")
         normalized_rules = _normalize_rules(rules)
+        if len(normalized_rules) > 2:
+            raise ValueError("matrix rules must contain at most two rules")
         row_rule = normalized_rules[0]
         column_rule = normalized_rules[1] if len(normalized_rules) > 1 else normalized_rules[0]
         selected_rules = normalized_rules
