@@ -8,7 +8,7 @@ Regenerate all files from the fixed seeds with:
 python examples/visual/generate_examples.py
 ```
 
-`manifest.json` records each source question's format, seed, difficulty, serialized rules, correct option, and explanation. The SVG panels are assembled from the package's existing `Scene`/`render_svg` output; the generator remains the source of truth.
+`manifest.json` is an index of the fixed-seed items. Each entry points to a complete portable JSON question and its SVG panel, and records the format, seed, difficulty, serialized rules, correct option, and explanation. The SVG panels are assembled from the package's existing `Scene`/`render_svg` output; the generator remains the source of truth.
 
 | SVG | Format | Seed | Difficulty |
 | --- | --- | --- | --- |

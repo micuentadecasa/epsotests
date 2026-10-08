@@ -125,6 +125,38 @@ class VisualAbstractGeneratorTests(unittest.TestCase):
             )
             self.assertIn(question["correctOption"], {"A", "B", "C", "D"})
 
+    def test_all_formats_have_one_rendered_answer_and_complete_provenance(self):
+        cases = (
+            ("sequence", 101),
+            ("matrix-2x2", 102),
+            ("matrix-3x3", 103),
+            ("analogy", 104),
+        )
+        for format_name, seed in cases:
+            with self.subTest(format=format_name):
+                question = generate_question(format_name, seed=seed, difficulty="hard")
+                options = question["options"]
+                correct_svg = next(
+                    option["svg"]
+                    for option in options
+                    if option["id"] == question["correctOption"]
+                )
+                self.assertEqual(len(options), 4)
+                self.assertEqual(len({option["svg"] for option in options}), 4)
+                self.assertEqual(
+                    sum(option["svg"] == correct_svg for option in options), 1
+                )
+                self.assertEqual(len(question["metadata"]["distractors"]), 3)
+                self.assertTrue(question["metadata"]["rules"])
+                self.assertIn("rule", question["explanation"].lower())
+                self.assertIn(question["correctOption"], question["explanation"])
+                self.assertEqual(
+                    question,
+                    generate_question(
+                        format_name, seed=seed, difficulty="hard"
+                    ),
+                )
+
     def test_rule_application_covers_requested_transformations(self):
         base = Scene((Element("one", shape="square", x=0.3, y=0.4, fill="#123456"),))
         cases = [
@@ -310,6 +342,26 @@ class VisualAbstractGeneratorTests(unittest.TestCase):
             self.assertGreaterEqual(content.count('data-element-id='), 4)
             self.assertGreaterEqual(content.count('>A</text>'), 1)
             self.assertGreaterEqual(content.count('>D</text>'), 1)
+
+    def test_fixed_seed_json_examples_match_the_index_and_panels(self):
+        from pathlib import Path
+
+        examples = Path(__file__).parents[1] / "examples" / "visual"
+        index = json.loads((examples / "manifest.json").read_text(encoding="utf-8"))
+        self.assertEqual(len(index), 4)
+        for entry in index:
+            question_path = examples / entry["json"]
+            panel_path = examples / entry["svg"]
+            question = json.loads(question_path.read_text(encoding="utf-8"))
+            self.assertEqual(question["format"], entry["format"])
+            self.assertEqual(question["metadata"]["seed"], entry["seed"])
+            self.assertEqual(question["difficulty"], entry["difficulty"])
+            self.assertEqual(question["correctOption"], entry["correctOption"])
+            self.assertEqual(len(question["options"]), 4)
+            self.assertEqual(
+                len({option["svg"] for option in question["options"]}), 4
+            )
+            self.assertIn('role="img"', panel_path.read_text(encoding="utf-8"))
 
     def test_explanation_is_complete_and_metadata_can_regenerate(self):
         question = generate_question("analogy", seed=23, difficulty="medium")

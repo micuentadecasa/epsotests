@@ -1,0 +1,401 @@
+{
+  "id": "abstract-matrix-2x2-23-easy",
+  "exam": "abstract",
+  "format": "matrix-2x2",
+  "difficulty": "easy",
+  "stimulus": {
+    "type": "matrix",
+    "rows": 2,
+    "columns": 2,
+    "grid": [
+      [
+        {
+          "id": "cell-1-1",
+          "scene": {
+            "background": "#ffffff",
+            "elements": [
+              {
+                "id": "element-1",
+                "shape": "diamond",
+                "x": 0.316359,
+                "y": 0.391918,
+                "size": 0.199623,
+                "rotation": 0.0,
+                "fill": "#dc2626",
+                "shaded": true,
+                "stroke": "#111827",
+                "lineCount": 1,
+                "symmetry": 1,
+                "marker": "dot",
+                "markerPosition": 0.5,
+                "children": []
+              }
+            ]
+          },
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"160\" viewBox=\"0 0 160 160\" role=\"img\" aria-label=\"visual reasoning figure\"><rect width=\"100%\" height=\"100%\" fill=\"#ffffff\"/><polygon data-element-id=\"element-1\" points=\"50.617,46.737 66.587,62.707 50.617,78.677 34.648,62.707\" fill=\"#dc2626\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-1\" x1=\"50.617\" y1=\"62.707\" x2=\"50.617\" y2=\"52.806\" stroke=\"#111827\" stroke-width=\"1\"/><circle data-marker=\"dot\" cx=\"50.617\" cy=\"73.566\" r=\"3\" fill=\"#111827\"/></svg>"
+        },
+        {
+          "id": "cell-1-2",
+          "scene": {
+            "background": "#ffffff",
+            "elements": [
+              {
+                "id": "element-1",
+                "shape": "diamond",
+                "x": 0.316359,
+                "y": 0.391918,
+                "size": 0.199623,
+                "rotation": 0.0,
+                "fill": "#dc2626",
+                "shaded": false,
+                "stroke": "#111827",
+                "lineCount": 1,
+                "symmetry": 1,
+                "marker": "dot",
+                "markerPosition": 0.5,
+                "children": []
+              }
+            ]
+          },
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"160\" viewBox=\"0 0 160 160\" role=\"img\" aria-label=\"visual reasoning figure\"><rect width=\"100%\" height=\"100%\" fill=\"#ffffff\"/><polygon data-element-id=\"element-1\" points=\"50.617,46.737 66.587,62.707 50.617,78.677 34.648,62.707\" fill=\"none\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-1\" x1=\"50.617\" y1=\"62.707\" x2=\"50.617\" y2=\"52.806\" stroke=\"#111827\" stroke-width=\"1\"/><circle data-marker=\"dot\" cx=\"50.617\" cy=\"73.566\" r=\"3\" fill=\"#111827\"/></svg>"
+        }
+      ],
+      [
+        {
+          "id": "cell-2-1",
+          "scene": {
+            "background": "#ffffff",
+            "elements": [
+              {
+                "id": "element-1",
+                "shape": "diamond",
+                "x": 0.316359,
+                "y": 0.391918,
+                "size": 0.199623,
+                "rotation": 90.0,
+                "fill": "#dc2626",
+                "shaded": true,
+                "stroke": "#111827",
+                "lineCount": 1,
+                "symmetry": 1,
+                "marker": "dot",
+                "markerPosition": 0.5,
+                "children": []
+              }
+            ]
+          },
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"160\" viewBox=\"0 0 160 160\" role=\"img\" aria-label=\"visual reasoning figure\"><rect width=\"100%\" height=\"100%\" fill=\"#ffffff\"/><polygon data-element-id=\"element-1\" points=\"66.587,62.707 50.617,78.677 34.648,62.707 50.617,46.737\" fill=\"#dc2626\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-1\" x1=\"50.617\" y1=\"62.707\" x2=\"60.519\" y2=\"62.707\" stroke=\"#111827\" stroke-width=\"1\"/><circle data-marker=\"dot\" cx=\"39.758\" cy=\"62.707\" r=\"3\" fill=\"#111827\"/></svg>"
+        },
+        null
+      ]
+    ],
+    "missing": {
+      "row": 2,
+      "column": 2
+    }
+  },
+  "question": "Which figure completes the matrix?",
+  "options": [
+    {
+      "id": "A",
+      "figure": {
+        "background": "#ffffff",
+        "elements": [
+          {
+            "id": "element-1",
+            "shape": "diamond",
+            "x": 0.316359,
+            "y": 0.391918,
+            "size": 0.199623,
+            "rotation": 180.0,
+            "fill": "#dc2626",
+            "shaded": true,
+            "stroke": "#111827",
+            "lineCount": 1,
+            "symmetry": 1,
+            "marker": "dot",
+            "markerPosition": 0.5,
+            "children": []
+          }
+        ]
+      },
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"160\" viewBox=\"0 0 160 160\" role=\"img\" aria-label=\"visual reasoning figure\"><rect width=\"100%\" height=\"100%\" fill=\"#ffffff\"/><polygon data-element-id=\"element-1\" points=\"50.617,78.677 34.648,62.707 50.617,46.737 66.587,62.707\" fill=\"#dc2626\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-1\" x1=\"50.617\" y1=\"62.707\" x2=\"50.617\" y2=\"72.608\" stroke=\"#111827\" stroke-width=\"1\"/><circle data-marker=\"dot\" cx=\"50.617\" cy=\"51.847\" r=\"3\" fill=\"#111827\"/></svg>",
+      "mutation": {
+        "kind": "partial-figure",
+        "description": "applies the rule to only part of the figure",
+        "ruleKinds": [
+          "rotation",
+          "fill"
+        ]
+      }
+    },
+    {
+      "id": "B",
+      "figure": {
+        "background": "#ffffff",
+        "elements": [
+          {
+            "id": "element-1",
+            "shape": "diamond",
+            "x": 0.316359,
+            "y": 0.391918,
+            "size": 0.199623,
+            "rotation": 90.0,
+            "fill": "#dc2626",
+            "shaded": true,
+            "stroke": "#111827",
+            "lineCount": 1,
+            "symmetry": 1,
+            "marker": "dot",
+            "markerPosition": 0.5,
+            "children": []
+          }
+        ]
+      },
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"160\" viewBox=\"0 0 160 160\" role=\"img\" aria-label=\"visual reasoning figure\"><rect width=\"100%\" height=\"100%\" fill=\"#ffffff\"/><polygon data-element-id=\"element-1\" points=\"66.587,62.707 50.617,78.677 34.648,62.707 50.617,46.737\" fill=\"#dc2626\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-1\" x1=\"50.617\" y1=\"62.707\" x2=\"60.519\" y2=\"62.707\" stroke=\"#111827\" stroke-width=\"1\"/><circle data-marker=\"dot\" cx=\"39.758\" cy=\"62.707\" r=\"3\" fill=\"#111827\"/></svg>",
+      "mutation": {
+        "kind": "wrong-shading",
+        "description": "gets the fill or shading wrong"
+      }
+    },
+    {
+      "id": "C",
+      "figure": {
+        "background": "#ffffff",
+        "elements": [
+          {
+            "id": "element-1",
+            "shape": "triangle",
+            "x": 0.316359,
+            "y": 0.391918,
+            "size": 0.199623,
+            "rotation": 90.0,
+            "fill": "#dc2626",
+            "shaded": false,
+            "stroke": "#111827",
+            "lineCount": 1,
+            "symmetry": 1,
+            "marker": "dot",
+            "markerPosition": 0.5,
+            "children": []
+          }
+        ]
+      },
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"160\" viewBox=\"0 0 160 160\" role=\"img\" aria-label=\"visual reasoning figure\"><rect width=\"100%\" height=\"100%\" fill=\"#ffffff\"/><polygon data-element-id=\"element-1\" points=\"66.587,62.707 42.633,76.537 42.633,48.877\" fill=\"none\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-1\" x1=\"50.617\" y1=\"62.707\" x2=\"60.519\" y2=\"62.707\" stroke=\"#111827\" stroke-width=\"1\"/><circle data-marker=\"dot\" cx=\"39.758\" cy=\"62.707\" r=\"3\" fill=\"#111827\"/></svg>",
+      "mutation": {
+        "kind": "wrong-shape",
+        "description": "changes the shape incorrectly"
+      }
+    },
+    {
+      "id": "D",
+      "figure": {
+        "background": "#ffffff",
+        "elements": [
+          {
+            "id": "element-1",
+            "shape": "diamond",
+            "x": 0.316359,
+            "y": 0.391918,
+            "size": 0.199623,
+            "rotation": 90.0,
+            "fill": "#dc2626",
+            "shaded": false,
+            "stroke": "#111827",
+            "lineCount": 1,
+            "symmetry": 1,
+            "marker": "dot",
+            "markerPosition": 0.5,
+            "children": []
+          }
+        ]
+      },
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"160\" viewBox=\"0 0 160 160\" role=\"img\" aria-label=\"visual reasoning figure\"><rect width=\"100%\" height=\"100%\" fill=\"#ffffff\"/><polygon data-element-id=\"element-1\" points=\"66.587,62.707 50.617,78.677 34.648,62.707 50.617,46.737\" fill=\"none\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-1\" x1=\"50.617\" y1=\"62.707\" x2=\"60.519\" y2=\"62.707\" stroke=\"#111827\" stroke-width=\"1\"/><circle data-marker=\"dot\" cx=\"39.758\" cy=\"62.707\" r=\"3\" fill=\"#111827\"/></svg>",
+      "mutation": {
+        "kind": "correct",
+        "description": "matches every rule"
+      }
+    }
+  ],
+  "correctOption": "D",
+  "explanation": "The rule is applied in two directions: Rows rotate by 90\u00b0; columns change the fill/shading. Reading across each row and down each column gives the same local/global pattern. The missing bottom-right figure must therefore apply both changes. Option D is correct because it applies rotate by 90\u00b0 and change the fill/shading. Other options omit one change or use a plausible wrong direction, rotation, fill, or element count.",
+  "explanationFragments": [
+    "Rule: rotate by 90\u00b0 and change the fill/shading.",
+    "Answer: option D continues that rule.",
+    "Distractors: each wrong option records the visual mutation it makes."
+  ],
+  "metadata": {
+    "seed": 23,
+    "rules": [
+      {
+        "kind": "rotation",
+        "parameters": {
+          "degrees": 90
+        }
+      },
+      {
+        "kind": "fill",
+        "parameters": {}
+      }
+    ],
+    "ruleMetadata": [
+      {
+        "kind": "rotation",
+        "parameters": {
+          "degrees": 90
+        }
+      },
+      {
+        "kind": "fill",
+        "parameters": {}
+      }
+    ],
+    "generatedFigures": [
+      {
+        "id": "cell-1-1",
+        "scene": {
+          "background": "#ffffff",
+          "elements": [
+            {
+              "id": "element-1",
+              "shape": "diamond",
+              "x": 0.316359,
+              "y": 0.391918,
+              "size": 0.199623,
+              "rotation": 0.0,
+              "fill": "#dc2626",
+              "shaded": true,
+              "stroke": "#111827",
+              "lineCount": 1,
+              "symmetry": 1,
+              "marker": "dot",
+              "markerPosition": 0.5,
+              "children": []
+            }
+          ]
+        },
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"160\" viewBox=\"0 0 160 160\" role=\"img\" aria-label=\"visual reasoning figure\"><rect width=\"100%\" height=\"100%\" fill=\"#ffffff\"/><polygon data-element-id=\"element-1\" points=\"50.617,46.737 66.587,62.707 50.617,78.677 34.648,62.707\" fill=\"#dc2626\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-1\" x1=\"50.617\" y1=\"62.707\" x2=\"50.617\" y2=\"52.806\" stroke=\"#111827\" stroke-width=\"1\"/><circle data-marker=\"dot\" cx=\"50.617\" cy=\"73.566\" r=\"3\" fill=\"#111827\"/></svg>"
+      },
+      {
+        "id": "cell-1-2",
+        "scene": {
+          "background": "#ffffff",
+          "elements": [
+            {
+              "id": "element-1",
+              "shape": "diamond",
+              "x": 0.316359,
+              "y": 0.391918,
+              "size": 0.199623,
+              "rotation": 0.0,
+              "fill": "#dc2626",
+              "shaded": false,
+              "stroke": "#111827",
+              "lineCount": 1,
+              "symmetry": 1,
+              "marker": "dot",
+              "markerPosition": 0.5,
+              "children": []
+            }
+          ]
+        },
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"160\" viewBox=\"0 0 160 160\" role=\"img\" aria-label=\"visual reasoning figure\"><rect width=\"100%\" height=\"100%\" fill=\"#ffffff\"/><polygon data-element-id=\"element-1\" points=\"50.617,46.737 66.587,62.707 50.617,78.677 34.648,62.707\" fill=\"none\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-1\" x1=\"50.617\" y1=\"62.707\" x2=\"50.617\" y2=\"52.806\" stroke=\"#111827\" stroke-width=\"1\"/><circle data-marker=\"dot\" cx=\"50.617\" cy=\"73.566\" r=\"3\" fill=\"#111827\"/></svg>"
+      },
+      {
+        "id": "cell-2-1",
+        "scene": {
+          "background": "#ffffff",
+          "elements": [
+            {
+              "id": "element-1",
+              "shape": "diamond",
+              "x": 0.316359,
+              "y": 0.391918,
+              "size": 0.199623,
+              "rotation": 90.0,
+              "fill": "#dc2626",
+              "shaded": true,
+              "stroke": "#111827",
+              "lineCount": 1,
+              "symmetry": 1,
+              "marker": "dot",
+              "markerPosition": 0.5,
+              "children": []
+            }
+          ]
+        },
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"160\" viewBox=\"0 0 160 160\" role=\"img\" aria-label=\"visual reasoning figure\"><rect width=\"100%\" height=\"100%\" fill=\"#ffffff\"/><polygon data-element-id=\"element-1\" points=\"66.587,62.707 50.617,78.677 34.648,62.707 50.617,46.737\" fill=\"#dc2626\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-1\" x1=\"50.617\" y1=\"62.707\" x2=\"60.519\" y2=\"62.707\" stroke=\"#111827\" stroke-width=\"1\"/><circle data-marker=\"dot\" cx=\"39.758\" cy=\"62.707\" r=\"3\" fill=\"#111827\"/></svg>"
+      },
+      {
+        "id": "answer",
+        "scene": {
+          "background": "#ffffff",
+          "elements": [
+            {
+              "id": "element-1",
+              "shape": "diamond",
+              "x": 0.316359,
+              "y": 0.391918,
+              "size": 0.199623,
+              "rotation": 90.0,
+              "fill": "#dc2626",
+              "shaded": false,
+              "stroke": "#111827",
+              "lineCount": 1,
+              "symmetry": 1,
+              "marker": "dot",
+              "markerPosition": 0.5,
+              "children": []
+            }
+          ]
+        },
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"160\" viewBox=\"0 0 160 160\" role=\"img\" aria-label=\"visual reasoning figure\"><rect width=\"100%\" height=\"100%\" fill=\"#ffffff\"/><polygon data-element-id=\"element-1\" points=\"66.587,62.707 50.617,78.677 34.648,62.707 50.617,46.737\" fill=\"none\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-1\" x1=\"50.617\" y1=\"62.707\" x2=\"60.519\" y2=\"62.707\" stroke=\"#111827\" stroke-width=\"1\"/><circle data-marker=\"dot\" cx=\"39.758\" cy=\"62.707\" r=\"3\" fill=\"#111827\"/></svg>"
+      }
+    ],
+    "distractors": [
+      {
+        "kind": "wrong-shape",
+        "description": "changes the shape incorrectly"
+      },
+      {
+        "kind": "partial-figure",
+        "description": "applies the rule to only part of the figure",
+        "ruleKinds": [
+          "rotation",
+          "fill"
+        ]
+      },
+      {
+        "kind": "wrong-shading",
+        "description": "gets the fill or shading wrong"
+      }
+    ],
+    "explanationFragments": [
+      "Rule: rotate by 90\u00b0 and change the fill/shading.",
+      "Answer: option D continues that rule.",
+      "Distractors: each wrong option records the visual mutation it makes."
+    ],
+    "answerFigure": {
+      "background": "#ffffff",
+      "elements": [
+        {
+          "id": "element-1",
+          "shape": "diamond",
+          "x": 0.316359,
+          "y": 0.391918,
+          "size": 0.199623,
+          "rotation": 90.0,
+          "fill": "#dc2626",
+          "shaded": false,
+          "stroke": "#111827",
+          "lineCount": 1,
+          "symmetry": 1,
+          "marker": "dot",
+          "markerPosition": 0.5,
+          "children": []
+        }
+      ]
+    },
+    "answerSignature": "{\"background\":\"#ffffff\",\"elements\":[{\"children\":[],\"fill\":\"#dc2626\",\"id\":\"element-1\",\"lineCount\":1,\"marker\":\"dot\",\"markerPosition\":0.5,\"rotation\":90.0,\"shaded\":false,\"shape\":\"diamond\",\"size\":0.199623,\"stroke\":\"#111827\",\"symmetry\":1,\"x\":0.316359,\"y\":0.391918}]}"
+  }
+}

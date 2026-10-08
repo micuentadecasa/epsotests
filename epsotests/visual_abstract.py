@@ -1435,10 +1435,10 @@ def generate_matrix(
     format_name = f"matrix-{size}x{size}"
     rule_text = f"Rows {_rule_label(row_rule)}; columns {_rule_label(column_rule)}."
     explanation = (
-        f"{rule_text} Reading across each row and down each column gives the same local/global pattern. "
-        f"The missing bottom-right figure must therefore apply both changes. Option {correct_option} is correct "
-        f"because it {_rule_sentence([row_rule, column_rule])}. Other options omit one change or use a plausible "
-        "wrong direction, rotation, fill, or element count."
+        f"The rule is applied in two directions: {rule_text} Reading across each row and down each column "
+        "gives the same local/global pattern. The missing bottom-right figure must therefore apply both changes. "
+        f"Option {correct_option} is correct because it applies {_rule_sentence([row_rule, column_rule])}. "
+        "Other options omit one change or use a plausible wrong direction, rotation, fill, or element count."
     )
     return _base_question(
         f"abstract-matrix-{size}x{size}-{seed}-{level}",

@@ -1,0 +1,675 @@
+{
+  "id": "abstract-sequence-12-medium",
+  "exam": "abstract",
+  "format": "sequence",
+  "difficulty": "medium",
+  "stimulus": {
+    "type": "sequence",
+    "frames": [
+      {
+        "id": "frame-1",
+        "scene": {
+          "background": "#ffffff",
+          "elements": [
+            {
+              "id": "element-1",
+              "shape": "diamond",
+              "x": 0.29152,
+              "y": 0.39233,
+              "size": 0.207983,
+              "rotation": 90.0,
+              "fill": "#2563eb",
+              "shaded": true,
+              "stroke": "#111827",
+              "lineCount": 1,
+              "symmetry": 1,
+              "marker": null,
+              "markerPosition": 0.5,
+              "children": []
+            },
+            {
+              "id": "element-2",
+              "shape": "triangle",
+              "x": 0.528603,
+              "y": 0.681473,
+              "size": 0.216817,
+              "rotation": 0.0,
+              "fill": "#ea580c",
+              "shaded": true,
+              "stroke": "#111827",
+              "lineCount": 1,
+              "symmetry": 1,
+              "marker": null,
+              "markerPosition": 0.5,
+              "children": []
+            }
+          ]
+        },
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"160\" viewBox=\"0 0 160 160\" role=\"img\" aria-label=\"visual reasoning figure\"><rect width=\"100%\" height=\"100%\" fill=\"#ffffff\"/><polygon data-element-id=\"element-1\" points=\"63.282,62.773 46.643,79.411 30.005,62.773 46.643,46.134\" fill=\"#2563eb\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-1\" x1=\"46.643\" y1=\"62.773\" x2=\"56.959\" y2=\"62.773\" stroke=\"#111827\" stroke-width=\"1\"/><polygon data-element-id=\"element-2\" points=\"84.576,91.690 99.598,117.708 69.555,117.708\" fill=\"#ea580c\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-2\" x1=\"84.576\" y1=\"109.036\" x2=\"84.576\" y2=\"98.282\" stroke=\"#111827\" stroke-width=\"1\"/></svg>"
+      },
+      {
+        "id": "frame-2",
+        "scene": {
+          "background": "#ffffff",
+          "elements": [
+            {
+              "id": "element-1",
+              "shape": "diamond",
+              "x": 0.37152,
+              "y": 0.39233,
+              "size": 0.207983,
+              "rotation": 180.0,
+              "fill": "#2563eb",
+              "shaded": true,
+              "stroke": "#111827",
+              "lineCount": 1,
+              "symmetry": 1,
+              "marker": null,
+              "markerPosition": 0.5,
+              "children": []
+            },
+            {
+              "id": "element-2",
+              "shape": "triangle",
+              "x": 0.608603,
+              "y": 0.681473,
+              "size": 0.216817,
+              "rotation": 90.0,
+              "fill": "#ea580c",
+              "shaded": true,
+              "stroke": "#111827",
+              "lineCount": 1,
+              "symmetry": 1,
+              "marker": null,
+              "markerPosition": 0.5,
+              "children": []
+            }
+          ]
+        },
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"160\" viewBox=\"0 0 160 160\" role=\"img\" aria-label=\"visual reasoning figure\"><rect width=\"100%\" height=\"100%\" fill=\"#ffffff\"/><polygon data-element-id=\"element-1\" points=\"59.443,79.411 42.805,62.773 59.443,46.134 76.082,62.773\" fill=\"#2563eb\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-1\" x1=\"59.443\" y1=\"62.773\" x2=\"59.443\" y2=\"73.089\" stroke=\"#111827\" stroke-width=\"1\"/><polygon data-element-id=\"element-2\" points=\"114.722,109.036 88.704,124.057 88.704,94.014\" fill=\"#ea580c\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-2\" x1=\"97.376\" y1=\"109.036\" x2=\"108.131\" y2=\"109.036\" stroke=\"#111827\" stroke-width=\"1\"/></svg>"
+      },
+      {
+        "id": "frame-3",
+        "scene": {
+          "background": "#ffffff",
+          "elements": [
+            {
+              "id": "element-1",
+              "shape": "diamond",
+              "x": 0.45152,
+              "y": 0.39233,
+              "size": 0.207983,
+              "rotation": 270.0,
+              "fill": "#2563eb",
+              "shaded": true,
+              "stroke": "#111827",
+              "lineCount": 1,
+              "symmetry": 1,
+              "marker": null,
+              "markerPosition": 0.5,
+              "children": []
+            },
+            {
+              "id": "element-2",
+              "shape": "triangle",
+              "x": 0.688603,
+              "y": 0.681473,
+              "size": 0.216817,
+              "rotation": 180.0,
+              "fill": "#ea580c",
+              "shaded": true,
+              "stroke": "#111827",
+              "lineCount": 1,
+              "symmetry": 1,
+              "marker": null,
+              "markerPosition": 0.5,
+              "children": []
+            }
+          ]
+        },
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"160\" viewBox=\"0 0 160 160\" role=\"img\" aria-label=\"visual reasoning figure\"><rect width=\"100%\" height=\"100%\" fill=\"#ffffff\"/><polygon data-element-id=\"element-1\" points=\"55.605,62.773 72.243,46.134 88.882,62.773 72.243,79.411\" fill=\"#2563eb\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-1\" x1=\"72.243\" y1=\"62.773\" x2=\"61.927\" y2=\"62.773\" stroke=\"#111827\" stroke-width=\"1\"/><polygon data-element-id=\"element-2\" points=\"110.176,126.381 95.155,100.363 125.198,100.363\" fill=\"#ea580c\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-2\" x1=\"110.176\" y1=\"109.036\" x2=\"110.176\" y2=\"119.790\" stroke=\"#111827\" stroke-width=\"1\"/></svg>"
+      },
+      {
+        "id": "frame-4",
+        "scene": {
+          "background": "#ffffff",
+          "elements": [
+            {
+              "id": "element-1",
+              "shape": "diamond",
+              "x": 0.53152,
+              "y": 0.39233,
+              "size": 0.207983,
+              "rotation": 0.0,
+              "fill": "#2563eb",
+              "shaded": true,
+              "stroke": "#111827",
+              "lineCount": 1,
+              "symmetry": 1,
+              "marker": null,
+              "markerPosition": 0.5,
+              "children": []
+            },
+            {
+              "id": "element-2",
+              "shape": "triangle",
+              "x": 0.768603,
+              "y": 0.681473,
+              "size": 0.216817,
+              "rotation": 270.0,
+              "fill": "#ea580c",
+              "shaded": true,
+              "stroke": "#111827",
+              "lineCount": 1,
+              "symmetry": 1,
+              "marker": null,
+              "markerPosition": 0.5,
+              "children": []
+            }
+          ]
+        },
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"160\" viewBox=\"0 0 160 160\" role=\"img\" aria-label=\"visual reasoning figure\"><rect width=\"100%\" height=\"100%\" fill=\"#ffffff\"/><polygon data-element-id=\"element-1\" points=\"85.043,46.134 101.682,62.773 85.043,79.411 68.405,62.773\" fill=\"#2563eb\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-1\" x1=\"85.043\" y1=\"62.773\" x2=\"85.043\" y2=\"52.457\" stroke=\"#111827\" stroke-width=\"1\"/><polygon data-element-id=\"element-2\" points=\"105.631,109.036 131.649,94.014 131.649,124.057\" fill=\"#ea580c\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-2\" x1=\"122.976\" y1=\"109.036\" x2=\"112.222\" y2=\"109.036\" stroke=\"#111827\" stroke-width=\"1\"/></svg>"
+      }
+    ],
+    "missing": "next"
+  },
+  "question": "Which visual figure completes the sequence?",
+  "options": [
+    {
+      "id": "A",
+      "figure": {
+        "background": "#ffffff",
+        "elements": [
+          {
+            "id": "element-1",
+            "shape": "diamond",
+            "x": 0.53152,
+            "y": 0.39233,
+            "size": 0.207983,
+            "rotation": 90.0,
+            "fill": "#2563eb",
+            "shaded": true,
+            "stroke": "#111827",
+            "lineCount": 1,
+            "symmetry": 1,
+            "marker": null,
+            "markerPosition": 0.5,
+            "children": []
+          },
+          {
+            "id": "element-2",
+            "shape": "triangle",
+            "x": 0.768603,
+            "y": 0.681473,
+            "size": 0.216817,
+            "rotation": 270.0,
+            "fill": "#ea580c",
+            "shaded": true,
+            "stroke": "#111827",
+            "lineCount": 1,
+            "symmetry": 1,
+            "marker": null,
+            "markerPosition": 0.5,
+            "children": []
+          }
+        ]
+      },
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"160\" viewBox=\"0 0 160 160\" role=\"img\" aria-label=\"visual reasoning figure\"><rect width=\"100%\" height=\"100%\" fill=\"#ffffff\"/><polygon data-element-id=\"element-1\" points=\"101.682,62.773 85.043,79.411 68.405,62.773 85.043,46.134\" fill=\"#2563eb\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-1\" x1=\"85.043\" y1=\"62.773\" x2=\"95.359\" y2=\"62.773\" stroke=\"#111827\" stroke-width=\"1\"/><polygon data-element-id=\"element-2\" points=\"105.631,109.036 131.649,94.014 131.649,124.057\" fill=\"#ea580c\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-2\" x1=\"122.976\" y1=\"109.036\" x2=\"112.222\" y2=\"109.036\" stroke=\"#111827\" stroke-width=\"1\"/></svg>",
+      "mutation": {
+        "kind": "partial-figure",
+        "description": "applies the rule to only part of the figure",
+        "ruleKinds": [
+          "rotation",
+          "translation"
+        ]
+      }
+    },
+    {
+      "id": "B",
+      "figure": {
+        "background": "#ffffff",
+        "elements": [
+          {
+            "id": "element-1",
+            "shape": "diamond",
+            "x": 0.61152,
+            "y": 0.39233,
+            "size": 0.207983,
+            "rotation": 90.0,
+            "fill": "#2563eb",
+            "shaded": true,
+            "stroke": "#111827",
+            "lineCount": 1,
+            "symmetry": 1,
+            "marker": null,
+            "markerPosition": 0.5,
+            "children": []
+          }
+        ]
+      },
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"160\" viewBox=\"0 0 160 160\" role=\"img\" aria-label=\"visual reasoning figure\"><rect width=\"100%\" height=\"100%\" fill=\"#ffffff\"/><polygon data-element-id=\"element-1\" points=\"114.482,62.773 97.843,79.411 81.205,62.773 97.843,46.134\" fill=\"#2563eb\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-1\" x1=\"97.843\" y1=\"62.773\" x2=\"108.159\" y2=\"62.773\" stroke=\"#111827\" stroke-width=\"1\"/></svg>",
+      "mutation": {
+        "kind": "wrong-element-count",
+        "description": "has the wrong number of elements",
+        "expectedCount": 2,
+        "actualCount": 1
+      }
+    },
+    {
+      "id": "C",
+      "figure": {
+        "background": "#ffffff",
+        "elements": [
+          {
+            "id": "element-1",
+            "shape": "diamond",
+            "x": 0.61152,
+            "y": 0.39233,
+            "size": 0.207983,
+            "rotation": 90.0,
+            "fill": "#2563eb",
+            "shaded": true,
+            "stroke": "#111827",
+            "lineCount": 1,
+            "symmetry": 1,
+            "marker": null,
+            "markerPosition": 0.5,
+            "children": []
+          },
+          {
+            "id": "element-2",
+            "shape": "triangle",
+            "x": 0.848603,
+            "y": 0.681473,
+            "size": 0.216817,
+            "rotation": 0.0,
+            "fill": "#ea580c",
+            "shaded": true,
+            "stroke": "#111827",
+            "lineCount": 1,
+            "symmetry": 1,
+            "marker": null,
+            "markerPosition": 0.5,
+            "children": []
+          }
+        ]
+      },
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"160\" viewBox=\"0 0 160 160\" role=\"img\" aria-label=\"visual reasoning figure\"><rect width=\"100%\" height=\"100%\" fill=\"#ffffff\"/><polygon data-element-id=\"element-1\" points=\"114.482,62.773 97.843,79.411 81.205,62.773 97.843,46.134\" fill=\"#2563eb\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-1\" x1=\"97.843\" y1=\"62.773\" x2=\"108.159\" y2=\"62.773\" stroke=\"#111827\" stroke-width=\"1\"/><polygon data-element-id=\"element-2\" points=\"135.776,91.690 150.798,117.708 120.755,117.708\" fill=\"#ea580c\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-2\" x1=\"135.776\" y1=\"109.036\" x2=\"135.776\" y2=\"98.282\" stroke=\"#111827\" stroke-width=\"1\"/></svg>",
+      "mutation": {
+        "kind": "correct",
+        "description": "matches every rule"
+      }
+    },
+    {
+      "id": "D",
+      "figure": {
+        "background": "#ffffff",
+        "elements": [
+          {
+            "id": "element-1",
+            "shape": "diamond",
+            "x": 0.61152,
+            "y": 0.39233,
+            "size": 0.207983,
+            "rotation": 135.0,
+            "fill": "#2563eb",
+            "shaded": true,
+            "stroke": "#111827",
+            "lineCount": 1,
+            "symmetry": 1,
+            "marker": null,
+            "markerPosition": 0.5,
+            "children": []
+          },
+          {
+            "id": "element-2",
+            "shape": "triangle",
+            "x": 0.848603,
+            "y": 0.681473,
+            "size": 0.216817,
+            "rotation": 0.0,
+            "fill": "#ea580c",
+            "shaded": true,
+            "stroke": "#111827",
+            "lineCount": 1,
+            "symmetry": 1,
+            "marker": null,
+            "markerPosition": 0.5,
+            "children": []
+          }
+        ]
+      },
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"160\" viewBox=\"0 0 160 160\" role=\"img\" aria-label=\"visual reasoning figure\"><rect width=\"100%\" height=\"100%\" fill=\"#ffffff\"/><polygon data-element-id=\"element-1\" points=\"109.608,74.538 86.078,74.538 86.078,51.008 109.608,51.008\" fill=\"#2563eb\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-1\" x1=\"97.843\" y1=\"62.773\" x2=\"105.138\" y2=\"70.067\" stroke=\"#111827\" stroke-width=\"1\"/><polygon data-element-id=\"element-2\" points=\"135.776,91.690 150.798,117.708 120.755,117.708\" fill=\"#ea580c\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-2\" x1=\"135.776\" y1=\"109.036\" x2=\"135.776\" y2=\"98.282\" stroke=\"#111827\" stroke-width=\"1\"/></svg>",
+      "mutation": {
+        "kind": "wrong-rotation",
+        "description": "uses an incorrect rotation",
+        "rotationDelta": 45
+      }
+    }
+  ],
+  "correctOption": "C",
+  "explanation": "The rule is rotate by 90\u00b0 and move by (0.08, 0). Each frame changes from the previous frame by that rule; the missing next frame must continue the same change. Option C is correct because it continues rotate by 90\u00b0 and move by (0.08, 0) while preserving the other elements. The wrong options apply only part of the rule, use a wrong direction or rotation, or change the element count.",
+  "explanationFragments": [
+    "Rule: rotate by 90\u00b0 and move by (0.08, 0).",
+    "Answer: option C continues that rule.",
+    "Distractors: each wrong option records the visual mutation it makes."
+  ],
+  "metadata": {
+    "seed": 12,
+    "rules": [
+      {
+        "kind": "composite",
+        "parameters": {
+          "rules": [
+            {
+              "kind": "rotation",
+              "parameters": {
+                "degrees": 90
+              }
+            },
+            {
+              "kind": "translation",
+              "parameters": {
+                "dx": 0.08,
+                "dy": 0
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "ruleMetadata": [
+      {
+        "kind": "composite",
+        "parameters": {
+          "rules": [
+            {
+              "kind": "rotation",
+              "parameters": {
+                "degrees": 90
+              }
+            },
+            {
+              "kind": "translation",
+              "parameters": {
+                "dx": 0.08,
+                "dy": 0
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "generatedFigures": [
+      {
+        "id": "frame-1",
+        "scene": {
+          "background": "#ffffff",
+          "elements": [
+            {
+              "id": "element-1",
+              "shape": "diamond",
+              "x": 0.29152,
+              "y": 0.39233,
+              "size": 0.207983,
+              "rotation": 90.0,
+              "fill": "#2563eb",
+              "shaded": true,
+              "stroke": "#111827",
+              "lineCount": 1,
+              "symmetry": 1,
+              "marker": null,
+              "markerPosition": 0.5,
+              "children": []
+            },
+            {
+              "id": "element-2",
+              "shape": "triangle",
+              "x": 0.528603,
+              "y": 0.681473,
+              "size": 0.216817,
+              "rotation": 0.0,
+              "fill": "#ea580c",
+              "shaded": true,
+              "stroke": "#111827",
+              "lineCount": 1,
+              "symmetry": 1,
+              "marker": null,
+              "markerPosition": 0.5,
+              "children": []
+            }
+          ]
+        },
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"160\" viewBox=\"0 0 160 160\" role=\"img\" aria-label=\"visual reasoning figure\"><rect width=\"100%\" height=\"100%\" fill=\"#ffffff\"/><polygon data-element-id=\"element-1\" points=\"63.282,62.773 46.643,79.411 30.005,62.773 46.643,46.134\" fill=\"#2563eb\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-1\" x1=\"46.643\" y1=\"62.773\" x2=\"56.959\" y2=\"62.773\" stroke=\"#111827\" stroke-width=\"1\"/><polygon data-element-id=\"element-2\" points=\"84.576,91.690 99.598,117.708 69.555,117.708\" fill=\"#ea580c\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-2\" x1=\"84.576\" y1=\"109.036\" x2=\"84.576\" y2=\"98.282\" stroke=\"#111827\" stroke-width=\"1\"/></svg>"
+      },
+      {
+        "id": "frame-2",
+        "scene": {
+          "background": "#ffffff",
+          "elements": [
+            {
+              "id": "element-1",
+              "shape": "diamond",
+              "x": 0.37152,
+              "y": 0.39233,
+              "size": 0.207983,
+              "rotation": 180.0,
+              "fill": "#2563eb",
+              "shaded": true,
+              "stroke": "#111827",
+              "lineCount": 1,
+              "symmetry": 1,
+              "marker": null,
+              "markerPosition": 0.5,
+              "children": []
+            },
+            {
+              "id": "element-2",
+              "shape": "triangle",
+              "x": 0.608603,
+              "y": 0.681473,
+              "size": 0.216817,
+              "rotation": 90.0,
+              "fill": "#ea580c",
+              "shaded": true,
+              "stroke": "#111827",
+              "lineCount": 1,
+              "symmetry": 1,
+              "marker": null,
+              "markerPosition": 0.5,
+              "children": []
+            }
+          ]
+        },
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"160\" viewBox=\"0 0 160 160\" role=\"img\" aria-label=\"visual reasoning figure\"><rect width=\"100%\" height=\"100%\" fill=\"#ffffff\"/><polygon data-element-id=\"element-1\" points=\"59.443,79.411 42.805,62.773 59.443,46.134 76.082,62.773\" fill=\"#2563eb\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-1\" x1=\"59.443\" y1=\"62.773\" x2=\"59.443\" y2=\"73.089\" stroke=\"#111827\" stroke-width=\"1\"/><polygon data-element-id=\"element-2\" points=\"114.722,109.036 88.704,124.057 88.704,94.014\" fill=\"#ea580c\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-2\" x1=\"97.376\" y1=\"109.036\" x2=\"108.131\" y2=\"109.036\" stroke=\"#111827\" stroke-width=\"1\"/></svg>"
+      },
+      {
+        "id": "frame-3",
+        "scene": {
+          "background": "#ffffff",
+          "elements": [
+            {
+              "id": "element-1",
+              "shape": "diamond",
+              "x": 0.45152,
+              "y": 0.39233,
+              "size": 0.207983,
+              "rotation": 270.0,
+              "fill": "#2563eb",
+              "shaded": true,
+              "stroke": "#111827",
+              "lineCount": 1,
+              "symmetry": 1,
+              "marker": null,
+              "markerPosition": 0.5,
+              "children": []
+            },
+            {
+              "id": "element-2",
+              "shape": "triangle",
+              "x": 0.688603,
+              "y": 0.681473,
+              "size": 0.216817,
+              "rotation": 180.0,
+              "fill": "#ea580c",
+              "shaded": true,
+              "stroke": "#111827",
+              "lineCount": 1,
+              "symmetry": 1,
+              "marker": null,
+              "markerPosition": 0.5,
+              "children": []
+            }
+          ]
+        },
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"160\" viewBox=\"0 0 160 160\" role=\"img\" aria-label=\"visual reasoning figure\"><rect width=\"100%\" height=\"100%\" fill=\"#ffffff\"/><polygon data-element-id=\"element-1\" points=\"55.605,62.773 72.243,46.134 88.882,62.773 72.243,79.411\" fill=\"#2563eb\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-1\" x1=\"72.243\" y1=\"62.773\" x2=\"61.927\" y2=\"62.773\" stroke=\"#111827\" stroke-width=\"1\"/><polygon data-element-id=\"element-2\" points=\"110.176,126.381 95.155,100.363 125.198,100.363\" fill=\"#ea580c\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-2\" x1=\"110.176\" y1=\"109.036\" x2=\"110.176\" y2=\"119.790\" stroke=\"#111827\" stroke-width=\"1\"/></svg>"
+      },
+      {
+        "id": "frame-4",
+        "scene": {
+          "background": "#ffffff",
+          "elements": [
+            {
+              "id": "element-1",
+              "shape": "diamond",
+              "x": 0.53152,
+              "y": 0.39233,
+              "size": 0.207983,
+              "rotation": 0.0,
+              "fill": "#2563eb",
+              "shaded": true,
+              "stroke": "#111827",
+              "lineCount": 1,
+              "symmetry": 1,
+              "marker": null,
+              "markerPosition": 0.5,
+              "children": []
+            },
+            {
+              "id": "element-2",
+              "shape": "triangle",
+              "x": 0.768603,
+              "y": 0.681473,
+              "size": 0.216817,
+              "rotation": 270.0,
+              "fill": "#ea580c",
+              "shaded": true,
+              "stroke": "#111827",
+              "lineCount": 1,
+              "symmetry": 1,
+              "marker": null,
+              "markerPosition": 0.5,
+              "children": []
+            }
+          ]
+        },
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"160\" viewBox=\"0 0 160 160\" role=\"img\" aria-label=\"visual reasoning figure\"><rect width=\"100%\" height=\"100%\" fill=\"#ffffff\"/><polygon data-element-id=\"element-1\" points=\"85.043,46.134 101.682,62.773 85.043,79.411 68.405,62.773\" fill=\"#2563eb\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-1\" x1=\"85.043\" y1=\"62.773\" x2=\"85.043\" y2=\"52.457\" stroke=\"#111827\" stroke-width=\"1\"/><polygon data-element-id=\"element-2\" points=\"105.631,109.036 131.649,94.014 131.649,124.057\" fill=\"#ea580c\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-2\" x1=\"122.976\" y1=\"109.036\" x2=\"112.222\" y2=\"109.036\" stroke=\"#111827\" stroke-width=\"1\"/></svg>"
+      },
+      {
+        "id": "answer",
+        "scene": {
+          "background": "#ffffff",
+          "elements": [
+            {
+              "id": "element-1",
+              "shape": "diamond",
+              "x": 0.61152,
+              "y": 0.39233,
+              "size": 0.207983,
+              "rotation": 90.0,
+              "fill": "#2563eb",
+              "shaded": true,
+              "stroke": "#111827",
+              "lineCount": 1,
+              "symmetry": 1,
+              "marker": null,
+              "markerPosition": 0.5,
+              "children": []
+            },
+            {
+              "id": "element-2",
+              "shape": "triangle",
+              "x": 0.848603,
+              "y": 0.681473,
+              "size": 0.216817,
+              "rotation": 0.0,
+              "fill": "#ea580c",
+              "shaded": true,
+              "stroke": "#111827",
+              "lineCount": 1,
+              "symmetry": 1,
+              "marker": null,
+              "markerPosition": 0.5,
+              "children": []
+            }
+          ]
+        },
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"160\" viewBox=\"0 0 160 160\" role=\"img\" aria-label=\"visual reasoning figure\"><rect width=\"100%\" height=\"100%\" fill=\"#ffffff\"/><polygon data-element-id=\"element-1\" points=\"114.482,62.773 97.843,79.411 81.205,62.773 97.843,46.134\" fill=\"#2563eb\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-1\" x1=\"97.843\" y1=\"62.773\" x2=\"108.159\" y2=\"62.773\" stroke=\"#111827\" stroke-width=\"1\"/><polygon data-element-id=\"element-2\" points=\"135.776,91.690 150.798,117.708 120.755,117.708\" fill=\"#ea580c\" stroke=\"#111827\" stroke-width=\"2\"/><line data-orientation=\"element-2\" x1=\"135.776\" y1=\"109.036\" x2=\"135.776\" y2=\"98.282\" stroke=\"#111827\" stroke-width=\"1\"/></svg>"
+      }
+    ],
+    "distractors": [
+      {
+        "kind": "wrong-rotation",
+        "description": "uses an incorrect rotation",
+        "rotationDelta": 45
+      },
+      {
+        "kind": "wrong-element-count",
+        "description": "has the wrong number of elements",
+        "expectedCount": 2,
+        "actualCount": 1
+      },
+      {
+        "kind": "partial-figure",
+        "description": "applies the rule to only part of the figure",
+        "ruleKinds": [
+          "rotation",
+          "translation"
+        ]
+      }
+    ],
+    "explanationFragments": [
+      "Rule: rotate by 90\u00b0 and move by (0.08, 0).",
+      "Answer: option C continues that rule.",
+      "Distractors: each wrong option records the visual mutation it makes."
+    ],
+    "answerFigure": {
+      "background": "#ffffff",
+      "elements": [
+        {
+          "id": "element-1",
+          "shape": "diamond",
+          "x": 0.61152,
+          "y": 0.39233,
+          "size": 0.207983,
+          "rotation": 90.0,
+          "fill": "#2563eb",
+          "shaded": true,
+          "stroke": "#111827",
+          "lineCount": 1,
+          "symmetry": 1,
+          "marker": null,
+          "markerPosition": 0.5,
+          "children": []
+        },
+        {
+          "id": "element-2",
+          "shape": "triangle",
+          "x": 0.848603,
+          "y": 0.681473,
+          "size": 0.216817,
+          "rotation": 0.0,
+          "fill": "#ea580c",
+          "shaded": true,
+          "stroke": "#111827",
+          "lineCount": 1,
+          "symmetry": 1,
+          "marker": null,
+          "markerPosition": 0.5,
+          "children": []
+        }
+      ]
+    },
+    "answerSignature": "{\"background\":\"#ffffff\",\"elements\":[{\"children\":[],\"fill\":\"#2563eb\",\"id\":\"element-1\",\"lineCount\":1,\"marker\":null,\"markerPosition\":0.5,\"rotation\":90.0,\"shaded\":true,\"shape\":\"diamond\",\"size\":0.207983,\"stroke\":\"#111827\",\"symmetry\":1,\"x\":0.61152,\"y\":0.39233},{\"children\":[],\"fill\":\"#ea580c\",\"id\":\"element-2\",\"lineCount\":1,\"marker\":null,\"markerPosition\":0.5,\"rotation\":0.0,\"shaded\":true,\"shape\":\"triangle\",\"size\":0.216817,\"stroke\":\"#111827\",\"symmetry\":1,\"x\":0.848603,\"y\":0.681473}]}"
+  }
+}

@@ -110,10 +110,14 @@ def main() -> None:
     manifest: list[dict[str, object]] = []
     for filename, fmt, seed, difficulty in ITEMS:
         question = generate_question(fmt, seed=seed, difficulty=difficulty)
+        (ROOT / f"{filename}.json").write_text(
+            json.dumps(question, indent=2) + "\n", encoding="utf-8"
+        )
         (ROOT / f"{filename}.svg").write_text(_panel(question), encoding="utf-8")
         manifest.append(
             {
-                "file": f"{filename}.svg",
+                "json": f"{filename}.json",
+                "svg": f"{filename}.svg",
                 "format": question["format"],
                 "seed": question["metadata"]["seed"],  # type: ignore[index]
                 "difficulty": question["difficulty"],
@@ -122,6 +126,8 @@ def main() -> None:
                 "explanation": question["explanation"],
             }
         )
+    # manifest.json is the human-readable index; each entry points to the
+    # complete portable question and its clean exam-style SVG panel.
     (ROOT / "manifest.json").write_text(
         json.dumps(manifest, indent=2) + "\n", encoding="utf-8"
     )
