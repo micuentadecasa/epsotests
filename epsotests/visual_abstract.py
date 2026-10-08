@@ -8,6 +8,7 @@ an image library.
 
 from __future__ import annotations
 
+from copy import deepcopy
 from dataclasses import dataclass, field, replace
 import html
 import json
@@ -16,7 +17,8 @@ import random
 from typing import Any, Callable, Iterable, Mapping, Sequence
 
 
-PALETTE = ("#2563eb", "#dc2626", "#16a34a", "#9333ea", "#ea580c", "#0891b2")
+# EPSO-style figures use restrained grayscale rather than decorative colours.
+PALETTE = ("#111827", "#374151", "#6b7280", "#9ca3af", "#d1d5db", "#000000")
 SHAPES = ("circle", "square", "triangle", "diamond", "star")
 
 # Stable rule vocabulary.  Alias kinds remain serializable so callers can
@@ -44,6 +46,15 @@ SUPPORTED_RULE_KINDS = (
     "line-count",
     "composite",
 )
+
+# Canonical values shared by the Python API, CLI, examples, and tests.  The
+# dispatcher still accepts documented aliases (for example ``matrix``), but
+# these are the stable values that appear in generated question JSON.
+SUPPORTED_FORMATS = ("sequence", "matrix-2x2", "matrix-3x3", "analogy")
+SUPPORTED_DIFFICULTIES = ("easy", "medium", "hard")
+SUPPORTED_EXAM_PROFILES = ("standard", "five-option")
+EXPLAIN_LOGIC_ACTION_ID = "explain-logic"
+HIDE_SOLUTION_ACTION_ID = "hide-solution"
 
 
 def _clamp(value: float, low: float = 0.08, high: float = 0.92) -> float:
@@ -90,7 +101,7 @@ class Element:
     y: float = 0.5
     size: float = 0.22
     rotation: float = 0.0
-    fill: str = "#2563eb"
+    fill: str = PALETTE[0]
     shaded: bool = True
     stroke: str = "#111827"
     line_count: int = 1
@@ -126,7 +137,7 @@ class Element:
             y=_as_number(data.get("y"), 0.5),
             size=_as_number(data.get("size"), 0.22),
             rotation=_as_number(data.get("rotation"), 0),
-            fill=str(data.get("fill", "#2563eb")),
+            fill=str(data.get("fill", PALETTE[0])),
             shaded=bool(data.get("shaded", True)),
             stroke=str(data.get("stroke", "#111827")),
             line_count=max(1, int(data.get("lineCount", data.get("line_count", 1)))),
@@ -163,6 +174,60 @@ class Scene:
 
     def signature(self) -> str:
         return json.dumps(self.to_dict(), sort_keys=True, separators=(",", ":"))
+
+
+@dataclass(frozen=True)
+class ExamProfile:
+    """Exam presentation settings that affect answer-option cardinality."""
+
+    name: str
+    option_count: int
+
+    def __post_init__(self) -> None:
+        name = str(self.name).strip().lower()
+        count = int(self.option_count)
+        if not name:
+            raise ValueError("exam profile name cannot be empty")
+        if count < 2 or count > 26:
+            raise ValueError("exam profile option_count must be between 2 and 26")
+        object.__setattr__(self, "name", name)
+        object.__setattr__(self, "option_count", count)
+
+    @property
+    def option_ids(self) -> tuple[str, ...]:
+        return tuple(chr(65 + index) for index in range(self.option_count))
+
+
+EXAM_PROFILES = {
+    "standard": ExamProfile("standard", 4),
+    "five-option": ExamProfile("five-option", 5),
+}
+_PROFILE_ALIASES = {
+    "default": "standard",
+    "four-option": "standard",
+    "pdf": "standard",
+    "computer": "standard",
+    "five": "five-option",
+    "png": "five-option",
+}
+
+
+def resolve_exam_profile(
+    profile: str | ExamProfile | None = None,
+) -> ExamProfile:
+    """Resolve a named or custom exam profile for question presentation."""
+
+    if profile is None:
+        return EXAM_PROFILES["standard"]
+    if isinstance(profile, ExamProfile):
+        return profile
+    key = str(profile).strip().lower()
+    key = _PROFILE_ALIASES.get(key, key)
+    try:
+        return EXAM_PROFILES[key]
+    except KeyError as error:
+        available = ", ".join(SUPPORTED_EXAM_PROFILES)
+        raise ValueError(f"Unsupported exam profile {profile!r}; use {available}") from error
 
 
 @dataclass(frozen=True)
@@ -895,21 +960,21 @@ def render_svg(scene: Scene, width: int = 160, height: int = 160) -> str:
 def _base_scene(seed: int, difficulty: str | int = "medium") -> Scene:
     rng = random.Random(seed)
     level = _difficulty_name(difficulty)
-    count = {"easy": 1, "medium": 2, "hard": 3}[level]
+    count = {"easy": 2, "medium": 3, "hard": 4}[level]
     elements: list[Element] = []
     for index in range(count):
         elements.append(
             Element(
                 id=f"element-{index + 1}",
                 shape=rng.choice(SHAPES),
-                x=0.27 + index * 0.22 + rng.random() * 0.08,
-                y=0.35 + (index % 2) * 0.28 + rng.random() * 0.08,
+                x=0.2 + index * 0.2 + rng.random() * 0.06,
+                y=0.3 + (index % 2) * 0.35 + rng.random() * 0.08,
                 size=0.18 + rng.random() * 0.08,
                 rotation=float(rng.choice((0, 0, 45, 90))),
                 fill=rng.choice(PALETTE),
                 shaded=True,
                 line_count=1,
-                marker="dot" if level in ("easy", "hard") and index == 0 else None,
+                marker=("dot" if index == 0 else "cross" if index == 1 else None),
             )
         )
     return Scene(tuple(elements))
@@ -932,7 +997,7 @@ def _default_sequence_rules(level: str) -> list[Rule]:
     if level == "hard":
         return [
             Rule("composite", {"rules": [rotation(90), translation(0.08, 0.05)]}),
-            color_change(("#2563eb", "#dc2626", "#16a34a")),
+            color_change(("#111827", "#6b7280", "#d1d5db")),
         ]
     return [Rule("composite", {"rules": [rotation(90), translation(0.08, 0)]})]
 
@@ -948,7 +1013,7 @@ def _default_matrix_rules(level: str, size: int) -> tuple[Rule, Rule]:
                 {
                     "rules": [
                         reflection("vertical"),
-                        color_change(("#2563eb", "#dc2626", "#16a34a")),
+                        color_change(("#111827", "#6b7280", "#d1d5db")),
                     ]
                 },
             ),
@@ -1259,9 +1324,21 @@ def make_distractors(
 
 
 def _option_records(
-    correct: Scene, reference: Scene, rules: Sequence[Rule], seed: int
+    correct: Scene,
+    reference: Scene,
+    rules: Sequence[Rule],
+    seed: int,
+    option_count: int,
 ) -> tuple[list[dict[str, Any]], str, list[dict[str, Any]]]:
-    distractors = make_distractors(correct, reference, rules, seed=seed, count=3)
+    if option_count < 2 or option_count > 26:
+        raise ValueError("option_count must be between 2 and 26")
+    distractors = make_distractors(
+        correct,
+        reference,
+        rules,
+        seed=seed,
+        count=option_count - 1,
+    )
     candidates = [
         {
             "scene": correct,
@@ -1288,6 +1365,77 @@ def _option_records(
     return options, correct_option, [item["mutation"] for item in distractors]
 
 
+def _explain_logic_action(
+    explanation: str,
+    options: Sequence[dict[str, Any]],
+    correct_option: str,
+    rules: Sequence[Rule],
+    exam_profile: ExamProfile,
+) -> dict[str, Any]:
+    """Build the reusable learner action used to reveal an item explanation.
+
+    The result is intentionally nested under a hidden-by-default button action:
+    a learner can see that help is available without seeing the answer until
+    they request it.  Review clients can use the same payload to show the rule
+    and the reason every distractor fails.
+    """
+
+    distractor_reviews = [
+        {
+            "option": option["id"],
+            "reason": str(option["mutation"]["description"]),
+            "mutation": option["mutation"],
+        }
+        for option in options
+        if option["id"] != correct_option
+    ]
+    return {
+        "id": EXPLAIN_LOGIC_ACTION_ID,
+        "type": "button",
+        "label": "Explain logic",
+        "initiallyVisible": False,
+        "revealsAnswer": True,
+        "solutionView": {
+            "initiallyVisible": False,
+            "hideAction": {
+                "id": HIDE_SOLUTION_ACTION_ID,
+                "type": "button",
+                "label": "Hide solution",
+                "visibleAfterReveal": True,
+            },
+        },
+        "result": {
+            "rule": [rule.to_dict() for rule in rules],
+            "ruleText": _rule_sentence(rules),
+            "optionCount": exam_profile.option_count,
+            "explanation": explanation,
+            "correctOption": correct_option,
+            "correctReason": (
+                f"Option {correct_option} is correct because it follows "
+                f"{_rule_sentence(rules)}."
+            ),
+            "distractors": distractor_reviews,
+        },
+    }
+
+
+def explain_logic(question: Mapping[str, Any]) -> dict[str, Any]:
+    """Return the explanation revealed by a question's Explain Logic action.
+
+    Consumers should render the action's label first and call this function
+    only after the learner activates that action.  A copy is returned so a
+    review UI cannot mutate the question's stored contract.
+    """
+
+    try:
+        action = question["actions"]["explainLogic"]
+        if action["id"] != EXPLAIN_LOGIC_ACTION_ID:
+            raise KeyError("unexpected action id")
+        return deepcopy(action["result"])
+    except (KeyError, TypeError) as error:
+        raise ValueError("question has no Explain Logic action") from error
+
+
 def _base_question(
     question_id: str,
     format_name: str,
@@ -1301,6 +1449,7 @@ def _base_question(
     rules: Sequence[Rule],
     figures: Sequence[dict[str, Any]],
     distractors: Sequence[dict[str, Any]],
+    exam_profile: ExamProfile,
 ) -> dict[str, Any]:
     rule_data = [rule.to_dict() for rule in rules]
     explanation_fragments = [
@@ -1313,7 +1462,10 @@ def _base_question(
     )
     return {
         "id": question_id,
+        "itemNumber": 1,
         "exam": "abstract",
+        "examProfile": exam_profile.name,
+        "optionCount": exam_profile.option_count,
         "format": format_name,
         "difficulty": difficulty,
         "stimulus": stimulus,
@@ -1322,8 +1474,19 @@ def _base_question(
         "correctOption": correct_option,
         "explanation": explanation,
         "explanationFragments": explanation_fragments,
+        "actions": {
+            "explainLogic": _explain_logic_action(
+                explanation,
+                options,
+                correct_option,
+                rules,
+                exam_profile,
+            )
+        },
         "metadata": {
             "seed": seed,
+            "examProfile": exam_profile.name,
+            "optionCount": exam_profile.option_count,
             "rules": rule_data,
             "ruleMetadata": rule_data,
             "generatedFigures": list(figures),
@@ -1339,10 +1502,12 @@ def generate_sequence(
     seed: int = 0,
     difficulty: str | int = "medium",
     rules: Sequence[Rule] | None = None,
+    exam_profile: str | ExamProfile | None = None,
 ) -> dict[str, Any]:
     """Generate a visual sequence-completion question."""
 
     level = _difficulty_name(difficulty)
+    profile = resolve_exam_profile(exam_profile)
     selected_rules = _rules_for_sequence(rules, level)
     base = _base_scene(seed, level)
     frame_count = {"easy": 3, "medium": 4, "hard": 5}[level]
@@ -1356,7 +1521,11 @@ def generate_sequence(
     ]
     stimulus = {"type": "sequence", "frames": figures, "missing": "next"}
     options, correct_option, distractors = _option_records(
-        correct, frames[-1], selected_rules, seed + 101
+        correct,
+        frames[-1],
+        selected_rules,
+        seed + 101,
+        profile.option_count,
     )
     explanation = (
         f"The rule is {_rule_sentence(selected_rules)}. Each frame changes from the previous frame by that rule; "
@@ -1378,6 +1547,7 @@ def generate_sequence(
         selected_rules,
         figures + [_figure(correct, "answer")],
         distractors,
+        profile,
     )
 
 
@@ -1392,12 +1562,14 @@ def generate_matrix(
     seed: int = 0,
     difficulty: str | int = "medium",
     rules: Sequence[Rule] | None = None,
+    exam_profile: str | ExamProfile | None = None,
 ) -> dict[str, Any]:
     """Generate a 2x2 or 3x3 matrix-completion question."""
 
     if size not in (2, 3):
         raise ValueError("matrix size must be 2 or 3")
     level = _difficulty_name(difficulty)
+    profile = resolve_exam_profile(exam_profile)
     default_row, default_column = _default_matrix_rules(level, size)
     if rules is None:
         row_rule, column_rule = default_row, default_column
@@ -1430,7 +1602,11 @@ def generate_matrix(
     correct = _matrix_scene(base, row_rule, column_rule, size - 1, size - 1)
     reference_scene = Scene.from_dict(figures[-1]["scene"]) if figures else base
     options, correct_option, distractors = _option_records(
-        correct, reference_scene, selected_rules, seed + 211
+        correct,
+        reference_scene,
+        selected_rules,
+        seed + 211,
+        profile.option_count,
     )
     format_name = f"matrix-{size}x{size}"
     rule_text = f"Rows {_rule_label(row_rule)}; columns {_rule_label(column_rule)}."
@@ -1459,6 +1635,7 @@ def generate_matrix(
         selected_rules,
         figures + [_figure(correct, "answer")],
         distractors,
+        profile,
     )
 
 
@@ -1466,10 +1643,12 @@ def generate_analogy(
     seed: int = 0,
     difficulty: str | int = "medium",
     rules: Sequence[Rule] | None = None,
+    exam_profile: str | ExamProfile | None = None,
 ) -> dict[str, Any]:
     """Generate a visual A:B :: C:? transformation question."""
 
     level = _difficulty_name(difficulty)
+    profile = resolve_exam_profile(exam_profile)
     selected_rules = _rules_for_sequence(rules, level)
     source = _base_scene(seed + 29, level)
     transformed = apply_rules(source, selected_rules, 1)
@@ -1485,7 +1664,11 @@ def generate_analogy(
         "notation": "A : B :: C : ?",
     }
     options, correct_option, distractors = _option_records(
-        correct, target, selected_rules, seed + 307
+        correct,
+        target,
+        selected_rules,
+        seed + 307,
+        profile.option_count,
     )
     explanation = (
         f"A changes to B by {_rule_sentence(selected_rules)}. Apply the same transformation to C: "
@@ -1512,6 +1695,7 @@ def generate_analogy(
         selected_rules,
         figures,
         distractors,
+        profile,
     )
 
 
@@ -1520,25 +1704,33 @@ def generate_question(
     seed: int = 0,
     difficulty: str | int = "medium",
     rules: Sequence[Rule] | None = None,
+    exam_profile: str | ExamProfile | None = None,
 ) -> dict[str, Any]:
     """Dispatch to a stable public generator by visual question format."""
 
     normalized = format.lower().replace("_", "-")
     if normalized in ("sequence", "visual-sequence"):
-        return generate_sequence(seed, difficulty, rules)
+        return generate_sequence(seed, difficulty, rules, exam_profile)
     if normalized in ("matrix", "matrix-2x2", "2x2"):
-        return generate_matrix(2, seed, difficulty, rules)
+        return generate_matrix(2, seed, difficulty, rules, exam_profile)
     if normalized in ("matrix-3x3", "3x3"):
-        return generate_matrix(3, seed, difficulty, rules)
+        return generate_matrix(3, seed, difficulty, rules, exam_profile)
     if normalized in ("analogy", "transformation", "transformation-analogy"):
-        return generate_analogy(seed, difficulty, rules)
+        return generate_analogy(seed, difficulty, rules, exam_profile)
     raise ValueError(f"Unsupported visual abstract format: {format}")
 
 
 __all__ = [
     "Element",
+    "EXAM_PROFILES",
+    "EXPLAIN_LOGIC_ACTION_ID",
+    "ExamProfile",
+    "HIDE_SOLUTION_ACTION_ID",
     "Rule",
     "Scene",
+    "SUPPORTED_DIFFICULTIES",
+    "SUPPORTED_EXAM_PROFILES",
+    "SUPPORTED_FORMATS",
     "SUPPORTED_RULE_KINDS",
     "alternation",
     "apply_rule",
@@ -1550,6 +1742,7 @@ __all__ = [
     "deserialize_rule",
     "deserialize_scene",
     "element_count",
+    "explain_logic",
     "fill",
     "generate_analogy",
     "generate_matrix",
@@ -1564,6 +1757,7 @@ __all__ = [
     "position",
     "reflection",
     "render_svg",
+    "resolve_exam_profile",
     "rotation",
     "serialize_rule",
     "serialize_scene",

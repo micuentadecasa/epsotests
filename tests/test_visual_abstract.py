@@ -1,17 +1,26 @@
 import json
+import subprocess
+import sys
 import unittest
 import xml.etree.ElementTree as ET
+from pathlib import Path
 
 from epsotests import (
     Element,
+    ExamProfile,
     Rule,
     Scene,
+    SUPPORTED_DIFFICULTIES,
+    SUPPORTED_EXAM_PROFILES,
+    SUPPORTED_FORMATS,
+    resolve_exam_profile,
     apply_rule,
     colour_change,
     composite,
     containment,
     deserialize_rule,
     deserialize_scene,
+    explain_logic,
     generate_analogy,
     generate_matrix,
     generate_question,
@@ -118,10 +127,11 @@ class VisualAbstractGeneratorTests(unittest.TestCase):
         ]
         for question in questions:
             self.assertEqual(question["exam"], "abstract")
-            self.assertGreaterEqual(len(question["options"]), 3)
+            self.assertEqual(len(question["options"]), 4)
             self.assertIn("<svg", question["options"][0]["svg"])
             self.assertEqual(
-                {option["id"] for option in question["options"]}, {"A", "B", "C", "D"}
+                {option["id"] for option in question["options"]},
+                {"A", "B", "C", "D"},
             )
             self.assertIn(question["correctOption"], {"A", "B", "C", "D"})
 
@@ -156,6 +166,239 @@ class VisualAbstractGeneratorTests(unittest.TestCase):
                         format_name, seed=seed, difficulty="hard"
                     ),
                 )
+
+    def test_public_contract_covers_formats_difficulties_and_review_metadata(self):
+        for format_name in SUPPORTED_FORMATS:
+            for difficulty in SUPPORTED_DIFFICULTIES:
+                with self.subTest(format=format_name, difficulty=difficulty):
+                    question = generate_question(
+                        format_name,
+                        seed=314,
+                        difficulty=difficulty,
+                    )
+                    repeated = generate_question(
+                        format_name,
+                        seed=314,
+                        difficulty=difficulty,
+                    )
+                    self.assertEqual(question, repeated)
+                    self.assertEqual(question["format"], format_name)
+                    self.assertEqual(question["difficulty"], difficulty)
+                    self.assertEqual(question["examProfile"], "standard")
+                    self.assertEqual(question["optionCount"], 4)
+                    self.assertEqual(question["metadata"]["examProfile"], "standard")
+                    self.assertEqual(question["metadata"]["optionCount"], 4)
+                    self.assertEqual(len(question["options"]), 4)
+                    self.assertEqual(
+                        len({option["svg"] for option in question["options"]}),
+                        4,
+                    )
+                    self.assertIn(
+                        question["correctOption"], {"A", "B", "C", "D"}
+                    )
+                    action = question["actions"]["explainLogic"]
+                    self.assertEqual(action["id"], "explain-logic")
+                    self.assertEqual(action["type"], "button")
+                    self.assertEqual(action["label"], "Explain logic")
+                    self.assertFalse(action["initiallyVisible"])
+                    self.assertTrue(action["revealsAnswer"])
+                    self.assertFalse(action["solutionView"]["initiallyVisible"])
+                    self.assertEqual(
+                        action["solutionView"]["hideAction"]["id"],
+                        "hide-solution",
+                    )
+                    self.assertEqual(
+                        action["solutionView"]["hideAction"]["label"],
+                        "Hide solution",
+                    )
+                    revealed = explain_logic(question)
+                    self.assertEqual(
+                        revealed["correctOption"], question["correctOption"]
+                    )
+                    self.assertEqual(revealed["rule"], question["metadata"]["rules"])
+                    self.assertEqual(len(revealed["distractors"]), 3)
+                    self.assertTrue(all(item["reason"] for item in revealed["distractors"]))
+                    revealed["correctOption"] = "mutated"
+                    self.assertEqual(
+                        explain_logic(question)["correctOption"],
+                        question["correctOption"],
+                    )
+
+                    for option in question["options"]:
+                        self.assertEqual(
+                            option["svg"],
+                            render_svg(Scene.from_dict(option["figure"])),
+                        )
+                        ET.fromstring(option["svg"])
+                    self.assertEqual(
+                        question["metadata"]["rules"],
+                        question["metadata"]["ruleMetadata"],
+                    )
+                    self.assertEqual(
+                        question["metadata"]["explanationFragments"],
+                        question["explanationFragments"],
+                    )
+                    answer = next(
+                        option
+                        for option in question["options"]
+                        if option["id"] == question["correctOption"]
+                    )
+                    self.assertEqual(
+                        question["metadata"]["answerFigure"], answer["figure"]
+                    )
+                    self.assertEqual(
+                        question["metadata"]["answerSignature"],
+                        Scene.from_dict(answer["figure"]).signature(),
+                    )
+                    wrong_options = [
+                        option
+                        for option in question["options"]
+                        if option["id"] != question["correctOption"]
+                    ]
+                    self.assertEqual(
+                        sorted(
+                            json.dumps(option["mutation"], sort_keys=True)
+                            for option in wrong_options
+                        ),
+                        sorted(
+                            json.dumps(mutation, sort_keys=True)
+                            for mutation in question["metadata"]["distractors"]
+                        ),
+                    )
+                    self.assertGreater(len(question["explanation"].strip()), 40)
+                    self.assertIn("rule", question["explanation"].lower())
+                    self.assertIn(
+                        question["correctOption"], question["explanation"]
+                    )
+
+    def test_exam_profiles_control_option_count_and_stay_deterministic(self):
+        self.assertEqual(SUPPORTED_EXAM_PROFILES, ("standard", "five-option"))
+        self.assertEqual(resolve_exam_profile().option_count, 4)
+        self.assertEqual(resolve_exam_profile("pdf").name, "standard")
+        self.assertEqual(resolve_exam_profile("png").option_count, 5)
+        custom = ExamProfile("custom-six", 6)
+        for profile, expected_count in (
+            ("standard", 4),
+            ("five-option", 5),
+            (custom, 6),
+        ):
+            with self.subTest(profile=str(profile)):
+                question = generate_question(
+                    "matrix-3x3",
+                    seed=909,
+                    difficulty="hard",
+                    exam_profile=profile,
+                )
+                self.assertEqual(question["optionCount"], expected_count)
+                self.assertEqual(len(question["options"]), expected_count)
+                self.assertEqual(
+                    {option["id"] for option in question["options"]},
+                    set(custom.option_ids[:expected_count]),
+                )
+                self.assertEqual(
+                    question,
+                    generate_question(
+                        "matrix-3x3",
+                        seed=909,
+                        difficulty="hard",
+                        exam_profile=profile,
+                    ),
+                )
+
+    def test_every_serialized_svg_in_a_question_is_valid(self):
+        def svg_values(value):
+            if isinstance(value, dict):
+                if isinstance(value.get("svg"), str):
+                    yield value["svg"]
+                for child in value.values():
+                    yield from svg_values(child)
+            elif isinstance(value, list):
+                for child in value:
+                    yield from svg_values(child)
+
+        for format_name in SUPPORTED_FORMATS:
+            with self.subTest(format=format_name):
+                question = generate_question(format_name, seed=2718, difficulty="hard")
+                figures = list(svg_values(question["stimulus"]))
+                figures.extend(option["svg"] for option in question["options"])
+                self.assertGreater(len(figures), 4)
+                for svg in figures:
+                    ET.fromstring(svg)
+
+    def test_cli_emits_the_same_portable_question_contract(self):
+        root = Path(__file__).parents[1]
+        for format_name, difficulty in zip(
+            SUPPORTED_FORMATS, ("easy", "medium", "hard", "medium")
+        ):
+            with self.subTest(format=format_name):
+                result = subprocess.run(
+                    [
+                        sys.executable,
+                        "-m",
+                        "epsotests.cli",
+                        format_name,
+                        "--seed",
+                        "808",
+                        "--difficulty",
+                        difficulty,
+                    ],
+                    cwd=root,
+                    check=True,
+                    capture_output=True,
+                    text=True,
+                )
+                question = json.loads(result.stdout)
+                self.assertEqual(question, generate_question(
+                    format_name, seed=808, difficulty=difficulty
+                ))
+                self.assertEqual(question["optionCount"], 4)
+                self.assertEqual(result.stderr, "")
+
+        review = subprocess.run(
+            [
+                sys.executable,
+                "-m",
+                "epsotests.cli",
+                "analogy",
+                "--seed",
+                "808",
+                "--difficulty",
+                "hard",
+                "--exam-profile",
+                "five-option",
+                "--review",
+            ],
+            cwd=root,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        review_payload = json.loads(review.stdout)
+        self.assertEqual(review_payload["action"]["id"], "explain-logic")
+        self.assertEqual(review_payload["action"]["label"], "Explain logic")
+        review_question = generate_question(
+            "analogy",
+            seed=808,
+            difficulty="hard",
+            exam_profile="five-option",
+        )
+        self.assertEqual(review_payload["action"]["result"]["correctOption"], review_question["correctOption"])
+        self.assertEqual(review_payload["action"]["result"]["optionCount"], 5)
+        self.assertEqual(len(review_payload["action"]["result"]["distractors"]), 4)
+
+    def test_example_regeneration_is_byte_stable(self):
+        root = Path(__file__).parents[1]
+        examples = root / "examples" / "visual"
+        paths = sorted(examples.glob("*.json")) + sorted(examples.glob("*.svg"))
+        before = {path: path.read_bytes() for path in paths}
+        subprocess.run(
+            [sys.executable, "examples/visual/generate_examples.py"],
+            cwd=root,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(before, {path: path.read_bytes() for path in paths})
 
     def test_rule_application_covers_requested_transformations(self):
         base = Scene((Element("one", shape="square", x=0.3, y=0.4, fill="#123456"),))
@@ -341,7 +584,8 @@ class VisualAbstractGeneratorTests(unittest.TestCase):
             self.assertIn('role="img"', content)
             self.assertGreaterEqual(content.count('data-element-id='), 4)
             self.assertGreaterEqual(content.count('>A</text>'), 1)
-            self.assertGreaterEqual(content.count('>D</text>'), 1)
+            self.assertGreaterEqual(content.count('>E</text>'), 1)
+            self.assertIn('data-option-count="5"', content)
 
     def test_fixed_seed_json_examples_match_the_index_and_panels(self):
         from pathlib import Path
@@ -354,13 +598,19 @@ class VisualAbstractGeneratorTests(unittest.TestCase):
             panel_path = examples / entry["svg"]
             question = json.loads(question_path.read_text(encoding="utf-8"))
             self.assertEqual(question["format"], entry["format"])
+            self.assertEqual(question["examProfile"], entry["examProfile"])
+            self.assertEqual(question["itemNumber"], entry["itemNumber"])
             self.assertEqual(question["metadata"]["seed"], entry["seed"])
             self.assertEqual(question["difficulty"], entry["difficulty"])
             self.assertEqual(question["correctOption"], entry["correctOption"])
-            self.assertEqual(len(question["options"]), 4)
             self.assertEqual(
-                len({option["svg"] for option in question["options"]}), 4
+                question["actions"]["explainLogic"], entry["explainLogic"]
             )
+            self.assertEqual(len(question["options"]), 5)
+            self.assertEqual(
+                len({option["svg"] for option in question["options"]}), 5
+            )
+            self.assertEqual(len(question["metadata"]["distractors"]), 4)
             self.assertIn('role="img"', panel_path.read_text(encoding="utf-8"))
 
     def test_explanation_is_complete_and_metadata_can_regenerate(self):
