@@ -301,7 +301,8 @@ def _apply_alternation(scene: Scene, parameters: Mapping[str, Any], frame_index:
         if property_name == "shaded":
             changed = replace(element, shaded=bool(value))
         elif property_name == "fill":
-            changed = replace(element, fill=str(value))
+            fill_value = value if isinstance(value, str) else PALETTE[frame_index % len(PALETTE)]
+            changed = replace(element, fill=fill_value)
         elif property_name == "shape":
             changed = replace(element, shape=str(value))
         elif property_name in ("rotation", "orientation"):
@@ -779,12 +780,13 @@ def make_distractors(
     ]
     rng.shuffle(mutation_kinds)
     results: list[dict[str, Any]] = []
-    seen = {correct.signature()}
+    seen = {render_svg(correct)}
     for mutation in mutation_kinds:
         candidate, mutation_record = _mutated(correct, mutation, reference, rules)
-        if candidate.signature() in seen:
+        rendered = render_svg(candidate)
+        if rendered in seen:
             continue
-        seen.add(candidate.signature())
+        seen.add(rendered)
         results.append({"scene": candidate, "mutation": mutation_record})
         if len(results) >= count:
             break
@@ -794,8 +796,9 @@ def make_distractors(
     while len(results) < count:
         candidate = replace(correct, elements=correct.elements + (Element(f"fallback-{fallback_index}", shape="line", line_count=fallback_index + 2),))
         fallback_index += 1
-        if candidate.signature() not in seen:
-            seen.add(candidate.signature())
+        rendered = render_svg(candidate)
+        if rendered not in seen:
+            seen.add(rendered)
             results.append({"scene": candidate, "mutation": {"kind": "fallback", "description": "uses an additional line element"}})
     return results
 
