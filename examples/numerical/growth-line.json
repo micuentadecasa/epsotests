@@ -1,0 +1,505 @@
+{
+  "id": "numerical-growth-31-hard",
+  "itemNumber": 1,
+  "exam": "numerical",
+  "examProfile": "five-option",
+  "optionCount": 5,
+  "format": "line-chart",
+  "difficulty": "hard",
+  "operation": "growth",
+  "stimulus": {
+    "type": "line-chart",
+    "title": "Revenue growth",
+    "sourceData": {
+      "type": "table",
+      "title": "Revenue growth",
+      "unit": "thousand EUR",
+      "columns": [
+        "Year",
+        "Revenue"
+      ],
+      "rows": [
+        {
+          "Year": "Year 1",
+          "Revenue": 300
+        },
+        {
+          "Year": "Year 2",
+          "Revenue": 324
+        }
+      ],
+      "parameters": {
+        "initial": 300,
+        "rate": 8,
+        "periods": 4
+      }
+    },
+    "chart": {
+      "type": "line-chart",
+      "title": "Revenue growth",
+      "xLabel": "Year",
+      "yLabel": "thousand EUR",
+      "unit": "thousand EUR",
+      "series": [
+        {
+          "name": "Revenue",
+          "points": [
+            {
+              "label": "Year 1",
+              "value": 300
+            },
+            {
+              "label": "Year 2",
+              "value": 324
+            }
+          ]
+        }
+      ]
+    },
+    "representation": {
+      "type": "line-chart",
+      "title": "Revenue growth",
+      "xLabel": "Year",
+      "yLabel": "thousand EUR",
+      "unit": "thousand EUR",
+      "series": [
+        {
+          "name": "Revenue",
+          "points": [
+            {
+              "label": "Year 1",
+              "value": 300
+            },
+            {
+              "label": "Year 2",
+              "value": 324
+            }
+          ]
+        }
+      ]
+    },
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"640\" height=\"340\" viewBox=\"0 0 640 340\" role=\"img\" data-chart-type=\"line-chart\" aria-label=\"Revenue growth\"><title>Revenue growth</title><rect width=\"100%\" height=\"100%\" fill=\"#ffffff\"/><line x1=\"64\" y1=\"48\" x2=\"64\" y2=\"278\" stroke=\"#374151\"/><line x1=\"64\" y1=\"278\" x2=\"618\" y2=\"278\" stroke=\"#374151\"/><text x=\"320\" y=\"24\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#111827\">Revenue growth</text><text x=\"202.50\" y=\"303\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"11\" fill=\"#111827\">Year 1</text><text x=\"479.50\" y=\"303\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"11\" fill=\"#111827\">Year 2</text><polyline data-series=\"Revenue\" points=\"202.50,65.04 479.50,48.00\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"3\"/><circle data-series=\"Revenue\" cx=\"202.50\" cy=\"65.04\" r=\"4\" fill=\"#2563eb\"/><title>Revenue: 300</title><circle data-series=\"Revenue\" cx=\"479.50\" cy=\"48.00\" r=\"4\" fill=\"#2563eb\"/><title>Revenue: 324</title><text x=\"72\" y=\"326\" font-family=\"sans-serif\" font-size=\"11\" fill=\"#111827\">■ Revenue</text><text x=\"14\" y=\"163\" transform=\"rotate(-90 14 163)\" font-family=\"sans-serif\" font-size=\"11\" fill=\"#111827\">thousand EUR</text></svg>",
+    "accessibleText": "Revenue growth: Revenue Year 1 300, Year 2 324.0"
+  },
+  "question": "Revenue is 8% higher each year. What will it be after 4 years?",
+  "options": [
+    {
+      "id": "A",
+      "value": 377.91,
+      "label": "377.91 thousand EUR",
+      "unit": "thousand EUR",
+      "mutation": {
+        "kind": "missing-period",
+        "description": "applies growth for one too few periods"
+      },
+      "numericValue": 377.91
+    },
+    {
+      "id": "B",
+      "value": 214.92,
+      "label": "214.92 thousand EUR",
+      "unit": "thousand EUR",
+      "mutation": {
+        "kind": "decrease",
+        "description": "uses a decrease multiplier instead of a growth multiplier"
+      },
+      "numericValue": 214.92
+    },
+    {
+      "id": "C",
+      "value": 396,
+      "label": "396.00 thousand EUR",
+      "unit": "thousand EUR",
+      "mutation": {
+        "kind": "simple-growth",
+        "description": "applies the rate to the original value only"
+      },
+      "numericValue": 396
+    },
+    {
+      "id": "D",
+      "value": 408.15,
+      "label": "408.15 thousand EUR",
+      "unit": "thousand EUR",
+      "mutation": {
+        "kind": "correct",
+        "description": "matches the formula and every calculation step"
+      },
+      "numericValue": 408.15
+    },
+    {
+      "id": "E",
+      "value": 409.15,
+      "label": "409.15 thousand EUR",
+      "unit": "thousand EUR",
+      "mutation": {
+        "kind": "fallback",
+        "description": "uses a nearby value that does not follow the stated calculation"
+      },
+      "numericValue": 409.15
+    }
+  ],
+  "correctOption": "D",
+  "explanation": "Read the values from the chart and apply the stated operation. Formula: initial × (1 + rate ÷ 100)^years. Growth factor: 1 + rate ÷ 100; substitute 1 + 8 ÷ 100 = 1.08 factor; exact. After year 1: previous value × growth factor; substitute 300.00 × 1.080 = 324 thousand EUR; rounded to 2 decimal places. After year 2: previous value × growth factor; substitute 324.00 × 1.080 = 349.92 thousand EUR; rounded to 2 decimal places. After year 3: previous value × growth factor; substitute 349.92 × 1.080 = 377.91 thousand EUR; rounded to 2 decimal places. After year 4: previous value × growth factor; substitute 377.91 × 1.080 = 408.15 thousand EUR; rounded to 2 decimal places. Final result: 408.15 thousand EUR (rounded to 2 decimal places where needed). Option D is correct. Visual shortcut: Follow the line trend, then apply the same multiplier for each additional year. Each distractor records the specific calculation mistake it makes.",
+  "explanationFragments": [
+    "Formula: initial × (1 + rate ÷ 100)^years.",
+    "Growth factor: 1 + rate ÷ 100; substitute 1 + 8 ÷ 100 = 1.08 factor; exact.",
+    "After year 1: previous value × growth factor; substitute 300.00 × 1.080 = 324 thousand EUR; rounded to 2 decimal places.",
+    "After year 2: previous value × growth factor; substitute 324.00 × 1.080 = 349.92 thousand EUR; rounded to 2 decimal places.",
+    "After year 3: previous value × growth factor; substitute 349.92 × 1.080 = 377.91 thousand EUR; rounded to 2 decimal places.",
+    "After year 4: previous value × growth factor; substitute 377.91 × 1.080 = 408.15 thousand EUR; rounded to 2 decimal places.",
+    "Final result: 408.15 thousand EUR.",
+    "Visual shortcut: Follow the line trend, then apply the same multiplier for each additional year."
+  ],
+  "actions": {
+    "explainLogic": {
+      "id": "explain-logic",
+      "type": "button",
+      "label": "Explain logic",
+      "localizedLabel": "Ver solución",
+      "labels": {
+        "en": "Explain Logic",
+        "es": "Ver solución"
+      },
+      "ariaLabel": "Explain Logic / Ver solución",
+      "initiallyVisible": false,
+      "revealsAnswer": true,
+      "solutionView": {
+        "initiallyVisible": false,
+        "hideAction": {
+          "id": "hide-solution",
+          "type": "button",
+          "label": "Hide solution",
+          "localizedLabel": "Ocultar solución",
+          "visibleAfterReveal": true
+        }
+      },
+      "result": {
+        "optionCount": 5,
+        "formula": "initial × (1 + rate ÷ 100)^years",
+        "calculationSteps": [
+          {
+            "id": "1",
+            "label": "Growth factor",
+            "formula": "1 + rate ÷ 100",
+            "substitution": "1 + 8 ÷ 100",
+            "result": 1.08,
+            "unit": "factor",
+            "rounding": "exact",
+            "note": ""
+          },
+          {
+            "id": "2",
+            "label": "After year 1",
+            "formula": "previous value × growth factor",
+            "substitution": "300.00 × 1.080",
+            "result": 324,
+            "unit": "thousand EUR",
+            "rounding": "2 decimal places",
+            "note": ""
+          },
+          {
+            "id": "3",
+            "label": "After year 2",
+            "formula": "previous value × growth factor",
+            "substitution": "324.00 × 1.080",
+            "result": 349.92,
+            "unit": "thousand EUR",
+            "rounding": "2 decimal places",
+            "note": ""
+          },
+          {
+            "id": "4",
+            "label": "After year 3",
+            "formula": "previous value × growth factor",
+            "substitution": "349.92 × 1.080",
+            "result": 377.91,
+            "unit": "thousand EUR",
+            "rounding": "2 decimal places",
+            "note": ""
+          },
+          {
+            "id": "5",
+            "label": "After year 4",
+            "formula": "previous value × growth factor",
+            "substitution": "377.91 × 1.080",
+            "result": 408.15,
+            "unit": "thousand EUR",
+            "rounding": "2 decimal places",
+            "note": ""
+          }
+        ],
+        "visualShortcut": "Follow the line trend, then apply the same multiplier for each additional year.",
+        "sourceData": {
+          "type": "table",
+          "title": "Revenue growth",
+          "unit": "thousand EUR",
+          "columns": [
+            "Year",
+            "Revenue"
+          ],
+          "rows": [
+            {
+              "Year": "Year 1",
+              "Revenue": 300
+            },
+            {
+              "Year": "Year 2",
+              "Revenue": 324
+            }
+          ],
+          "parameters": {
+            "initial": 300,
+            "rate": 8,
+            "periods": 4
+          }
+        },
+        "explanation": "Read the values from the chart and apply the stated operation. Formula: initial × (1 + rate ÷ 100)^years. Growth factor: 1 + rate ÷ 100; substitute 1 + 8 ÷ 100 = 1.08 factor; exact. After year 1: previous value × growth factor; substitute 300.00 × 1.080 = 324 thousand EUR; rounded to 2 decimal places. After year 2: previous value × growth factor; substitute 324.00 × 1.080 = 349.92 thousand EUR; rounded to 2 decimal places. After year 3: previous value × growth factor; substitute 349.92 × 1.080 = 377.91 thousand EUR; rounded to 2 decimal places. After year 4: previous value × growth factor; substitute 377.91 × 1.080 = 408.15 thousand EUR; rounded to 2 decimal places. Final result: 408.15 thousand EUR (rounded to 2 decimal places where needed). Option D is correct. Visual shortcut: Follow the line trend, then apply the same multiplier for each additional year. Each distractor records the specific calculation mistake it makes.",
+        "correctOption": "D",
+        "correctReason": "Option D is correct because it follows the formula and all intermediate steps.",
+        "distractors": [
+          {
+            "kind": "missing-period",
+            "description": "applies growth for one too few periods",
+            "option": "A",
+            "answer": 377.91
+          },
+          {
+            "kind": "decrease",
+            "description": "uses a decrease multiplier instead of a growth multiplier",
+            "option": "B",
+            "answer": 214.92
+          },
+          {
+            "kind": "simple-growth",
+            "description": "applies the rate to the original value only",
+            "option": "C",
+            "answer": 396
+          },
+          {
+            "kind": "fallback",
+            "description": "uses a nearby value that does not follow the stated calculation",
+            "option": "E",
+            "answer": 409.15
+          }
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "seed": 31,
+    "examProfile": "five-option",
+    "optionCount": 5,
+    "operation": "growth",
+    "sourceData": {
+      "type": "table",
+      "title": "Revenue growth",
+      "unit": "thousand EUR",
+      "columns": [
+        "Year",
+        "Revenue"
+      ],
+      "rows": [
+        {
+          "Year": "Year 1",
+          "Revenue": 300
+        },
+        {
+          "Year": "Year 2",
+          "Revenue": 324
+        }
+      ],
+      "parameters": {
+        "initial": 300,
+        "rate": 8,
+        "periods": 4
+      }
+    },
+    "table": {
+      "type": "table",
+      "title": "Revenue growth",
+      "unit": "thousand EUR",
+      "columns": [
+        "Year",
+        "Revenue"
+      ],
+      "rows": [
+        {
+          "Year": "Year 1",
+          "Revenue": 300
+        },
+        {
+          "Year": "Year 2",
+          "Revenue": 324
+        }
+      ]
+    },
+    "sourceParameters": {
+      "initial": 300,
+      "rate": 8,
+      "periods": 4
+    },
+    "representation": {
+      "type": "line-chart",
+      "title": "Revenue growth",
+      "xLabel": "Year",
+      "yLabel": "thousand EUR",
+      "unit": "thousand EUR",
+      "series": [
+        {
+          "name": "Revenue",
+          "points": [
+            {
+              "label": "Year 1",
+              "value": 300
+            },
+            {
+              "label": "Year 2",
+              "value": 324
+            }
+          ]
+        }
+      ]
+    },
+    "chart": {
+      "type": "line-chart",
+      "title": "Revenue growth",
+      "xLabel": "Year",
+      "yLabel": "thousand EUR",
+      "unit": "thousand EUR",
+      "series": [
+        {
+          "name": "Revenue",
+          "points": [
+            {
+              "label": "Year 1",
+              "value": 300
+            },
+            {
+              "label": "Year 2",
+              "value": 324
+            }
+          ]
+        }
+      ]
+    },
+    "formula": "initial × (1 + rate ÷ 100)^years",
+    "calculationSteps": [
+      {
+        "id": "1",
+        "label": "Growth factor",
+        "formula": "1 + rate ÷ 100",
+        "substitution": "1 + 8 ÷ 100",
+        "result": 1.08,
+        "unit": "factor",
+        "rounding": "exact",
+        "note": ""
+      },
+      {
+        "id": "2",
+        "label": "After year 1",
+        "formula": "previous value × growth factor",
+        "substitution": "300.00 × 1.080",
+        "result": 324,
+        "unit": "thousand EUR",
+        "rounding": "2 decimal places",
+        "note": ""
+      },
+      {
+        "id": "3",
+        "label": "After year 2",
+        "formula": "previous value × growth factor",
+        "substitution": "324.00 × 1.080",
+        "result": 349.92,
+        "unit": "thousand EUR",
+        "rounding": "2 decimal places",
+        "note": ""
+      },
+      {
+        "id": "4",
+        "label": "After year 3",
+        "formula": "previous value × growth factor",
+        "substitution": "349.92 × 1.080",
+        "result": 377.91,
+        "unit": "thousand EUR",
+        "rounding": "2 decimal places",
+        "note": ""
+      },
+      {
+        "id": "5",
+        "label": "After year 4",
+        "formula": "previous value × growth factor",
+        "substitution": "377.91 × 1.080",
+        "result": 408.15,
+        "unit": "thousand EUR",
+        "rounding": "2 decimal places",
+        "note": ""
+      }
+    ],
+    "rounding": "2 decimal places",
+    "visualShortcut": "Follow the line trend, then apply the same multiplier for each additional year.",
+    "generatedFigures": [
+      {
+        "type": "line-chart",
+        "title": "Revenue growth",
+        "xLabel": "Year",
+        "yLabel": "thousand EUR",
+        "unit": "thousand EUR",
+        "series": [
+          {
+            "name": "Revenue",
+            "points": [
+              {
+                "label": "Year 1",
+                "value": 300
+              },
+              {
+                "label": "Year 2",
+                "value": 324
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "distractors": [
+      {
+        "kind": "missing-period",
+        "description": "applies growth for one too few periods",
+        "option": "A",
+        "answer": 377.91
+      },
+      {
+        "kind": "decrease",
+        "description": "uses a decrease multiplier instead of a growth multiplier",
+        "option": "B",
+        "answer": 214.92
+      },
+      {
+        "kind": "simple-growth",
+        "description": "applies the rate to the original value only",
+        "option": "C",
+        "answer": 396
+      },
+      {
+        "kind": "fallback",
+        "description": "uses a nearby value that does not follow the stated calculation",
+        "option": "E",
+        "answer": 409.15
+      }
+    ],
+    "explanationFragments": [
+      "Formula: initial × (1 + rate ÷ 100)^years.",
+      "Growth factor: 1 + rate ÷ 100; substitute 1 + 8 ÷ 100 = 1.08 factor; exact.",
+      "After year 1: previous value × growth factor; substitute 300.00 × 1.080 = 324 thousand EUR; rounded to 2 decimal places.",
+      "After year 2: previous value × growth factor; substitute 324.00 × 1.080 = 349.92 thousand EUR; rounded to 2 decimal places.",
+      "After year 3: previous value × growth factor; substitute 349.92 × 1.080 = 377.91 thousand EUR; rounded to 2 decimal places.",
+      "After year 4: previous value × growth factor; substitute 377.91 × 1.080 = 408.15 thousand EUR; rounded to 2 decimal places.",
+      "Final result: 408.15 thousand EUR.",
+      "Visual shortcut: Follow the line trend, then apply the same multiplier for each additional year."
+    ],
+    "answerValue": 408.15,
+    "answerUnit": "thousand EUR",
+    "answerSignature": "{\"unit\":\"thousand EUR\",\"value\":408.15}"
+  }
+}

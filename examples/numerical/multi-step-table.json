@@ -1,0 +1,492 @@
+{
+  "id": "numerical-multi-step-47-hard",
+  "itemNumber": 1,
+  "exam": "numerical",
+  "examProfile": "five-option",
+  "optionCount": 5,
+  "format": "table",
+  "difficulty": "hard",
+  "operation": "multi-step",
+  "stimulus": {
+    "type": "table",
+    "title": "Procurement order",
+    "sourceData": {
+      "type": "table",
+      "title": "Procurement order",
+      "unit": "EUR",
+      "columns": [
+        "Item",
+        "Quantity",
+        "Unit price (EUR)"
+      ],
+      "rows": [
+        {
+          "Item": "Report",
+          "Quantity": 5,
+          "Unit price (EUR)": 24
+        },
+        {
+          "Item": "Workshop",
+          "Quantity": 2,
+          "Unit price (EUR)": 25
+        }
+      ],
+      "parameters": {
+        "discount": 15,
+        "tax": 10
+      }
+    },
+    "table": {
+      "type": "table",
+      "title": "Procurement order",
+      "unit": "EUR",
+      "columns": [
+        "Item",
+        "Quantity",
+        "Unit price (EUR)"
+      ],
+      "rows": [
+        {
+          "Item": "Report",
+          "Quantity": 5,
+          "Unit price (EUR)": 24
+        },
+        {
+          "Item": "Workshop",
+          "Quantity": 2,
+          "Unit price (EUR)": 25
+        }
+      ]
+    },
+    "representation": {
+      "type": "table",
+      "title": "Procurement order",
+      "unit": "EUR",
+      "columns": [
+        "Item",
+        "Quantity",
+        "Unit price (EUR)"
+      ],
+      "rows": [
+        {
+          "Item": "Report",
+          "Quantity": 5,
+          "Unit price (EUR)": 24
+        },
+        {
+          "Item": "Workshop",
+          "Quantity": 2,
+          "Unit price (EUR)": 25
+        }
+      ]
+    },
+    "html": "<table role=\"table\" aria-label=\"Procurement order\"><caption>Procurement order</caption><thead><tr><th scope=\"col\">Item</th><th scope=\"col\">Quantity</th><th scope=\"col\">Unit price (EUR)</th></tr></thead><tbody><tr><td>Report</td><td>5</td><td>24</td></tr><tr><td>Workshop</td><td>2</td><td>25</td></tr></tbody></table>",
+    "accessibleText": "Procurement order: Item Report, Quantity 5, Unit price (EUR) 24; Item Workshop, Quantity 2, Unit price (EUR) 25"
+  },
+  "question": "What is the final cost after a 15% discount and then 10% tax?",
+  "options": [
+    {
+      "id": "A",
+      "value": 159.95,
+      "label": "159.95 EUR",
+      "unit": "EUR",
+      "mutation": {
+        "kind": "fallback",
+        "description": "uses a nearby value that does not follow the stated calculation"
+      },
+      "numericValue": 159.95
+    },
+    {
+      "id": "B",
+      "value": 127.5,
+      "label": "127.50 EUR",
+      "unit": "EUR",
+      "mutation": {
+        "kind": "combines-rates",
+        "description": "combines the rates as subtraction instead of applying them in order"
+      },
+      "numericValue": 127.5
+    },
+    {
+      "id": "C",
+      "value": 144.5,
+      "label": "144.50 EUR",
+      "unit": "EUR",
+      "mutation": {
+        "kind": "stops-after-discount",
+        "description": "stops after the discount and omits tax"
+      },
+      "numericValue": 144.5
+    },
+    {
+      "id": "D",
+      "value": 187,
+      "label": "187.00 EUR",
+      "unit": "EUR",
+      "mutation": {
+        "kind": "omits-discount",
+        "description": "applies tax but omits the discount"
+      },
+      "numericValue": 187
+    },
+    {
+      "id": "E",
+      "value": 158.95,
+      "label": "158.95 EUR",
+      "unit": "EUR",
+      "mutation": {
+        "kind": "correct",
+        "description": "matches the formula and every calculation step"
+      },
+      "numericValue": 158.95
+    }
+  ],
+  "correctOption": "E",
+  "explanation": "Read the values from the table and apply the stated operation. Formula: (Σ quantity × unit price) × (1 − discount ÷ 100) × (1 + tax ÷ 100). Report subtotal: quantity × unit price; substitute 5 × 24 = 120 EUR; exact. Workshop subtotal: quantity × unit price; substitute 2 × 25 = 50 EUR; exact. Order subtotal: subtotal₁ + subtotal₂; substitute 120 + 50 = 170 EUR; exact. After discount: subtotal × (1 − discount ÷ 100); substitute 170 × (1 − 15 ÷ 100) = 144.5 EUR; exact. Final cost: after discount × (1 + tax ÷ 100); substitute 144.5 × (1 + 10 ÷ 100) = 158.95 EUR; rounded to 2 decimal places. Final result: 158.95 EUR (rounded to 2 decimal places where needed). Option E is correct. Visual shortcut: Multiply each row first, combine subtotals, then apply the two percentages in order. Each distractor records the specific calculation mistake it makes.",
+  "explanationFragments": [
+    "Formula: (Σ quantity × unit price) × (1 − discount ÷ 100) × (1 + tax ÷ 100).",
+    "Report subtotal: quantity × unit price; substitute 5 × 24 = 120 EUR; exact.",
+    "Workshop subtotal: quantity × unit price; substitute 2 × 25 = 50 EUR; exact.",
+    "Order subtotal: subtotal₁ + subtotal₂; substitute 120 + 50 = 170 EUR; exact.",
+    "After discount: subtotal × (1 − discount ÷ 100); substitute 170 × (1 − 15 ÷ 100) = 144.5 EUR; exact.",
+    "Final cost: after discount × (1 + tax ÷ 100); substitute 144.5 × (1 + 10 ÷ 100) = 158.95 EUR; rounded to 2 decimal places.",
+    "Final result: 158.95 EUR.",
+    "Visual shortcut: Multiply each row first, combine subtotals, then apply the two percentages in order."
+  ],
+  "actions": {
+    "explainLogic": {
+      "id": "explain-logic",
+      "type": "button",
+      "label": "Explain logic",
+      "localizedLabel": "Ver solución",
+      "labels": {
+        "en": "Explain Logic",
+        "es": "Ver solución"
+      },
+      "ariaLabel": "Explain Logic / Ver solución",
+      "initiallyVisible": false,
+      "revealsAnswer": true,
+      "solutionView": {
+        "initiallyVisible": false,
+        "hideAction": {
+          "id": "hide-solution",
+          "type": "button",
+          "label": "Hide solution",
+          "localizedLabel": "Ocultar solución",
+          "visibleAfterReveal": true
+        }
+      },
+      "result": {
+        "optionCount": 5,
+        "formula": "(Σ quantity × unit price) × (1 − discount ÷ 100) × (1 + tax ÷ 100)",
+        "calculationSteps": [
+          {
+            "id": "1",
+            "label": "Report subtotal",
+            "formula": "quantity × unit price",
+            "substitution": "5 × 24",
+            "result": 120,
+            "unit": "EUR",
+            "rounding": "exact",
+            "note": ""
+          },
+          {
+            "id": "2",
+            "label": "Workshop subtotal",
+            "formula": "quantity × unit price",
+            "substitution": "2 × 25",
+            "result": 50,
+            "unit": "EUR",
+            "rounding": "exact",
+            "note": ""
+          },
+          {
+            "id": "3",
+            "label": "Order subtotal",
+            "formula": "subtotal₁ + subtotal₂",
+            "substitution": "120 + 50",
+            "result": 170,
+            "unit": "EUR",
+            "rounding": "exact",
+            "note": ""
+          },
+          {
+            "id": "4",
+            "label": "After discount",
+            "formula": "subtotal × (1 − discount ÷ 100)",
+            "substitution": "170 × (1 − 15 ÷ 100)",
+            "result": 144.5,
+            "unit": "EUR",
+            "rounding": "exact",
+            "note": ""
+          },
+          {
+            "id": "5",
+            "label": "Final cost",
+            "formula": "after discount × (1 + tax ÷ 100)",
+            "substitution": "144.5 × (1 + 10 ÷ 100)",
+            "result": 158.95,
+            "unit": "EUR",
+            "rounding": "2 decimal places",
+            "note": ""
+          }
+        ],
+        "visualShortcut": "Multiply each row first, combine subtotals, then apply the two percentages in order.",
+        "sourceData": {
+          "type": "table",
+          "title": "Procurement order",
+          "unit": "EUR",
+          "columns": [
+            "Item",
+            "Quantity",
+            "Unit price (EUR)"
+          ],
+          "rows": [
+            {
+              "Item": "Report",
+              "Quantity": 5,
+              "Unit price (EUR)": 24
+            },
+            {
+              "Item": "Workshop",
+              "Quantity": 2,
+              "Unit price (EUR)": 25
+            }
+          ],
+          "parameters": {
+            "discount": 15,
+            "tax": 10
+          }
+        },
+        "explanation": "Read the values from the table and apply the stated operation. Formula: (Σ quantity × unit price) × (1 − discount ÷ 100) × (1 + tax ÷ 100). Report subtotal: quantity × unit price; substitute 5 × 24 = 120 EUR; exact. Workshop subtotal: quantity × unit price; substitute 2 × 25 = 50 EUR; exact. Order subtotal: subtotal₁ + subtotal₂; substitute 120 + 50 = 170 EUR; exact. After discount: subtotal × (1 − discount ÷ 100); substitute 170 × (1 − 15 ÷ 100) = 144.5 EUR; exact. Final cost: after discount × (1 + tax ÷ 100); substitute 144.5 × (1 + 10 ÷ 100) = 158.95 EUR; rounded to 2 decimal places. Final result: 158.95 EUR (rounded to 2 decimal places where needed). Option E is correct. Visual shortcut: Multiply each row first, combine subtotals, then apply the two percentages in order. Each distractor records the specific calculation mistake it makes.",
+        "correctOption": "E",
+        "correctReason": "Option E is correct because it follows the formula and all intermediate steps.",
+        "distractors": [
+          {
+            "kind": "fallback",
+            "description": "uses a nearby value that does not follow the stated calculation",
+            "option": "A",
+            "answer": 159.95
+          },
+          {
+            "kind": "combines-rates",
+            "description": "combines the rates as subtraction instead of applying them in order",
+            "option": "B",
+            "answer": 127.5
+          },
+          {
+            "kind": "stops-after-discount",
+            "description": "stops after the discount and omits tax",
+            "option": "C",
+            "answer": 144.5
+          },
+          {
+            "kind": "omits-discount",
+            "description": "applies tax but omits the discount",
+            "option": "D",
+            "answer": 187
+          }
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "seed": 47,
+    "examProfile": "five-option",
+    "optionCount": 5,
+    "operation": "multi-step",
+    "sourceData": {
+      "type": "table",
+      "title": "Procurement order",
+      "unit": "EUR",
+      "columns": [
+        "Item",
+        "Quantity",
+        "Unit price (EUR)"
+      ],
+      "rows": [
+        {
+          "Item": "Report",
+          "Quantity": 5,
+          "Unit price (EUR)": 24
+        },
+        {
+          "Item": "Workshop",
+          "Quantity": 2,
+          "Unit price (EUR)": 25
+        }
+      ],
+      "parameters": {
+        "discount": 15,
+        "tax": 10
+      }
+    },
+    "table": {
+      "type": "table",
+      "title": "Procurement order",
+      "unit": "EUR",
+      "columns": [
+        "Item",
+        "Quantity",
+        "Unit price (EUR)"
+      ],
+      "rows": [
+        {
+          "Item": "Report",
+          "Quantity": 5,
+          "Unit price (EUR)": 24
+        },
+        {
+          "Item": "Workshop",
+          "Quantity": 2,
+          "Unit price (EUR)": 25
+        }
+      ]
+    },
+    "sourceParameters": {
+      "discount": 15,
+      "tax": 10
+    },
+    "representation": {
+      "type": "table",
+      "title": "Procurement order",
+      "unit": "EUR",
+      "columns": [
+        "Item",
+        "Quantity",
+        "Unit price (EUR)"
+      ],
+      "rows": [
+        {
+          "Item": "Report",
+          "Quantity": 5,
+          "Unit price (EUR)": 24
+        },
+        {
+          "Item": "Workshop",
+          "Quantity": 2,
+          "Unit price (EUR)": 25
+        }
+      ]
+    },
+    "chart": null,
+    "formula": "(Σ quantity × unit price) × (1 − discount ÷ 100) × (1 + tax ÷ 100)",
+    "calculationSteps": [
+      {
+        "id": "1",
+        "label": "Report subtotal",
+        "formula": "quantity × unit price",
+        "substitution": "5 × 24",
+        "result": 120,
+        "unit": "EUR",
+        "rounding": "exact",
+        "note": ""
+      },
+      {
+        "id": "2",
+        "label": "Workshop subtotal",
+        "formula": "quantity × unit price",
+        "substitution": "2 × 25",
+        "result": 50,
+        "unit": "EUR",
+        "rounding": "exact",
+        "note": ""
+      },
+      {
+        "id": "3",
+        "label": "Order subtotal",
+        "formula": "subtotal₁ + subtotal₂",
+        "substitution": "120 + 50",
+        "result": 170,
+        "unit": "EUR",
+        "rounding": "exact",
+        "note": ""
+      },
+      {
+        "id": "4",
+        "label": "After discount",
+        "formula": "subtotal × (1 − discount ÷ 100)",
+        "substitution": "170 × (1 − 15 ÷ 100)",
+        "result": 144.5,
+        "unit": "EUR",
+        "rounding": "exact",
+        "note": ""
+      },
+      {
+        "id": "5",
+        "label": "Final cost",
+        "formula": "after discount × (1 + tax ÷ 100)",
+        "substitution": "144.5 × (1 + 10 ÷ 100)",
+        "result": 158.95,
+        "unit": "EUR",
+        "rounding": "2 decimal places",
+        "note": ""
+      }
+    ],
+    "rounding": "2 decimal places",
+    "visualShortcut": "Multiply each row first, combine subtotals, then apply the two percentages in order.",
+    "generatedFigures": [
+      {
+        "type": "table",
+        "title": "Procurement order",
+        "unit": "EUR",
+        "columns": [
+          "Item",
+          "Quantity",
+          "Unit price (EUR)"
+        ],
+        "rows": [
+          {
+            "Item": "Report",
+            "Quantity": 5,
+            "Unit price (EUR)": 24
+          },
+          {
+            "Item": "Workshop",
+            "Quantity": 2,
+            "Unit price (EUR)": 25
+          }
+        ]
+      }
+    ],
+    "distractors": [
+      {
+        "kind": "fallback",
+        "description": "uses a nearby value that does not follow the stated calculation",
+        "option": "A",
+        "answer": 159.95
+      },
+      {
+        "kind": "combines-rates",
+        "description": "combines the rates as subtraction instead of applying them in order",
+        "option": "B",
+        "answer": 127.5
+      },
+      {
+        "kind": "stops-after-discount",
+        "description": "stops after the discount and omits tax",
+        "option": "C",
+        "answer": 144.5
+      },
+      {
+        "kind": "omits-discount",
+        "description": "applies tax but omits the discount",
+        "option": "D",
+        "answer": 187
+      }
+    ],
+    "explanationFragments": [
+      "Formula: (Σ quantity × unit price) × (1 − discount ÷ 100) × (1 + tax ÷ 100).",
+      "Report subtotal: quantity × unit price; substitute 5 × 24 = 120 EUR; exact.",
+      "Workshop subtotal: quantity × unit price; substitute 2 × 25 = 50 EUR; exact.",
+      "Order subtotal: subtotal₁ + subtotal₂; substitute 120 + 50 = 170 EUR; exact.",
+      "After discount: subtotal × (1 − discount ÷ 100); substitute 170 × (1 − 15 ÷ 100) = 144.5 EUR; exact.",
+      "Final cost: after discount × (1 + tax ÷ 100); substitute 144.5 × (1 + 10 ÷ 100) = 158.95 EUR; rounded to 2 decimal places.",
+      "Final result: 158.95 EUR.",
+      "Visual shortcut: Multiply each row first, combine subtotals, then apply the two percentages in order."
+    ],
+    "answerValue": 158.95,
+    "answerUnit": "EUR",
+    "answerSignature": "{\"unit\":\"EUR\",\"value\":158.95}"
+  }
+}

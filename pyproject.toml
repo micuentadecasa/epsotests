@@ -13,3 +13,4 @@ include = ["epsotests*"]
 
 [project.scripts]
 epsotests-visual = "epsotests.cli:main"
+epsotests-numerical = "epsotests.cli:main"

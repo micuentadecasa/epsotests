@@ -1,0 +1,674 @@
+[
+  {
+    "json": "percentage-change-bar.json",
+    "svg": "percentage-change-bar.svg",
+    "operation": "percentage-change",
+    "format": "bar-chart",
+    "examProfile": "five-option",
+    "itemNumber": 1,
+    "seed": 12,
+    "difficulty": "medium",
+    "correctOption": "C",
+    "formula": "(new − original) ÷ original × 100",
+    "calculationSteps": [
+      {
+        "id": "1",
+        "label": "Absolute change",
+        "formula": "new − original",
+        "substitution": "104 − 88",
+        "result": 16,
+        "unit": "visitors",
+        "rounding": "not rounded",
+        "note": ""
+      },
+      {
+        "id": "2",
+        "label": "Percentage change",
+        "formula": "(change ÷ original) × 100",
+        "substitution": "(16 ÷ 88) × 100",
+        "result": 18.2,
+        "unit": "%",
+        "rounding": "1 decimal place",
+        "note": ""
+      }
+    ],
+    "explanation": "Read the values from the chart and apply the stated operation. Formula: (new − original) ÷ original × 100. Absolute change: new − original; substitute 104 − 88 = 16 visitors; rounded to not rounded. Percentage change: (change ÷ original) × 100; substitute (16 ÷ 88) × 100 = 18.2; rounded to 1 decimal place. Final result: 18.2% (rounded to 1 decimal place where needed). Option C is correct. Visual shortcut: Compare the two bars first; use the original bar as the denominator. Each distractor records the specific calculation mistake it makes.",
+    "explainLogic": {
+      "id": "explain-logic",
+      "type": "button",
+      "label": "Explain logic",
+      "localizedLabel": "Ver solución",
+      "labels": {
+        "en": "Explain Logic",
+        "es": "Ver solución"
+      },
+      "ariaLabel": "Explain Logic / Ver solución",
+      "initiallyVisible": false,
+      "revealsAnswer": true,
+      "solutionView": {
+        "initiallyVisible": false,
+        "hideAction": {
+          "id": "hide-solution",
+          "type": "button",
+          "label": "Hide solution",
+          "localizedLabel": "Ocultar solución",
+          "visibleAfterReveal": true
+        }
+      },
+      "result": {
+        "optionCount": 5,
+        "formula": "(new − original) ÷ original × 100",
+        "calculationSteps": [
+          {
+            "id": "1",
+            "label": "Absolute change",
+            "formula": "new − original",
+            "substitution": "104 − 88",
+            "result": 16,
+            "unit": "visitors",
+            "rounding": "not rounded",
+            "note": ""
+          },
+          {
+            "id": "2",
+            "label": "Percentage change",
+            "formula": "(change ÷ original) × 100",
+            "substitution": "(16 ÷ 88) × 100",
+            "result": 18.2,
+            "unit": "%",
+            "rounding": "1 decimal place",
+            "note": ""
+          }
+        ],
+        "visualShortcut": "Compare the two bars first; use the original bar as the denominator.",
+        "sourceData": {
+          "type": "table",
+          "title": "Monthly visitors",
+          "unit": "visitors",
+          "columns": [
+            "Period",
+            "Visitors"
+          ],
+          "rows": [
+            {
+              "Period": "January",
+              "Visitors": 88
+            },
+            {
+              "Period": "February",
+              "Visitors": 104
+            }
+          ],
+          "parameters": {
+            "old": 88,
+            "new": 104
+          }
+        },
+        "explanation": "Read the values from the chart and apply the stated operation. Formula: (new − original) ÷ original × 100. Absolute change: new − original; substitute 104 − 88 = 16 visitors; rounded to not rounded. Percentage change: (change ÷ original) × 100; substitute (16 ÷ 88) × 100 = 18.2; rounded to 1 decimal place. Final result: 18.2% (rounded to 1 decimal place where needed). Option C is correct. Visual shortcut: Compare the two bars first; use the original bar as the denominator. Each distractor records the specific calculation mistake it makes.",
+        "correctOption": "C",
+        "correctReason": "Option C is correct because it follows the formula and all intermediate steps.",
+        "distractors": [
+          {
+            "kind": "adds-values",
+            "description": "adds the two readings before calculating the change",
+            "option": "A",
+            "answer": 218.2
+          },
+          {
+            "kind": "fallback",
+            "description": "uses a nearby value that does not follow the stated calculation",
+            "option": "B",
+            "answer": 19.2
+          },
+          {
+            "kind": "absolute-change",
+            "description": "uses the absolute change instead of dividing by the original value",
+            "option": "D",
+            "answer": 16
+          },
+          {
+            "kind": "new-denominator",
+            "description": "divides by the new value rather than the original value",
+            "option": "E",
+            "answer": 15.4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "json": "ratio-table.json",
+    "svg": "ratio-table.svg",
+    "operation": "ratio",
+    "format": "table",
+    "examProfile": "five-option",
+    "itemNumber": 1,
+    "seed": 23,
+    "difficulty": "easy",
+    "correctOption": "A",
+    "formula": "numerator : denominator, then divide both by their greatest common divisor",
+    "calculationSteps": [
+      {
+        "id": "1",
+        "label": "Common divisor",
+        "formula": "gcd(numerator, denominator)",
+        "substitution": "gcd(9, 6)",
+        "result": 3,
+        "unit": "applications",
+        "rounding": "exact",
+        "note": ""
+      },
+      {
+        "id": "2",
+        "label": "Simplified ratio",
+        "formula": "numerator ÷ gcd : denominator ÷ gcd",
+        "substitution": "9 ÷ 3 : 6 ÷ 3",
+        "result": "3:2",
+        "unit": "",
+        "rounding": "exact",
+        "note": ""
+      }
+    ],
+    "explanation": "Read the values from the table and apply the stated operation. Formula: numerator : denominator, then divide both by their greatest common divisor. Common divisor: gcd(numerator, denominator); substitute gcd(9, 6) = 3 applications; exact. Simplified ratio: numerator ÷ gcd : denominator ÷ gcd; substitute 9 ÷ 3 : 6 ÷ 3 = 3:2; exact. Final result: 3:2 (using exact arithmetic). Option A is correct. Visual shortcut: Read the two bars in the requested order; simplify both by the same divisor. Each distractor records the specific calculation mistake it makes.",
+    "explainLogic": {
+      "id": "explain-logic",
+      "type": "button",
+      "label": "Explain logic",
+      "localizedLabel": "Ver solución",
+      "labels": {
+        "en": "Explain Logic",
+        "es": "Ver solución"
+      },
+      "ariaLabel": "Explain Logic / Ver solución",
+      "initiallyVisible": false,
+      "revealsAnswer": true,
+      "solutionView": {
+        "initiallyVisible": false,
+        "hideAction": {
+          "id": "hide-solution",
+          "type": "button",
+          "label": "Hide solution",
+          "localizedLabel": "Ocultar solución",
+          "visibleAfterReveal": true
+        }
+      },
+      "result": {
+        "optionCount": 5,
+        "formula": "numerator : denominator, then divide both by their greatest common divisor",
+        "calculationSteps": [
+          {
+            "id": "1",
+            "label": "Common divisor",
+            "formula": "gcd(numerator, denominator)",
+            "substitution": "gcd(9, 6)",
+            "result": 3,
+            "unit": "applications",
+            "rounding": "exact",
+            "note": ""
+          },
+          {
+            "id": "2",
+            "label": "Simplified ratio",
+            "formula": "numerator ÷ gcd : denominator ÷ gcd",
+            "substitution": "9 ÷ 3 : 6 ÷ 3",
+            "result": "3:2",
+            "unit": "",
+            "rounding": "exact",
+            "note": ""
+          }
+        ],
+        "visualShortcut": "Read the two bars in the requested order; simplify both by the same divisor.",
+        "sourceData": {
+          "type": "table",
+          "title": "Applications by department",
+          "unit": "applications",
+          "columns": [
+            "Department",
+            "Applications"
+          ],
+          "rows": [
+            {
+              "Department": "Operations",
+              "Applications": 9
+            },
+            {
+              "Department": "Policy",
+              "Applications": 6
+            }
+          ],
+          "parameters": {
+            "numerator": 9,
+            "denominator": 6
+          }
+        },
+        "explanation": "Read the values from the table and apply the stated operation. Formula: numerator : denominator, then divide both by their greatest common divisor. Common divisor: gcd(numerator, denominator); substitute gcd(9, 6) = 3 applications; exact. Simplified ratio: numerator ÷ gcd : denominator ÷ gcd; substitute 9 ÷ 3 : 6 ÷ 3 = 3:2; exact. Final result: 3:2 (using exact arithmetic). Option A is correct. Visual shortcut: Read the two bars in the requested order; simplify both by the same divisor. Each distractor records the specific calculation mistake it makes.",
+        "correctOption": "A",
+        "correctReason": "Option A is correct because it follows the formula and all intermediate steps.",
+        "distractors": [
+          {
+            "kind": "reversed-ratio",
+            "description": "reverses the requested numerator and denominator",
+            "option": "B",
+            "answer": "2:3"
+          },
+          {
+            "kind": "summed-ratio",
+            "description": "adds the two quantities instead of comparing them",
+            "option": "C",
+            "answer": "15:1"
+          },
+          {
+            "kind": "fallback",
+            "description": "uses a nearby value that does not follow the stated calculation",
+            "option": "D",
+            "answer": 2
+          },
+          {
+            "kind": "wrong-denominator",
+            "description": "changes the denominator instead of dividing both values by the common divisor",
+            "option": "E",
+            "answer": "9:7"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "json": "growth-line.json",
+    "svg": "growth-line.svg",
+    "operation": "growth",
+    "format": "line-chart",
+    "examProfile": "five-option",
+    "itemNumber": 1,
+    "seed": 31,
+    "difficulty": "hard",
+    "correctOption": "D",
+    "formula": "initial × (1 + rate ÷ 100)^years",
+    "calculationSteps": [
+      {
+        "id": "1",
+        "label": "Growth factor",
+        "formula": "1 + rate ÷ 100",
+        "substitution": "1 + 8 ÷ 100",
+        "result": 1.08,
+        "unit": "factor",
+        "rounding": "exact",
+        "note": ""
+      },
+      {
+        "id": "2",
+        "label": "After year 1",
+        "formula": "previous value × growth factor",
+        "substitution": "300.00 × 1.080",
+        "result": 324,
+        "unit": "thousand EUR",
+        "rounding": "2 decimal places",
+        "note": ""
+      },
+      {
+        "id": "3",
+        "label": "After year 2",
+        "formula": "previous value × growth factor",
+        "substitution": "324.00 × 1.080",
+        "result": 349.92,
+        "unit": "thousand EUR",
+        "rounding": "2 decimal places",
+        "note": ""
+      },
+      {
+        "id": "4",
+        "label": "After year 3",
+        "formula": "previous value × growth factor",
+        "substitution": "349.92 × 1.080",
+        "result": 377.91,
+        "unit": "thousand EUR",
+        "rounding": "2 decimal places",
+        "note": ""
+      },
+      {
+        "id": "5",
+        "label": "After year 4",
+        "formula": "previous value × growth factor",
+        "substitution": "377.91 × 1.080",
+        "result": 408.15,
+        "unit": "thousand EUR",
+        "rounding": "2 decimal places",
+        "note": ""
+      }
+    ],
+    "explanation": "Read the values from the chart and apply the stated operation. Formula: initial × (1 + rate ÷ 100)^years. Growth factor: 1 + rate ÷ 100; substitute 1 + 8 ÷ 100 = 1.08 factor; exact. After year 1: previous value × growth factor; substitute 300.00 × 1.080 = 324 thousand EUR; rounded to 2 decimal places. After year 2: previous value × growth factor; substitute 324.00 × 1.080 = 349.92 thousand EUR; rounded to 2 decimal places. After year 3: previous value × growth factor; substitute 349.92 × 1.080 = 377.91 thousand EUR; rounded to 2 decimal places. After year 4: previous value × growth factor; substitute 377.91 × 1.080 = 408.15 thousand EUR; rounded to 2 decimal places. Final result: 408.15 thousand EUR (rounded to 2 decimal places where needed). Option D is correct. Visual shortcut: Follow the line trend, then apply the same multiplier for each additional year. Each distractor records the specific calculation mistake it makes.",
+    "explainLogic": {
+      "id": "explain-logic",
+      "type": "button",
+      "label": "Explain logic",
+      "localizedLabel": "Ver solución",
+      "labels": {
+        "en": "Explain Logic",
+        "es": "Ver solución"
+      },
+      "ariaLabel": "Explain Logic / Ver solución",
+      "initiallyVisible": false,
+      "revealsAnswer": true,
+      "solutionView": {
+        "initiallyVisible": false,
+        "hideAction": {
+          "id": "hide-solution",
+          "type": "button",
+          "label": "Hide solution",
+          "localizedLabel": "Ocultar solución",
+          "visibleAfterReveal": true
+        }
+      },
+      "result": {
+        "optionCount": 5,
+        "formula": "initial × (1 + rate ÷ 100)^years",
+        "calculationSteps": [
+          {
+            "id": "1",
+            "label": "Growth factor",
+            "formula": "1 + rate ÷ 100",
+            "substitution": "1 + 8 ÷ 100",
+            "result": 1.08,
+            "unit": "factor",
+            "rounding": "exact",
+            "note": ""
+          },
+          {
+            "id": "2",
+            "label": "After year 1",
+            "formula": "previous value × growth factor",
+            "substitution": "300.00 × 1.080",
+            "result": 324,
+            "unit": "thousand EUR",
+            "rounding": "2 decimal places",
+            "note": ""
+          },
+          {
+            "id": "3",
+            "label": "After year 2",
+            "formula": "previous value × growth factor",
+            "substitution": "324.00 × 1.080",
+            "result": 349.92,
+            "unit": "thousand EUR",
+            "rounding": "2 decimal places",
+            "note": ""
+          },
+          {
+            "id": "4",
+            "label": "After year 3",
+            "formula": "previous value × growth factor",
+            "substitution": "349.92 × 1.080",
+            "result": 377.91,
+            "unit": "thousand EUR",
+            "rounding": "2 decimal places",
+            "note": ""
+          },
+          {
+            "id": "5",
+            "label": "After year 4",
+            "formula": "previous value × growth factor",
+            "substitution": "377.91 × 1.080",
+            "result": 408.15,
+            "unit": "thousand EUR",
+            "rounding": "2 decimal places",
+            "note": ""
+          }
+        ],
+        "visualShortcut": "Follow the line trend, then apply the same multiplier for each additional year.",
+        "sourceData": {
+          "type": "table",
+          "title": "Revenue growth",
+          "unit": "thousand EUR",
+          "columns": [
+            "Year",
+            "Revenue"
+          ],
+          "rows": [
+            {
+              "Year": "Year 1",
+              "Revenue": 300
+            },
+            {
+              "Year": "Year 2",
+              "Revenue": 324
+            }
+          ],
+          "parameters": {
+            "initial": 300,
+            "rate": 8,
+            "periods": 4
+          }
+        },
+        "explanation": "Read the values from the chart and apply the stated operation. Formula: initial × (1 + rate ÷ 100)^years. Growth factor: 1 + rate ÷ 100; substitute 1 + 8 ÷ 100 = 1.08 factor; exact. After year 1: previous value × growth factor; substitute 300.00 × 1.080 = 324 thousand EUR; rounded to 2 decimal places. After year 2: previous value × growth factor; substitute 324.00 × 1.080 = 349.92 thousand EUR; rounded to 2 decimal places. After year 3: previous value × growth factor; substitute 349.92 × 1.080 = 377.91 thousand EUR; rounded to 2 decimal places. After year 4: previous value × growth factor; substitute 377.91 × 1.080 = 408.15 thousand EUR; rounded to 2 decimal places. Final result: 408.15 thousand EUR (rounded to 2 decimal places where needed). Option D is correct. Visual shortcut: Follow the line trend, then apply the same multiplier for each additional year. Each distractor records the specific calculation mistake it makes.",
+        "correctOption": "D",
+        "correctReason": "Option D is correct because it follows the formula and all intermediate steps.",
+        "distractors": [
+          {
+            "kind": "missing-period",
+            "description": "applies growth for one too few periods",
+            "option": "A",
+            "answer": 377.91
+          },
+          {
+            "kind": "decrease",
+            "description": "uses a decrease multiplier instead of a growth multiplier",
+            "option": "B",
+            "answer": 214.92
+          },
+          {
+            "kind": "simple-growth",
+            "description": "applies the rate to the original value only",
+            "option": "C",
+            "answer": 396
+          },
+          {
+            "kind": "fallback",
+            "description": "uses a nearby value that does not follow the stated calculation",
+            "option": "E",
+            "answer": 409.15
+          }
+        ]
+      }
+    }
+  },
+  {
+    "json": "multi-step-table.json",
+    "svg": "multi-step-table.svg",
+    "operation": "multi-step",
+    "format": "table",
+    "examProfile": "five-option",
+    "itemNumber": 1,
+    "seed": 47,
+    "difficulty": "hard",
+    "correctOption": "E",
+    "formula": "(Σ quantity × unit price) × (1 − discount ÷ 100) × (1 + tax ÷ 100)",
+    "calculationSteps": [
+      {
+        "id": "1",
+        "label": "Report subtotal",
+        "formula": "quantity × unit price",
+        "substitution": "5 × 24",
+        "result": 120,
+        "unit": "EUR",
+        "rounding": "exact",
+        "note": ""
+      },
+      {
+        "id": "2",
+        "label": "Workshop subtotal",
+        "formula": "quantity × unit price",
+        "substitution": "2 × 25",
+        "result": 50,
+        "unit": "EUR",
+        "rounding": "exact",
+        "note": ""
+      },
+      {
+        "id": "3",
+        "label": "Order subtotal",
+        "formula": "subtotal₁ + subtotal₂",
+        "substitution": "120 + 50",
+        "result": 170,
+        "unit": "EUR",
+        "rounding": "exact",
+        "note": ""
+      },
+      {
+        "id": "4",
+        "label": "After discount",
+        "formula": "subtotal × (1 − discount ÷ 100)",
+        "substitution": "170 × (1 − 15 ÷ 100)",
+        "result": 144.5,
+        "unit": "EUR",
+        "rounding": "exact",
+        "note": ""
+      },
+      {
+        "id": "5",
+        "label": "Final cost",
+        "formula": "after discount × (1 + tax ÷ 100)",
+        "substitution": "144.5 × (1 + 10 ÷ 100)",
+        "result": 158.95,
+        "unit": "EUR",
+        "rounding": "2 decimal places",
+        "note": ""
+      }
+    ],
+    "explanation": "Read the values from the table and apply the stated operation. Formula: (Σ quantity × unit price) × (1 − discount ÷ 100) × (1 + tax ÷ 100). Report subtotal: quantity × unit price; substitute 5 × 24 = 120 EUR; exact. Workshop subtotal: quantity × unit price; substitute 2 × 25 = 50 EUR; exact. Order subtotal: subtotal₁ + subtotal₂; substitute 120 + 50 = 170 EUR; exact. After discount: subtotal × (1 − discount ÷ 100); substitute 170 × (1 − 15 ÷ 100) = 144.5 EUR; exact. Final cost: after discount × (1 + tax ÷ 100); substitute 144.5 × (1 + 10 ÷ 100) = 158.95 EUR; rounded to 2 decimal places. Final result: 158.95 EUR (rounded to 2 decimal places where needed). Option E is correct. Visual shortcut: Multiply each row first, combine subtotals, then apply the two percentages in order. Each distractor records the specific calculation mistake it makes.",
+    "explainLogic": {
+      "id": "explain-logic",
+      "type": "button",
+      "label": "Explain logic",
+      "localizedLabel": "Ver solución",
+      "labels": {
+        "en": "Explain Logic",
+        "es": "Ver solución"
+      },
+      "ariaLabel": "Explain Logic / Ver solución",
+      "initiallyVisible": false,
+      "revealsAnswer": true,
+      "solutionView": {
+        "initiallyVisible": false,
+        "hideAction": {
+          "id": "hide-solution",
+          "type": "button",
+          "label": "Hide solution",
+          "localizedLabel": "Ocultar solución",
+          "visibleAfterReveal": true
+        }
+      },
+      "result": {
+        "optionCount": 5,
+        "formula": "(Σ quantity × unit price) × (1 − discount ÷ 100) × (1 + tax ÷ 100)",
+        "calculationSteps": [
+          {
+            "id": "1",
+            "label": "Report subtotal",
+            "formula": "quantity × unit price",
+            "substitution": "5 × 24",
+            "result": 120,
+            "unit": "EUR",
+            "rounding": "exact",
+            "note": ""
+          },
+          {
+            "id": "2",
+            "label": "Workshop subtotal",
+            "formula": "quantity × unit price",
+            "substitution": "2 × 25",
+            "result": 50,
+            "unit": "EUR",
+            "rounding": "exact",
+            "note": ""
+          },
+          {
+            "id": "3",
+            "label": "Order subtotal",
+            "formula": "subtotal₁ + subtotal₂",
+            "substitution": "120 + 50",
+            "result": 170,
+            "unit": "EUR",
+            "rounding": "exact",
+            "note": ""
+          },
+          {
+            "id": "4",
+            "label": "After discount",
+            "formula": "subtotal × (1 − discount ÷ 100)",
+            "substitution": "170 × (1 − 15 ÷ 100)",
+            "result": 144.5,
+            "unit": "EUR",
+            "rounding": "exact",
+            "note": ""
+          },
+          {
+            "id": "5",
+            "label": "Final cost",
+            "formula": "after discount × (1 + tax ÷ 100)",
+            "substitution": "144.5 × (1 + 10 ÷ 100)",
+            "result": 158.95,
+            "unit": "EUR",
+            "rounding": "2 decimal places",
+            "note": ""
+          }
+        ],
+        "visualShortcut": "Multiply each row first, combine subtotals, then apply the two percentages in order.",
+        "sourceData": {
+          "type": "table",
+          "title": "Procurement order",
+          "unit": "EUR",
+          "columns": [
+            "Item",
+            "Quantity",
+            "Unit price (EUR)"
+          ],
+          "rows": [
+            {
+              "Item": "Report",
+              "Quantity": 5,
+              "Unit price (EUR)": 24
+            },
+            {
+              "Item": "Workshop",
+              "Quantity": 2,
+              "Unit price (EUR)": 25
+            }
+          ],
+          "parameters": {
+            "discount": 15,
+            "tax": 10
+          }
+        },
+        "explanation": "Read the values from the table and apply the stated operation. Formula: (Σ quantity × unit price) × (1 − discount ÷ 100) × (1 + tax ÷ 100). Report subtotal: quantity × unit price; substitute 5 × 24 = 120 EUR; exact. Workshop subtotal: quantity × unit price; substitute 2 × 25 = 50 EUR; exact. Order subtotal: subtotal₁ + subtotal₂; substitute 120 + 50 = 170 EUR; exact. After discount: subtotal × (1 − discount ÷ 100); substitute 170 × (1 − 15 ÷ 100) = 144.5 EUR; exact. Final cost: after discount × (1 + tax ÷ 100); substitute 144.5 × (1 + 10 ÷ 100) = 158.95 EUR; rounded to 2 decimal places. Final result: 158.95 EUR (rounded to 2 decimal places where needed). Option E is correct. Visual shortcut: Multiply each row first, combine subtotals, then apply the two percentages in order. Each distractor records the specific calculation mistake it makes.",
+        "correctOption": "E",
+        "correctReason": "Option E is correct because it follows the formula and all intermediate steps.",
+        "distractors": [
+          {
+            "kind": "fallback",
+            "description": "uses a nearby value that does not follow the stated calculation",
+            "option": "A",
+            "answer": 159.95
+          },
+          {
+            "kind": "combines-rates",
+            "description": "combines the rates as subtraction instead of applying them in order",
+            "option": "B",
+            "answer": 127.5
+          },
+          {
+            "kind": "stops-after-discount",
+            "description": "stops after the discount and omits tax",
+            "option": "C",
+            "answer": 144.5
+          },
+          {
+            "kind": "omits-discount",
+            "description": "applies tax but omits the discount",
+            "option": "D",
+            "answer": 187
+          }
+        ]
+      }
+    }
+  }
+]

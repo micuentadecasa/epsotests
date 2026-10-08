@@ -1,8 +1,9 @@
 # epsotests
 
-`epsotests` generates deterministic EPSO-style visual abstract-reasoning items. It
-uses vector scenes and SVG figures only: no textual logic puzzles or image
-runtime dependencies are involved.
+`epsotests` generates deterministic EPSO-style visual abstract-reasoning and
+numerical-reasoning items. It uses dependency-free vector scenes/charts and
+portable JSON; no browser, image runtime, verbal logic, or remote service is
+required.
 
 ## Generate an item in Python
 
@@ -48,6 +49,32 @@ question = generate_sequence(
 )
 ```
 
+## Numerical reasoning
+
+Numerical questions preserve their source table, chart data, formulas,
+substitutions, intermediate values, units, rounding, visual shortcuts, and
+specific distractor rationales. Supported operations are percentage change,
+ratios, proportions, totals, growth, comparisons, and multi-step calculations.
+They use the same four-option `standard` and five-option `five-option` profiles
+and hidden `Explain Logic` / `Ver solución` action contract as visual items:
+
+```python
+from epsotests import generate_numerical_question
+
+question = generate_numerical_question(
+    "percentage-change", seed=42, representation="bar-chart", exam_profile="five-option"
+)
+print(question["correctOption"], question["metadata"]["calculationSteps"])
+```
+
+Chart items include accessible deterministic SVG; table items include an
+HTML-friendly `<table>`. Fixed-seed JSON and exam-style SVG panels are in
+[`examples/numerical/`](examples/numerical/), regenerated with:
+
+```sh
+python examples/numerical/generate_examples.py
+```
+
 ## Command line
 
 The installed `epsotests-visual` command and the module form emit one complete
@@ -58,6 +85,7 @@ epsotests-visual sequence --seed 42 --difficulty medium
 python -m epsotests.cli matrix-3x3 --seed 42 --difficulty hard
 python -m epsotests.cli analogy --seed 42 --difficulty hard \
   --exam-profile five-option --review
+python -m epsotests.cli numerical percentage-change --seed 42 --representation bar-chart
 ```
 
 Use one of the four canonical format names and one of `easy`, `medium`, or

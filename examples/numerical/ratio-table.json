@@ -1,0 +1,402 @@
+{
+  "id": "numerical-ratio-23-easy",
+  "itemNumber": 1,
+  "exam": "numerical",
+  "examProfile": "five-option",
+  "optionCount": 5,
+  "format": "table",
+  "difficulty": "easy",
+  "operation": "ratio",
+  "stimulus": {
+    "type": "table",
+    "title": "Applications by department",
+    "sourceData": {
+      "type": "table",
+      "title": "Applications by department",
+      "unit": "applications",
+      "columns": [
+        "Department",
+        "Applications"
+      ],
+      "rows": [
+        {
+          "Department": "Operations",
+          "Applications": 9
+        },
+        {
+          "Department": "Policy",
+          "Applications": 6
+        }
+      ],
+      "parameters": {
+        "numerator": 9,
+        "denominator": 6
+      }
+    },
+    "table": {
+      "type": "table",
+      "title": "Applications by department",
+      "unit": "applications",
+      "columns": [
+        "Department",
+        "Applications"
+      ],
+      "rows": [
+        {
+          "Department": "Operations",
+          "Applications": 9
+        },
+        {
+          "Department": "Policy",
+          "Applications": 6
+        }
+      ]
+    },
+    "representation": {
+      "type": "table",
+      "title": "Applications by department",
+      "unit": "applications",
+      "columns": [
+        "Department",
+        "Applications"
+      ],
+      "rows": [
+        {
+          "Department": "Operations",
+          "Applications": 9
+        },
+        {
+          "Department": "Policy",
+          "Applications": 6
+        }
+      ]
+    },
+    "html": "<table role=\"table\" aria-label=\"Applications by department\"><caption>Applications by department</caption><thead><tr><th scope=\"col\">Department</th><th scope=\"col\">Applications</th></tr></thead><tbody><tr><td>Operations</td><td>9</td></tr><tr><td>Policy</td><td>6</td></tr></tbody></table>",
+    "accessibleText": "Applications by department: Department Operations, Applications 9; Department Policy, Applications 6"
+  },
+  "question": "What is the simplified ratio of Operations applications to Policy applications?",
+  "options": [
+    {
+      "id": "A",
+      "value": "3:2",
+      "label": "3:2",
+      "unit": "",
+      "mutation": {
+        "kind": "correct",
+        "description": "matches the formula and every calculation step"
+      },
+      "numericValue": 1.5
+    },
+    {
+      "id": "B",
+      "value": "2:3",
+      "label": "2:3",
+      "unit": "",
+      "mutation": {
+        "kind": "reversed-ratio",
+        "description": "reverses the requested numerator and denominator"
+      },
+      "numericValue": 0.6666666666666666
+    },
+    {
+      "id": "C",
+      "value": "15:1",
+      "label": "15:1",
+      "unit": "",
+      "mutation": {
+        "kind": "summed-ratio",
+        "description": "adds the two quantities instead of comparing them"
+      },
+      "numericValue": 15
+    },
+    {
+      "id": "D",
+      "value": 2,
+      "label": "2",
+      "unit": "",
+      "mutation": {
+        "kind": "fallback",
+        "description": "uses a nearby value that does not follow the stated calculation"
+      },
+      "numericValue": 2
+    },
+    {
+      "id": "E",
+      "value": "9:7",
+      "label": "9:7",
+      "unit": "",
+      "mutation": {
+        "kind": "wrong-denominator",
+        "description": "changes the denominator instead of dividing both values by the common divisor"
+      },
+      "numericValue": 1.2857142857142858
+    }
+  ],
+  "correctOption": "A",
+  "explanation": "Read the values from the table and apply the stated operation. Formula: numerator : denominator, then divide both by their greatest common divisor. Common divisor: gcd(numerator, denominator); substitute gcd(9, 6) = 3 applications; exact. Simplified ratio: numerator ÷ gcd : denominator ÷ gcd; substitute 9 ÷ 3 : 6 ÷ 3 = 3:2; exact. Final result: 3:2 (using exact arithmetic). Option A is correct. Visual shortcut: Read the two bars in the requested order; simplify both by the same divisor. Each distractor records the specific calculation mistake it makes.",
+  "explanationFragments": [
+    "Formula: numerator : denominator, then divide both by their greatest common divisor.",
+    "Common divisor: gcd(numerator, denominator); substitute gcd(9, 6) = 3 applications; exact.",
+    "Simplified ratio: numerator ÷ gcd : denominator ÷ gcd; substitute 9 ÷ 3 : 6 ÷ 3 = 3:2; exact.",
+    "Final result: 3:2.",
+    "Visual shortcut: Read the two bars in the requested order; simplify both by the same divisor."
+  ],
+  "actions": {
+    "explainLogic": {
+      "id": "explain-logic",
+      "type": "button",
+      "label": "Explain logic",
+      "localizedLabel": "Ver solución",
+      "labels": {
+        "en": "Explain Logic",
+        "es": "Ver solución"
+      },
+      "ariaLabel": "Explain Logic / Ver solución",
+      "initiallyVisible": false,
+      "revealsAnswer": true,
+      "solutionView": {
+        "initiallyVisible": false,
+        "hideAction": {
+          "id": "hide-solution",
+          "type": "button",
+          "label": "Hide solution",
+          "localizedLabel": "Ocultar solución",
+          "visibleAfterReveal": true
+        }
+      },
+      "result": {
+        "optionCount": 5,
+        "formula": "numerator : denominator, then divide both by their greatest common divisor",
+        "calculationSteps": [
+          {
+            "id": "1",
+            "label": "Common divisor",
+            "formula": "gcd(numerator, denominator)",
+            "substitution": "gcd(9, 6)",
+            "result": 3,
+            "unit": "applications",
+            "rounding": "exact",
+            "note": ""
+          },
+          {
+            "id": "2",
+            "label": "Simplified ratio",
+            "formula": "numerator ÷ gcd : denominator ÷ gcd",
+            "substitution": "9 ÷ 3 : 6 ÷ 3",
+            "result": "3:2",
+            "unit": "",
+            "rounding": "exact",
+            "note": ""
+          }
+        ],
+        "visualShortcut": "Read the two bars in the requested order; simplify both by the same divisor.",
+        "sourceData": {
+          "type": "table",
+          "title": "Applications by department",
+          "unit": "applications",
+          "columns": [
+            "Department",
+            "Applications"
+          ],
+          "rows": [
+            {
+              "Department": "Operations",
+              "Applications": 9
+            },
+            {
+              "Department": "Policy",
+              "Applications": 6
+            }
+          ],
+          "parameters": {
+            "numerator": 9,
+            "denominator": 6
+          }
+        },
+        "explanation": "Read the values from the table and apply the stated operation. Formula: numerator : denominator, then divide both by their greatest common divisor. Common divisor: gcd(numerator, denominator); substitute gcd(9, 6) = 3 applications; exact. Simplified ratio: numerator ÷ gcd : denominator ÷ gcd; substitute 9 ÷ 3 : 6 ÷ 3 = 3:2; exact. Final result: 3:2 (using exact arithmetic). Option A is correct. Visual shortcut: Read the two bars in the requested order; simplify both by the same divisor. Each distractor records the specific calculation mistake it makes.",
+        "correctOption": "A",
+        "correctReason": "Option A is correct because it follows the formula and all intermediate steps.",
+        "distractors": [
+          {
+            "kind": "reversed-ratio",
+            "description": "reverses the requested numerator and denominator",
+            "option": "B",
+            "answer": "2:3"
+          },
+          {
+            "kind": "summed-ratio",
+            "description": "adds the two quantities instead of comparing them",
+            "option": "C",
+            "answer": "15:1"
+          },
+          {
+            "kind": "fallback",
+            "description": "uses a nearby value that does not follow the stated calculation",
+            "option": "D",
+            "answer": 2
+          },
+          {
+            "kind": "wrong-denominator",
+            "description": "changes the denominator instead of dividing both values by the common divisor",
+            "option": "E",
+            "answer": "9:7"
+          }
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "seed": 23,
+    "examProfile": "five-option",
+    "optionCount": 5,
+    "operation": "ratio",
+    "sourceData": {
+      "type": "table",
+      "title": "Applications by department",
+      "unit": "applications",
+      "columns": [
+        "Department",
+        "Applications"
+      ],
+      "rows": [
+        {
+          "Department": "Operations",
+          "Applications": 9
+        },
+        {
+          "Department": "Policy",
+          "Applications": 6
+        }
+      ],
+      "parameters": {
+        "numerator": 9,
+        "denominator": 6
+      }
+    },
+    "table": {
+      "type": "table",
+      "title": "Applications by department",
+      "unit": "applications",
+      "columns": [
+        "Department",
+        "Applications"
+      ],
+      "rows": [
+        {
+          "Department": "Operations",
+          "Applications": 9
+        },
+        {
+          "Department": "Policy",
+          "Applications": 6
+        }
+      ]
+    },
+    "sourceParameters": {
+      "numerator": 9,
+      "denominator": 6
+    },
+    "representation": {
+      "type": "table",
+      "title": "Applications by department",
+      "unit": "applications",
+      "columns": [
+        "Department",
+        "Applications"
+      ],
+      "rows": [
+        {
+          "Department": "Operations",
+          "Applications": 9
+        },
+        {
+          "Department": "Policy",
+          "Applications": 6
+        }
+      ]
+    },
+    "chart": null,
+    "formula": "numerator : denominator, then divide both by their greatest common divisor",
+    "calculationSteps": [
+      {
+        "id": "1",
+        "label": "Common divisor",
+        "formula": "gcd(numerator, denominator)",
+        "substitution": "gcd(9, 6)",
+        "result": 3,
+        "unit": "applications",
+        "rounding": "exact",
+        "note": ""
+      },
+      {
+        "id": "2",
+        "label": "Simplified ratio",
+        "formula": "numerator ÷ gcd : denominator ÷ gcd",
+        "substitution": "9 ÷ 3 : 6 ÷ 3",
+        "result": "3:2",
+        "unit": "",
+        "rounding": "exact",
+        "note": ""
+      }
+    ],
+    "rounding": "nearest whole number",
+    "visualShortcut": "Read the two bars in the requested order; simplify both by the same divisor.",
+    "generatedFigures": [
+      {
+        "type": "table",
+        "title": "Applications by department",
+        "unit": "applications",
+        "columns": [
+          "Department",
+          "Applications"
+        ],
+        "rows": [
+          {
+            "Department": "Operations",
+            "Applications": 9
+          },
+          {
+            "Department": "Policy",
+            "Applications": 6
+          }
+        ]
+      }
+    ],
+    "distractors": [
+      {
+        "kind": "reversed-ratio",
+        "description": "reverses the requested numerator and denominator",
+        "option": "B",
+        "answer": "2:3"
+      },
+      {
+        "kind": "summed-ratio",
+        "description": "adds the two quantities instead of comparing them",
+        "option": "C",
+        "answer": "15:1"
+      },
+      {
+        "kind": "fallback",
+        "description": "uses a nearby value that does not follow the stated calculation",
+        "option": "D",
+        "answer": 2
+      },
+      {
+        "kind": "wrong-denominator",
+        "description": "changes the denominator instead of dividing both values by the common divisor",
+        "option": "E",
+        "answer": "9:7"
+      }
+    ],
+    "explanationFragments": [
+      "Formula: numerator : denominator, then divide both by their greatest common divisor.",
+      "Common divisor: gcd(numerator, denominator); substitute gcd(9, 6) = 3 applications; exact.",
+      "Simplified ratio: numerator ÷ gcd : denominator ÷ gcd; substitute 9 ÷ 3 : 6 ÷ 3 = 3:2; exact.",
+      "Final result: 3:2.",
+      "Visual shortcut: Read the two bars in the requested order; simplify both by the same divisor."
+    ],
+    "answerValue": "3:2",
+    "answerUnit": "",
+    "answerSignature": "{\"unit\":\"\",\"value\":\"3:2\"}"
+  }
+}
