@@ -567,7 +567,7 @@ def _element_svg(
                 f'stroke="{stroke_value}" stroke-width="1"/>'
             )
     if element.marker:
-        marker_angle = 2 * math.pi * element.marker_position - math.pi / 2
+        marker_angle = 2 * math.pi * element.marker_position - math.pi / 2 + math.radians(element.rotation)
         marker_x = cx + radius * 0.68 * math.cos(marker_angle)
         marker_y = cy + radius * 0.68 * math.sin(marker_angle)
         marker_name = html.escape(element.marker, quote=True)
@@ -626,7 +626,7 @@ def _base_scene(seed: int, difficulty: str | int = "medium") -> Scene:
                 fill=rng.choice(PALETTE),
                 shaded=True,
                 line_count=1,
-                marker="dot" if level == "hard" and index == 0 else None,
+                marker="dot" if level in ("easy", "hard") and index == 0 else None,
             )
         )
     return Scene(tuple(elements))
