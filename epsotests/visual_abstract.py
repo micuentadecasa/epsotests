@@ -276,11 +276,26 @@ def _apply_reflection(scene: Scene, axis: str, parameters: Mapping[str, Any], fr
     for index in _target_indices(scene, parameters):
         element = scene.elements[index]
         if axis in ("vertical", "y"):
-            changed = replace(element, x=_clamp(1 - element.x), rotation=_wrap_angle(-element.rotation))
+            changed = replace(
+                element,
+                x=_clamp(1 - element.x),
+                rotation=_wrap_angle(-element.rotation),
+                marker_position=(1 - element.marker_position) % 1,
+            )
         elif axis in ("horizontal", "x"):
-            changed = replace(element, y=_clamp(1 - element.y), rotation=_wrap_angle(-element.rotation))
+            changed = replace(
+                element,
+                y=_clamp(1 - element.y),
+                rotation=_wrap_angle(-element.rotation),
+                marker_position=(0.5 - element.marker_position) % 1,
+            )
         else:
-            changed = replace(element, x=_clamp(1 - element.x), y=_clamp(1 - element.y))
+            changed = replace(
+                element,
+                x=_clamp(1 - element.x),
+                y=_clamp(1 - element.y),
+                marker_position=(element.marker_position + 0.5) % 1,
+            )
         scene = _with_element(scene, index, changed)
     return scene
 
@@ -526,16 +541,21 @@ def _element_svg(
     element: Element,
     width: int,
     height: int,
-    parent: tuple[float, float, float] | None = None,
+    parent: tuple[float, float, float, float] | None = None,
     id_suffix: str = "",
 ) -> str:
     if parent is None:
         cx, cy, size = element.x * width, element.y * height, element.size * min(width, height)
+        render_rotation = element.rotation
     else:
-        parent_x, parent_y, parent_size = parent
-        cx = parent_x + (element.x - 0.5) * parent_size
-        cy = parent_y + (element.y - 0.5) * parent_size
+        parent_x, parent_y, parent_size, parent_rotation = parent
+        relative_x = (element.x - 0.5) * parent_size
+        relative_y = (element.y - 0.5) * parent_size
+        parent_angle = math.radians(parent_rotation)
+        cx = parent_x + relative_x * math.cos(parent_angle) - relative_y * math.sin(parent_angle)
+        cy = parent_y + relative_x * math.sin(parent_angle) + relative_y * math.cos(parent_angle)
         size = element.size * parent_size
+        render_rotation = element.rotation + parent_rotation
     fill_value = html.escape(element.fill if element.shaded else "none", quote=True)
     stroke_value = html.escape(element.stroke, quote=True)
     element_id = html.escape(element.id + id_suffix, quote=True)
@@ -550,18 +570,18 @@ def _element_svg(
             offset = (line_index - (element.line_count - 1) / 2) * size * 0.12
             pieces.append(
                 f'<line data-element-id="{element_id}-{line_index}" x1="{cx - radius:.3f}" y1="{cy + offset:.3f}" '
-                f'x2="{cx + radius:.3f}" y2="{cy + offset:.3f}" transform="rotate({element.rotation:.3f} {cx:.3f} {cy:.3f})" {common}/>'
+                f'x2="{cx + radius:.3f}" y2="{cy + offset:.3f}" transform="rotate({render_rotation:.3f} {cx:.3f} {cy:.3f})" {common}/>'
             )
     elif shape == "square":
         pieces.append(
             f'<rect data-element-id="{element_id}" x="{cx - radius:.3f}" y="{cy - radius:.3f}" '
-            f'width="{size:.3f}" height="{size:.3f}" transform="rotate({element.rotation:.3f} {cx:.3f} {cy:.3f})" {common}/>'
+            f'width="{size:.3f}" height="{size:.3f}" transform="rotate({render_rotation:.3f} {cx:.3f} {cy:.3f})" {common}/>'
         )
     else:
-        points = _points_for_shape(shape, cx, cy, radius, element.rotation)
+        points = _points_for_shape(shape, cx, cy, radius, render_rotation)
         pieces.append(f'<polygon data-element-id="{element_id}" points="{points}" {common}/>')
-    if shape in ("circle", "square", "diamond"):
-        orientation_angle = math.radians(element.rotation - 90)
+    if shape in ("circle", "square", "diamond", "triangle", "star"):
+        orientation_angle = math.radians(render_rotation - 90)
         orientation_x = cx + radius * 0.62 * math.cos(orientation_angle)
         orientation_y = cy + radius * 0.62 * math.sin(orientation_angle)
         pieces.append(
@@ -579,7 +599,7 @@ def _element_svg(
                 f'stroke="{stroke_value}" stroke-width="1"/>'
             )
     if element.marker:
-        marker_angle = 2 * math.pi * element.marker_position - math.pi / 2 + math.radians(element.rotation)
+        marker_angle = 2 * math.pi * element.marker_position - math.pi / 2 + math.radians(render_rotation)
         marker_x = cx + radius * 0.68 * math.cos(marker_angle)
         marker_y = cy + radius * 0.68 * math.sin(marker_angle)
         marker_name = html.escape(element.marker, quote=True)
@@ -591,7 +611,7 @@ def _element_svg(
         else:
             pieces.append(f'<circle data-marker="{marker_name}" cx="{marker_x:.3f}" cy="{marker_y:.3f}" r="3" fill="{stroke_value}"/>')
     for child in element.children:
-        pieces.append(_element_svg(child, width, height, (cx, cy, size), id_suffix + "-nested"))
+        pieces.append(_element_svg(child, width, height, (cx, cy, size, render_rotation), id_suffix + "-nested"))
     if element.symmetry > 1 and parent is None:
         # Symmetry is a scene-visible property, not only metadata.  Mirror
         # copies are rendered around the element while retaining stable IDs.

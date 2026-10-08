@@ -1,5 +1,6 @@
 import json
 import unittest
+import xml.etree.ElementTree as ET
 
 from epsotests import (
     Element,
@@ -31,10 +32,32 @@ class VisualAbstractGeneratorTests(unittest.TestCase):
             self.assertNotEqual(frames[0]["svg"], frames[1]["svg"])
 
     def test_rotation_changes_symmetric_and_line_renderings(self):
-        for shape in ("circle", "line", "diamond"):
+        for shape in ("circle", "line", "diamond", "triangle", "star"):
             base = Scene((Element("one", shape=shape),))
             rotated = apply_rule(base, Rule("rotation", {"degrees": 90}))
             self.assertNotEqual(render_svg(base), render_svg(rotated))
+
+    def test_nested_rotation_reaches_child_rendering(self):
+        nested = apply_rule(
+            Scene((Element("one"),)),
+            Rule("nesting", {"shape": "triangle"}),
+        )
+        rotated_svg = render_svg(apply_rule(nested, Rule("rotation", {"degrees": 90})))
+        root = ET.fromstring(rotated_svg)
+        orientation = next(
+            element for element in root if element.attrib.get("data-orientation") == "one-inner-nested"
+        )
+        self.assertGreater(float(orientation.attrib["x2"]), float(orientation.attrib["x1"]))
+        self.assertEqual(orientation.attrib["y2"], orientation.attrib["y1"])
+
+    def test_reflection_mirrors_marker_position_for_each_axis(self):
+        base = Scene((Element("one", marker="dot", marker_position=0.25),))
+        vertical = apply_rule(base, Rule("reflection", {"axis": "vertical"}))
+        horizontal = apply_rule(base, Rule("reflection", {"axis": "horizontal"}))
+        both = apply_rule(base, Rule("reflection", {"axis": "diagonal"}))
+        self.assertAlmostEqual(vertical.elements[0].marker_position, 0.75)
+        self.assertAlmostEqual(horizontal.elements[0].marker_position, 0.25)
+        self.assertAlmostEqual(both.elements[0].marker_position, 0.75)
 
     def test_colour_changes_remain_visible_when_initially_unshaded(self):
         base = Scene((Element("one", shaded=False),))
