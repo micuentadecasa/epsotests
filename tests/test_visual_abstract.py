@@ -24,6 +24,12 @@ class VisualAbstractGeneratorTests(unittest.TestCase):
         self.assertEqual(first, second)
         self.assertEqual(render_svg(Scene.from_dict(first["stimulus"]["frames"][0]["scene"])), first["stimulus"]["frames"][0]["svg"])
 
+    def test_default_rotation_is_visually_observable(self):
+        for seed in range(20):
+            question = generate_sequence(seed=seed, difficulty="easy")
+            frames = question["stimulus"]["frames"]
+            self.assertNotEqual(frames[0]["svg"], frames[1]["svg"])
+
     def test_every_requested_format_has_visual_options(self):
         questions = [
             generate_sequence(seed=1),
