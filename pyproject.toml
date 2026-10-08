@@ -12,7 +12,7 @@ requires-python = ">=3.10"
 include = ["epsotests*"]
 
 [tool.setuptools.package-data]
-epsotests = ["web/*.html", "web/*.css", "web/*.js"]
+epsotests = ["web/*.html", "web/*.css", "web/*.js", "web/*.json"]
 
 [project.scripts]
 epsotests-visual = "epsotests.cli:main"

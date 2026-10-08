@@ -19,9 +19,14 @@ const VERBAL_TYPES = [
   ["true-false", "True / false"],
 ];
 
+const STATIC_MODE = document.documentElement.dataset.epsotestsMode === "static";
+const STATIC_CATALOG_URL = new URL("catalog.json", document.baseURI);
+let staticCatalogPromise = null;
+
 const state = {
   question: null,
   solutionToken: null,
+  staticSolution: null,
   solution: null,
   solutionPreference: sessionStorage.getItem("epsotests:show-solution") === "true",
   loading: false,
@@ -216,9 +221,10 @@ function renderOptions(question) {
   explainButton.disabled = !question.options.length;
 }
 
-function renderQuestion(question, token) {
+function renderQuestion(question, token, staticSolution = null) {
   state.question = question;
   state.solutionToken = token;
+  state.staticSolution = staticSolution;
   state.solution = null;
   $("#item-meta").textContent = `${question.exam} reasoning · item ${question.itemNumber || 1} · seed ${question.metadata?.seed ?? seed.value}`;
   $("#question-heading").textContent = question.format || question.questionType || "Question";
@@ -241,24 +247,74 @@ function selectedOption() {
   return answerForm.querySelector("input[name=answer]:checked")?.value || "";
 }
 
+function questionParams() {
+  const params = {
+    family: family.value,
+    difficulty: difficulty.value,
+    profile: profile.value,
+    seed: Number(seed.value || 0),
+    variant: variant.value,
+    representation: representation.value,
+  };
+  return params;
+}
+
+async function loadStaticCatalog() {
+  if (!staticCatalogPromise) {
+    staticCatalogPromise = fetch(STATIC_CATALOG_URL, { headers: { Accept: "application/json" } })
+      .then(async (response) => {
+        const payload = await response.json();
+        if (!response.ok || !Array.isArray(payload.questions)) {
+          throw new Error(payload.error || "Static question catalog is unavailable");
+        }
+        return payload;
+      });
+  }
+  return staticCatalogPromise;
+}
+
+function staticCatalogEntry(catalog, params) {
+  const candidates = catalog.questions.filter((entry) => (
+    entry.family === params.family
+    && entry.variant === params.variant
+    && entry.difficulty === params.difficulty
+    && entry.profile === params.profile
+    && (params.family !== "numerical" || entry.representation === params.representation)
+  ));
+  if (!candidates.length) return null;
+  const exact = candidates.find((entry) => entry.seed === params.seed);
+  if (exact) return exact;
+  const index = ((Math.abs(params.seed) % candidates.length) + candidates.length) % candidates.length;
+  return candidates[index];
+}
+
 async function fetchQuestion() {
   if (state.loading) return;
   state.loading = true;
   setStatus("Generating a deterministic question…");
-  const params = new URLSearchParams({
-    family: family.value,
-    difficulty: difficulty.value,
-    profile: profile.value,
-    seed: seed.value,
+  const params = questionParams();
+  const apiParams = new URLSearchParams({
+    family: params.family,
+    difficulty: params.difficulty,
+    profile: params.profile,
+    seed: String(params.seed),
   });
-  if (family.value === "visual") params.set("format", variant.value);
-  if (family.value === "numerical") {
-    params.set("operation", variant.value);
-    params.set("representation", representation.value);
+  if (params.family === "visual") apiParams.set("format", params.variant);
+  if (params.family === "numerical") {
+    apiParams.set("operation", params.variant);
+    apiParams.set("representation", params.representation);
   }
-  if (family.value === "verbal") params.set("questionType", variant.value);
+  if (params.family === "verbal") apiParams.set("questionType", params.variant);
   try {
-    const response = await fetch(`/api/question?${params.toString()}`, { headers: { Accept: "application/json" } });
+    if (STATIC_MODE) {
+      const catalog = await loadStaticCatalog();
+      const entry = staticCatalogEntry(catalog, params);
+      if (!entry) throw new Error("No matching question in the static catalog");
+      renderQuestion(entry.question, null, entry.solution);
+      setStatus(`${entry.question.optionCount}-option question ready from the static catalog. Select an answer, then review the logic when you are ready.`);
+      return;
+    }
+    const response = await fetch(`/api/question?${apiParams.toString()}`, { headers: { Accept: "application/json" } });
     const payload = await response.json();
     if (!response.ok) throw new Error(payload.error || "Question generation failed");
     renderQuestion(payload.question, payload.solutionToken);
@@ -342,6 +398,24 @@ function appendSolutionBlock(title, content) {
 }
 
 async function revealSolution(optionId = selectedOption()) {
+  if (STATIC_MODE) {
+    if (!state.staticSolution) return;
+    const result = JSON.parse(JSON.stringify(state.staticSolution));
+    result.selectedOption = optionId || null;
+    result.isCorrect = optionId ? optionId === result.correctOption : null;
+    result.selectedReason = result.isCorrect === true
+      ? "Your answer matches the correct option."
+      : optionId
+        ? `You selected option ${optionId}; the correct answer is option ${result.correctOption}.`
+        : "Solution preference is enabled. Select an answer to check your response.";
+    renderSolution(result);
+    if (result.selectedOption) {
+      answerFeedback.textContent = result.isCorrect ? `Option ${result.selectedOption} is correct.` : `Option ${result.selectedOption} is recorded. Compare it with the worked solution below.`;
+      answerFeedback.className = `answer-feedback ${result.isCorrect ? "correct" : "incorrect"}`;
+    }
+    setStatus("Solution is visible. Use Hide Solution to close it, or keep the toggle enabled for the next question.");
+    return;
+  }
   if (!state.solutionToken) return;
   setStatus("Loading the solution…");
   try {

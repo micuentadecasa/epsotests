@@ -27,6 +27,8 @@ from . import (
     generate_question,
     generate_verbal_question,
 )
+from .web_payload import public_option as _public_option
+from .web_payload import public_question as _public_question
 
 
 STATIC_ROOT = Path(__file__).with_name("web")
@@ -41,60 +43,6 @@ class APIError(ValueError):
 def _query_value(query: Mapping[str, list[str]], name: str, default: str) -> str:
     value = query.get(name, [default])[0]
     return str(value).strip() or default
-
-
-def _public_option(option: Mapping[str, Any]) -> dict[str, Any]:
-    """Remove generator review metadata from an answer option."""
-
-    result = dict(option)
-    for key in (
-        "mutation",
-        "claimId",
-        "claimType",
-        "evaluationStatus",
-        "evidence",
-        "distractorRationale",
-    ):
-        result.pop(key, None)
-    return result
-
-
-def _public_question(question: Mapping[str, Any], token: str) -> dict[str, Any]:
-    """Build the learner-facing payload without exposing the solution."""
-
-    public = deepcopy(dict(question))
-    for key in (
-        "correctOption",
-        "explanation",
-        "explanationFragments",
-        "answerEvaluation",
-        "explanationDetails",
-        "claims",
-        "evidenceSpans",
-    ):
-        public.pop(key, None)
-    public["options"] = [_public_option(option) for option in public.get("options", ())]
-
-    # The source passage/table/chart remains available as stimulus data, but
-    # evidence annotations and the answer-bearing metadata do not.
-    if isinstance(public.get("stimulus"), dict):
-        public["stimulus"].pop("evidenceSpans", None)
-        if isinstance(public["stimulus"].get("passage"), dict):
-            public["stimulus"]["passage"].pop("evidenceSpans", None)
-    public["metadata"] = {
-        key: public.get("metadata", {}).get(key)
-        for key in ("seed", "examProfile", "optionCount", "operation", "questionType")
-        if key in public.get("metadata", {})
-    }
-    action = public.get("actions", {}).get("explainLogic")
-    if isinstance(action, dict):
-        action.pop("result", None)
-        action["solutionView"] = {
-            "initiallyVisible": False,
-            "hideAction": action.get("solutionView", {}).get("hideAction", {}),
-        }
-    public["solutionToken"] = token
-    return public
 
 
 def _generate_question(query: Mapping[str, list[str]]) -> tuple[str, dict[str, Any]]:

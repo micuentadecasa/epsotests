@@ -205,6 +205,12 @@ cython_debug/
 # Temporary file for partial code execution
 tempCodeRunnerFile.py
 
+# Local Pages browser preview
+.playwright-static-root/
+_site/
+web/node_modules/
+web/test-results/
+
 # Ruff stuff:
 .ruff_cache/
 

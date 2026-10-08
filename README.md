@@ -212,3 +212,45 @@ npm test
 
 The Playwright configuration starts the local server automatically on port
 8765. The API can also be checked directly at `/api/health`.
+
+### GitHub Pages static deployment
+
+GitHub Pages serves the browser app from a repository subpath and cannot run
+the Python API. The Pages build therefore creates `catalog.json` from fixed
+seeds (`42` and `43`) for every visual, numerical, and verbal variant,
+difficulty, representation, and option profile. The browser switches to this
+catalog through the static build flag; it does not call `/api` in that mode.
+The same app and controls continue to use the Python API in local mode.
+
+Build and preview the static artifact locally from the repository root:
+
+```sh
+python -m pip install --editable .
+python scripts/build_pages.py --output _site
+python -m http.server 8000 --directory _site
+```
+
+Open <http://127.0.0.1:8000/>. To regenerate only the committed catalog,
+run `python examples/web/generate_catalog.py`; the reproducibility and asset
+integrity checks are included in `python -m unittest discover -v`.
+
+The deployment workflow is `.github/workflows/pages.yml`. It runs on pushes to
+`main` (or `workflow_dispatch`), generates the catalog and relative-asset
+artifact, uploads it with `actions/upload-pages-artifact`, and deploys it with
+`actions/deploy-pages`. After enabling GitHub Pages with **GitHub Actions** as
+the source, the URL is:
+
+```text
+https://<owner>.github.io/<repository>/
+```
+
+Run the Pages-mode browser smoke tests locally with:
+
+```sh
+cd web
+EPSOTESTS_STATIC=1 npm test
+```
+
+Those tests serve the artifact under `/epsotests/`, covering relative asset
+resolution, no-API loading, answer selection, persistent Explain Logic / Ver
+solución review, Hide Solution, Next Question, and one flow per exam family.
