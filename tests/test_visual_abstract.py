@@ -30,6 +30,19 @@ class VisualAbstractGeneratorTests(unittest.TestCase):
             frames = question["stimulus"]["frames"]
             self.assertNotEqual(frames[0]["svg"], frames[1]["svg"])
 
+    def test_rotation_changes_symmetric_and_line_renderings(self):
+        for shape in ("circle", "line", "diamond"):
+            base = Scene((Element("one", shape=shape),))
+            rotated = apply_rule(base, Rule("rotation", {"degrees": 90}))
+            self.assertNotEqual(render_svg(base), render_svg(rotated))
+
+    def test_matrix_rejects_unassigned_extra_rules(self):
+        with self.assertRaises(ValueError):
+            generate_matrix(
+                2,
+                rules=[Rule("rotation"), Rule("translation"), Rule("fill")],
+            )
+
     def test_every_requested_format_has_visual_options(self):
         questions = [
             generate_sequence(seed=1),
