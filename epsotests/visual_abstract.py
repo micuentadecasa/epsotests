@@ -129,7 +129,9 @@ class Scene:
     @classmethod
     def from_dict(cls, data: Mapping[str, Any]) -> "Scene":
         return cls(
-            elements=tuple(Element.from_dict(item) for item in data.get("elements", [])),
+            elements=tuple(
+                Element.from_dict(item) for item in data.get("elements", [])
+            ),
             background=str(data.get("background", "#ffffff")),
         )
 
@@ -164,7 +166,9 @@ class Rule:
 
     @classmethod
     def from_dict(cls, data: Mapping[str, Any]) -> "Rule":
-        return cls(str(data["kind"]), dict(data.get("parameters", data.get("params", {}))))
+        return cls(
+            str(data["kind"]), dict(data.get("parameters", data.get("params", {})))
+        )
 
 
 # Small constructors keep generated rule data readable while Rule remains the
@@ -239,7 +243,11 @@ def _target_indices(scene: Scene, parameters: Mapping[str, Any]) -> list[int]:
         return list(range(len(scene.elements)))
     if isinstance(target, int) and 0 <= target < len(scene.elements):
         return [target]
-    return [index for index, element in enumerate(scene.elements) if element.id == str(target)]
+    return [
+        index
+        for index, element in enumerate(scene.elements)
+        if element.id == str(target)
+    ]
 
 
 def _with_element(scene: Scene, index: int, element: Element) -> Scene:
@@ -248,11 +256,17 @@ def _with_element(scene: Scene, index: int, element: Element) -> Scene:
     return replace(scene, elements=tuple(elements))
 
 
-def _apply_rotation(scene: Scene, degrees: float, frame_index: int, parameters: Mapping[str, Any]) -> Scene:
+def _apply_rotation(
+    scene: Scene, degrees: float, frame_index: int, parameters: Mapping[str, Any]
+) -> Scene:
     amount = degrees * frame_index
     for index in _target_indices(scene, parameters):
         element = scene.elements[index]
-        scene = _with_element(scene, index, replace(element, rotation=_wrap_angle(element.rotation + amount)))
+        scene = _with_element(
+            scene,
+            index,
+            replace(element, rotation=_wrap_angle(element.rotation + amount)),
+        )
     return scene
 
 
@@ -264,7 +278,11 @@ def _apply_translation(
         scene = _with_element(
             scene,
             index,
-            replace(element, x=_clamp(element.x + dx * frame_index), y=_clamp(element.y + dy * frame_index)),
+            replace(
+                element,
+                x=_clamp(element.x + dx * frame_index),
+                y=_clamp(element.y + dy * frame_index),
+            ),
         )
     return scene
 
@@ -296,16 +314,22 @@ def _reflected_element(element: Element, axis: str) -> Element:
     )
 
 
-def _apply_reflection(scene: Scene, axis: str, parameters: Mapping[str, Any], frame_index: int) -> Scene:
+def _apply_reflection(
+    scene: Scene, axis: str, parameters: Mapping[str, Any], frame_index: int
+) -> Scene:
     if frame_index == 0 or frame_index % 2 == 0:
         return scene
     axis = axis.lower()
     for index in _target_indices(scene, parameters):
-        scene = _with_element(scene, index, _reflected_element(scene.elements[index], axis))
+        scene = _with_element(
+            scene, index, _reflected_element(scene.elements[index], axis)
+        )
     return scene
 
 
-def _apply_alternation(scene: Scene, parameters: Mapping[str, Any], frame_index: int) -> Scene:
+def _apply_alternation(
+    scene: Scene, parameters: Mapping[str, Any], frame_index: int
+) -> Scene:
     if frame_index == 0:
         return scene
     property_name = str(parameters.get("property", "shaded"))
@@ -321,7 +345,9 @@ def _apply_alternation(scene: Scene, parameters: Mapping[str, Any], frame_index:
         if property_name == "shaded":
             changed = replace(element, shaded=bool(value))
         elif property_name == "fill":
-            fill_value = value if isinstance(value, str) else PALETTE[frame_index % len(PALETTE)]
+            fill_value = (
+                value if isinstance(value, str) else PALETTE[frame_index % len(PALETTE)]
+            )
             changed = replace(element, fill=fill_value, shaded=True)
         elif property_name == "shape":
             changed = replace(element, shape=str(value))
@@ -335,7 +361,9 @@ def _apply_alternation(scene: Scene, parameters: Mapping[str, Any], frame_index:
     return scene
 
 
-def _apply_count(scene: Scene, delta: int, frame_index: int, parameters: Mapping[str, Any]) -> Scene:
+def _apply_count(
+    scene: Scene, delta: int, frame_index: int, parameters: Mapping[str, Any]
+) -> Scene:
     desired_delta = int(delta) * frame_index
     if desired_delta > 0:
         elements = list(scene.elements)
@@ -359,13 +387,17 @@ def _apply_count(scene: Scene, delta: int, frame_index: int, parameters: Mapping
     return scene
 
 
-def _apply_shape_change(scene: Scene, parameters: Mapping[str, Any], frame_index: int) -> Scene:
+def _apply_shape_change(
+    scene: Scene, parameters: Mapping[str, Any], frame_index: int
+) -> Scene:
     if frame_index == 0:
         return scene
     shapes = tuple(str(shape) for shape in parameters.get("shapes", SHAPES)) or SHAPES
     for index in _target_indices(scene, parameters):
         element = scene.elements[index]
-        scene = _with_element(scene, index, replace(element, shape=shapes[frame_index % len(shapes)]))
+        scene = _with_element(
+            scene, index, replace(element, shape=shapes[frame_index % len(shapes)])
+        )
     return scene
 
 
@@ -382,7 +414,9 @@ def _apply_fill(scene: Scene, parameters: Mapping[str, Any], frame_index: int) -
     return scene
 
 
-def _apply_color(scene: Scene, parameters: Mapping[str, Any], frame_index: int) -> Scene:
+def _apply_color(
+    scene: Scene, parameters: Mapping[str, Any], frame_index: int
+) -> Scene:
     if frame_index == 0:
         return scene
     colors = tuple(str(color) for color in parameters.get("colors", PALETTE)) or PALETTE
@@ -396,16 +430,22 @@ def _apply_color(scene: Scene, parameters: Mapping[str, Any], frame_index: int) 
     return scene
 
 
-def _apply_symmetry(scene: Scene, parameters: Mapping[str, Any], frame_index: int) -> Scene:
+def _apply_symmetry(
+    scene: Scene, parameters: Mapping[str, Any], frame_index: int
+) -> Scene:
     if frame_index == 0:
         return scene
     order = max(1, int(parameters.get("order", parameters.get("count", 2))))
     for index in _target_indices(scene, parameters):
-        scene = _with_element(scene, index, replace(scene.elements[index], symmetry=order))
+        scene = _with_element(
+            scene, index, replace(scene.elements[index], symmetry=order)
+        )
     return scene
 
 
-def _apply_nesting(scene: Scene, parameters: Mapping[str, Any], frame_index: int) -> Scene:
+def _apply_nesting(
+    scene: Scene, parameters: Mapping[str, Any], frame_index: int
+) -> Scene:
     if frame_index == 0:
         return scene
     action = str(parameters.get("action", "add")).lower()
@@ -414,7 +454,11 @@ def _apply_nesting(scene: Scene, parameters: Mapping[str, Any], frame_index: int
         if action in ("remove", "delete"):
             changed = replace(element, children=())
         else:
-            inner_shape = str(parameters.get("shape", "circle" if element.shape != "circle" else "diamond"))
+            inner_shape = str(
+                parameters.get(
+                    "shape", "circle" if element.shape != "circle" else "diamond"
+                )
+            )
             child = Element(
                 id=f"{element.id}-inner",
                 shape=inner_shape,
@@ -432,15 +476,25 @@ def _apply_nesting(scene: Scene, parameters: Mapping[str, Any], frame_index: int
     return scene
 
 
-def _apply_line_count(scene: Scene, parameters: Mapping[str, Any], frame_index: int) -> Scene:
+def _apply_line_count(
+    scene: Scene, parameters: Mapping[str, Any], frame_index: int
+) -> Scene:
     delta = int(parameters.get("delta", 1))
     for index in _target_indices(scene, parameters):
         element = scene.elements[index]
-        scene = _with_element(scene, index, replace(element, line_count=max(1, element.line_count + delta * frame_index)))
+        scene = _with_element(
+            scene,
+            index,
+            replace(
+                element, line_count=max(1, element.line_count + delta * frame_index)
+            ),
+        )
     return scene
 
 
-def _apply_marker(scene: Scene, parameters: Mapping[str, Any], frame_index: int) -> Scene:
+def _apply_marker(
+    scene: Scene, parameters: Mapping[str, Any], frame_index: int
+) -> Scene:
     if frame_index == 0:
         return scene
     movement = _as_number(parameters.get("delta", parameters.get("movement", 0.2)), 0.2)
@@ -475,10 +529,21 @@ def apply_rule(scene: Scene, rule: Rule, frame_index: int = 1) -> Scene:
         result = scene
         nested = parameters.get("rules", ())
         for nested_rule in nested:
-            result = apply_rule(result, nested_rule if isinstance(nested_rule, Rule) else Rule.from_dict(nested_rule), frame_index)
+            result = apply_rule(
+                result,
+                nested_rule
+                if isinstance(nested_rule, Rule)
+                else Rule.from_dict(nested_rule),
+                frame_index,
+            )
         return result
     if kind in ("rotation", "orientation"):
-        return _apply_rotation(scene, _as_number(parameters.get("degrees", parameters.get("angle", 90)), 90), frame_index, parameters)
+        return _apply_rotation(
+            scene,
+            _as_number(parameters.get("degrees", parameters.get("angle", 90)), 90),
+            frame_index,
+            parameters,
+        )
     if kind in ("translation", "movement", "position"):
         return _apply_translation(
             scene,
@@ -488,7 +553,9 @@ def apply_rule(scene: Scene, rule: Rule, frame_index: int = 1) -> Scene:
             parameters,
         )
     if kind in ("reflection", "reflect"):
-        return _apply_reflection(scene, str(parameters.get("axis", "vertical")), parameters, frame_index)
+        return _apply_reflection(
+            scene, str(parameters.get("axis", "vertical")), parameters, frame_index
+        )
     if kind in ("alternation", "alternate"):
         return _apply_alternation(scene, parameters, frame_index)
     if kind in ("element-count", "count", "shape-addition", "shape-removal"):
@@ -520,7 +587,9 @@ def apply_rules(scene: Scene, rules: Iterable[Rule], frame_index: int = 1) -> Sc
     return result
 
 
-def _points_for_shape(shape: str, cx: float, cy: float, radius: float, rotation_degrees: float) -> str:
+def _points_for_shape(
+    shape: str, cx: float, cy: float, radius: float, rotation_degrees: float
+) -> str:
     sides = {"triangle": 3, "diamond": 4, "square": 4, "star": 10}.get(shape, 0)
     if not sides:
         return ""
@@ -530,15 +599,21 @@ def _points_for_shape(shape: str, cx: float, cy: float, radius: float, rotation_
         for index in range(10):
             radius_for_point = radius if index % 2 == 0 else radius * 0.45
             angle = start + index * math.pi / 5
-            points.append(f"{cx + radius_for_point * math.cos(angle):.3f},{cy + radius_for_point * math.sin(angle):.3f}")
+            points.append(
+                f"{cx + radius_for_point * math.cos(angle):.3f},{cy + radius_for_point * math.sin(angle):.3f}"
+            )
     elif shape == "diamond":
         for index in range(4):
             angle = start + index * math.pi / 2
-            points.append(f"{cx + radius * math.cos(angle):.3f},{cy + radius * math.sin(angle):.3f}")
+            points.append(
+                f"{cx + radius * math.cos(angle):.3f},{cy + radius * math.sin(angle):.3f}"
+            )
     else:
         for index in range(sides):
             angle = start + index * 2 * math.pi / sides
-            points.append(f"{cx + radius * math.cos(angle):.3f},{cy + radius * math.sin(angle):.3f}")
+            points.append(
+                f"{cx + radius * math.cos(angle):.3f},{cy + radius * math.sin(angle):.3f}"
+            )
     return " ".join(points)
 
 
@@ -550,15 +625,27 @@ def _element_svg(
     id_suffix: str = "",
 ) -> str:
     if parent is None:
-        cx, cy, size = element.x * width, element.y * height, element.size * min(width, height)
+        cx, cy, size = (
+            element.x * width,
+            element.y * height,
+            element.size * min(width, height),
+        )
         render_rotation = element.rotation
     else:
         parent_x, parent_y, parent_size, parent_rotation = parent
         relative_x = (element.x - 0.5) * parent_size
         relative_y = (element.y - 0.5) * parent_size
         parent_angle = math.radians(parent_rotation)
-        cx = parent_x + relative_x * math.cos(parent_angle) - relative_y * math.sin(parent_angle)
-        cy = parent_y + relative_x * math.sin(parent_angle) + relative_y * math.cos(parent_angle)
+        cx = (
+            parent_x
+            + relative_x * math.cos(parent_angle)
+            - relative_y * math.sin(parent_angle)
+        )
+        cy = (
+            parent_y
+            + relative_x * math.sin(parent_angle)
+            + relative_y * math.cos(parent_angle)
+        )
         size = element.size * parent_size
         render_rotation = element.rotation + parent_rotation
     fill_value = html.escape(element.fill if element.shaded else "none", quote=True)
@@ -569,7 +656,9 @@ def _element_svg(
     shape = element.shape.lower()
     common = f'fill="{fill_value}" stroke="{stroke_value}" stroke-width="2"'
     if shape == "circle":
-        pieces.append(f'<circle data-element-id="{element_id}" cx="{cx:.3f}" cy="{cy:.3f}" r="{radius:.3f}" {common}/>')
+        pieces.append(
+            f'<circle data-element-id="{element_id}" cx="{cx:.3f}" cy="{cy:.3f}" r="{radius:.3f}" {common}/>'
+        )
     elif shape == "line":
         for line_index in range(max(1, element.line_count)):
             offset = (line_index - (element.line_count - 1) / 2) * size * 0.12
@@ -584,7 +673,9 @@ def _element_svg(
         )
     else:
         points = _points_for_shape(shape, cx, cy, radius, render_rotation)
-        pieces.append(f'<polygon data-element-id="{element_id}" points="{points}" {common}/>')
+        pieces.append(
+            f'<polygon data-element-id="{element_id}" points="{points}" {common}/>'
+        )
     if shape in ("circle", "square", "diamond", "triangle", "star"):
         orientation_angle = math.radians(render_rotation - 90)
         orientation_x = cx + radius * 0.62 * math.cos(orientation_angle)
@@ -604,7 +695,11 @@ def _element_svg(
                 f'stroke="{stroke_value}" stroke-width="1"/>'
             )
     if element.marker:
-        marker_angle = 2 * math.pi * element.marker_position - math.pi / 2 + math.radians(render_rotation)
+        marker_angle = (
+            2 * math.pi * element.marker_position
+            - math.pi / 2
+            + math.radians(render_rotation)
+        )
         marker_x = cx + radius * 0.68 * math.cos(marker_angle)
         marker_y = cy + radius * 0.68 * math.sin(marker_angle)
         marker_name = html.escape(element.marker, quote=True)
@@ -614,9 +709,19 @@ def _element_svg(
                 f'M {marker_x:.3f} {marker_y - 4:.3f} L {marker_x:.3f} {marker_y + 4:.3f}" stroke="{stroke_value}" stroke-width="2"/>'
             )
         else:
-            pieces.append(f'<circle data-marker="{marker_name}" cx="{marker_x:.3f}" cy="{marker_y:.3f}" r="3" fill="{stroke_value}"/>')
+            pieces.append(
+                f'<circle data-marker="{marker_name}" cx="{marker_x:.3f}" cy="{marker_y:.3f}" r="3" fill="{stroke_value}"/>'
+            )
     for child in element.children:
-        pieces.append(_element_svg(child, width, height, (cx, cy, size, render_rotation), id_suffix + "-nested"))
+        pieces.append(
+            _element_svg(
+                child,
+                width,
+                height,
+                (cx, cy, size, render_rotation),
+                id_suffix + "-nested",
+            )
+        )
     if element.symmetry > 1 and parent is None:
         # Symmetry is a scene-visible property, not only metadata.  Mirror
         # copies are rendered around the element while retaining stable IDs.
@@ -625,7 +730,9 @@ def _element_svg(
             copy_x = _clamp(element.x + math.cos(angle) * element.size * 0.65) * width
             copy_y = _clamp(element.y + math.sin(angle) * element.size * 0.65) * height
             copy = replace(element, x=copy_x / width, y=copy_y / height, symmetry=1)
-            pieces.append(_element_svg(copy, width, height, None, f"-symmetry-{copy_index}"))
+            pieces.append(
+                _element_svg(copy, width, height, None, f"-symmetry-{copy_index}")
+            )
     return "".join(pieces)
 
 
@@ -638,7 +745,9 @@ def render_svg(scene: Scene, width: int = 160, height: int = 160) -> str:
 
     scene = Scene.from_dict(scene.to_dict())
     background = html.escape(scene.background, quote=True)
-    content = "".join(_element_svg(element, width, height) for element in scene.elements)
+    content = "".join(
+        _element_svg(element, width, height) for element in scene.elements
+    )
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{int(width)}" height="{int(height)}" '
         f'viewBox="0 0 {int(width)} {int(height)}" role="img" aria-label="visual reasoning figure">'
@@ -697,7 +806,15 @@ def _default_matrix_rules(level: str, size: int) -> tuple[Rule, Rule]:
     if level == "hard":
         return (
             Rule("composite", {"rules": [rotation(90), translation(0.07, 0.04)]}),
-            Rule("composite", {"rules": [reflection("vertical"), color_change(("#2563eb", "#dc2626", "#16a34a"))]}),
+            Rule(
+                "composite",
+                {
+                    "rules": [
+                        reflection("vertical"),
+                        color_change(("#2563eb", "#dc2626", "#16a34a")),
+                    ]
+                },
+            ),
         )
     return rotation(90), translation(0, 0.1)
 
@@ -707,7 +824,9 @@ def _normalize_rules(rules: Sequence[Rule]) -> list[Rule]:
 
 
 def _rules_for_sequence(rules: Sequence[Rule] | None, level: str) -> list[Rule]:
-    return _normalize_rules(rules) if rules is not None else _default_sequence_rules(level)
+    return (
+        _normalize_rules(rules) if rules is not None else _default_sequence_rules(level)
+    )
 
 
 def _figure(scene: Scene, figure_id: str) -> dict[str, Any]:
@@ -742,7 +861,10 @@ def _rule_label(rule: Rule) -> str:
     if kind in ("marker", "marker-movement"):
         return "move the marker"
     if kind in ("composite", "combined"):
-        return " and ".join(_rule_label(Rule.from_dict(item) if not isinstance(item, Rule) else item) for item in p.get("rules", []))
+        return " and ".join(
+            _rule_label(Rule.from_dict(item) if not isinstance(item, Rule) else item)
+            for item in p.get("rules", [])
+        )
     return rule.kind
 
 
@@ -757,38 +879,77 @@ def _rule_sentence(rules: Sequence[Rule]) -> str:
     return ", ".join(labels[:-1]) + f", and {labels[-1]}"
 
 
-def _mutated(scene: Scene, mutation: str, reference: Scene, rules: Sequence[Rule]) -> tuple[Scene, dict[str, Any]]:
+def _mutated(
+    scene: Scene, mutation: str, reference: Scene, rules: Sequence[Rule]
+) -> tuple[Scene, dict[str, Any]]:
     elements = list(scene.elements)
     if not elements:
-        return Scene((Element("distractor"),)), {"kind": mutation, "description": mutation}
+        return Scene((Element("distractor"),)), {
+            "kind": mutation,
+            "description": mutation,
+        }
     first = elements[0]
     if mutation == "partial-rule":
         partial = apply_rule(reference, rules[0]) if rules else reference
-        return partial, {"kind": mutation, "description": "applies only part of the composite rule"}
+        return partial, {
+            "kind": mutation,
+            "description": "applies only part of the composite rule",
+        }
     if mutation == "wrong-direction":
         if first.x < 0.5:
             changed = replace(first, x=_clamp(first.x - 0.12))
         else:
             changed = replace(first, x=_clamp(first.x + 0.12))
         elements[0] = changed
-        return Scene(tuple(elements), scene.background), {"kind": mutation, "description": "moves in the opposite direction"}
+        return Scene(tuple(elements), scene.background), {
+            "kind": mutation,
+            "description": "moves in the opposite direction",
+        }
     if mutation == "wrong-rotation":
         elements[0] = replace(first, rotation=_wrap_angle(first.rotation + 45))
-        return Scene(tuple(elements), scene.background), {"kind": mutation, "description": "uses an incorrect rotation"}
+        return Scene(tuple(elements), scene.background), {
+            "kind": mutation,
+            "description": "uses an incorrect rotation",
+        }
     if mutation == "wrong-element-count":
         if len(elements) > 1:
             elements = elements[:-1]
         else:
-            elements.append(replace(first, id="extra-distractor", x=_clamp(first.x + 0.2), y=_clamp(first.y + 0.12)))
-        return Scene(tuple(elements), scene.background), {"kind": mutation, "description": "has the wrong number of elements"}
+            elements.append(
+                replace(
+                    first,
+                    id="extra-distractor",
+                    x=_clamp(first.x + 0.2),
+                    y=_clamp(first.y + 0.12),
+                )
+            )
+        return Scene(tuple(elements), scene.background), {
+            "kind": mutation,
+            "description": "has the wrong number of elements",
+        }
     if mutation == "wrong-marker-movement":
-        elements[0] = replace(first, marker=first.marker or "dot", marker_position=(first.marker_position + 0.37) % 1)
-        return Scene(tuple(elements), scene.background), {"kind": mutation, "description": "moves the marker to the wrong position"}
+        elements[0] = replace(
+            first,
+            marker=first.marker or "dot",
+            marker_position=(first.marker_position + 0.37) % 1,
+        )
+        return Scene(tuple(elements), scene.background), {
+            "kind": mutation,
+            "description": "moves the marker to the wrong position",
+        }
     if mutation == "wrong-shading":
         elements[0] = replace(first, shaded=not first.shaded)
-        return Scene(tuple(elements), scene.background), {"kind": mutation, "description": "gets the fill or shading wrong"}
-    elements[0] = replace(first, shape="diamond" if first.shape != "diamond" else "triangle")
-    return Scene(tuple(elements), scene.background), {"kind": "wrong-shape", "description": "changes the shape incorrectly"}
+        return Scene(tuple(elements), scene.background), {
+            "kind": mutation,
+            "description": "gets the fill or shading wrong",
+        }
+    elements[0] = replace(
+        first, shape="diamond" if first.shape != "diamond" else "triangle"
+    )
+    return Scene(tuple(elements), scene.background), {
+        "kind": "wrong-shape",
+        "description": "changes the shape incorrectly",
+    }
 
 
 def make_distractors(
@@ -831,18 +992,43 @@ def make_distractors(
     # final deterministic fallback still guarantees answer uniqueness.
     fallback_index = 0
     while len(results) < count:
-        candidate = replace(correct, elements=correct.elements + (Element(f"fallback-{fallback_index}", shape="line", line_count=fallback_index + 2),))
+        candidate = replace(
+            correct,
+            elements=correct.elements
+            + (
+                Element(
+                    f"fallback-{fallback_index}",
+                    shape="line",
+                    line_count=fallback_index + 2,
+                ),
+            ),
+        )
         fallback_index += 1
         rendered = render_svg(candidate)
         if rendered not in seen:
             seen.add(rendered)
-            results.append({"scene": candidate, "mutation": {"kind": "fallback", "description": "uses an additional line element"}})
+            results.append(
+                {
+                    "scene": candidate,
+                    "mutation": {
+                        "kind": "fallback",
+                        "description": "uses an additional line element",
+                    },
+                }
+            )
     return results
 
 
-def _option_records(correct: Scene, reference: Scene, rules: Sequence[Rule], seed: int) -> tuple[list[dict[str, Any]], str, list[dict[str, Any]]]:
+def _option_records(
+    correct: Scene, reference: Scene, rules: Sequence[Rule], seed: int
+) -> tuple[list[dict[str, Any]], str, list[dict[str, Any]]]:
     distractors = make_distractors(correct, reference, rules, seed=seed, count=3)
-    candidates = [{"scene": correct, "mutation": {"kind": "correct", "description": "matches every rule"}}] + distractors
+    candidates = [
+        {
+            "scene": correct,
+            "mutation": {"kind": "correct", "description": "matches every rule"},
+        }
+    ] + distractors
     random.Random(seed + 7919).shuffle(candidates)
     options: list[dict[str, Any]] = []
     correct_option = ""
@@ -891,8 +1077,16 @@ def _base_question(
             "rules": rule_data,
             "generatedFigures": list(figures),
             "distractors": list(distractors),
-            "answerFigure": next(option["figure"] for option in options if option["id"] == correct_option),
-            "answerSignature": Scene.from_dict(next(option["figure"] for option in options if option["id"] == correct_option)).signature(),
+            "answerFigure": next(
+                option["figure"] for option in options if option["id"] == correct_option
+            ),
+            "answerSignature": Scene.from_dict(
+                next(
+                    option["figure"]
+                    for option in options
+                    if option["id"] == correct_option
+                )
+            ).signature(),
         },
     }
 
@@ -908,11 +1102,18 @@ def generate_sequence(
     selected_rules = _rules_for_sequence(rules, level)
     base = _base_scene(seed, level)
     frame_count = {"easy": 3, "medium": 4, "hard": 5}[level]
-    frames = [apply_rules(base, selected_rules, frame_index=index) for index in range(frame_count)]
+    frames = [
+        apply_rules(base, selected_rules, frame_index=index)
+        for index in range(frame_count)
+    ]
     correct = apply_rules(base, selected_rules, frame_index=frame_count)
-    figures = [_figure(scene, f"frame-{index + 1}") for index, scene in enumerate(frames)]
+    figures = [
+        _figure(scene, f"frame-{index + 1}") for index, scene in enumerate(frames)
+    ]
     stimulus = {"type": "sequence", "frames": figures, "missing": "next"}
-    options, correct_option, distractors = _option_records(correct, frames[-1], selected_rules, seed + 101)
+    options, correct_option, distractors = _option_records(
+        correct, frames[-1], selected_rules, seed + 101
+    )
     explanation = (
         f"The rule is {_rule_sentence(selected_rules)}. Each frame changes from the previous frame by that rule; "
         f"the missing next frame must continue the same change. Option {correct_option} is correct because it "
@@ -936,7 +1137,9 @@ def generate_sequence(
     )
 
 
-def _matrix_scene(base: Scene, row_rule: Rule, column_rule: Rule, row: int, column: int) -> Scene:
+def _matrix_scene(
+    base: Scene, row_rule: Rule, column_rule: Rule, row: int, column: int
+) -> Scene:
     return apply_rule(apply_rule(base, row_rule, row), column_rule, column)
 
 
@@ -962,7 +1165,9 @@ def generate_matrix(
         if len(normalized_rules) > 2:
             raise ValueError("matrix rules must contain at most two rules")
         row_rule = normalized_rules[0]
-        column_rule = normalized_rules[1] if len(normalized_rules) > 1 else normalized_rules[0]
+        column_rule = (
+            normalized_rules[1] if len(normalized_rules) > 1 else normalized_rules[0]
+        )
         selected_rules = normalized_rules
     base = _base_scene(seed + 17, level)
     grid: list[list[dict[str, Any] | None]] = []
@@ -980,7 +1185,9 @@ def generate_matrix(
         grid.append(grid_row)
     correct = _matrix_scene(base, row_rule, column_rule, size - 1, size - 1)
     reference_scene = Scene.from_dict(figures[-1]["scene"]) if figures else base
-    options, correct_option, distractors = _option_records(correct, reference_scene, selected_rules, seed + 211)
+    options, correct_option, distractors = _option_records(
+        correct, reference_scene, selected_rules, seed + 211
+    )
     format_name = f"matrix-{size}x{size}"
     rule_text = f"Rows {_rule_label(row_rule)}; columns {_rule_label(column_rule)}."
     explanation = (
@@ -994,7 +1201,13 @@ def generate_matrix(
         format_name,
         level,
         seed,
-        {"type": "matrix", "rows": size, "columns": size, "grid": grid, "missing": {"row": size, "column": size}},
+        {
+            "type": "matrix",
+            "rows": size,
+            "columns": size,
+            "grid": grid,
+            "missing": {"row": size, "column": size},
+        },
         "Which figure completes the matrix?",
         options,
         correct_option,
@@ -1027,14 +1240,21 @@ def generate_analogy(
         "right": {"C": target_figure, "missing": "answer"},
         "notation": "A : B :: C : ?",
     }
-    options, correct_option, distractors = _option_records(correct, target, selected_rules, seed + 307)
+    options, correct_option, distractors = _option_records(
+        correct, target, selected_rules, seed + 307
+    )
     explanation = (
         f"A changes to B by {_rule_sentence(selected_rules)}. Apply the same transformation to C: "
         f"{_rule_sentence(selected_rules)}. Option {correct_option} is correct because it matches that "
         "transformation without changing unrelated parts. The distractors use partial rules, wrong directions, "
         "or incorrect rotations/counts."
     )
-    figures = [source_figure, transformed_figure, target_figure, _figure(correct, "answer")]
+    figures = [
+        source_figure,
+        transformed_figure,
+        target_figure,
+        _figure(correct, "answer"),
+    ]
     return _base_question(
         f"abstract-analogy-{seed}-{level}",
         "analogy",
