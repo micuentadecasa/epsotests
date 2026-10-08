@@ -7,14 +7,24 @@ from epsotests import (
     Rule,
     Scene,
     apply_rule,
+    colour_change,
+    composite,
+    containment,
     deserialize_rule,
     deserialize_scene,
     generate_analogy,
     generate_matrix,
     generate_question,
     generate_sequence,
+    make_distractors,
+    movement,
+    orientation,
+    position,
     render_svg,
     serialize_scene,
+    shape_addition,
+    shape_removal,
+    shading,
 )
 
 
@@ -220,6 +230,86 @@ class VisualAbstractGeneratorTests(unittest.TestCase):
             all(option["mutation"]["kind"] != "correct" for option in wrong)
         )
         self.assertTrue(all(option["mutation"]["description"] for option in wrong))
+
+    def test_rule_aliases_and_nested_targets_are_visible(self):
+        child = Element("inner", shape="triangle", fill="#123456", shaded=True)
+        base = Scene((Element("outer", children=(child,)),))
+        cases = [
+            movement(0.1, 0.05),
+            position(0.1, 0.05),
+            orientation(45),
+            shading(False),
+            colour_change(("#dc2626",)),
+            containment("add"),
+            shape_addition("square"),
+            shape_removal(),
+        ]
+        for rule in cases:
+            with self.subTest(rule=rule.kind):
+                changed = apply_rule(base, rule)
+                self.assertIsInstance(changed, Scene)
+                self.assertNotEqual(render_svg(base), render_svg(changed))
+        targeted = apply_rule(
+            base,
+            Rule("line-count", {"delta": 1, "target": "inner"}),
+        )
+        self.assertEqual(targeted.elements[0].children[0].line_count, 2)
+        self.assertIn("data-line-count", render_svg(targeted))
+
+    def test_composite_alias_round_trip_and_nested_rendering(self):
+        rule = composite((orientation(90), movement(0.1), colour_change(("#dc2626",))))
+        restored = deserialize_rule(rule.to_dict())
+        base = Scene((Element("one", children=(Element("inner"),)),))
+        changed = apply_rule(base, restored)
+        self.assertEqual(changed.elements[0].rotation, 90)
+        self.assertAlmostEqual(changed.elements[0].x, 0.6)
+        self.assertEqual(changed.elements[0].fill, "#dc2626")
+        self.assertNotEqual(render_svg(base), render_svg(changed))
+
+    def test_distractors_are_svg_unique_and_seed_stable(self):
+        base = Scene((Element("one", shape="triangle", marker="dot"), Element("two")))
+        rules = [composite((orientation(90), movement(0.1)))]
+        first = make_distractors(base, base, rules, seed=13, count=8)
+        second = make_distractors(base, base, rules, seed=13, count=8)
+        self.assertEqual(first, second)
+        rendered = [render_svg(item["scene"]) for item in first]
+        self.assertEqual(len(rendered), len(set(rendered)))
+        self.assertTrue(all(item["mutation"]["description"] for item in first))
+        self.assertIn("partial-rule", {item["mutation"]["kind"] for item in first})
+
+    def test_question_exposes_explanation_fragments_and_visual_uniqueness(self):
+        question = generate_sequence(seed=6, difficulty="hard")
+        self.assertEqual(len(question["explanationFragments"]), 3)
+        self.assertEqual(
+            question["metadata"]["explanationFragments"],
+            question["explanationFragments"],
+        )
+        correct_svg = next(
+            option["svg"]
+            for option in question["options"]
+            if option["id"] == question["correctOption"]
+        )
+        self.assertEqual(
+            sum(option["svg"] == correct_svg for option in question["options"]),
+            1,
+        )
+        self.assertEqual(
+            len({option["svg"] for option in question["options"]}),
+            len(question["options"]),
+        )
+
+    def test_inspectable_examples_are_exam_like_svg_panels(self):
+        from pathlib import Path
+
+        examples = Path(__file__).parents[1] / "examples" / "visual"
+        files = sorted(examples.glob("*.svg"))
+        self.assertEqual(len(files), 4)
+        for path in files:
+            content = path.read_text(encoding="utf-8")
+            self.assertIn('role="img"', content)
+            self.assertGreaterEqual(content.count('data-element-id='), 4)
+            self.assertGreaterEqual(content.count('>A</text>'), 1)
+            self.assertGreaterEqual(content.count('>D</text>'), 1)
 
     def test_explanation_is_complete_and_metadata_can_regenerate(self):
         question = generate_question("analogy", seed=23, difficulty="medium")

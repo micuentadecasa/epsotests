@@ -1,0 +1,145 @@
+[
+  {
+    "file": "sequence-medium.svg",
+    "format": "sequence",
+    "seed": 12,
+    "difficulty": "medium",
+    "correctOption": "C",
+    "rules": [
+      {
+        "kind": "composite",
+        "parameters": {
+          "rules": [
+            {
+              "kind": "rotation",
+              "parameters": {
+                "degrees": 90
+              }
+            },
+            {
+              "kind": "translation",
+              "parameters": {
+                "dx": 0.08,
+                "dy": 0
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "explanation": "The rule is rotate by 90\u00b0 and move by (0.08, 0). Each frame changes from the previous frame by that rule; the missing next frame must continue the same change. Option C is correct because it continues rotate by 90\u00b0 and move by (0.08, 0) while preserving the other elements. The wrong options apply only part of the rule, use a wrong direction or rotation, or change the element count."
+  },
+  {
+    "file": "matrix-2x2-easy.svg",
+    "format": "matrix-2x2",
+    "seed": 23,
+    "difficulty": "easy",
+    "correctOption": "D",
+    "rules": [
+      {
+        "kind": "rotation",
+        "parameters": {
+          "degrees": 90
+        }
+      },
+      {
+        "kind": "fill",
+        "parameters": {}
+      }
+    ],
+    "explanation": "Rows rotate by 90\u00b0; columns change the fill/shading. Reading across each row and down each column gives the same local/global pattern. The missing bottom-right figure must therefore apply both changes. Option D is correct because it rotate by 90\u00b0 and change the fill/shading. Other options omit one change or use a plausible wrong direction, rotation, fill, or element count."
+  },
+  {
+    "file": "matrix-3x3-hard.svg",
+    "format": "matrix-3x3",
+    "seed": 31,
+    "difficulty": "hard",
+    "correctOption": "A",
+    "rules": [
+      {
+        "kind": "composite",
+        "parameters": {
+          "rules": [
+            {
+              "kind": "rotation",
+              "parameters": {
+                "degrees": 90
+              }
+            },
+            {
+              "kind": "translation",
+              "parameters": {
+                "dx": 0.07,
+                "dy": 0.04
+              }
+            }
+          ]
+        }
+      },
+      {
+        "kind": "composite",
+        "parameters": {
+          "rules": [
+            {
+              "kind": "reflection",
+              "parameters": {
+                "axis": "vertical"
+              }
+            },
+            {
+              "kind": "color-change",
+              "parameters": {
+                "colors": [
+                  "#2563eb",
+                  "#dc2626",
+                  "#16a34a"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "explanation": "Rows rotate by 90\u00b0 and move by (0.07, 0.04); columns reflect across the vertical axis and change colour. Reading across each row and down each column gives the same local/global pattern. The missing bottom-right figure must therefore apply both changes. Option A is correct because it rotate by 90\u00b0 and move by (0.07, 0.04) and reflect across the vertical axis and change colour. Other options omit one change or use a plausible wrong direction, rotation, fill, or element count."
+  },
+  {
+    "file": "analogy-hard.svg",
+    "format": "analogy",
+    "seed": 47,
+    "difficulty": "hard",
+    "correctOption": "C",
+    "rules": [
+      {
+        "kind": "composite",
+        "parameters": {
+          "rules": [
+            {
+              "kind": "rotation",
+              "parameters": {
+                "degrees": 90
+              }
+            },
+            {
+              "kind": "translation",
+              "parameters": {
+                "dx": 0.08,
+                "dy": 0.05
+              }
+            }
+          ]
+        }
+      },
+      {
+        "kind": "color-change",
+        "parameters": {
+          "colors": [
+            "#2563eb",
+            "#dc2626",
+            "#16a34a"
+          ]
+        }
+      }
+    ],
+    "explanation": "A changes to B by rotate by 90\u00b0 and move by (0.08, 0.05) and change colour. Apply the same transformation to C: rotate by 90\u00b0 and move by (0.08, 0.05) and change colour. Option C is correct because it matches that transformation without changing unrelated parts. The distractors use partial rules, wrong directions, or incorrect rotations/counts."
+  }
+]
