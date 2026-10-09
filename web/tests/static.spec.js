@@ -11,6 +11,7 @@ function expectNoApiRequests(page) {
 async function waitForQuestion(page) {
   await expect(page.locator("#question-prompt")).not.toHaveText("");
   await expect(page.locator("#answer-options input[type=radio]")).toHaveCount(4);
+  await expect(page.locator("#controls-form button[type=submit]")).toBeEnabled();
 }
 
 async function questionState(page) {
@@ -18,8 +19,15 @@ async function questionState(page) {
     const prompt = document.querySelector("#question-prompt").getBoundingClientRect();
     return {
       identity: document.querySelector("#item-meta").textContent,
+      questionId: document.querySelector("#item-meta").dataset.questionId,
       seed: document.querySelector("#seed").value,
       stimulus: document.querySelector("#stimulus").innerHTML,
+      family: document.querySelector("#family").value,
+      variant: document.querySelector("#variant").value,
+      representation: document.querySelector("#representation").value,
+      difficulty: document.querySelector("#difficulty").value,
+      profile: document.querySelector("#profile").value,
+      viewport: { width: window.innerWidth, height: window.innerHeight },
       scrollY: window.scrollY,
       promptVisible: prompt.top >= 0 && prompt.bottom <= window.innerHeight,
     };
@@ -96,6 +104,76 @@ test.describe("GitHub Pages static catalog", () => {
     expect(after.promptVisible).toBe(true);
     await expect(page.locator("#solution")).toBeVisible();
     await expect(page.locator("#explain-button")).toHaveAttribute("aria-pressed", "true");
+    expect(apiRequests).toEqual([]);
+  });
+
+  test("repeated Generate advances the selected family before cycling", async ({ page }) => {
+    await page.goto("./");
+    await waitForQuestion(page);
+    const states = [await questionState(page)];
+
+    for (let index = 0; index < 3; index += 1) {
+      await page.locator("#controls-form").getByRole("button", { name: /Generate question/ }).click();
+      const previous = states.at(-1);
+      await expect.poll(async () => (await questionState(page)).questionId).not.toBe(previous.questionId);
+      const current = await questionState(page);
+      expect(current.questionId).not.toBe(previous.questionId);
+      expect(current.stimulus).not.toBe(previous.stimulus);
+      states.push(current);
+    }
+
+    expect(states.map(({ seed }) => seed)).toEqual(["42", "43", "42", "43"]);
+    expect(new Set(states.slice(1).map(({ questionId }) => questionId)).size).toBe(2);
+  });
+
+  test("Generate advances one sequence across visual and numerical family switches", async ({ page }) => {
+    const apiRequests = expectNoApiRequests(page);
+    const catalogResponse = page.waitForResponse((response) => response.url().endsWith("/catalog.json"));
+    await page.goto("./");
+    const catalog = await catalogResponse;
+    expect((await catalog.json()).seeds).toEqual([42, 43]);
+    await page.locator("#profile").selectOption("five-option");
+    await page.locator("#controls-form").getByRole("button", { name: /Generate question/ }).click();
+    await expect(page.locator("#answer-options input[type=radio]")).toHaveCount(5);
+    await enableSolution(page);
+
+    const states = [await questionState(page)];
+    const generate = async (selectedFamily) => {
+      await page.locator("#family").selectOption(selectedFamily);
+      if (selectedFamily === "numerical") {
+        await page.locator("#variant").selectOption("growth");
+        await page.locator("#representation").selectOption("bar-chart");
+      } else {
+        await page.locator("#variant").selectOption("sequence");
+      }
+      const previous = states.at(-1);
+      await page.locator("#controls-form").getByRole("button", { name: /Generate question/ }).click();
+      await expect.poll(async () => (await questionState(page)).questionId).not.toBe(previous.questionId);
+      await expect(page.locator("#solution")).toBeVisible();
+      await expect(page.locator("#explain-button")).toHaveAttribute("aria-pressed", "true");
+      const current = await questionState(page);
+      expect(current.questionId).not.toBe(previous.questionId);
+      expect(current.stimulus).not.toBe(previous.stimulus);
+      await expect.poll(async () => (await questionState(page)).promptVisible).toBe(true);
+      expect(current.promptVisible).toBe(true);
+      expect(current.viewport).toEqual(previous.viewport);
+      expect(current.difficulty).toBe("medium");
+      expect(current.profile).toBe("five-option");
+      states.push(current);
+    };
+
+    await generate("numerical");
+    await generate("visual");
+    await generate("numerical");
+
+    expect(new Set(states.map(({ questionId }) => questionId)).size).toBe(4);
+    expect(states.map(({ seed }) => seed)).toEqual(["42", "42", "43", "43"]);
+    expect(states.map(({ family, variant, representation }) => [family, variant, representation])).toEqual([
+      ["visual", "sequence", "table"],
+      ["numerical", "growth", "bar-chart"],
+      ["visual", "sequence", "bar-chart"],
+      ["numerical", "growth", "bar-chart"],
+    ]);
     expect(apiRequests).toEqual([]);
   });
 

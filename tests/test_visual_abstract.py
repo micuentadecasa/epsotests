@@ -6,8 +6,11 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 from epsotests import (
+    DIFFICULTY_ELEMENT_COUNTS,
     Element,
     ExamProfile,
+    MIN_HUMAN_OBSERVABLE_TRANSLATION,
+    QUANTIZED_ROTATION_DEGREES,
     Rule,
     Scene,
     SUPPORTED_DIFFICULTIES,
@@ -52,6 +55,90 @@ class VisualAbstractGeneratorTests(unittest.TestCase):
             question = generate_sequence(seed=seed, difficulty="easy")
             frames = question["stimulus"]["frames"]
             self.assertNotEqual(frames[0]["svg"], frames[1]["svg"])
+
+    def test_generated_rules_meet_human_observable_visual_audit(self):
+        def atomic_rules(rules):
+            for rule in rules:
+                if rule["kind"] == "composite":
+                    yield from atomic_rules(rule["parameters"]["rules"])
+                else:
+                    yield rule
+
+        expected_terms = {
+            "rotation": "rotate",
+            "translation": "move",
+            "reflection": "reflect",
+            "color-change": "colour",
+            "fill": "fill",
+        }
+        for format_name in SUPPORTED_FORMATS:
+            for difficulty in SUPPORTED_DIFFICULTIES:
+                with self.subTest(format=format_name, difficulty=difficulty):
+                    question = generate_question(
+                        format_name, seed=42, difficulty=difficulty
+                    )
+                    scene_data = question["stimulus"]
+                    if format_name == "sequence":
+                        first_scene = scene_data["frames"][0]["scene"]
+                        adjacent_groups = [
+                            [frame["svg"] for frame in scene_data["frames"]]
+                        ]
+                    elif format_name.startswith("matrix"):
+                        first_scene = next(
+                            cell["scene"]
+                            for row in scene_data["grid"]
+                            for cell in row
+                            if cell
+                        )
+                        grid = scene_data["grid"]
+                        adjacent_groups = [
+                            [cell["svg"] for cell in row if cell]
+                            for row in grid
+                        ]
+                        adjacent_groups.extend(
+                            [
+                                grid[row][column]["svg"]
+                                for row in range(len(grid))
+                                if grid[row][column]
+                            ]
+                            for column in range(len(grid[0]))
+                        )
+                    else:
+                        first_scene = scene_data["left"]["A"]["scene"]
+                        adjacent_groups = [
+                            [figure["svg"] for figure in scene_data["left"].values()]
+                        ]
+                    self.assertEqual(
+                        len(first_scene["elements"]),
+                        DIFFICULTY_ELEMENT_COUNTS[difficulty],
+                    )
+                    for group in adjacent_groups:
+                        for previous, current in zip(group, group[1:]):
+                            self.assertNotEqual(previous, current)
+                    option_svgs = [option["svg"] for option in question["options"]]
+                    self.assertEqual(len(option_svgs), len(set(option_svgs)))
+
+                    explanation = question["explanation"].lower()
+                    self.assertIn("rule", explanation)
+                    for rule in atomic_rules(question["metadata"]["rules"]):
+                        kind = rule["kind"]
+                        parameters = rule["parameters"]
+                        if kind == "rotation":
+                            self.assertIn(
+                                abs(float(parameters["degrees"])) % 360,
+                                QUANTIZED_ROTATION_DEGREES,
+                            )
+                        elif kind == "translation":
+                            delta = max(
+                                abs(float(parameters.get("dx", 0))),
+                                abs(float(parameters.get("dy", 0))),
+                            )
+                            self.assertGreaterEqual(
+                                delta, MIN_HUMAN_OBSERVABLE_TRANSLATION
+                            )
+                        term = expected_terms.get(kind)
+                        if term:
+                            self.assertIn(term, explanation)
 
     def test_rotation_changes_symmetric_and_line_renderings(self):
         for shape in ("circle", "line", "diamond", "triangle", "star"):

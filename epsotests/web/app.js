@@ -21,6 +21,10 @@ const VERBAL_TYPES = [
 
 const STATIC_MODE = document.documentElement.dataset.epsotestsMode === "static";
 const STATIC_CATALOG_URL = new URL("catalog.json", document.baseURI);
+// Keep the local API and the Pages catalog on the same deterministic question
+// sequence. A session consumes each catalog position for the selected controls
+// before the sequence is allowed to cycle after that catalog is exhausted.
+const QUESTION_SEQUENCE_SEEDS = Object.freeze([42, 43]);
 let staticCatalogPromise = null;
 
 const state = {
@@ -30,6 +34,10 @@ const state = {
   solution: null,
   solutionPreference: sessionStorage.getItem("epsotests:show-solution") === "true",
   loading: false,
+  questionSequence: {
+    seeds: QUESTION_SEQUENCE_SEEDS,
+    seen: new Set(),
+  },
 };
 
 const $ = (selector) => document.querySelector(selector);
@@ -46,6 +54,7 @@ const profile = $("#profile");
 const seed = $("#seed");
 const status = $("#status");
 const questionSection = $("#question");
+const itemMeta = $("#item-meta");
 const stimulus = $("#stimulus");
 const answerOptions = $("#answer-options");
 const explainButton = $("#explain-button");
@@ -240,7 +249,10 @@ function renderQuestion(
   state.solutionToken = token;
   state.staticSolution = staticSolution;
   state.solution = null;
-  $("#item-meta").textContent = `${question.exam} reasoning · item ${question.itemNumber || 1} · seed ${question.metadata?.seed ?? seed.value}`;
+  const questionSeed = question.metadata?.seed ?? seed.value;
+  seed.value = String(questionSeed);
+  itemMeta.dataset.questionId = question.id || "";
+  itemMeta.textContent = `${question.exam} reasoning · ${question.id || `item ${question.itemNumber || 1}`} · seed ${questionSeed}`;
   $("#question-heading").textContent = question.format || question.questionType || "Question";
   $("#question-prompt").textContent = question.question;
   $("#difficulty-badge").textContent = question.difficulty;
@@ -287,6 +299,31 @@ async function loadStaticCatalog() {
   return staticCatalogPromise;
 }
 
+function sequenceKey(params, sequenceSeed) {
+  const key = [params.family, params.variant];
+  if (params.family === "numerical") key.push(params.representation);
+  key.push(params.difficulty, params.profile, sequenceSeed);
+  return key.join(":");
+}
+
+function nextQuestionParams(params) {
+  const { seeds, seen } = state.questionSequence;
+  const nextSeed = seeds.find((candidate) => !seen.has(sequenceKey(params, candidate)));
+  if (nextSeed !== undefined) return { ...params, seed: nextSeed };
+
+  // The selected controls have consumed every available catalog position. Start
+  // that deterministic catalog over without clearing history for other controls.
+  seeds.forEach((candidate) => seen.delete(sequenceKey(params, candidate)));
+  return { ...params, seed: seeds[0] };
+}
+
+function rememberQuestion(params, question, catalogEntry = null) {
+  const questionSeed = question.metadata?.seed ?? params.seed;
+  state.questionSequence.seen.add(
+    catalogEntry?.id || sequenceKey(params, questionSeed),
+  );
+}
+
 function staticCatalogEntry(catalog, params) {
   const candidates = catalog.questions.filter((entry) => (
     entry.family === params.family
@@ -297,16 +334,21 @@ function staticCatalogEntry(catalog, params) {
   ));
   if (!candidates.length) return null;
   const exact = candidates.find((entry) => entry.seed === params.seed);
-  if (exact) return exact;
-  const index = ((Math.abs(params.seed) % candidates.length) + candidates.length) % candidates.length;
-  return candidates[index];
+  if (exact && !state.questionSequence.seen.has(exact.id)) return exact;
+  const unseen = candidates.find((entry) => !state.questionSequence.seen.has(entry.id));
+  if (unseen) return unseen;
+  // The filtered catalog is exhausted. Keep selection deterministic while
+  // allowing the next session cycle to begin at the requested catalog position.
+  return exact || candidates[0];
 }
 
-async function fetchQuestion({ scrollToQuestion = false } = {}) {
+async function fetchQuestion({ scrollToQuestion = false, advance = false } = {}) {
   if (state.loading) return;
   setQuestionLoading(true);
   setStatus("Generating a deterministic question…");
-  const params = questionParams();
+  const currentParams = questionParams();
+  const params = advance ? nextQuestionParams(currentParams) : currentParams;
+  seed.value = String(params.seed);
   const apiParams = new URLSearchParams({
     family: params.family,
     difficulty: params.difficulty,
@@ -325,6 +367,7 @@ async function fetchQuestion({ scrollToQuestion = false } = {}) {
       const entry = staticCatalogEntry(catalog, params);
       if (!entry) throw new Error("No matching question in the static catalog");
       renderQuestion(entry.question, null, entry.solution, { scrollToSolution: false });
+      rememberQuestion(params, entry.question, entry);
       if (scrollToQuestion) $("#question-prompt").scrollIntoView({ block: "start", behavior: "auto" });
       setStatus(`${entry.question.optionCount}-option question ready from the static catalog. Select an answer, then review the logic when you are ready.`);
       return;
@@ -333,6 +376,7 @@ async function fetchQuestion({ scrollToQuestion = false } = {}) {
     const payload = await response.json();
     if (!response.ok) throw new Error(payload.error || "Question generation failed");
     renderQuestion(payload.question, payload.solutionToken, null, { scrollToSolution: false });
+    rememberQuestion(params, payload.question);
     if (scrollToQuestion) $("#question-prompt").scrollIntoView({ block: "start", behavior: "auto" });
     setStatus(`${payload.question.optionCount}-option question ready. Select an answer, then review the logic when you are ready.`);
   } catch (error) {
@@ -470,7 +514,7 @@ function disableSolution() {
 
 controlsForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  fetchQuestion();
+  fetchQuestion({ advance: true });
 });
 family.addEventListener("change", updateVariantOptions);
 answerForm.addEventListener("submit", (event) => {
@@ -486,8 +530,7 @@ answerForm.addEventListener("submit", (event) => {
 hideButton.addEventListener("click", disableSolution);
 nextButton.addEventListener("click", (event) => {
   event.preventDefault();
-  seed.value = String(Number(seed.value || 0) + 1);
-  fetchQuestion({ scrollToQuestion: true });
+  fetchQuestion({ scrollToQuestion: true, advance: true });
 });
 
 updateVariantOptions();

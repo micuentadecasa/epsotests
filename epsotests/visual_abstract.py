@@ -53,6 +53,12 @@ SUPPORTED_RULE_KINDS = (
 SUPPORTED_FORMATS = ("sequence", "matrix-2x2", "matrix-3x3", "analogy")
 SUPPORTED_DIFFICULTIES = ("easy", "medium", "hard")
 SUPPORTED_EXAM_PROFILES = ("standard", "five-option")
+# Generated rule magnitudes are intentionally quantized and large enough to
+# recover at normal exam scale.  The policy is shared by default item rules
+# and the audit tests; callers may still construct custom Rule values.
+MIN_HUMAN_OBSERVABLE_TRANSLATION = 0.04
+QUANTIZED_ROTATION_DEGREES = (45, 90, 180, 270)
+DIFFICULTY_ELEMENT_COUNTS = {"easy": 2, "medium": 3, "hard": 4}
 EXPLAIN_LOGIC_ACTION_ID = "explain-logic"
 HIDE_SOLUTION_ACTION_ID = "hide-solution"
 
@@ -960,7 +966,7 @@ def render_svg(scene: Scene, width: int = 160, height: int = 160) -> str:
 def _base_scene(seed: int, difficulty: str | int = "medium") -> Scene:
     rng = random.Random(seed)
     level = _difficulty_name(difficulty)
-    count = {"easy": 2, "medium": 3, "hard": 4}[level]
+    count = DIFFICULTY_ELEMENT_COUNTS[level]
     elements: list[Element] = []
     for index in range(count):
         elements.append(

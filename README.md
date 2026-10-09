@@ -197,9 +197,11 @@ python -m epsotests.web_server --host 127.0.0.1 --port 8000
 
 Open <http://127.0.0.1:8000>. Choose visual abstract, numerical, or verbal
 reasoning, then set the format, difficulty, seed, and standard/five-option
-profile. The solution toggle is session-persistent: enabling it automatically
-opens the solution for each Next Question until Hide Solution / Ocultar
-solución is selected.
+profile. Generate Question and Next Question share one deterministic session
+sequence, consuming each available catalog position for the selected controls
+before cycling. The solution toggle is session-persistent: enabling it
+automatically opens the solution for each Next Question until Hide Solution /
+Ocultar solución is selected.
 
 Run the browser behavior and accessibility tests with Playwright:
 
