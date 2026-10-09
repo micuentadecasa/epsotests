@@ -910,6 +910,10 @@
         "source": "passage"
       }
     ],
-    "answerSignature": "claim-1"
+    "answerSignature": "a89d6b1395bbd23e6df9",
+    "answerValueSignature": "02bacced6632c655f567",
+    "evidenceSignature": "a89d6b1395bbd23e6df9",
+    "methodSignature": "100c0c3cd99e2dd42655",
+    "explanationSignature": "fdaf031b4e7144343c35"
   }
 }

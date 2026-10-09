@@ -48,7 +48,22 @@ def public_question(
             public["stimulus"]["passage"].pop("evidenceSpans", None)
     public["metadata"] = {
         key: public.get("metadata", {}).get(key)
-        for key in ("seed", "examProfile", "optionCount", "operation", "questionType")
+        for key in (
+            "seed",
+            "examProfile",
+            "optionCount",
+            "operation",
+            "questionType",
+            # Opaque variation signatures let the browser audit that a new
+            # item changed its method without exposing its answer or rule.
+            "methodSignature",
+            "operationSignature",
+            "ruleSignature",
+            "evidenceSignature",
+            "explanationSignature",
+            "calculationSignature",
+            "answerValueSignature",
+        )
         if key in public.get("metadata", {})
     }
     action = public.get("actions", {}).get("explainLogic")

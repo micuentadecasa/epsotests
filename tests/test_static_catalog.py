@@ -28,6 +28,33 @@ class StaticCatalogTests(unittest.TestCase):
             len(actual["questions"]),
         )
 
+    def test_catalog_entries_record_variation_provenance(self):
+        catalog = json.loads(
+            (self.root / "epsotests" / "web" / "catalog.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        required = {
+            "id",
+            "questionId",
+            "methodSignature",
+            "answerSignature",
+            "explanationSignature",
+            "difficulty",
+            "profile",
+        }
+        for entry in catalog["questions"]:
+            with self.subTest(entry=entry["id"]):
+                self.assertTrue(required <= entry.keys())
+                self.assertTrue(entry["methodSignature"])
+                self.assertTrue(entry["answerSignature"])
+                self.assertTrue(entry["explanationSignature"])
+                self.assertEqual(entry["questionId"], entry["id"])
+                self.assertTrue(entry["generatorQuestionId"])
+        for family in ("visual", "numerical", "verbal"):
+            entries = [item for item in catalog["questions"] if item["family"] == family]
+            self.assertGreater(len({item["methodSignature"] for item in entries}), 1)
+
     def test_catalog_public_questions_pair_with_complete_solutions(self):
         catalog = json.loads(
             (self.root / "epsotests" / "web" / "catalog.json").read_text(

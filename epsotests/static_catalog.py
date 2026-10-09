@@ -38,14 +38,26 @@ def _entry(
         for value in (family, variant, representation or "", difficulty, profile, str(seed))
         if value
     )
+    metadata = question.get("metadata", {})
     return {
+        # Include the controls in the catalog identity: generator IDs alone
+        # intentionally omit representation/profile and would collide here.
         "id": key,
+        "questionId": key,
+        "generatorQuestionId": question["id"],
         "family": family,
         "variant": variant,
         "representation": representation,
         "difficulty": difficulty,
         "profile": profile,
         "seed": seed,
+        "methodSignature": metadata.get("methodSignature"),
+        "operationSignature": metadata.get("operationSignature"),
+        "ruleSignature": metadata.get("ruleSignature"),
+        "evidenceSignature": metadata.get("evidenceSignature"),
+        "answerSignature": metadata.get("answerSignature"),
+        "explanationSignature": metadata.get("explanationSignature"),
+        "calculationSignature": metadata.get("calculationSignature"),
         "question": public,
         "solution": static_solution(question),
     }

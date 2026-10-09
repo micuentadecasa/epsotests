@@ -16,6 +16,8 @@ import math
 import random
 from typing import Any, Callable, Iterable, Mapping, Sequence
 
+from .signatures import stable_signature
+
 
 # EPSO-style figures use restrained grayscale rather than decorative colours.
 PALETTE = ("#111827", "#374151", "#6b7280", "#9ca3af", "#d1d5db", "#000000")
@@ -53,6 +55,15 @@ SUPPORTED_RULE_KINDS = (
 SUPPORTED_FORMATS = ("sequence", "matrix-2x2", "matrix-3x3", "analogy")
 SUPPORTED_DIFFICULTIES = ("easy", "medium", "hard")
 SUPPORTED_EXAM_PROFILES = ("standard", "five-option")
+# Explicit rule profiles keep repeated seeds from changing only the source
+# drawing.  The profile is selected deterministically from the seed and is
+# recorded in metadata so catalog consumers can audit method variation.
+VISUAL_RULE_VARIATION_PROFILES = (
+    "rotation-movement",
+    "reflection-fill",
+    "count-symmetry",
+    "nesting-shape",
+)
 # Generated rule magnitudes are intentionally quantized and large enough to
 # recover at normal exam scale.  The policy is shared by default item rules
 # and the audit tests; callers may still construct custom Rule values.
@@ -624,7 +635,10 @@ def _apply_symmetry(
 ) -> Scene:
     if frame_index == 0:
         return scene
-    order = max(1, int(parameters.get("order", parameters.get("count", 2))))
+    base_order = max(1, int(parameters.get("order", parameters.get("count", 2))))
+    # Increase the visible symmetry order each frame; setting a constant order
+    # would make matrix columns 1 and 2 identical while metadata claimed a rule.
+    order = base_order + max(0, frame_index - 1)
     return _update_targets(
         scene,
         parameters,
@@ -997,43 +1011,53 @@ def _difficulty_name(difficulty: str | int) -> str:
     return "medium"
 
 
-def _default_sequence_rules(level: str) -> list[Rule]:
-    if level == "easy":
-        return [rotation(90)]
-    if level == "hard":
-        return [
-            Rule("composite", {"rules": [rotation(90), translation(0.08, 0.05)]}),
-            color_change(("#111827", "#6b7280", "#d1d5db")),
-        ]
-    return [Rule("composite", {"rules": [rotation(90), translation(0.08, 0)]})]
+def _variation_index(seed: int) -> int:
+    return abs(int(seed)) % len(VISUAL_RULE_VARIATION_PROFILES)
 
 
-def _default_matrix_rules(level: str, size: int) -> tuple[Rule, Rule]:
-    if level == "easy":
-        return rotation(90), fill()
-    if level == "hard":
-        return (
-            Rule("composite", {"rules": [rotation(90), translation(0.07, 0.04)]}),
-            Rule(
-                "composite",
-                {
-                    "rules": [
-                        reflection("vertical"),
-                        color_change(("#111827", "#6b7280", "#d1d5db")),
-                    ]
-                },
-            ),
-        )
-    return rotation(90), translation(0, 0.1)
+def _default_sequence_rules(level: str, variation_index: int = 0) -> list[Rule]:
+    """Return a visible, named transformation profile for a sequence."""
+
+    profiles = (
+        [composite((rotation(90), movement(0.08, 0.04)))],
+        [composite((reflection("vertical"), fill()))],
+        [composite((element_count(1), symmetry(2)))],
+        [composite((nesting("add"), shape_change(("circle", "square", "triangle", "diamond"))))],
+    )
+    selected = list(profiles[variation_index % len(profiles)])
+    if level == "hard" and variation_index % 2 == 1:
+        selected.append(color_change(("#111827", "#6b7280", "#d1d5db")))
+    return selected
+
+
+def _default_matrix_rules(
+    level: str, size: int, variation_index: int = 0
+) -> tuple[Rule, Rule]:
+    """Return two distinct directional transformations for a matrix."""
+
+    profiles = (
+        (rotation(90), fill()),
+        (reflection("vertical"), movement(0.08, 0.04)),
+        (element_count(1), symmetry(2)),
+        (nesting("add"), shape_change(("circle", "square", "triangle", "diamond"))),
+    )
+    row_rule, column_rule = profiles[variation_index % len(profiles)]
+    if level == "hard" and variation_index % 2 == 1:
+        column_rule = composite((column_rule, color_change(("#111827", "#6b7280", "#d1d5db"))))
+    return row_rule, column_rule
 
 
 def _normalize_rules(rules: Sequence[Rule]) -> list[Rule]:
     return [rule if isinstance(rule, Rule) else Rule.from_dict(rule) for rule in rules]  # type: ignore[arg-type]
 
 
-def _rules_for_sequence(rules: Sequence[Rule] | None, level: str) -> list[Rule]:
+def _rules_for_sequence(
+    rules: Sequence[Rule] | None, level: str, variation_index: int = 0
+) -> list[Rule]:
     return (
-        _normalize_rules(rules) if rules is not None else _default_sequence_rules(level)
+        _normalize_rules(rules)
+        if rules is not None
+        else _default_sequence_rules(level, variation_index)
     )
 
 
@@ -1466,6 +1490,8 @@ def _base_question(
     answer_figure = next(
         option["figure"] for option in options if option["id"] == correct_option
     )
+    rule_signature = stable_signature(rule_data)
+    answer_signature = Scene.from_dict(answer_figure).signature()
     return {
         "id": question_id,
         "itemNumber": 1,
@@ -1495,11 +1521,15 @@ def _base_question(
             "optionCount": exam_profile.option_count,
             "rules": rule_data,
             "ruleMetadata": rule_data,
+            "ruleSignature": rule_signature,
+            "methodSignature": stable_signature({"format": format_name, "rules": rule_data}),
             "generatedFigures": list(figures),
             "distractors": list(distractors),
             "explanationFragments": explanation_fragments,
+            "explanationSignature": stable_signature(explanation),
             "answerFigure": answer_figure,
-            "answerSignature": Scene.from_dict(answer_figure).signature(),
+            "answerSignature": answer_signature,
+            "answerValueSignature": stable_signature(answer_signature),
         },
     }
 
@@ -1509,12 +1539,15 @@ def generate_sequence(
     difficulty: str | int = "medium",
     rules: Sequence[Rule] | None = None,
     exam_profile: str | ExamProfile | None = None,
+    variation: int | None = None,
 ) -> dict[str, Any]:
     """Generate a visual sequence-completion question."""
 
     level = _difficulty_name(difficulty)
     profile = resolve_exam_profile(exam_profile)
-    selected_rules = _rules_for_sequence(rules, level)
+    selected_rules = _rules_for_sequence(
+        rules, level, _variation_index(seed) if variation is None else int(variation)
+    )
     base = _base_scene(seed, level)
     frame_count = {"easy": 3, "medium": 4, "hard": 5}[level]
     frames = [
@@ -1569,6 +1602,7 @@ def generate_matrix(
     difficulty: str | int = "medium",
     rules: Sequence[Rule] | None = None,
     exam_profile: str | ExamProfile | None = None,
+    variation: int | None = None,
 ) -> dict[str, Any]:
     """Generate a 2x2 or 3x3 matrix-completion question."""
 
@@ -1576,7 +1610,12 @@ def generate_matrix(
         raise ValueError("matrix size must be 2 or 3")
     level = _difficulty_name(difficulty)
     profile = resolve_exam_profile(exam_profile)
-    default_row, default_column = _default_matrix_rules(level, size)
+    variation_index = _variation_index(seed) if variation is None else int(variation)
+    if variation is None:
+        # Keep the fixed Pages seeds compact while distributing all visual
+        # rule families across the two matrix sizes.
+        variation_index = (abs(int(seed)) % 2) if size == 2 else 2 + (abs(int(seed)) % 2)
+    default_row, default_column = _default_matrix_rules(level, size, variation_index)
     if rules is None:
         row_rule, column_rule = default_row, default_column
         selected_rules = [row_rule, column_rule]
@@ -1650,12 +1689,17 @@ def generate_analogy(
     difficulty: str | int = "medium",
     rules: Sequence[Rule] | None = None,
     exam_profile: str | ExamProfile | None = None,
+    variation: int | None = None,
 ) -> dict[str, Any]:
     """Generate a visual A:B :: C:? transformation question."""
 
     level = _difficulty_name(difficulty)
     profile = resolve_exam_profile(exam_profile)
-    selected_rules = _rules_for_sequence(rules, level)
+    selected_rules = _rules_for_sequence(
+        rules,
+        level,
+        (_variation_index(seed) % 2) if variation is None else int(variation),
+    )
     source = _base_scene(seed + 29, level)
     transformed = apply_rules(source, selected_rules, 1)
     target = _base_scene(seed + 47, level)
@@ -1711,18 +1755,19 @@ def generate_question(
     difficulty: str | int = "medium",
     rules: Sequence[Rule] | None = None,
     exam_profile: str | ExamProfile | None = None,
+    variation: int | None = None,
 ) -> dict[str, Any]:
     """Dispatch to a stable public generator by visual question format."""
 
     normalized = format.lower().replace("_", "-")
     if normalized in ("sequence", "visual-sequence"):
-        return generate_sequence(seed, difficulty, rules, exam_profile)
+        return generate_sequence(seed, difficulty, rules, exam_profile, variation)
     if normalized in ("matrix", "matrix-2x2", "2x2"):
-        return generate_matrix(2, seed, difficulty, rules, exam_profile)
+        return generate_matrix(2, seed, difficulty, rules, exam_profile, variation)
     if normalized in ("matrix-3x3", "3x3"):
-        return generate_matrix(3, seed, difficulty, rules, exam_profile)
+        return generate_matrix(3, seed, difficulty, rules, exam_profile, variation)
     if normalized in ("analogy", "transformation", "transformation-analogy"):
-        return generate_analogy(seed, difficulty, rules, exam_profile)
+        return generate_analogy(seed, difficulty, rules, exam_profile, variation)
     raise ValueError(f"Unsupported visual abstract format: {format}")
 
 
@@ -1738,6 +1783,7 @@ __all__ = [
     "SUPPORTED_EXAM_PROFILES",
     "SUPPORTED_FORMATS",
     "SUPPORTED_RULE_KINDS",
+    "VISUAL_RULE_VARIATION_PROFILES",
     "alternation",
     "apply_rule",
     "apply_rules",

@@ -26,6 +26,7 @@ import math
 import random
 from typing import Any, Iterable, Mapping, Sequence
 
+from .signatures import stable_signature
 from .visual_abstract import (
     EXAM_PROFILES,
     EXPLAIN_LOGIC_ACTION_ID,
@@ -670,39 +671,47 @@ def _source_bundle(seed: int, level: str, operation: str) -> _SourceBundle:
             "Monthly visitors",
             "visitors",
         )
-        return _SourceBundle(table, {"old": old, "new": new}, "What was the percentage change in visitors from January to February?", " %")
+        return _SourceBundle(table, {"old": old, "new": new, "template": abs(int(seed)) % 2}, "What was the percentage change in visitors from January to February?", " %")
     if operation == "ratio":
-        multiplier = 2 + rng.randrange(1, 5)
-        first, second = 3 * multiplier, 2 * multiplier
+        # Multiplying a fixed 3:2 pair only changes the drawing.  Pick from
+        # explicit ratio templates so the answer and simplification path vary.
+        ratio_templates = ((3, 2), (4, 3), (5, 2), (7, 4))
+        template = abs(int(seed)) % len(ratio_templates)
+        base_first, base_second = ratio_templates[template]
+        multiplier = 1 + rng.randrange(1, 4)
+        first, second = base_first * multiplier, base_second * multiplier
         table = NumericalTable(
             ("Department", "Applications"),
             (("Operations", first), ("Policy", second)),
             "Applications by department",
             "applications",
         )
-        return _SourceBundle(table, {"numerator": first, "denominator": second}, "What is the simplified ratio of Operations applications to Policy applications?", "")
+        return _SourceBundle(table, {"numerator": first, "denominator": second, "template": template}, "What is the simplified ratio of Operations applications to Policy applications?", "")
     if operation == "proportion":
-        whole = 120 + rng.randrange(0, 5) * 20
-        part = whole // (3 if difficulty_scale == 1 else 4)
+        fraction_templates = ((1, 3), (2, 5), (3, 8), (3, 4))
+        template = abs(int(seed)) % len(fraction_templates)
+        numerator, denominator = fraction_templates[template]
+        whole = denominator * (30 + rng.randrange(0, 5) * difficulty_scale)
+        part = numerator * (whole // denominator)
         table = NumericalTable(
             ("Group", "People"),
             (("Completed training", part), ("All participants", whole)),
             "Training participation",
             "people",
         )
-        return _SourceBundle(table, {"part": part, "whole": whole}, "What percentage of all participants completed training?", " %")
+        return _SourceBundle(table, {"part": part, "whole": whole, "template": template}, "What percentage of all participants completed training?", " %")
     if operation == "total":
         values = tuple(24 + rng.randrange(0, 8) * difficulty_scale for _ in range(4 if level != "hard" else 5))
         rows = tuple((f"Region {index + 1}", value) for index, value in enumerate(values))
         table = NumericalTable(("Region", "Cases"), rows, "Cases by region", "cases")
-        return _SourceBundle(table, {"values": values}, "What is the total number of cases across all regions?", " cases")
+        return _SourceBundle(table, {"values": values, "template": abs(int(seed)) % 2}, "What is the total number of cases across all regions?", " cases")
     if operation == "growth":
         initial = 200 + rng.randrange(0, 5) * 25
         rate = (5, 8, 10)[rng.randrange(3)]
         periods = 2 + (0 if level == "easy" else 1 if level == "medium" else 2)
         rows = (("Year 1", initial), ("Year 2", _quantize(_decimal(initial) * (1 + _decimal(rate) / 100), 1)))
         table = NumericalTable(("Year", "Revenue"), rows, "Revenue growth", "thousand EUR")
-        return _SourceBundle(table, {"initial": initial, "rate": rate, "periods": periods}, f"Revenue is {rate}% higher each year. What will it be after {periods} years?", " thousand EUR")
+        return _SourceBundle(table, {"initial": initial, "rate": rate, "periods": periods, "template": abs(int(seed)) % 2}, f"Revenue is {rate}% higher each year. What will it be after {periods} years?", " thousand EUR")
     if operation == "comparison":
         first = 100 + rng.randrange(0, 8) * 10
         second = 60 + rng.randrange(0, 5) * 8
@@ -712,7 +721,7 @@ def _source_bundle(seed: int, level: str, operation: str) -> _SourceBundle:
             "Requests by programme",
             "requests",
         )
-        return _SourceBundle(table, {"first": first, "second": second}, "How many more requests did Programme A receive than Programme B?", " requests")
+        return _SourceBundle(table, {"first": first, "second": second, "template": abs(int(seed)) % 2}, "How many more requests did Programme A receive than Programme B?", " requests")
     quantity_a = 3 + rng.randrange(0, 4)
     quantity_b = 2 + rng.randrange(0, 3)
     price_a, price_b = 18 + rng.randrange(0, 4) * 2, 25 + rng.randrange(0, 4) * 3
@@ -724,7 +733,7 @@ def _source_bundle(seed: int, level: str, operation: str) -> _SourceBundle:
         "Procurement order",
         "EUR",
     )
-    return _SourceBundle(table, {"discount": discount, "tax": tax}, f"What is the final cost after a {discount}% discount and then {tax}% tax?", " EUR")
+    return _SourceBundle(table, {"discount": discount, "tax": tax, "template": abs(int(seed)) % 2}, f"What is the final cost after a {discount}% discount and then {tax}% tax?", " EUR")
 
 
 def _compute(bundle: _SourceBundle, operation: str, level: str) -> _Computation:
@@ -734,45 +743,99 @@ def _compute(bundle: _SourceBundle, operation: str, level: str) -> _Computation:
         old, new = _decimal(p["old"]), _decimal(p["new"])
         change = new - old
         result = calculate_percentage_change(old, new, decimals)
-        steps = (
-            CalculationStep("1", "Absolute change", "new − original", f"{_fmt(new)} − {_fmt(old)}", change, "visitors", "not rounded"),
-            CalculationStep("2", "Percentage change", "(change ÷ original) × 100", f"({_fmt(change)} ÷ {_fmt(old)}) × 100", result, "%", _rounding_text(decimals)),
-        )
-        return _Computation(result, f"{_fmt(result, decimals)}%", "%", "(new − original) ÷ original × 100", steps, "Compare the two bars first; use the original bar as the denominator.", decimals, {"old": old, "new": new, "change": change}, result)
+        if int(p.get("template", 0)) % 2:
+            rate = change / old
+            steps = (
+                CalculationStep("1", "Relative change", "(new − original) ÷ original", f"({_fmt(new)} − {_fmt(old)}) ÷ {_fmt(old)}", rate, "rate", "not rounded"),
+                CalculationStep("2", "Percentage change", "relative change × 100", f"{_fmt(rate, 4)} × 100", result, "%", _rounding_text(decimals)),
+            )
+            formula = "((new − original) ÷ original) × 100"
+        else:
+            steps = (
+                CalculationStep("1", "Absolute change", "new − original", f"{_fmt(new)} − {_fmt(old)}", change, "visitors", "not rounded"),
+                CalculationStep("2", "Percentage change", "(change ÷ original) × 100", f"({_fmt(change)} ÷ {_fmt(old)}) × 100", result, "%", _rounding_text(decimals)),
+            )
+            formula = "(new − original) ÷ original × 100"
+        return _Computation(result, f"{_fmt(result, decimals)}%", "%", formula, steps, "Compare the two readings first; use the original reading as the denominator.", decimals, {"old": old, "new": new, "change": change, "template": p.get("template", 0)}, result)
     if operation == "ratio":
         first, second = _decimal(p["numerator"]), _decimal(p["denominator"])
         fraction = Fraction(first) / Fraction(second)
         result = simplify_ratio(first, second)
-        steps = (
-            CalculationStep("1", "Common divisor", "gcd(numerator, denominator)", f"gcd({_fmt(first)}, {_fmt(second)})", math.gcd(int(first), int(second)), "applications", "exact"),
-            CalculationStep("2", "Simplified ratio", "numerator ÷ gcd : denominator ÷ gcd", f"{_fmt(first)} ÷ {math.gcd(int(first), int(second))} : {_fmt(second)} ÷ {math.gcd(int(first), int(second))}", result, "", "exact"),
-        )
-        return _Computation(result, result, "", "numerator : denominator, then divide both by their greatest common divisor", steps, "Read the two bars in the requested order; simplify both by the same divisor.", 0, {"numerator": first, "denominator": second}, _quantize(Decimal(fraction.numerator) / Decimal(fraction.denominator), 3))
+        divisor = math.gcd(int(first), int(second))
+        if int(p.get("template", 0)) % 2:
+            steps = (
+                CalculationStep("1", "Scale to one part", "denominator ÷ numerator", f"{_fmt(second)} ÷ {_fmt(first)}", Decimal(fraction.numerator) / Decimal(fraction.denominator), "ratio", "exact"),
+                CalculationStep("2", "Reduce both terms", "numerator ÷ gcd : denominator ÷ gcd", f"{_fmt(first)} ÷ {divisor} : {_fmt(second)} ÷ {divisor}", result, "", "exact"),
+            )
+            formula = "numerator : denominator, reduced by their greatest common divisor"
+        else:
+            steps = (
+                CalculationStep("1", "Common divisor", "gcd(numerator, denominator)", f"gcd({_fmt(first)}, {_fmt(second)})", divisor, "applications", "exact"),
+                CalculationStep("2", "Simplified ratio", "numerator ÷ gcd : denominator ÷ gcd", f"{_fmt(first)} ÷ {divisor} : {_fmt(second)} ÷ {divisor}", result, "", "exact"),
+            )
+            formula = "numerator : denominator, then divide both by their greatest common divisor"
+        return _Computation(result, result, "", formula, steps, "Read the two bars in the requested order; simplify both by the same divisor.", 0, {"numerator": first, "denominator": second, "template": p.get("template", 0)}, _quantize(Decimal(fraction.numerator) / Decimal(fraction.denominator), 3))
     if operation == "proportion":
         part, whole = _decimal(p["part"]), _decimal(p["whole"])
         result = calculate_proportion(part, whole, decimals=decimals)
-        steps = (CalculationStep("1", "Proportion", "part ÷ whole × 100", f"{_fmt(part)} ÷ {_fmt(whole)} × 100", result, "%", _rounding_text(decimals)),)
-        return _Computation(result, f"{_fmt(result, decimals)}%", "%", "part ÷ whole × 100", steps, "Use the part bar over the whole bar, then convert the fraction to a percentage.", decimals, {"part": part, "whole": whole}, result)
+        if int(p.get("template", 0)) % 2:
+            fraction = part / whole
+            steps = (
+                CalculationStep("1", "Part as a fraction", "part ÷ whole", f"{_fmt(part)} ÷ {_fmt(whole)}", fraction, "fraction", "not rounded"),
+                CalculationStep("2", "Percentage", "fraction × 100", f"{_fmt(fraction, 4)} × 100", result, "%", _rounding_text(decimals)),
+            )
+        else:
+            steps = (CalculationStep("1", "Proportion", "part ÷ whole × 100", f"{_fmt(part)} ÷ {_fmt(whole)} × 100", result, "%", _rounding_text(decimals)),)
+        return _Computation(result, f"{_fmt(result, decimals)}%", "%", "part ÷ whole × 100", steps, "Use the part over the whole, then convert the fraction to a percentage.", decimals, {"part": part, "whole": whole, "template": p.get("template", 0)}, result)
     if operation == "total":
         values = tuple(_decimal(value) for value in p["values"])
         result = calculate_total(values, decimals)
-        steps = (CalculationStep("1", "Total", "value₁ + value₂ + …", " + ".join(_fmt(value) for value in values), result, "cases", _rounding_text(decimals)),)
-        return _Computation(result, f"{_fmt(result, decimals)} cases", "cases", "sum of all regional values", steps, "Add the bar heights; no value is counted twice.", decimals, {"values": values}, result)
+        if int(p.get("template", 0)) % 2:
+            midpoint = len(values) // 2
+            first_group = calculate_total(values[:midpoint], decimals)
+            second_group = calculate_total(values[midpoint:], decimals)
+            steps = (
+                CalculationStep("1", "First regional group", "value₁ + … + valueₙ", " + ".join(_fmt(value) for value in values[:midpoint]), first_group, "cases", _rounding_text(decimals)),
+                CalculationStep("2", "Second regional group", "valueₙ₊₁ + … + valueₘ", " + ".join(_fmt(value) for value in values[midpoint:]), second_group, "cases", _rounding_text(decimals)),
+                CalculationStep("3", "Total", "first group + second group", f"{_fmt(first_group)} + {_fmt(second_group)}", result, "cases", _rounding_text(decimals)),
+            )
+            formula = "(sum of first regional group) + (sum of second regional group)"
+        else:
+            steps = (CalculationStep("1", "Total", "value₁ + value₂ + …", " + ".join(_fmt(value) for value in values), result, "cases", _rounding_text(decimals)),)
+            formula = "sum of all regional values"
+        return _Computation(result, f"{_fmt(result, decimals)} cases", "cases", formula, steps, "Add every regional value exactly once.", decimals, {"values": values, "template": p.get("template", 0)}, result)
     if operation == "growth":
         initial, rate, periods = _decimal(p["initial"]), _decimal(p["rate"]), int(p["periods"])
         result = calculate_growth(initial, rate, periods, decimals)
-        steps: list[CalculationStep] = [CalculationStep("1", "Growth factor", "1 + rate ÷ 100", f"1 + {_fmt(rate)} ÷ 100", 1 + rate / 100, "factor", "exact")]
+        factor = 1 + rate / 100
+        steps: list[CalculationStep] = [CalculationStep("1", "Growth factor", "1 + rate ÷ 100", f"1 + {_fmt(rate)} ÷ 100", factor, "factor", "exact")]
         current = initial
         for index in range(1, periods + 1):
-            current = current * (1 + rate / 100)
+            previous = current
+            current = current * factor
             rounded = _quantize(current, decimals)
-            steps.append(CalculationStep(str(index + 1), f"After year {index}", "previous value × growth factor", f"{_fmt(current / (1 + rate / 100), decimals)} × {_fmt(1 + rate / 100, 3)}", rounded, "thousand EUR", _rounding_text(decimals)))
-        return _Computation(result, f"{_fmt(result, decimals)} thousand EUR", "thousand EUR", "initial × (1 + rate ÷ 100)^years", tuple(steps), "Follow the line trend, then apply the same multiplier for each additional year.", decimals, {"initial": initial, "rate": rate, "periods": periods}, result)
+            if int(p.get("template", 0)) % 2:
+                formula = "previous value + (previous value × rate ÷ 100)"
+                substitution = f"{_fmt(previous, decimals)} + ({_fmt(previous, decimals)} × {_fmt(rate)} ÷ 100)"
+            else:
+                formula = "previous value × growth factor"
+                substitution = f"{_fmt(previous, decimals)} × {_fmt(factor, 3)}"
+            steps.append(CalculationStep(str(index + 1), f"After year {index}", formula, substitution, rounded, "thousand EUR", _rounding_text(decimals)))
+        return _Computation(result, f"{_fmt(result, decimals)} thousand EUR", "thousand EUR", "initial × (1 + rate ÷ 100)^years", tuple(steps), "Follow the trend and apply the same multiplier for each additional year.", decimals, {"initial": initial, "rate": rate, "periods": periods, "template": p.get("template", 0)}, result)
     if operation == "comparison":
         first, second = _decimal(p["first"]), _decimal(p["second"])
         result = calculate_comparison(first, second, decimals)
-        steps = (CalculationStep("1", "Difference", "A − B", f"{_fmt(first)} − {_fmt(second)}", result, "requests", _rounding_text(decimals)),)
-        return _Computation(result, f"{_fmt(result, decimals)} requests", "requests", "Programme A − Programme B", steps, "Subtract the shorter bar from the taller bar.", decimals, {"first": first, "second": second}, result)
+        if int(p.get("template", 0)) % 2:
+            absolute = abs(first - second)
+            steps = (
+                CalculationStep("1", "Absolute gap", "|A − B|", f"|{_fmt(first)} − {_fmt(second)}|", absolute, "requests", "exact"),
+                CalculationStep("2", "Direction", "A − B", f"{_fmt(first)} − {_fmt(second)}", result, "requests", _rounding_text(decimals)),
+            )
+            formula = "absolute gap, then retain the direction Programme A − Programme B"
+        else:
+            steps = (CalculationStep("1", "Difference", "A − B", f"{_fmt(first)} − {_fmt(second)}", result, "requests", _rounding_text(decimals)),)
+            formula = "Programme A − Programme B"
+        return _Computation(result, f"{_fmt(result, decimals)} requests", "requests", formula, steps, "Subtract the shorter bar from the taller bar and keep the requested direction.", decimals, {"first": first, "second": second, "template": p.get("template", 0)}, result)
     quantity_a, quantity_b = _decimal(table.rows[0][1]), _decimal(table.rows[1][1])
     price_a, price_b = _decimal(table.rows[0][2]), _decimal(table.rows[1][2])
     discount, tax = _decimal(p["discount"]), _decimal(p["tax"])
@@ -1007,6 +1070,22 @@ def generate_numerical_question(
     ]
     action = _action(explanation, computation, options, correct_option, source_data, profile, distractors)
     answer_option = next(option for option in options if option["id"] == correct_option)
+    operation_signature = stable_signature(
+        {
+            "operation": operation,
+            "formula": computation.formula,
+            "steps": [(step.label, step.formula) for step in computation.steps],
+            "template": bundle.parameters.get("template", 0),
+        }
+    )
+    calculation_signature = stable_signature(
+        {"operation": operation, "steps": [step.to_dict() for step in computation.steps]}
+    )
+    answer_signature = json.dumps(
+        {"value": answer_option["value"], "unit": computation.unit},
+        sort_keys=True,
+        separators=(",", ":"),
+    )
     metadata: dict[str, Any] = {
         "seed": int(seed),
         "examProfile": profile.name,
@@ -1026,7 +1105,12 @@ def generate_numerical_question(
         "explanationFragments": fragments,
         "answerValue": answer_option["value"],
         "answerUnit": computation.unit,
-        "answerSignature": json.dumps({"value": answer_option["value"], "unit": computation.unit}, sort_keys=True, separators=(",", ":")),
+        "answerSignature": answer_signature,
+        "answerValueSignature": stable_signature(answer_signature),
+        "operationSignature": operation_signature,
+        "calculationSignature": calculation_signature,
+        "methodSignature": operation_signature,
+        "explanationSignature": stable_signature(fragments),
     }
     question = NumericalQuestion(
         id=f"numerical-{operation}-{int(seed)}-{level}",

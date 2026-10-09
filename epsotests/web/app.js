@@ -252,6 +252,11 @@ function renderQuestion(
   const questionSeed = question.metadata?.seed ?? seed.value;
   seed.value = String(questionSeed);
   itemMeta.dataset.questionId = question.id || "";
+  itemMeta.dataset.methodSignature = question.metadata?.methodSignature || "";
+  itemMeta.dataset.answerSignature = question.metadata?.answerValueSignature || "";
+  itemMeta.dataset.calculationSignature = question.metadata?.calculationSignature || "";
+  itemMeta.dataset.evidenceSignature = question.metadata?.evidenceSignature || "";
+  itemMeta.dataset.explanationSignature = question.metadata?.explanationSignature || "";
   itemMeta.textContent = `${question.exam} reasoning · ${question.id || `item ${question.itemNumber || 1}`} · seed ${questionSeed}`;
   $("#question-heading").textContent = question.format || question.questionType || "Question";
   $("#question-prompt").textContent = question.question;

@@ -50,6 +50,28 @@ class VisualAbstractGeneratorTests(unittest.TestCase):
             first["stimulus"]["frames"][0]["svg"],
         )
 
+    def test_adjacent_catalog_seeds_change_rule_and_answer_signatures(self):
+        for format_name in SUPPORTED_FORMATS:
+            first = generate_question(format_name, seed=42, difficulty="medium")
+            second = generate_question(format_name, seed=43, difficulty="medium")
+            with self.subTest(format=format_name):
+                self.assertNotEqual(
+                    first["metadata"]["ruleSignature"],
+                    second["metadata"]["ruleSignature"],
+                )
+                self.assertNotEqual(
+                    first["metadata"]["answerSignature"],
+                    second["metadata"]["answerSignature"],
+                )
+                self.assertNotEqual(
+                    first["metadata"]["explanationSignature"],
+                    second["metadata"]["explanationSignature"],
+                )
+                self.assertNotEqual(
+                    first["metadata"]["methodSignature"],
+                    second["metadata"]["methodSignature"],
+                )
+
     def test_default_rotation_is_visually_observable(self):
         for seed in range(20):
             question = generate_sequence(seed=seed, difficulty="easy")

@@ -1,5 +1,5 @@
 {
-  "id": "verbal-true-false-archive-maps-9-easy",
+  "id": "verbal-true-false-river-sensors-9-easy",
   "itemNumber": 1,
   "exam": "verbal",
   "examProfile": "five-option",
@@ -8,73 +8,81 @@
   "questionType": "true-false",
   "difficulty": "easy",
   "passage": {
-    "id": "archive-maps",
-    "title": "The archive's first digitisation phase",
-    "text": "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.\n\nIn May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.\n\nThe project creates digital access copies while the original maps remain in the archive reading room.",
+    "id": "river-sensors",
+    "title": "What the river sensors can show",
+    "text": "The regional environment agency installed sensors at three river gauges in May. Each sensor records water level every 15 minutes and sends the readings to a central dashboard.\n\nDuring the summer drought, the level at the Willow gauge stayed below the agency's alert threshold for nine days. Staff reviewed an alert before issuing any public bulletin.\n\nHeavy rain in September produced two alerts in three days, but neither led to a closure because the water level receded within four hours. The sensors report current levels; they do not predict rainfall.",
     "paragraphs": [
-      "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.",
-      "In May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.",
-      "The project creates digital access copies while the original maps remain in the archive reading room."
+      "The regional environment agency installed sensors at three river gauges in May. Each sensor records water level every 15 minutes and sends the readings to a central dashboard.",
+      "During the summer drought, the level at the Willow gauge stayed below the agency's alert threshold for nine days. Staff reviewed an alert before issuing any public bulletin.",
+      "Heavy rain in September produced two alerts in three days, but neither led to a closure because the water level receded within four hours. The sensors report current levels; they do not predict rainfall."
     ],
     "source": "original"
   },
   "sourcePassage": {
-    "id": "archive-maps",
-    "title": "The archive's first digitisation phase",
-    "text": "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.\n\nIn May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.\n\nThe project creates digital access copies while the original maps remain in the archive reading room.",
+    "id": "river-sensors",
+    "title": "What the river sensors can show",
+    "text": "The regional environment agency installed sensors at three river gauges in May. Each sensor records water level every 15 minutes and sends the readings to a central dashboard.\n\nDuring the summer drought, the level at the Willow gauge stayed below the agency's alert threshold for nine days. Staff reviewed an alert before issuing any public bulletin.\n\nHeavy rain in September produced two alerts in three days, but neither led to a closure because the water level receded within four hours. The sensors report current levels; they do not predict rainfall.",
     "paragraphs": [
-      "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.",
-      "In May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.",
-      "The project creates digital access copies while the original maps remain in the archive reading room."
+      "The regional environment agency installed sensors at three river gauges in May. Each sensor records water level every 15 minutes and sends the readings to a central dashboard.",
+      "During the summer drought, the level at the Willow gauge stayed below the agency's alert threshold for nine days. Staff reviewed an alert before issuing any public bulletin.",
+      "Heavy rain in September produced two alerts in three days, but neither led to a closure because the water level receded within four hours. The sensors report current levels; they do not predict rainfall."
     ],
     "source": "original"
   },
-  "passageText": "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.\n\nIn May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.\n\nThe project creates digital access copies while the original maps remain in the archive reading room.",
+  "passageText": "The regional environment agency installed sensors at three river gauges in May. Each sensor records water level every 15 minutes and sends the readings to a central dashboard.\n\nDuring the summer drought, the level at the Willow gauge stayed below the agency's alert threshold for nine days. Staff reviewed an alert before issuing any public bulletin.\n\nHeavy rain in September produced two alerts in three days, but neither led to a closure because the water level receded within four hours. The sensors report current levels; they do not predict rainfall.",
   "stimulus": {
     "type": "passage",
-    "title": "The archive's first digitisation phase",
+    "title": "What the river sensors can show",
     "passage": {
-      "id": "archive-maps",
-      "title": "The archive's first digitisation phase",
-      "text": "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.\n\nIn May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.\n\nThe project creates digital access copies while the original maps remain in the archive reading room.",
+      "id": "river-sensors",
+      "title": "What the river sensors can show",
+      "text": "The regional environment agency installed sensors at three river gauges in May. Each sensor records water level every 15 minutes and sends the readings to a central dashboard.\n\nDuring the summer drought, the level at the Willow gauge stayed below the agency's alert threshold for nine days. Staff reviewed an alert before issuing any public bulletin.\n\nHeavy rain in September produced two alerts in three days, but neither led to a closure because the water level receded within four hours. The sensors report current levels; they do not predict rainfall.",
       "paragraphs": [
-        "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.",
-        "In May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.",
-        "The project creates digital access copies while the original maps remain in the archive reading room."
+        "The regional environment agency installed sensors at three river gauges in May. Each sensor records water level every 15 minutes and sends the readings to a central dashboard.",
+        "During the summer drought, the level at the Willow gauge stayed below the agency's alert threshold for nine days. Staff reviewed an alert before issuing any public bulletin.",
+        "Heavy rain in September produced two alerts in three days, but neither led to a closure because the water level receded within four hours. The sensors report current levels; they do not predict rainfall."
       ],
       "source": "original"
     },
-    "text": "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.\n\nIn May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.\n\nThe project creates digital access copies while the original maps remain in the archive reading room.",
+    "text": "The regional environment agency installed sensors at three river gauges in May. Each sensor records water level every 15 minutes and sends the readings to a central dashboard.\n\nDuring the summer drought, the level at the Willow gauge stayed below the agency's alert threshold for nine days. Staff reviewed an alert before issuing any public bulletin.\n\nHeavy rain in September produced two alerts in three days, but neither led to a closure because the water level receded within four hours. The sensors report current levels; they do not predict rainfall.",
     "evidenceSpans": [
       {
         "id": "evidence-1",
-        "start": 234,
-        "end": 296,
-        "text": "Volunteers transcribed handwritten labels for 90 of those maps",
+        "start": 291,
+        "end": 349,
+        "text": "Staff reviewed an alert before issuing any public bulletin",
         "paragraph": 2,
         "source": "passage"
       },
       {
         "id": "evidence-2",
-        "start": 298,
-        "end": 341,
-        "text": "the volunteers did not operate the scanners",
-        "paragraph": 2,
+        "start": 526,
+        "end": 554,
+        "text": "they do not predict rainfall",
+        "paragraph": 3,
         "source": "passage"
       },
       {
         "id": "evidence-3",
-        "start": 396,
-        "end": 444,
-        "text": "original maps remain in the archive reading room",
+        "start": 415,
+        "end": 439,
+        "text": "neither led to a closure",
         "paragraph": 3,
         "source": "passage"
       },
       {
         "id": "evidence-4",
-        "start": 207,
-        "end": 232,
-        "text": "the team scanned 320 maps",
+        "start": 80,
+        "end": 128,
+        "text": "Each sensor records water level every 15 minutes",
+        "paragraph": 1,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-5",
+        "start": 204,
+        "end": 289,
+        "text": "the level at the Willow gauge stayed below the agency's alert threshold for nine days",
         "paragraph": 2,
         "source": "passage"
       }
@@ -84,90 +92,98 @@
   "claims": [
     {
       "id": "claim-1",
-      "text": "Volunteers transcribed handwritten labels for 90 maps.",
+      "text": "Staff review an alert before issuing a public bulletin.",
       "claimType": "explicit-fact",
       "status": "supported",
       "evidence": [
         "evidence-1"
       ],
-      "reasoning": "This fact is stated directly.",
+      "reasoning": "This procedure is stated explicitly.",
       "explicit": true
     },
     {
       "id": "claim-2",
-      "text": "Volunteers operated the scanners.",
+      "text": "The sensors predict rainfall.",
       "claimType": "contradicted",
       "status": "contradicted",
       "evidence": [
         "evidence-2"
       ],
-      "reasoning": "The passage explicitly excludes scanner operation from the volunteer role.",
+      "reasoning": "The passage says the sensors do not predict rainfall.",
       "explicit": false
     },
     {
       "id": "claim-3",
-      "text": "Original maps were moved out of the reading room.",
+      "text": "Both September alerts caused a river closure.",
       "claimType": "contradicted",
       "status": "contradicted",
       "evidence": [
         "evidence-3"
       ],
-      "reasoning": "The passage says the originals remain in the reading room.",
+      "reasoning": "Neither September alert led to closure.",
       "explicit": false
     },
     {
       "id": "claim-4",
-      "text": "The team scanned 3,200 maps in May.",
+      "text": "Sensors record readings only once a day.",
       "claimType": "contradicted",
       "status": "contradicted",
       "evidence": [
         "evidence-4"
       ],
-      "reasoning": "The reported count is 320.",
+      "reasoning": "The stated interval is every 15 minutes.",
       "explicit": false
     },
     {
       "id": "claim-5",
-      "text": "Every map received a volunteer transcription.",
+      "text": "All three gauges stayed below threshold for nine days.",
       "claimType": "invalid-inference",
       "status": "not-stated",
       "evidence": [
-        "evidence-1"
+        "evidence-5"
       ],
-      "reasoning": "Only 90 maps are identified as having volunteer transcriptions.",
+      "reasoning": "Only the Willow gauge is identified in that statement.",
       "explicit": false
     }
   ],
   "evidenceSpans": [
     {
       "id": "evidence-1",
-      "start": 234,
-      "end": 296,
-      "text": "Volunteers transcribed handwritten labels for 90 of those maps",
+      "start": 291,
+      "end": 349,
+      "text": "Staff reviewed an alert before issuing any public bulletin",
       "paragraph": 2,
       "source": "passage"
     },
     {
       "id": "evidence-2",
-      "start": 298,
-      "end": 341,
-      "text": "the volunteers did not operate the scanners",
-      "paragraph": 2,
+      "start": 526,
+      "end": 554,
+      "text": "they do not predict rainfall",
+      "paragraph": 3,
       "source": "passage"
     },
     {
       "id": "evidence-3",
-      "start": 396,
-      "end": 444,
-      "text": "original maps remain in the archive reading room",
+      "start": 415,
+      "end": 439,
+      "text": "neither led to a closure",
       "paragraph": 3,
       "source": "passage"
     },
     {
       "id": "evidence-4",
-      "start": 207,
-      "end": 232,
-      "text": "the team scanned 320 maps",
+      "start": 80,
+      "end": 128,
+      "text": "Each sensor records water level every 15 minutes",
+      "paragraph": 1,
+      "source": "passage"
+    },
+    {
+      "id": "evidence-5",
+      "start": 204,
+      "end": 289,
+      "text": "the level at the Willow gauge stayed below the agency's alert threshold for nine days",
       "paragraph": 2,
       "source": "passage"
     }
@@ -175,56 +191,56 @@
   "options": [
     {
       "id": "A",
-      "label": "Original maps were moved out of the reading room.",
-      "text": "Original maps were moved out of the reading room.",
+      "label": "Both September alerts caused a river closure.",
+      "text": "Both September alerts caused a river closure.",
       "claimId": "claim-3",
       "claimType": "contradicted",
       "evaluationStatus": "contradicted",
       "evidence": [
         "evidence-3"
       ],
-      "distractorRationale": "contradicts where originals remain",
+      "distractorRationale": "reverses the outcome of both alerts",
       "mutation": {
         "kind": "verbal-misreading",
-        "description": "contradicts where originals remain"
+        "description": "reverses the outcome of both alerts"
       }
     },
     {
       "id": "B",
-      "label": "Every map received a volunteer transcription.",
-      "text": "Every map received a volunteer transcription.",
+      "label": "All three gauges stayed below threshold for nine days.",
+      "text": "All three gauges stayed below threshold for nine days.",
       "claimId": "claim-5",
       "claimType": "invalid-inference",
       "evaluationStatus": "not-stated",
       "evidence": [
-        "evidence-1"
+        "evidence-5"
       ],
-      "distractorRationale": "expands a subset to the entire project",
+      "distractorRationale": "generalises the Willow result to gauges not described that way",
       "mutation": {
         "kind": "verbal-misreading",
-        "description": "expands a subset to the entire project"
+        "description": "generalises the Willow result to gauges not described that way"
       }
     },
     {
       "id": "C",
-      "label": "The team scanned 3,200 maps in May.",
-      "text": "The team scanned 3,200 maps in May.",
+      "label": "Sensors record readings only once a day.",
+      "text": "Sensors record readings only once a day.",
       "claimId": "claim-4",
       "claimType": "contradicted",
       "evaluationStatus": "contradicted",
       "evidence": [
         "evidence-4"
       ],
-      "distractorRationale": "adds a zero to the reported count",
+      "distractorRationale": "changes the recording interval",
       "mutation": {
         "kind": "verbal-misreading",
-        "description": "adds a zero to the reported count"
+        "description": "changes the recording interval"
       }
     },
     {
       "id": "D",
-      "label": "Volunteers transcribed handwritten labels for 90 maps.",
-      "text": "Volunteers transcribed handwritten labels for 90 maps.",
+      "label": "Staff review an alert before issuing a public bulletin.",
+      "text": "Staff review an alert before issuing a public bulletin.",
       "claimId": "claim-1",
       "claimType": "explicit-fact",
       "evaluationStatus": "supported",
@@ -239,18 +255,18 @@
     },
     {
       "id": "E",
-      "label": "Volunteers operated the scanners.",
-      "text": "Volunteers operated the scanners.",
+      "label": "The sensors predict rainfall.",
+      "text": "The sensors predict rainfall.",
       "claimId": "claim-2",
       "claimType": "contradicted",
       "evaluationStatus": "contradicted",
       "evidence": [
         "evidence-2"
       ],
-      "distractorRationale": "contradicts the passage",
+      "distractorRationale": "contradicts the sensor limitation",
       "mutation": {
         "kind": "verbal-misreading",
-        "description": "contradicts the passage"
+        "description": "contradicts the sensor limitation"
       }
     }
   ],
@@ -266,8 +282,8 @@
       "evidence": [
         "evidence-3"
       ],
-      "reasoning": "The passage says the originals remain in the reading room.",
-      "rationale": "contradicts where originals remain"
+      "reasoning": "Neither September alert led to closure.",
+      "rationale": "reverses the outcome of both alerts"
     },
     {
       "option": "B",
@@ -277,10 +293,10 @@
       "verdict": "distractor",
       "isCorrect": false,
       "evidence": [
-        "evidence-1"
+        "evidence-5"
       ],
-      "reasoning": "Only 90 maps are identified as having volunteer transcriptions.",
-      "rationale": "expands a subset to the entire project"
+      "reasoning": "Only the Willow gauge is identified in that statement.",
+      "rationale": "generalises the Willow result to gauges not described that way"
     },
     {
       "option": "C",
@@ -292,8 +308,8 @@
       "evidence": [
         "evidence-4"
       ],
-      "reasoning": "The reported count is 320.",
-      "rationale": "adds a zero to the reported count"
+      "reasoning": "The stated interval is every 15 minutes.",
+      "rationale": "changes the recording interval"
     },
     {
       "option": "D",
@@ -305,7 +321,7 @@
       "evidence": [
         "evidence-1"
       ],
-      "reasoning": "This fact is stated directly.",
+      "reasoning": "This procedure is stated explicitly.",
       "rationale": ""
     },
     {
@@ -318,16 +334,16 @@
       "evidence": [
         "evidence-2"
       ],
-      "reasoning": "The passage explicitly excludes scanner operation from the volunteer role.",
-      "rationale": "contradicts the passage"
+      "reasoning": "The passage says the sensors do not predict rainfall.",
+      "rationale": "contradicts the sensor limitation"
     }
   ],
-  "explanation": "Option D is correct. Evidence evidence-1 states “Volunteers transcribed handwritten labels for 90 of those maps”. Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+  "explanation": "Option D is correct. Evidence evidence-1 states “Staff reviewed an alert before issuing any public bulletin”. Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
   "explanationDetails": {
-    "text": "Option D is correct. Evidence evidence-1 states “Volunteers transcribed handwritten labels for 90 of those maps”. Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+    "text": "Option D is correct. Evidence evidence-1 states “Staff reviewed an alert before issuing any public bulletin”. Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
     "reasoningSteps": [
-      "Identify the claim tested by option D: Volunteers transcribed handwritten labels for 90 maps.",
-      "Cite evidence evidence-1: “Volunteers transcribed handwritten labels for 90 of those maps”",
+      "Identify the claim tested by option D: Staff review an alert before issuing a public bulletin.",
+      "Cite evidence evidence-1: “Staff reviewed an alert before issuing any public bulletin”",
       "Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated.",
       "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
     ],
@@ -335,19 +351,19 @@
       "evidence-1"
     ],
     "explicitFacts": [
-      "Volunteers transcribed handwritten labels for 90 maps."
+      "Staff review an alert before issuing a public bulletin."
     ],
     "invalidInferences": [
-      "Option A: contradicts where originals remain.",
-      "Option B: expands a subset to the entire project.",
-      "Option C: adds a zero to the reported count.",
-      "Option E: contradicts the passage."
+      "Option A: reverses the outcome of both alerts.",
+      "Option B: generalises the Willow result to gauges not described that way.",
+      "Option C: changes the recording interval.",
+      "Option E: contradicts the sensor limitation."
     ],
-    "conclusion": "Volunteers transcribed handwritten labels for 90 maps."
+    "conclusion": "Staff review an alert before issuing a public bulletin."
   },
   "explanationFragments": [
-    "Identify the claim tested by option D: Volunteers transcribed handwritten labels for 90 maps.",
-    "Cite evidence evidence-1: “Volunteers transcribed handwritten labels for 90 of those maps”",
+    "Identify the claim tested by option D: Staff review an alert before issuing a public bulletin.",
+    "Cite evidence evidence-1: “Staff reviewed an alert before issuing any public bulletin”",
     "Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated.",
     "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
   ],
@@ -377,12 +393,12 @@
       "result": {
         "optionCount": 5,
         "questionType": "true-false",
-        "explanation": "Option D is correct. Evidence evidence-1 states “Volunteers transcribed handwritten labels for 90 of those maps”. Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+        "explanation": "Option D is correct. Evidence evidence-1 states “Staff reviewed an alert before issuing any public bulletin”. Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
         "explanationDetails": {
-          "text": "Option D is correct. Evidence evidence-1 states “Volunteers transcribed handwritten labels for 90 of those maps”. Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+          "text": "Option D is correct. Evidence evidence-1 states “Staff reviewed an alert before issuing any public bulletin”. Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
           "reasoningSteps": [
-            "Identify the claim tested by option D: Volunteers transcribed handwritten labels for 90 maps.",
-            "Cite evidence evidence-1: “Volunteers transcribed handwritten labels for 90 of those maps”",
+            "Identify the claim tested by option D: Staff review an alert before issuing a public bulletin.",
+            "Cite evidence evidence-1: “Staff reviewed an alert before issuing any public bulletin”",
             "Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated.",
             "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
           ],
@@ -390,52 +406,60 @@
             "evidence-1"
           ],
           "explicitFacts": [
-            "Volunteers transcribed handwritten labels for 90 maps."
+            "Staff review an alert before issuing a public bulletin."
           ],
           "invalidInferences": [
-            "Option A: contradicts where originals remain.",
-            "Option B: expands a subset to the entire project.",
-            "Option C: adds a zero to the reported count.",
-            "Option E: contradicts the passage."
+            "Option A: reverses the outcome of both alerts.",
+            "Option B: generalises the Willow result to gauges not described that way.",
+            "Option C: changes the recording interval.",
+            "Option E: contradicts the sensor limitation."
           ],
-          "conclusion": "Volunteers transcribed handwritten labels for 90 maps."
+          "conclusion": "Staff review an alert before issuing a public bulletin."
         },
         "reasoningSteps": [
-          "Identify the claim tested by option D: Volunteers transcribed handwritten labels for 90 maps.",
-          "Cite evidence evidence-1: “Volunteers transcribed handwritten labels for 90 of those maps”",
+          "Identify the claim tested by option D: Staff review an alert before issuing a public bulletin.",
+          "Cite evidence evidence-1: “Staff reviewed an alert before issuing any public bulletin”",
           "Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated.",
           "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
         ],
         "evidenceSpans": [
           {
             "id": "evidence-1",
-            "start": 234,
-            "end": 296,
-            "text": "Volunteers transcribed handwritten labels for 90 of those maps",
+            "start": 291,
+            "end": 349,
+            "text": "Staff reviewed an alert before issuing any public bulletin",
             "paragraph": 2,
             "source": "passage"
           },
           {
             "id": "evidence-2",
-            "start": 298,
-            "end": 341,
-            "text": "the volunteers did not operate the scanners",
-            "paragraph": 2,
+            "start": 526,
+            "end": 554,
+            "text": "they do not predict rainfall",
+            "paragraph": 3,
             "source": "passage"
           },
           {
             "id": "evidence-3",
-            "start": 396,
-            "end": 444,
-            "text": "original maps remain in the archive reading room",
+            "start": 415,
+            "end": 439,
+            "text": "neither led to a closure",
             "paragraph": 3,
             "source": "passage"
           },
           {
             "id": "evidence-4",
-            "start": 207,
-            "end": 232,
-            "text": "the team scanned 320 maps",
+            "start": 80,
+            "end": 128,
+            "text": "Each sensor records water level every 15 minutes",
+            "paragraph": 1,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-5",
+            "start": 204,
+            "end": 289,
+            "text": "the level at the Willow gauge stayed below the agency's alert threshold for nine days",
             "paragraph": 2,
             "source": "passage"
           }
@@ -443,57 +467,57 @@
         "claims": [
           {
             "id": "claim-1",
-            "text": "Volunteers transcribed handwritten labels for 90 maps.",
+            "text": "Staff review an alert before issuing a public bulletin.",
             "claimType": "explicit-fact",
             "status": "supported",
             "evidence": [
               "evidence-1"
             ],
-            "reasoning": "This fact is stated directly.",
+            "reasoning": "This procedure is stated explicitly.",
             "explicit": true
           },
           {
             "id": "claim-2",
-            "text": "Volunteers operated the scanners.",
+            "text": "The sensors predict rainfall.",
             "claimType": "contradicted",
             "status": "contradicted",
             "evidence": [
               "evidence-2"
             ],
-            "reasoning": "The passage explicitly excludes scanner operation from the volunteer role.",
+            "reasoning": "The passage says the sensors do not predict rainfall.",
             "explicit": false
           },
           {
             "id": "claim-3",
-            "text": "Original maps were moved out of the reading room.",
+            "text": "Both September alerts caused a river closure.",
             "claimType": "contradicted",
             "status": "contradicted",
             "evidence": [
               "evidence-3"
             ],
-            "reasoning": "The passage says the originals remain in the reading room.",
+            "reasoning": "Neither September alert led to closure.",
             "explicit": false
           },
           {
             "id": "claim-4",
-            "text": "The team scanned 3,200 maps in May.",
+            "text": "Sensors record readings only once a day.",
             "claimType": "contradicted",
             "status": "contradicted",
             "evidence": [
               "evidence-4"
             ],
-            "reasoning": "The reported count is 320.",
+            "reasoning": "The stated interval is every 15 minutes.",
             "explicit": false
           },
           {
             "id": "claim-5",
-            "text": "Every map received a volunteer transcription.",
+            "text": "All three gauges stayed below threshold for nine days.",
             "claimType": "invalid-inference",
             "status": "not-stated",
             "evidence": [
-              "evidence-1"
+              "evidence-5"
             ],
-            "reasoning": "Only 90 maps are identified as having volunteer transcriptions.",
+            "reasoning": "Only the Willow gauge is identified in that statement.",
             "explicit": false
           }
         ],
@@ -508,8 +532,8 @@
             "evidence": [
               "evidence-3"
             ],
-            "reasoning": "The passage says the originals remain in the reading room.",
-            "rationale": "contradicts where originals remain"
+            "reasoning": "Neither September alert led to closure.",
+            "rationale": "reverses the outcome of both alerts"
           },
           {
             "option": "B",
@@ -519,10 +543,10 @@
             "verdict": "distractor",
             "isCorrect": false,
             "evidence": [
-              "evidence-1"
+              "evidence-5"
             ],
-            "reasoning": "Only 90 maps are identified as having volunteer transcriptions.",
-            "rationale": "expands a subset to the entire project"
+            "reasoning": "Only the Willow gauge is identified in that statement.",
+            "rationale": "generalises the Willow result to gauges not described that way"
           },
           {
             "option": "C",
@@ -534,8 +558,8 @@
             "evidence": [
               "evidence-4"
             ],
-            "reasoning": "The reported count is 320.",
-            "rationale": "adds a zero to the reported count"
+            "reasoning": "The stated interval is every 15 minutes.",
+            "rationale": "changes the recording interval"
           },
           {
             "option": "D",
@@ -547,7 +571,7 @@
             "evidence": [
               "evidence-1"
             ],
-            "reasoning": "This fact is stated directly.",
+            "reasoning": "This procedure is stated explicitly.",
             "rationale": ""
           },
           {
@@ -560,8 +584,8 @@
             "evidence": [
               "evidence-2"
             ],
-            "reasoning": "The passage explicitly excludes scanner operation from the volunteer role.",
-            "rationale": "contradicts the passage"
+            "reasoning": "The passage says the sensors do not predict rainfall.",
+            "rationale": "contradicts the sensor limitation"
           }
         ],
         "correctOption": "D",
@@ -569,8 +593,8 @@
         "distractors": [
           {
             "option": "A",
-            "reason": "contradicts where originals remain",
-            "rationale": "contradicts where originals remain",
+            "reason": "reverses the outcome of both alerts",
+            "rationale": "reverses the outcome of both alerts",
             "status": "contradicted",
             "claimId": "claim-3",
             "evidence": [
@@ -579,18 +603,18 @@
           },
           {
             "option": "B",
-            "reason": "expands a subset to the entire project",
-            "rationale": "expands a subset to the entire project",
+            "reason": "generalises the Willow result to gauges not described that way",
+            "rationale": "generalises the Willow result to gauges not described that way",
             "status": "not-stated",
             "claimId": "claim-5",
             "evidence": [
-              "evidence-1"
+              "evidence-5"
             ]
           },
           {
             "option": "C",
-            "reason": "adds a zero to the reported count",
-            "rationale": "adds a zero to the reported count",
+            "reason": "changes the recording interval",
+            "rationale": "changes the recording interval",
             "status": "contradicted",
             "claimId": "claim-4",
             "evidence": [
@@ -599,8 +623,8 @@
           },
           {
             "option": "E",
-            "reason": "contradicts the passage",
-            "rationale": "contradicts the passage",
+            "reason": "contradicts the sensor limitation",
+            "rationale": "contradicts the sensor limitation",
             "status": "contradicted",
             "claimId": "claim-2",
             "evidence": [
@@ -616,116 +640,124 @@
     "examProfile": "five-option",
     "optionCount": 5,
     "questionType": "true-false",
-    "scenario": "archive-maps",
+    "scenario": "river-sensors",
     "sourcePassage": {
-      "id": "archive-maps",
-      "title": "The archive's first digitisation phase",
-      "text": "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.\n\nIn May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.\n\nThe project creates digital access copies while the original maps remain in the archive reading room.",
+      "id": "river-sensors",
+      "title": "What the river sensors can show",
+      "text": "The regional environment agency installed sensors at three river gauges in May. Each sensor records water level every 15 minutes and sends the readings to a central dashboard.\n\nDuring the summer drought, the level at the Willow gauge stayed below the agency's alert threshold for nine days. Staff reviewed an alert before issuing any public bulletin.\n\nHeavy rain in September produced two alerts in three days, but neither led to a closure because the water level receded within four hours. The sensors report current levels; they do not predict rainfall.",
       "paragraphs": [
-        "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.",
-        "In May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.",
-        "The project creates digital access copies while the original maps remain in the archive reading room."
+        "The regional environment agency installed sensors at three river gauges in May. Each sensor records water level every 15 minutes and sends the readings to a central dashboard.",
+        "During the summer drought, the level at the Willow gauge stayed below the agency's alert threshold for nine days. Staff reviewed an alert before issuing any public bulletin.",
+        "Heavy rain in September produced two alerts in three days, but neither led to a closure because the water level receded within four hours. The sensors report current levels; they do not predict rainfall."
       ],
       "source": "original"
     },
     "passage": {
-      "id": "archive-maps",
-      "title": "The archive's first digitisation phase",
-      "text": "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.\n\nIn May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.\n\nThe project creates digital access copies while the original maps remain in the archive reading room.",
+      "id": "river-sensors",
+      "title": "What the river sensors can show",
+      "text": "The regional environment agency installed sensors at three river gauges in May. Each sensor records water level every 15 minutes and sends the readings to a central dashboard.\n\nDuring the summer drought, the level at the Willow gauge stayed below the agency's alert threshold for nine days. Staff reviewed an alert before issuing any public bulletin.\n\nHeavy rain in September produced two alerts in three days, but neither led to a closure because the water level receded within four hours. The sensors report current levels; they do not predict rainfall.",
       "paragraphs": [
-        "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.",
-        "In May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.",
-        "The project creates digital access copies while the original maps remain in the archive reading room."
+        "The regional environment agency installed sensors at three river gauges in May. Each sensor records water level every 15 minutes and sends the readings to a central dashboard.",
+        "During the summer drought, the level at the Willow gauge stayed below the agency's alert threshold for nine days. Staff reviewed an alert before issuing any public bulletin.",
+        "Heavy rain in September produced two alerts in three days, but neither led to a closure because the water level receded within four hours. The sensors report current levels; they do not predict rainfall."
       ],
       "source": "original"
     },
     "claims": [
       {
         "id": "claim-1",
-        "text": "Volunteers transcribed handwritten labels for 90 maps.",
+        "text": "Staff review an alert before issuing a public bulletin.",
         "claimType": "explicit-fact",
         "status": "supported",
         "evidence": [
           "evidence-1"
         ],
-        "reasoning": "This fact is stated directly.",
+        "reasoning": "This procedure is stated explicitly.",
         "explicit": true
       },
       {
         "id": "claim-2",
-        "text": "Volunteers operated the scanners.",
+        "text": "The sensors predict rainfall.",
         "claimType": "contradicted",
         "status": "contradicted",
         "evidence": [
           "evidence-2"
         ],
-        "reasoning": "The passage explicitly excludes scanner operation from the volunteer role.",
+        "reasoning": "The passage says the sensors do not predict rainfall.",
         "explicit": false
       },
       {
         "id": "claim-3",
-        "text": "Original maps were moved out of the reading room.",
+        "text": "Both September alerts caused a river closure.",
         "claimType": "contradicted",
         "status": "contradicted",
         "evidence": [
           "evidence-3"
         ],
-        "reasoning": "The passage says the originals remain in the reading room.",
+        "reasoning": "Neither September alert led to closure.",
         "explicit": false
       },
       {
         "id": "claim-4",
-        "text": "The team scanned 3,200 maps in May.",
+        "text": "Sensors record readings only once a day.",
         "claimType": "contradicted",
         "status": "contradicted",
         "evidence": [
           "evidence-4"
         ],
-        "reasoning": "The reported count is 320.",
+        "reasoning": "The stated interval is every 15 minutes.",
         "explicit": false
       },
       {
         "id": "claim-5",
-        "text": "Every map received a volunteer transcription.",
+        "text": "All three gauges stayed below threshold for nine days.",
         "claimType": "invalid-inference",
         "status": "not-stated",
         "evidence": [
-          "evidence-1"
+          "evidence-5"
         ],
-        "reasoning": "Only 90 maps are identified as having volunteer transcriptions.",
+        "reasoning": "Only the Willow gauge is identified in that statement.",
         "explicit": false
       }
     ],
     "evidenceSpans": [
       {
         "id": "evidence-1",
-        "start": 234,
-        "end": 296,
-        "text": "Volunteers transcribed handwritten labels for 90 of those maps",
+        "start": 291,
+        "end": 349,
+        "text": "Staff reviewed an alert before issuing any public bulletin",
         "paragraph": 2,
         "source": "passage"
       },
       {
         "id": "evidence-2",
-        "start": 298,
-        "end": 341,
-        "text": "the volunteers did not operate the scanners",
-        "paragraph": 2,
+        "start": 526,
+        "end": 554,
+        "text": "they do not predict rainfall",
+        "paragraph": 3,
         "source": "passage"
       },
       {
         "id": "evidence-3",
-        "start": 396,
-        "end": 444,
-        "text": "original maps remain in the archive reading room",
+        "start": 415,
+        "end": 439,
+        "text": "neither led to a closure",
         "paragraph": 3,
         "source": "passage"
       },
       {
         "id": "evidence-4",
-        "start": 207,
-        "end": 232,
-        "text": "the team scanned 320 maps",
+        "start": 80,
+        "end": 128,
+        "text": "Each sensor records water level every 15 minutes",
+        "paragraph": 1,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-5",
+        "start": 204,
+        "end": 289,
+        "text": "the level at the Willow gauge stayed below the agency's alert threshold for nine days",
         "paragraph": 2,
         "source": "passage"
       }
@@ -741,8 +773,8 @@
         "evidence": [
           "evidence-3"
         ],
-        "reasoning": "The passage says the originals remain in the reading room.",
-        "rationale": "contradicts where originals remain"
+        "reasoning": "Neither September alert led to closure.",
+        "rationale": "reverses the outcome of both alerts"
       },
       {
         "option": "B",
@@ -752,10 +784,10 @@
         "verdict": "distractor",
         "isCorrect": false,
         "evidence": [
-          "evidence-1"
+          "evidence-5"
         ],
-        "reasoning": "Only 90 maps are identified as having volunteer transcriptions.",
-        "rationale": "expands a subset to the entire project"
+        "reasoning": "Only the Willow gauge is identified in that statement.",
+        "rationale": "generalises the Willow result to gauges not described that way"
       },
       {
         "option": "C",
@@ -767,8 +799,8 @@
         "evidence": [
           "evidence-4"
         ],
-        "reasoning": "The reported count is 320.",
-        "rationale": "adds a zero to the reported count"
+        "reasoning": "The stated interval is every 15 minutes.",
+        "rationale": "changes the recording interval"
       },
       {
         "option": "D",
@@ -780,7 +812,7 @@
         "evidence": [
           "evidence-1"
         ],
-        "reasoning": "This fact is stated directly.",
+        "reasoning": "This procedure is stated explicitly.",
         "rationale": ""
       },
       {
@@ -793,15 +825,15 @@
         "evidence": [
           "evidence-2"
         ],
-        "reasoning": "The passage explicitly excludes scanner operation from the volunteer role.",
-        "rationale": "contradicts the passage"
+        "reasoning": "The passage says the sensors do not predict rainfall.",
+        "rationale": "contradicts the sensor limitation"
       }
     ],
     "distractors": [
       {
         "option": "A",
-        "reason": "contradicts where originals remain",
-        "description": "contradicts where originals remain",
+        "reason": "reverses the outcome of both alerts",
+        "description": "reverses the outcome of both alerts",
         "status": "contradicted",
         "claimId": "claim-3",
         "evidence": [
@@ -810,18 +842,18 @@
       },
       {
         "option": "B",
-        "reason": "expands a subset to the entire project",
-        "description": "expands a subset to the entire project",
+        "reason": "generalises the Willow result to gauges not described that way",
+        "description": "generalises the Willow result to gauges not described that way",
         "status": "not-stated",
         "claimId": "claim-5",
         "evidence": [
-          "evidence-1"
+          "evidence-5"
         ]
       },
       {
         "option": "C",
-        "reason": "adds a zero to the reported count",
-        "description": "adds a zero to the reported count",
+        "reason": "changes the recording interval",
+        "description": "changes the recording interval",
         "status": "contradicted",
         "claimId": "claim-4",
         "evidence": [
@@ -830,8 +862,8 @@
       },
       {
         "option": "E",
-        "reason": "contradicts the passage",
-        "description": "contradicts the passage",
+        "reason": "contradicts the sensor limitation",
+        "description": "contradicts the sensor limitation",
         "status": "contradicted",
         "claimId": "claim-2",
         "evidence": [
@@ -842,8 +874,8 @@
     "distractorRationale": [
       {
         "option": "A",
-        "reason": "contradicts where originals remain",
-        "description": "contradicts where originals remain",
+        "reason": "reverses the outcome of both alerts",
+        "description": "reverses the outcome of both alerts",
         "status": "contradicted",
         "claimId": "claim-3",
         "evidence": [
@@ -852,18 +884,18 @@
       },
       {
         "option": "B",
-        "reason": "expands a subset to the entire project",
-        "description": "expands a subset to the entire project",
+        "reason": "generalises the Willow result to gauges not described that way",
+        "description": "generalises the Willow result to gauges not described that way",
         "status": "not-stated",
         "claimId": "claim-5",
         "evidence": [
-          "evidence-1"
+          "evidence-5"
         ]
       },
       {
         "option": "C",
-        "reason": "adds a zero to the reported count",
-        "description": "adds a zero to the reported count",
+        "reason": "changes the recording interval",
+        "description": "changes the recording interval",
         "status": "contradicted",
         "claimId": "claim-4",
         "evidence": [
@@ -872,8 +904,8 @@
       },
       {
         "option": "E",
-        "reason": "contradicts the passage",
-        "description": "contradicts the passage",
+        "reason": "contradicts the sensor limitation",
+        "description": "contradicts the sensor limitation",
         "status": "contradicted",
         "claimId": "claim-2",
         "evidence": [
@@ -882,38 +914,42 @@
       }
     ],
     "explanationFragments": [
-      "Identify the claim tested by option D: Volunteers transcribed handwritten labels for 90 maps.",
-      "Cite evidence evidence-1: “Volunteers transcribed handwritten labels for 90 of those maps”",
+      "Identify the claim tested by option D: Staff review an alert before issuing a public bulletin.",
+      "Cite evidence evidence-1: “Staff reviewed an alert before issuing any public bulletin”",
       "Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated.",
       "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
     ],
     "reasoningSteps": [
-      "Identify the claim tested by option D: Volunteers transcribed handwritten labels for 90 maps.",
-      "Cite evidence evidence-1: “Volunteers transcribed handwritten labels for 90 of those maps”",
+      "Identify the claim tested by option D: Staff review an alert before issuing a public bulletin.",
+      "Cite evidence evidence-1: “Staff reviewed an alert before issuing any public bulletin”",
       "Comparing the statement with the cited passage text shows that it is true; the other statements are contradicted or not stated.",
       "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
     ],
     "answerClaim": {
       "id": "claim-1",
-      "text": "Volunteers transcribed handwritten labels for 90 maps.",
+      "text": "Staff review an alert before issuing a public bulletin.",
       "claimType": "explicit-fact",
       "status": "supported",
       "evidence": [
         "evidence-1"
       ],
-      "reasoning": "This fact is stated directly.",
+      "reasoning": "This procedure is stated explicitly.",
       "explicit": true
     },
     "answerEvidence": [
       {
         "id": "evidence-1",
-        "start": 234,
-        "end": 296,
-        "text": "Volunteers transcribed handwritten labels for 90 of those maps",
+        "start": 291,
+        "end": 349,
+        "text": "Staff reviewed an alert before issuing any public bulletin",
         "paragraph": 2,
         "source": "passage"
       }
     ],
-    "answerSignature": "claim-1"
+    "answerSignature": "fc8cc0625a7c4701329c",
+    "answerValueSignature": "79d56bda20e54b1585ca",
+    "evidenceSignature": "fc8cc0625a7c4701329c",
+    "methodSignature": "5f5210f736c7e22d7556",
+    "explanationSignature": "de8f79c6a06bfaf176c3"
   }
 }

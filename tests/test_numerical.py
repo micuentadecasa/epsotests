@@ -57,6 +57,28 @@ class NumericalGeneratorTests(unittest.TestCase):
             self.assertEqual(first["operation"], operation)
             self.assertEqual(first["stimulus"]["sourceData"], first["metadata"]["sourceData"])
 
+    def test_adjacent_catalog_seeds_change_method_steps_and_answers(self):
+        for operation in SUPPORTED_NUMERICAL_OPERATIONS:
+            first = generate_numerical_question(operation, seed=42)
+            second = generate_numerical_question(operation, seed=43)
+            with self.subTest(operation=operation):
+                self.assertNotEqual(
+                    first["metadata"]["operationSignature"],
+                    second["metadata"]["operationSignature"],
+                )
+                self.assertNotEqual(
+                    first["metadata"]["calculationSignature"],
+                    second["metadata"]["calculationSignature"],
+                )
+                self.assertNotEqual(
+                    first["metadata"]["answerSignature"],
+                    second["metadata"]["answerSignature"],
+                )
+                self.assertNotEqual(
+                    first["metadata"]["explanationSignature"],
+                    second["metadata"]["explanationSignature"],
+                )
+
     def test_option_profiles_have_exactly_one_correct_answer(self):
         for operation in SUPPORTED_NUMERICAL_OPERATIONS:
             for profile, count in (("standard", 4), ("five-option", 5)):

@@ -20,17 +20,17 @@
               }
             },
             {
-              "kind": "translation",
+              "kind": "movement",
               "parameters": {
                 "dx": 0.08,
-                "dy": 0
+                "dy": 0.04
               }
             }
           ]
         }
       }
     ],
-    "explanation": "The rule is rotate by 90\u00b0 and move by (0.08, 0). Each frame changes from the previous frame by that rule; the missing next frame must continue the same change. Option D is correct because it continues rotate by 90\u00b0 and move by (0.08, 0) while preserving the other elements. The wrong options apply only part of the rule, use a wrong direction or rotation, or change the element count.",
+    "explanation": "The rule is rotate by 90\u00b0 and move by (0.08, 0.04). Each frame changes from the previous frame by that rule; the missing next frame must continue the same change. Option D is correct because it continues rotate by 90\u00b0 and move by (0.08, 0.04) while preserving the other elements. The wrong options apply only part of the rule, use a wrong direction or rotation, or change the element count.",
     "explainLogic": {
       "id": "explain-logic",
       "type": "button",
@@ -59,21 +59,21 @@
                   }
                 },
                 {
-                  "kind": "translation",
+                  "kind": "movement",
                   "parameters": {
                     "dx": 0.08,
-                    "dy": 0
+                    "dy": 0.04
                   }
                 }
               ]
             }
           }
         ],
-        "ruleText": "rotate by 90\u00b0 and move by (0.08, 0)",
+        "ruleText": "rotate by 90\u00b0 and move by (0.08, 0.04)",
         "optionCount": 5,
-        "explanation": "The rule is rotate by 90\u00b0 and move by (0.08, 0). Each frame changes from the previous frame by that rule; the missing next frame must continue the same change. Option D is correct because it continues rotate by 90\u00b0 and move by (0.08, 0) while preserving the other elements. The wrong options apply only part of the rule, use a wrong direction or rotation, or change the element count.",
+        "explanation": "The rule is rotate by 90\u00b0 and move by (0.08, 0.04). Each frame changes from the previous frame by that rule; the missing next frame must continue the same change. Option D is correct because it continues rotate by 90\u00b0 and move by (0.08, 0.04) while preserving the other elements. The wrong options apply only part of the rule, use a wrong direction or rotation, or change the element count.",
         "correctOption": "D",
-        "correctReason": "Option D is correct because it follows rotate by 90\u00b0 and move by (0.08, 0).",
+        "correctReason": "Option D is correct because it follows rotate by 90\u00b0 and move by (0.08, 0.04).",
         "distractors": [
           {
             "option": "A",
@@ -91,7 +91,7 @@
               "description": "applies the rule to only part of the figure",
               "ruleKinds": [
                 "rotation",
-                "translation"
+                "movement"
               ]
             }
           },
@@ -129,17 +129,20 @@
     "correctOption": "E",
     "rules": [
       {
-        "kind": "rotation",
+        "kind": "reflection",
         "parameters": {
-          "degrees": 90
+          "axis": "vertical"
         }
       },
       {
-        "kind": "fill",
-        "parameters": {}
+        "kind": "movement",
+        "parameters": {
+          "dx": 0.08,
+          "dy": 0.04
+        }
       }
     ],
-    "explanation": "The rule is applied in two directions: Rows rotate by 90\u00b0; columns change the fill/shading. Reading across each row and down each column gives the same local/global pattern. The missing bottom-right figure must therefore apply both changes. Option E is correct because it applies rotate by 90\u00b0 and change the fill/shading. Other options omit one change or use a plausible wrong direction, rotation, fill, or element count.",
+    "explanation": "The rule is applied in two directions: Rows reflect across the vertical axis; columns move by (0.08, 0.04). Reading across each row and down each column gives the same local/global pattern. The missing bottom-right figure must therefore apply both changes. Option E is correct because it applies reflect across the vertical axis and move by (0.08, 0.04). Other options omit one change or use a plausible wrong direction, rotation, fill, or element count.",
     "explainLogic": {
       "id": "explain-logic",
       "type": "button",
@@ -158,21 +161,24 @@
       "result": {
         "rule": [
           {
-            "kind": "rotation",
+            "kind": "reflection",
             "parameters": {
-              "degrees": 90
+              "axis": "vertical"
             }
           },
           {
-            "kind": "fill",
-            "parameters": {}
+            "kind": "movement",
+            "parameters": {
+              "dx": 0.08,
+              "dy": 0.04
+            }
           }
         ],
-        "ruleText": "rotate by 90\u00b0 and change the fill/shading",
+        "ruleText": "reflect across the vertical axis and move by (0.08, 0.04)",
         "optionCount": 5,
-        "explanation": "The rule is applied in two directions: Rows rotate by 90\u00b0; columns change the fill/shading. Reading across each row and down each column gives the same local/global pattern. The missing bottom-right figure must therefore apply both changes. Option E is correct because it applies rotate by 90\u00b0 and change the fill/shading. Other options omit one change or use a plausible wrong direction, rotation, fill, or element count.",
+        "explanation": "The rule is applied in two directions: Rows reflect across the vertical axis; columns move by (0.08, 0.04). Reading across each row and down each column gives the same local/global pattern. The missing bottom-right figure must therefore apply both changes. Option E is correct because it applies reflect across the vertical axis and move by (0.08, 0.04). Other options omit one change or use a plausible wrong direction, rotation, fill, or element count.",
         "correctOption": "E",
-        "correctReason": "Option E is correct because it follows rotate by 90\u00b0 and change the fill/shading.",
+        "correctReason": "Option E is correct because it follows reflect across the vertical axis and move by (0.08, 0.04).",
         "distractors": [
           {
             "option": "A",
@@ -206,8 +212,8 @@
               "kind": "partial-figure",
               "description": "applies the rule to only part of the figure",
               "ruleKinds": [
-                "rotation",
-                "fill"
+                "reflection",
+                "movement"
               ]
             }
           }
@@ -226,23 +232,9 @@
     "correctOption": "B",
     "rules": [
       {
-        "kind": "composite",
+        "kind": "nesting",
         "parameters": {
-          "rules": [
-            {
-              "kind": "rotation",
-              "parameters": {
-                "degrees": 90
-              }
-            },
-            {
-              "kind": "translation",
-              "parameters": {
-                "dx": 0.07,
-                "dy": 0.04
-              }
-            }
-          ]
+          "action": "add"
         }
       },
       {
@@ -250,9 +242,14 @@
         "parameters": {
           "rules": [
             {
-              "kind": "reflection",
+              "kind": "shape-change",
               "parameters": {
-                "axis": "vertical"
+                "shapes": [
+                  "circle",
+                  "square",
+                  "triangle",
+                  "diamond"
+                ]
               }
             },
             {
@@ -269,7 +266,7 @@
         }
       }
     ],
-    "explanation": "The rule is applied in two directions: Rows rotate by 90\u00b0 and move by (0.07, 0.04); columns reflect across the vertical axis and change colour. Reading across each row and down each column gives the same local/global pattern. The missing bottom-right figure must therefore apply both changes. Option B is correct because it applies rotate by 90\u00b0 and move by (0.07, 0.04) and reflect across the vertical axis and change colour. Other options omit one change or use a plausible wrong direction, rotation, fill, or element count.",
+    "explanation": "The rule is applied in two directions: Rows add a nested shape; columns cycle the shape and change colour. Reading across each row and down each column gives the same local/global pattern. The missing bottom-right figure must therefore apply both changes. Option B is correct because it applies add a nested shape and cycle the shape and change colour. Other options omit one change or use a plausible wrong direction, rotation, fill, or element count.",
     "explainLogic": {
       "id": "explain-logic",
       "type": "button",
@@ -288,23 +285,9 @@
       "result": {
         "rule": [
           {
-            "kind": "composite",
+            "kind": "nesting",
             "parameters": {
-              "rules": [
-                {
-                  "kind": "rotation",
-                  "parameters": {
-                    "degrees": 90
-                  }
-                },
-                {
-                  "kind": "translation",
-                  "parameters": {
-                    "dx": 0.07,
-                    "dy": 0.04
-                  }
-                }
-              ]
+              "action": "add"
             }
           },
           {
@@ -312,9 +295,14 @@
             "parameters": {
               "rules": [
                 {
-                  "kind": "reflection",
+                  "kind": "shape-change",
                   "parameters": {
-                    "axis": "vertical"
+                    "shapes": [
+                      "circle",
+                      "square",
+                      "triangle",
+                      "diamond"
+                    ]
                   }
                 },
                 {
@@ -331,18 +319,20 @@
             }
           }
         ],
-        "ruleText": "rotate by 90\u00b0 and move by (0.07, 0.04) and reflect across the vertical axis and change colour",
+        "ruleText": "add a nested shape and cycle the shape and change colour",
         "optionCount": 5,
-        "explanation": "The rule is applied in two directions: Rows rotate by 90\u00b0 and move by (0.07, 0.04); columns reflect across the vertical axis and change colour. Reading across each row and down each column gives the same local/global pattern. The missing bottom-right figure must therefore apply both changes. Option B is correct because it applies rotate by 90\u00b0 and move by (0.07, 0.04) and reflect across the vertical axis and change colour. Other options omit one change or use a plausible wrong direction, rotation, fill, or element count.",
+        "explanation": "The rule is applied in two directions: Rows add a nested shape; columns cycle the shape and change colour. Reading across each row and down each column gives the same local/global pattern. The missing bottom-right figure must therefore apply both changes. Option B is correct because it applies add a nested shape and cycle the shape and change colour. Other options omit one change or use a plausible wrong direction, rotation, fill, or element count.",
         "correctOption": "B",
-        "correctReason": "Option B is correct because it follows rotate by 90\u00b0 and move by (0.07, 0.04) and reflect across the vertical axis and change colour.",
+        "correctReason": "Option B is correct because it follows add a nested shape and cycle the shape and change colour.",
         "distractors": [
           {
             "option": "A",
-            "reason": "changes the shape incorrectly",
+            "reason": "has the wrong number of elements",
             "mutation": {
-              "kind": "wrong-shape",
-              "description": "changes the shape incorrectly"
+              "kind": "wrong-element-count",
+              "description": "has the wrong number of elements",
+              "expectedCount": 4,
+              "actualCount": 3
             }
           },
           {
@@ -355,14 +345,10 @@
           },
           {
             "option": "D",
-            "reason": "moves in the opposite direction",
+            "reason": "changes the shape incorrectly",
             "mutation": {
-              "kind": "wrong-direction",
-              "description": "moves in the opposite direction",
-              "expectedDelta": {
-                "x": -0.282146,
-                "y": 0.0
-              }
+              "kind": "wrong-shape",
+              "description": "changes the shape incorrectly"
             }
           },
           {
@@ -372,9 +358,8 @@
               "kind": "partial-figure",
               "description": "applies the rule to only part of the figure",
               "ruleKinds": [
-                "rotation",
-                "translation",
-                "reflection",
+                "nesting",
+                "shape-change",
                 "color-change"
               ]
             }
@@ -398,17 +383,14 @@
         "parameters": {
           "rules": [
             {
-              "kind": "rotation",
+              "kind": "reflection",
               "parameters": {
-                "degrees": 90
+                "axis": "vertical"
               }
             },
             {
-              "kind": "translation",
-              "parameters": {
-                "dx": 0.08,
-                "dy": 0.05
-              }
+              "kind": "fill",
+              "parameters": {}
             }
           ]
         }
@@ -424,7 +406,7 @@
         }
       }
     ],
-    "explanation": "A changes to B by rotate by 90\u00b0 and move by (0.08, 0.05) and change colour. Apply the same transformation to C: rotate by 90\u00b0 and move by (0.08, 0.05) and change colour. Option D is correct because it matches that transformation without changing unrelated parts. The distractors use partial rules, wrong directions, or incorrect rotations/counts.",
+    "explanation": "A changes to B by reflect across the vertical axis and change the fill/shading and change colour. Apply the same transformation to C: reflect across the vertical axis and change the fill/shading and change colour. Option D is correct because it matches that transformation without changing unrelated parts. The distractors use partial rules, wrong directions, or incorrect rotations/counts.",
     "explainLogic": {
       "id": "explain-logic",
       "type": "button",
@@ -447,17 +429,14 @@
             "parameters": {
               "rules": [
                 {
-                  "kind": "rotation",
+                  "kind": "reflection",
                   "parameters": {
-                    "degrees": 90
+                    "axis": "vertical"
                   }
                 },
                 {
-                  "kind": "translation",
-                  "parameters": {
-                    "dx": 0.08,
-                    "dy": 0.05
-                  }
+                  "kind": "fill",
+                  "parameters": {}
                 }
               ]
             }
@@ -473,11 +452,11 @@
             }
           }
         ],
-        "ruleText": "rotate by 90\u00b0 and move by (0.08, 0.05) and change colour",
+        "ruleText": "reflect across the vertical axis and change the fill/shading and change colour",
         "optionCount": 5,
-        "explanation": "A changes to B by rotate by 90\u00b0 and move by (0.08, 0.05) and change colour. Apply the same transformation to C: rotate by 90\u00b0 and move by (0.08, 0.05) and change colour. Option D is correct because it matches that transformation without changing unrelated parts. The distractors use partial rules, wrong directions, or incorrect rotations/counts.",
+        "explanation": "A changes to B by reflect across the vertical axis and change the fill/shading and change colour. Apply the same transformation to C: reflect across the vertical axis and change the fill/shading and change colour. Option D is correct because it matches that transformation without changing unrelated parts. The distractors use partial rules, wrong directions, or incorrect rotations/counts.",
         "correctOption": "D",
-        "correctReason": "Option D is correct because it follows rotate by 90\u00b0 and move by (0.08, 0.05) and change colour.",
+        "correctReason": "Option D is correct because it follows reflect across the vertical axis and change the fill/shading and change colour.",
         "distractors": [
           {
             "option": "A",
@@ -486,8 +465,8 @@
               "kind": "wrong-direction",
               "description": "moves in the opposite direction",
               "expectedDelta": {
-                "x": 0.08,
-                "y": 0.05
+                "x": 0.578093,
+                "y": 0.0
               }
             }
           },

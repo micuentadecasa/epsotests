@@ -30,7 +30,8 @@
       ],
       "parameters": {
         "old": 88,
-        "new": 104
+        "new": 104,
+        "template": 0
       }
     },
     "chart": {
@@ -139,13 +140,13 @@
     }
   ],
   "correctOption": "C",
-  "explanation": "Read the values from the chart and apply the stated operation. Formula: (new − original) ÷ original × 100. Absolute change: new − original; substitute 104 − 88 = 16 visitors; rounded to not rounded. Percentage change: (change ÷ original) × 100; substitute (16 ÷ 88) × 100 = 18.2; rounded to 1 decimal place. Final result: 18.2% (rounded to 1 decimal place where needed). Option C is correct. Visual shortcut: Compare the two bars first; use the original bar as the denominator. Each distractor records the specific calculation mistake it makes.",
+  "explanation": "Read the values from the chart and apply the stated operation. Formula: (new − original) ÷ original × 100. Absolute change: new − original; substitute 104 − 88 = 16 visitors; rounded to not rounded. Percentage change: (change ÷ original) × 100; substitute (16 ÷ 88) × 100 = 18.2; rounded to 1 decimal place. Final result: 18.2% (rounded to 1 decimal place where needed). Option C is correct. Visual shortcut: Compare the two readings first; use the original reading as the denominator. Each distractor records the specific calculation mistake it makes.",
   "explanationFragments": [
     "Formula: (new − original) ÷ original × 100.",
     "Absolute change: new − original; substitute 104 − 88 = 16 visitors; rounded to not rounded.",
     "Percentage change: (change ÷ original) × 100; substitute (16 ÷ 88) × 100 = 18.2; rounded to 1 decimal place.",
     "Final result: 18.2%.",
-    "Visual shortcut: Compare the two bars first; use the original bar as the denominator."
+    "Visual shortcut: Compare the two readings first; use the original reading as the denominator."
   ],
   "actions": {
     "explainLogic": {
@@ -195,7 +196,7 @@
             "note": ""
           }
         ],
-        "visualShortcut": "Compare the two bars first; use the original bar as the denominator.",
+        "visualShortcut": "Compare the two readings first; use the original reading as the denominator.",
         "sourceData": {
           "type": "table",
           "title": "Monthly visitors",
@@ -216,10 +217,11 @@
           ],
           "parameters": {
             "old": 88,
-            "new": 104
+            "new": 104,
+            "template": 0
           }
         },
-        "explanation": "Read the values from the chart and apply the stated operation. Formula: (new − original) ÷ original × 100. Absolute change: new − original; substitute 104 − 88 = 16 visitors; rounded to not rounded. Percentage change: (change ÷ original) × 100; substitute (16 ÷ 88) × 100 = 18.2; rounded to 1 decimal place. Final result: 18.2% (rounded to 1 decimal place where needed). Option C is correct. Visual shortcut: Compare the two bars first; use the original bar as the denominator. Each distractor records the specific calculation mistake it makes.",
+        "explanation": "Read the values from the chart and apply the stated operation. Formula: (new − original) ÷ original × 100. Absolute change: new − original; substitute 104 − 88 = 16 visitors; rounded to not rounded. Percentage change: (change ÷ original) × 100; substitute (16 ÷ 88) × 100 = 18.2; rounded to 1 decimal place. Final result: 18.2% (rounded to 1 decimal place where needed). Option C is correct. Visual shortcut: Compare the two readings first; use the original reading as the denominator. Each distractor records the specific calculation mistake it makes.",
         "correctOption": "C",
         "correctReason": "Option C is correct because it follows the formula and all intermediate steps.",
         "distractors": [
@@ -276,7 +278,8 @@
       ],
       "parameters": {
         "old": 88,
-        "new": 104
+        "new": 104,
+        "template": 0
       }
     },
     "table": {
@@ -300,7 +303,8 @@
     },
     "sourceParameters": {
       "old": 88,
-      "new": 104
+      "new": 104,
+      "template": 0
     },
     "representation": {
       "type": "bar-chart",
@@ -370,7 +374,7 @@
       }
     ],
     "rounding": "1 decimal place",
-    "visualShortcut": "Compare the two bars first; use the original bar as the denominator.",
+    "visualShortcut": "Compare the two readings first; use the original reading as the denominator.",
     "generatedFigures": [
       {
         "type": "bar-chart",
@@ -426,10 +430,15 @@
       "Absolute change: new − original; substitute 104 − 88 = 16 visitors; rounded to not rounded.",
       "Percentage change: (change ÷ original) × 100; substitute (16 ÷ 88) × 100 = 18.2; rounded to 1 decimal place.",
       "Final result: 18.2%.",
-      "Visual shortcut: Compare the two bars first; use the original bar as the denominator."
+      "Visual shortcut: Compare the two readings first; use the original reading as the denominator."
     ],
     "answerValue": 18.2,
     "answerUnit": "%",
-    "answerSignature": "{\"unit\":\"%\",\"value\":18.2}"
+    "answerSignature": "{\"unit\":\"%\",\"value\":18.2}",
+    "answerValueSignature": "ab9a9830cd99ce69d8b9",
+    "operationSignature": "7d8ce4a158a07eb186d3",
+    "calculationSignature": "5c5dc5b7952aba1bf513",
+    "methodSignature": "7d8ce4a158a07eb186d3",
+    "explanationSignature": "5a4843429b3d088a27bc"
   }
 }

@@ -12,6 +12,11 @@ async function questionState(page) {
     return {
       identity: document.querySelector("#item-meta").textContent,
       questionId: document.querySelector("#item-meta").dataset.questionId,
+      methodSignature: document.querySelector("#item-meta").dataset.methodSignature,
+      answerSignature: document.querySelector("#item-meta").dataset.answerSignature,
+      calculationSignature: document.querySelector("#item-meta").dataset.calculationSignature,
+      evidenceSignature: document.querySelector("#item-meta").dataset.evidenceSignature,
+      explanationSignature: document.querySelector("#item-meta").dataset.explanationSignature,
       seed: document.querySelector("#seed").value,
       stimulus: document.querySelector("#stimulus").innerHTML,
       family: document.querySelector("#family").value,
@@ -116,6 +121,8 @@ test.describe("learner question flows", () => {
     expect(after.identity).not.toBe(before.identity);
     expect(after.seed).toBe("43");
     expect(after.stimulus).not.toBe(before.stimulus);
+    expect(after.evidenceSignature).not.toBe(before.evidenceSignature);
+    expect(after.explanationSignature).not.toBe(before.explanationSignature);
     expect(after.promptVisible).toBe(true);
     await expect(page.locator("#family")).toHaveValue("verbal");
     await expect(page.locator("#variant")).toHaveValue("inference");
@@ -198,6 +205,28 @@ test.describe("learner question flows", () => {
     } else {
       expect(apiSeeds.slice(-4)).toEqual(["42", "42", "43", "43"]);
     }
+  });
+
+  test("Generate changes the numerical method and answer before cycling", async ({ page }) => {
+    await page.goto("./");
+    await page.locator("#family").selectOption("numerical");
+    await page.locator("#variant").selectOption("ratio");
+    await page.locator("#controls-form").getByRole("button", { name: /Generate question/ }).click();
+    await waitForQuestion(page);
+    const first = await questionState(page);
+    await page.locator("#controls-form").getByRole("button", { name: /Generate question/ }).click();
+    await expect.poll(async () => (await questionState(page)).questionId).not.toBe(first.questionId);
+    const second = await questionState(page);
+    expect(second.methodSignature).not.toBe(first.methodSignature);
+    expect(second.answerSignature).not.toBe(first.answerSignature);
+    expect(second.calculationSignature).not.toBe(first.calculationSignature);
+    expect(second.explanationSignature).not.toBe(first.explanationSignature);
+
+    await page.locator("#controls-form").getByRole("button", { name: /Generate question/ }).click();
+    await expect.poll(async () => (await questionState(page)).questionId).not.toBe(second.questionId);
+    const third = await questionState(page);
+    expect(third.methodSignature).toBe(first.methodSignature);
+    expect(third.answerSignature).toBe(first.answerSignature);
   });
 
   test("solution toggle is keyboard accessible and session-persistent", async ({ page }) => {

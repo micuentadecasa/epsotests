@@ -13,6 +13,7 @@ from dataclasses import dataclass
 import random
 from typing import Any, Mapping, Sequence
 
+from .signatures import stable_signature
 from .visual_abstract import (
     EXAM_PROFILES,
     EXPLAIN_LOGIC_ACTION_ID,
@@ -737,7 +738,10 @@ def generate_verbal_question(
     level = _difficulty_name(difficulty)
     profile = resolve_exam_profile(exam_profile)
     seed = int(seed)
-    scenario = _SCENARIOS[random.Random(seed * 31 + len(normalized_type)).randrange(len(_SCENARIOS))]
+    # Use an explicit stride through the scenario catalog rather than a random
+    # draw: adjacent catalog seeds must exercise a different evidence path.
+    scenario_index = (abs(seed) * 7 + len(normalized_type) * 3) % len(_SCENARIOS)
+    scenario = _SCENARIOS[scenario_index]
     passage = scenario.passage()
     prompt, blueprint_options = _BLUEPRINTS[scenario.id][normalized_type]
 
@@ -884,6 +888,16 @@ def generate_verbal_question(
     ]
     fragments = list(reasoning_steps)
     source_passage = passage.to_dict()
+    evidence_signature = stable_signature(
+        {
+            "questionType": normalized_type,
+            "scenario": scenario.id,
+            "evidence": [span.to_dict() for span in cited],
+        }
+    )
+    explanation_signature = stable_signature(
+        {"questionType": normalized_type, "reasoningSteps": reasoning_steps}
+    )
     metadata: dict[str, Any] = {
         "seed": seed,
         "examProfile": profile.name,
@@ -901,7 +915,11 @@ def generate_verbal_question(
         "reasoningSteps": fragments,
         "answerClaim": correct_claim.to_dict(),
         "answerEvidence": [item.to_dict() for item in cited],
-        "answerSignature": correct_claim.id,
+        "answerSignature": evidence_signature,
+        "answerValueSignature": stable_signature(correct_claim.to_dict()),
+        "evidenceSignature": evidence_signature,
+        "methodSignature": stable_signature({"questionType": normalized_type, "evidence": evidence_signature}),
+        "explanationSignature": explanation_signature,
     }
     question_model = VerbalQuestion(
         id=f"verbal-{normalized_type}-{scenario.id}-{seed}-{level}",

@@ -1,5 +1,5 @@
 {
-  "id": "verbal-reading-comprehension-permit-precheck-5-medium",
+  "id": "verbal-reading-comprehension-archive-maps-5-medium",
   "itemNumber": 1,
   "exam": "verbal",
   "examProfile": "five-option",
@@ -8,166 +8,182 @@
   "questionType": "reading-comprehension",
   "difficulty": "medium",
   "passage": {
-    "id": "permit-precheck",
-    "title": "A shorter visit to the permit office",
-    "text": "To reduce waiting time, the North District permit office introduced an online pre-check in April. Applicants may upload forms before visiting, but an officer still verifies original identity documents at the appointment.\n\nDuring the first six weeks, average counter time fell from 18 minutes to 11 minutes. The office handled 14% more applications than in the same period last year.\n\nThe office did not extend opening hours; it reassigned two clerks from filing to pre-checks.",
+    "id": "archive-maps",
+    "title": "The archive's first digitisation phase",
+    "text": "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.\n\nIn May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.\n\nThe project creates digital access copies while the original maps remain in the archive reading room.",
     "paragraphs": [
-      "To reduce waiting time, the North District permit office introduced an online pre-check in April. Applicants may upload forms before visiting, but an officer still verifies original identity documents at the appointment.",
-      "During the first six weeks, average counter time fell from 18 minutes to 11 minutes. The office handled 14% more applications than in the same period last year.",
-      "The office did not extend opening hours; it reassigned two clerks from filing to pre-checks."
+      "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.",
+      "In May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.",
+      "The project creates digital access copies while the original maps remain in the archive reading room."
     ],
     "source": "original"
   },
   "sourcePassage": {
-    "id": "permit-precheck",
-    "title": "A shorter visit to the permit office",
-    "text": "To reduce waiting time, the North District permit office introduced an online pre-check in April. Applicants may upload forms before visiting, but an officer still verifies original identity documents at the appointment.\n\nDuring the first six weeks, average counter time fell from 18 minutes to 11 minutes. The office handled 14% more applications than in the same period last year.\n\nThe office did not extend opening hours; it reassigned two clerks from filing to pre-checks.",
+    "id": "archive-maps",
+    "title": "The archive's first digitisation phase",
+    "text": "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.\n\nIn May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.\n\nThe project creates digital access copies while the original maps remain in the archive reading room.",
     "paragraphs": [
-      "To reduce waiting time, the North District permit office introduced an online pre-check in April. Applicants may upload forms before visiting, but an officer still verifies original identity documents at the appointment.",
-      "During the first six weeks, average counter time fell from 18 minutes to 11 minutes. The office handled 14% more applications than in the same period last year.",
-      "The office did not extend opening hours; it reassigned two clerks from filing to pre-checks."
+      "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.",
+      "In May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.",
+      "The project creates digital access copies while the original maps remain in the archive reading room."
     ],
     "source": "original"
   },
-  "passageText": "To reduce waiting time, the North District permit office introduced an online pre-check in April. Applicants may upload forms before visiting, but an officer still verifies original identity documents at the appointment.\n\nDuring the first six weeks, average counter time fell from 18 minutes to 11 minutes. The office handled 14% more applications than in the same period last year.\n\nThe office did not extend opening hours; it reassigned two clerks from filing to pre-checks.",
+  "passageText": "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.\n\nIn May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.\n\nThe project creates digital access copies while the original maps remain in the archive reading room.",
   "stimulus": {
     "type": "passage",
-    "title": "A shorter visit to the permit office",
+    "title": "The archive's first digitisation phase",
     "passage": {
-      "id": "permit-precheck",
-      "title": "A shorter visit to the permit office",
-      "text": "To reduce waiting time, the North District permit office introduced an online pre-check in April. Applicants may upload forms before visiting, but an officer still verifies original identity documents at the appointment.\n\nDuring the first six weeks, average counter time fell from 18 minutes to 11 minutes. The office handled 14% more applications than in the same period last year.\n\nThe office did not extend opening hours; it reassigned two clerks from filing to pre-checks.",
+      "id": "archive-maps",
+      "title": "The archive's first digitisation phase",
+      "text": "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.\n\nIn May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.\n\nThe project creates digital access copies while the original maps remain in the archive reading room.",
       "paragraphs": [
-        "To reduce waiting time, the North District permit office introduced an online pre-check in April. Applicants may upload forms before visiting, but an officer still verifies original identity documents at the appointment.",
-        "During the first six weeks, average counter time fell from 18 minutes to 11 minutes. The office handled 14% more applications than in the same period last year.",
-        "The office did not extend opening hours; it reassigned two clerks from filing to pre-checks."
+        "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.",
+        "In May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.",
+        "The project creates digital access copies while the original maps remain in the archive reading room."
       ],
       "source": "original"
     },
-    "text": "To reduce waiting time, the North District permit office introduced an online pre-check in April. Applicants may upload forms before visiting, but an officer still verifies original identity documents at the appointment.\n\nDuring the first six weeks, average counter time fell from 18 minutes to 11 minutes. The office handled 14% more applications than in the same period last year.\n\nThe office did not extend opening hours; it reassigned two clerks from filing to pre-checks.",
+    "text": "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.\n\nIn May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.\n\nThe project creates digital access copies while the original maps remain in the archive reading room.",
     "evidenceSpans": [
       {
         "id": "evidence-1",
-        "start": 143,
-        "end": 220,
-        "text": "but an officer still verifies original identity documents at the appointment.",
+        "start": 130,
+        "end": 196,
+        "text": "a quality check is completed before a public access copy is posted",
         "paragraph": 1,
         "source": "passage"
       },
       {
         "id": "evidence-2",
-        "start": 98,
-        "end": 141,
-        "text": "Applicants may upload forms before visiting",
-        "paragraph": 1,
+        "start": 298,
+        "end": 341,
+        "text": "the volunteers did not operate the scanners",
+        "paragraph": 2,
         "source": "passage"
       },
       {
         "id": "evidence-3",
-        "start": 384,
-        "end": 423,
-        "text": "The office did not extend opening hours",
+        "start": 392,
+        "end": 444,
+        "text": "the original maps remain in the archive reading room",
         "paragraph": 3,
         "source": "passage"
       },
       {
         "id": "evidence-4",
-        "start": 250,
-        "end": 305,
-        "text": "average counter time fell from 18 minutes to 11 minutes",
+        "start": 17,
+        "end": 51,
+        "text": "prioritised maps dated before 1950",
+        "paragraph": 1,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-5",
+        "start": 234,
+        "end": 296,
+        "text": "Volunteers transcribed handwritten labels for 90 of those maps",
         "paragraph": 2,
         "source": "passage"
       }
     ]
   },
-  "question": "What must applicants still do at their appointment?",
+  "question": "What happens before a public access copy is posted?",
   "claims": [
     {
       "id": "claim-1",
-      "text": "Present original identity documents for verification.",
+      "text": "A quality check is completed.",
       "claimType": "explicit-fact",
       "status": "supported",
       "evidence": [
         "evidence-1"
       ],
-      "reasoning": "The passage directly states this requirement.",
+      "reasoning": "The passage explicitly gives the quality check as a prior step.",
       "explicit": true
     },
     {
       "id": "claim-2",
-      "text": "Upload every form at the office rather than online.",
+      "text": "Volunteers operate the scanners.",
       "claimType": "contradicted",
       "status": "contradicted",
       "evidence": [
         "evidence-2"
       ],
-      "reasoning": "The passage allows online upload before the visit.",
+      "reasoning": "The passage says volunteers transcribed labels, not operated scanners.",
       "explicit": false
     },
     {
       "id": "claim-3",
-      "text": "Attend an office that has extended its opening hours.",
+      "text": "The original map is removed from the reading room.",
       "claimType": "contradicted",
       "status": "contradicted",
       "evidence": [
         "evidence-3"
       ],
-      "reasoning": "The passage explicitly says opening hours did not change.",
+      "reasoning": "The originals remain in the reading room.",
       "explicit": false
     },
     {
       "id": "claim-4",
-      "text": "Wait at the counter for 18 minutes on average.",
+      "text": "The map must be dated after 1950.",
       "claimType": "contradicted",
       "status": "contradicted",
       "evidence": [
         "evidence-4"
       ],
-      "reasoning": "The later average is 11 minutes, not 18.",
+      "reasoning": "The first phase prioritises maps before 1950.",
       "explicit": false
     },
     {
       "id": "claim-5",
-      "text": "Skip the appointment because the pre-check replaces identity checks.",
+      "text": "A volunteer transcribes every label on the map.",
       "claimType": "invalid-inference",
       "status": "not-stated",
       "evidence": [
-        "evidence-2"
+        "evidence-5"
       ],
-      "reasoning": "The passage separates online form upload from the identity check at the appointment.",
+      "reasoning": "The passage specifies 90 maps, not all maps.",
       "explicit": false
     }
   ],
   "evidenceSpans": [
     {
       "id": "evidence-1",
-      "start": 143,
-      "end": 220,
-      "text": "but an officer still verifies original identity documents at the appointment.",
+      "start": 130,
+      "end": 196,
+      "text": "a quality check is completed before a public access copy is posted",
       "paragraph": 1,
       "source": "passage"
     },
     {
       "id": "evidence-2",
-      "start": 98,
-      "end": 141,
-      "text": "Applicants may upload forms before visiting",
-      "paragraph": 1,
+      "start": 298,
+      "end": 341,
+      "text": "the volunteers did not operate the scanners",
+      "paragraph": 2,
       "source": "passage"
     },
     {
       "id": "evidence-3",
-      "start": 384,
-      "end": 423,
-      "text": "The office did not extend opening hours",
+      "start": 392,
+      "end": 444,
+      "text": "the original maps remain in the archive reading room",
       "paragraph": 3,
       "source": "passage"
     },
     {
       "id": "evidence-4",
-      "start": 250,
-      "end": 305,
-      "text": "average counter time fell from 18 minutes to 11 minutes",
+      "start": 17,
+      "end": 51,
+      "text": "prioritised maps dated before 1950",
+      "paragraph": 1,
+      "source": "passage"
+    },
+    {
+      "id": "evidence-5",
+      "start": 234,
+      "end": 296,
+      "text": "Volunteers transcribed handwritten labels for 90 of those maps",
       "paragraph": 2,
       "source": "passage"
     }
@@ -175,72 +191,72 @@
   "options": [
     {
       "id": "A",
-      "label": "Attend an office that has extended its opening hours.",
-      "text": "Attend an office that has extended its opening hours.",
+      "label": "The original map is removed from the reading room.",
+      "text": "The original map is removed from the reading room.",
       "claimId": "claim-3",
       "claimType": "contradicted",
       "evaluationStatus": "contradicted",
       "evidence": [
         "evidence-3"
       ],
-      "distractorRationale": "confuses the staffing change with an extension of opening hours",
+      "distractorRationale": "contradicts the stated location of originals",
       "mutation": {
         "kind": "verbal-misreading",
-        "description": "confuses the staffing change with an extension of opening hours"
+        "description": "contradicts the stated location of originals"
       }
     },
     {
       "id": "B",
-      "label": "Skip the appointment because the pre-check replaces identity checks.",
-      "text": "Skip the appointment because the pre-check replaces identity checks.",
+      "label": "A volunteer transcribes every label on the map.",
+      "text": "A volunteer transcribes every label on the map.",
       "claimId": "claim-5",
       "claimType": "invalid-inference",
       "evaluationStatus": "not-stated",
       "evidence": [
-        "evidence-2"
+        "evidence-5"
       ],
-      "distractorRationale": "treats online form upload as removal of the appointment and identity check",
+      "distractorRationale": "changes a stated subset into every map and every label",
       "mutation": {
         "kind": "verbal-misreading",
-        "description": "treats online form upload as removal of the appointment and identity check"
+        "description": "changes a stated subset into every map and every label"
       }
     },
     {
       "id": "C",
-      "label": "Wait at the counter for 18 minutes on average.",
-      "text": "Wait at the counter for 18 minutes on average.",
+      "label": "The map must be dated after 1950.",
+      "text": "The map must be dated after 1950.",
       "claimId": "claim-4",
       "claimType": "contradicted",
       "evaluationStatus": "contradicted",
       "evidence": [
         "evidence-4"
       ],
-      "distractorRationale": "uses the earlier average as if it were the current one",
+      "distractorRationale": "reverses the archive's prioritisation",
       "mutation": {
         "kind": "verbal-misreading",
-        "description": "uses the earlier average as if it were the current one"
+        "description": "reverses the archive's prioritisation"
       }
     },
     {
       "id": "D",
-      "label": "Upload every form at the office rather than online.",
-      "text": "Upload every form at the office rather than online.",
+      "label": "Volunteers operate the scanners.",
+      "text": "Volunteers operate the scanners.",
       "claimId": "claim-2",
       "claimType": "contradicted",
       "evaluationStatus": "contradicted",
       "evidence": [
         "evidence-2"
       ],
-      "distractorRationale": "reverses the passage's permission to upload forms before the visit",
+      "distractorRationale": "contradicts the volunteers' stated role",
       "mutation": {
         "kind": "verbal-misreading",
-        "description": "reverses the passage's permission to upload forms before the visit"
+        "description": "contradicts the volunteers' stated role"
       }
     },
     {
       "id": "E",
-      "label": "Present original identity documents for verification.",
-      "text": "Present original identity documents for verification.",
+      "label": "A quality check is completed.",
+      "text": "A quality check is completed.",
       "claimId": "claim-1",
       "claimType": "explicit-fact",
       "evaluationStatus": "supported",
@@ -266,8 +282,8 @@
       "evidence": [
         "evidence-3"
       ],
-      "reasoning": "The passage explicitly says opening hours did not change.",
-      "rationale": "confuses the staffing change with an extension of opening hours"
+      "reasoning": "The originals remain in the reading room.",
+      "rationale": "contradicts the stated location of originals"
     },
     {
       "option": "B",
@@ -277,10 +293,10 @@
       "verdict": "distractor",
       "isCorrect": false,
       "evidence": [
-        "evidence-2"
+        "evidence-5"
       ],
-      "reasoning": "The passage separates online form upload from the identity check at the appointment.",
-      "rationale": "treats online form upload as removal of the appointment and identity check"
+      "reasoning": "The passage specifies 90 maps, not all maps.",
+      "rationale": "changes a stated subset into every map and every label"
     },
     {
       "option": "C",
@@ -292,8 +308,8 @@
       "evidence": [
         "evidence-4"
       ],
-      "reasoning": "The later average is 11 minutes, not 18.",
-      "rationale": "uses the earlier average as if it were the current one"
+      "reasoning": "The first phase prioritises maps before 1950.",
+      "rationale": "reverses the archive's prioritisation"
     },
     {
       "option": "D",
@@ -305,8 +321,8 @@
       "evidence": [
         "evidence-2"
       ],
-      "reasoning": "The passage allows online upload before the visit.",
-      "rationale": "reverses the passage's permission to upload forms before the visit"
+      "reasoning": "The passage says volunteers transcribed labels, not operated scanners.",
+      "rationale": "contradicts the volunteers' stated role"
     },
     {
       "option": "E",
@@ -318,16 +334,16 @@
       "evidence": [
         "evidence-1"
       ],
-      "reasoning": "The passage directly states this requirement.",
+      "reasoning": "The passage explicitly gives the quality check as a prior step.",
       "rationale": ""
     }
   ],
-  "explanation": "Option E is correct. Evidence evidence-1 states “but an officer still verifies original identity documents at the appointment.”. This is an explicit fact stated in the passage, so no extra assumption is needed. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+  "explanation": "Option E is correct. Evidence evidence-1 states “a quality check is completed before a public access copy is posted”. This is an explicit fact stated in the passage, so no extra assumption is needed. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
   "explanationDetails": {
-    "text": "Option E is correct. Evidence evidence-1 states “but an officer still verifies original identity documents at the appointment.”. This is an explicit fact stated in the passage, so no extra assumption is needed. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+    "text": "Option E is correct. Evidence evidence-1 states “a quality check is completed before a public access copy is posted”. This is an explicit fact stated in the passage, so no extra assumption is needed. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
     "reasoningSteps": [
-      "Identify the claim tested by option E: Present original identity documents for verification.",
-      "Cite evidence evidence-1: “but an officer still verifies original identity documents at the appointment.”",
+      "Identify the claim tested by option E: A quality check is completed.",
+      "Cite evidence evidence-1: “a quality check is completed before a public access copy is posted”",
       "This is an explicit fact stated in the passage, so no extra assumption is needed.",
       "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
     ],
@@ -335,19 +351,19 @@
       "evidence-1"
     ],
     "explicitFacts": [
-      "Present original identity documents for verification."
+      "A quality check is completed."
     ],
     "invalidInferences": [
-      "Option A: confuses the staffing change with an extension of opening hours.",
-      "Option B: treats online form upload as removal of the appointment and identity check.",
-      "Option C: uses the earlier average as if it were the current one.",
-      "Option D: reverses the passage's permission to upload forms before the visit."
+      "Option A: contradicts the stated location of originals.",
+      "Option B: changes a stated subset into every map and every label.",
+      "Option C: reverses the archive's prioritisation.",
+      "Option D: contradicts the volunteers' stated role."
     ],
-    "conclusion": "Present original identity documents for verification."
+    "conclusion": "A quality check is completed."
   },
   "explanationFragments": [
-    "Identify the claim tested by option E: Present original identity documents for verification.",
-    "Cite evidence evidence-1: “but an officer still verifies original identity documents at the appointment.”",
+    "Identify the claim tested by option E: A quality check is completed.",
+    "Cite evidence evidence-1: “a quality check is completed before a public access copy is posted”",
     "This is an explicit fact stated in the passage, so no extra assumption is needed.",
     "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
   ],
@@ -377,12 +393,12 @@
       "result": {
         "optionCount": 5,
         "questionType": "reading-comprehension",
-        "explanation": "Option E is correct. Evidence evidence-1 states “but an officer still verifies original identity documents at the appointment.”. This is an explicit fact stated in the passage, so no extra assumption is needed. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+        "explanation": "Option E is correct. Evidence evidence-1 states “a quality check is completed before a public access copy is posted”. This is an explicit fact stated in the passage, so no extra assumption is needed. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
         "explanationDetails": {
-          "text": "Option E is correct. Evidence evidence-1 states “but an officer still verifies original identity documents at the appointment.”. This is an explicit fact stated in the passage, so no extra assumption is needed. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
+          "text": "Option E is correct. Evidence evidence-1 states “a quality check is completed before a public access copy is posted”. This is an explicit fact stated in the passage, so no extra assumption is needed. The distractors are not supported: each one either contradicts an explicit fact or makes an invalid inference from it.",
           "reasoningSteps": [
-            "Identify the claim tested by option E: Present original identity documents for verification.",
-            "Cite evidence evidence-1: “but an officer still verifies original identity documents at the appointment.”",
+            "Identify the claim tested by option E: A quality check is completed.",
+            "Cite evidence evidence-1: “a quality check is completed before a public access copy is posted”",
             "This is an explicit fact stated in the passage, so no extra assumption is needed.",
             "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
           ],
@@ -390,52 +406,60 @@
             "evidence-1"
           ],
           "explicitFacts": [
-            "Present original identity documents for verification."
+            "A quality check is completed."
           ],
           "invalidInferences": [
-            "Option A: confuses the staffing change with an extension of opening hours.",
-            "Option B: treats online form upload as removal of the appointment and identity check.",
-            "Option C: uses the earlier average as if it were the current one.",
-            "Option D: reverses the passage's permission to upload forms before the visit."
+            "Option A: contradicts the stated location of originals.",
+            "Option B: changes a stated subset into every map and every label.",
+            "Option C: reverses the archive's prioritisation.",
+            "Option D: contradicts the volunteers' stated role."
           ],
-          "conclusion": "Present original identity documents for verification."
+          "conclusion": "A quality check is completed."
         },
         "reasoningSteps": [
-          "Identify the claim tested by option E: Present original identity documents for verification.",
-          "Cite evidence evidence-1: “but an officer still verifies original identity documents at the appointment.”",
+          "Identify the claim tested by option E: A quality check is completed.",
+          "Cite evidence evidence-1: “a quality check is completed before a public access copy is posted”",
           "This is an explicit fact stated in the passage, so no extra assumption is needed.",
           "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
         ],
         "evidenceSpans": [
           {
             "id": "evidence-1",
-            "start": 143,
-            "end": 220,
-            "text": "but an officer still verifies original identity documents at the appointment.",
+            "start": 130,
+            "end": 196,
+            "text": "a quality check is completed before a public access copy is posted",
             "paragraph": 1,
             "source": "passage"
           },
           {
             "id": "evidence-2",
-            "start": 98,
-            "end": 141,
-            "text": "Applicants may upload forms before visiting",
-            "paragraph": 1,
+            "start": 298,
+            "end": 341,
+            "text": "the volunteers did not operate the scanners",
+            "paragraph": 2,
             "source": "passage"
           },
           {
             "id": "evidence-3",
-            "start": 384,
-            "end": 423,
-            "text": "The office did not extend opening hours",
+            "start": 392,
+            "end": 444,
+            "text": "the original maps remain in the archive reading room",
             "paragraph": 3,
             "source": "passage"
           },
           {
             "id": "evidence-4",
-            "start": 250,
-            "end": 305,
-            "text": "average counter time fell from 18 minutes to 11 minutes",
+            "start": 17,
+            "end": 51,
+            "text": "prioritised maps dated before 1950",
+            "paragraph": 1,
+            "source": "passage"
+          },
+          {
+            "id": "evidence-5",
+            "start": 234,
+            "end": 296,
+            "text": "Volunteers transcribed handwritten labels for 90 of those maps",
             "paragraph": 2,
             "source": "passage"
           }
@@ -443,57 +467,57 @@
         "claims": [
           {
             "id": "claim-1",
-            "text": "Present original identity documents for verification.",
+            "text": "A quality check is completed.",
             "claimType": "explicit-fact",
             "status": "supported",
             "evidence": [
               "evidence-1"
             ],
-            "reasoning": "The passage directly states this requirement.",
+            "reasoning": "The passage explicitly gives the quality check as a prior step.",
             "explicit": true
           },
           {
             "id": "claim-2",
-            "text": "Upload every form at the office rather than online.",
+            "text": "Volunteers operate the scanners.",
             "claimType": "contradicted",
             "status": "contradicted",
             "evidence": [
               "evidence-2"
             ],
-            "reasoning": "The passage allows online upload before the visit.",
+            "reasoning": "The passage says volunteers transcribed labels, not operated scanners.",
             "explicit": false
           },
           {
             "id": "claim-3",
-            "text": "Attend an office that has extended its opening hours.",
+            "text": "The original map is removed from the reading room.",
             "claimType": "contradicted",
             "status": "contradicted",
             "evidence": [
               "evidence-3"
             ],
-            "reasoning": "The passage explicitly says opening hours did not change.",
+            "reasoning": "The originals remain in the reading room.",
             "explicit": false
           },
           {
             "id": "claim-4",
-            "text": "Wait at the counter for 18 minutes on average.",
+            "text": "The map must be dated after 1950.",
             "claimType": "contradicted",
             "status": "contradicted",
             "evidence": [
               "evidence-4"
             ],
-            "reasoning": "The later average is 11 minutes, not 18.",
+            "reasoning": "The first phase prioritises maps before 1950.",
             "explicit": false
           },
           {
             "id": "claim-5",
-            "text": "Skip the appointment because the pre-check replaces identity checks.",
+            "text": "A volunteer transcribes every label on the map.",
             "claimType": "invalid-inference",
             "status": "not-stated",
             "evidence": [
-              "evidence-2"
+              "evidence-5"
             ],
-            "reasoning": "The passage separates online form upload from the identity check at the appointment.",
+            "reasoning": "The passage specifies 90 maps, not all maps.",
             "explicit": false
           }
         ],
@@ -508,8 +532,8 @@
             "evidence": [
               "evidence-3"
             ],
-            "reasoning": "The passage explicitly says opening hours did not change.",
-            "rationale": "confuses the staffing change with an extension of opening hours"
+            "reasoning": "The originals remain in the reading room.",
+            "rationale": "contradicts the stated location of originals"
           },
           {
             "option": "B",
@@ -519,10 +543,10 @@
             "verdict": "distractor",
             "isCorrect": false,
             "evidence": [
-              "evidence-2"
+              "evidence-5"
             ],
-            "reasoning": "The passage separates online form upload from the identity check at the appointment.",
-            "rationale": "treats online form upload as removal of the appointment and identity check"
+            "reasoning": "The passage specifies 90 maps, not all maps.",
+            "rationale": "changes a stated subset into every map and every label"
           },
           {
             "option": "C",
@@ -534,8 +558,8 @@
             "evidence": [
               "evidence-4"
             ],
-            "reasoning": "The later average is 11 minutes, not 18.",
-            "rationale": "uses the earlier average as if it were the current one"
+            "reasoning": "The first phase prioritises maps before 1950.",
+            "rationale": "reverses the archive's prioritisation"
           },
           {
             "option": "D",
@@ -547,8 +571,8 @@
             "evidence": [
               "evidence-2"
             ],
-            "reasoning": "The passage allows online upload before the visit.",
-            "rationale": "reverses the passage's permission to upload forms before the visit"
+            "reasoning": "The passage says volunteers transcribed labels, not operated scanners.",
+            "rationale": "contradicts the volunteers' stated role"
           },
           {
             "option": "E",
@@ -560,7 +584,7 @@
             "evidence": [
               "evidence-1"
             ],
-            "reasoning": "The passage directly states this requirement.",
+            "reasoning": "The passage explicitly gives the quality check as a prior step.",
             "rationale": ""
           }
         ],
@@ -569,8 +593,8 @@
         "distractors": [
           {
             "option": "A",
-            "reason": "confuses the staffing change with an extension of opening hours",
-            "rationale": "confuses the staffing change with an extension of opening hours",
+            "reason": "contradicts the stated location of originals",
+            "rationale": "contradicts the stated location of originals",
             "status": "contradicted",
             "claimId": "claim-3",
             "evidence": [
@@ -579,18 +603,18 @@
           },
           {
             "option": "B",
-            "reason": "treats online form upload as removal of the appointment and identity check",
-            "rationale": "treats online form upload as removal of the appointment and identity check",
+            "reason": "changes a stated subset into every map and every label",
+            "rationale": "changes a stated subset into every map and every label",
             "status": "not-stated",
             "claimId": "claim-5",
             "evidence": [
-              "evidence-2"
+              "evidence-5"
             ]
           },
           {
             "option": "C",
-            "reason": "uses the earlier average as if it were the current one",
-            "rationale": "uses the earlier average as if it were the current one",
+            "reason": "reverses the archive's prioritisation",
+            "rationale": "reverses the archive's prioritisation",
             "status": "contradicted",
             "claimId": "claim-4",
             "evidence": [
@@ -599,8 +623,8 @@
           },
           {
             "option": "D",
-            "reason": "reverses the passage's permission to upload forms before the visit",
-            "rationale": "reverses the passage's permission to upload forms before the visit",
+            "reason": "contradicts the volunteers' stated role",
+            "rationale": "contradicts the volunteers' stated role",
             "status": "contradicted",
             "claimId": "claim-2",
             "evidence": [
@@ -616,116 +640,124 @@
     "examProfile": "five-option",
     "optionCount": 5,
     "questionType": "reading-comprehension",
-    "scenario": "permit-precheck",
+    "scenario": "archive-maps",
     "sourcePassage": {
-      "id": "permit-precheck",
-      "title": "A shorter visit to the permit office",
-      "text": "To reduce waiting time, the North District permit office introduced an online pre-check in April. Applicants may upload forms before visiting, but an officer still verifies original identity documents at the appointment.\n\nDuring the first six weeks, average counter time fell from 18 minutes to 11 minutes. The office handled 14% more applications than in the same period last year.\n\nThe office did not extend opening hours; it reassigned two clerks from filing to pre-checks.",
+      "id": "archive-maps",
+      "title": "The archive's first digitisation phase",
+      "text": "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.\n\nIn May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.\n\nThe project creates digital access copies while the original maps remain in the archive reading room.",
       "paragraphs": [
-        "To reduce waiting time, the North District permit office introduced an online pre-check in April. Applicants may upload forms before visiting, but an officer still verifies original identity documents at the appointment.",
-        "During the first six weeks, average counter time fell from 18 minutes to 11 minutes. The office handled 14% more applications than in the same period last year.",
-        "The office did not extend opening hours; it reassigned two clerks from filing to pre-checks."
+        "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.",
+        "In May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.",
+        "The project creates digital access copies while the original maps remain in the archive reading room."
       ],
       "source": "original"
     },
     "passage": {
-      "id": "permit-precheck",
-      "title": "A shorter visit to the permit office",
-      "text": "To reduce waiting time, the North District permit office introduced an online pre-check in April. Applicants may upload forms before visiting, but an officer still verifies original identity documents at the appointment.\n\nDuring the first six weeks, average counter time fell from 18 minutes to 11 minutes. The office handled 14% more applications than in the same period last year.\n\nThe office did not extend opening hours; it reassigned two clerks from filing to pre-checks.",
+      "id": "archive-maps",
+      "title": "The archive's first digitisation phase",
+      "text": "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.\n\nIn May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.\n\nThe project creates digital access copies while the original maps remain in the archive reading room.",
       "paragraphs": [
-        "To reduce waiting time, the North District permit office introduced an online pre-check in April. Applicants may upload forms before visiting, but an officer still verifies original identity documents at the appointment.",
-        "During the first six weeks, average counter time fell from 18 minutes to 11 minutes. The office handled 14% more applications than in the same period last year.",
-        "The office did not extend opening hours; it reassigned two clerks from filing to pre-checks."
+        "The city archive prioritised maps dated before 1950 for its first digitisation phase. Each map is catalogued before scanning, and a quality check is completed before a public access copy is posted.",
+        "In May, the team scanned 320 maps. Volunteers transcribed handwritten labels for 90 of those maps; the volunteers did not operate the scanners.",
+        "The project creates digital access copies while the original maps remain in the archive reading room."
       ],
       "source": "original"
     },
     "claims": [
       {
         "id": "claim-1",
-        "text": "Present original identity documents for verification.",
+        "text": "A quality check is completed.",
         "claimType": "explicit-fact",
         "status": "supported",
         "evidence": [
           "evidence-1"
         ],
-        "reasoning": "The passage directly states this requirement.",
+        "reasoning": "The passage explicitly gives the quality check as a prior step.",
         "explicit": true
       },
       {
         "id": "claim-2",
-        "text": "Upload every form at the office rather than online.",
+        "text": "Volunteers operate the scanners.",
         "claimType": "contradicted",
         "status": "contradicted",
         "evidence": [
           "evidence-2"
         ],
-        "reasoning": "The passage allows online upload before the visit.",
+        "reasoning": "The passage says volunteers transcribed labels, not operated scanners.",
         "explicit": false
       },
       {
         "id": "claim-3",
-        "text": "Attend an office that has extended its opening hours.",
+        "text": "The original map is removed from the reading room.",
         "claimType": "contradicted",
         "status": "contradicted",
         "evidence": [
           "evidence-3"
         ],
-        "reasoning": "The passage explicitly says opening hours did not change.",
+        "reasoning": "The originals remain in the reading room.",
         "explicit": false
       },
       {
         "id": "claim-4",
-        "text": "Wait at the counter for 18 minutes on average.",
+        "text": "The map must be dated after 1950.",
         "claimType": "contradicted",
         "status": "contradicted",
         "evidence": [
           "evidence-4"
         ],
-        "reasoning": "The later average is 11 minutes, not 18.",
+        "reasoning": "The first phase prioritises maps before 1950.",
         "explicit": false
       },
       {
         "id": "claim-5",
-        "text": "Skip the appointment because the pre-check replaces identity checks.",
+        "text": "A volunteer transcribes every label on the map.",
         "claimType": "invalid-inference",
         "status": "not-stated",
         "evidence": [
-          "evidence-2"
+          "evidence-5"
         ],
-        "reasoning": "The passage separates online form upload from the identity check at the appointment.",
+        "reasoning": "The passage specifies 90 maps, not all maps.",
         "explicit": false
       }
     ],
     "evidenceSpans": [
       {
         "id": "evidence-1",
-        "start": 143,
-        "end": 220,
-        "text": "but an officer still verifies original identity documents at the appointment.",
+        "start": 130,
+        "end": 196,
+        "text": "a quality check is completed before a public access copy is posted",
         "paragraph": 1,
         "source": "passage"
       },
       {
         "id": "evidence-2",
-        "start": 98,
-        "end": 141,
-        "text": "Applicants may upload forms before visiting",
-        "paragraph": 1,
+        "start": 298,
+        "end": 341,
+        "text": "the volunteers did not operate the scanners",
+        "paragraph": 2,
         "source": "passage"
       },
       {
         "id": "evidence-3",
-        "start": 384,
-        "end": 423,
-        "text": "The office did not extend opening hours",
+        "start": 392,
+        "end": 444,
+        "text": "the original maps remain in the archive reading room",
         "paragraph": 3,
         "source": "passage"
       },
       {
         "id": "evidence-4",
-        "start": 250,
-        "end": 305,
-        "text": "average counter time fell from 18 minutes to 11 minutes",
+        "start": 17,
+        "end": 51,
+        "text": "prioritised maps dated before 1950",
+        "paragraph": 1,
+        "source": "passage"
+      },
+      {
+        "id": "evidence-5",
+        "start": 234,
+        "end": 296,
+        "text": "Volunteers transcribed handwritten labels for 90 of those maps",
         "paragraph": 2,
         "source": "passage"
       }
@@ -741,8 +773,8 @@
         "evidence": [
           "evidence-3"
         ],
-        "reasoning": "The passage explicitly says opening hours did not change.",
-        "rationale": "confuses the staffing change with an extension of opening hours"
+        "reasoning": "The originals remain in the reading room.",
+        "rationale": "contradicts the stated location of originals"
       },
       {
         "option": "B",
@@ -752,10 +784,10 @@
         "verdict": "distractor",
         "isCorrect": false,
         "evidence": [
-          "evidence-2"
+          "evidence-5"
         ],
-        "reasoning": "The passage separates online form upload from the identity check at the appointment.",
-        "rationale": "treats online form upload as removal of the appointment and identity check"
+        "reasoning": "The passage specifies 90 maps, not all maps.",
+        "rationale": "changes a stated subset into every map and every label"
       },
       {
         "option": "C",
@@ -767,8 +799,8 @@
         "evidence": [
           "evidence-4"
         ],
-        "reasoning": "The later average is 11 minutes, not 18.",
-        "rationale": "uses the earlier average as if it were the current one"
+        "reasoning": "The first phase prioritises maps before 1950.",
+        "rationale": "reverses the archive's prioritisation"
       },
       {
         "option": "D",
@@ -780,8 +812,8 @@
         "evidence": [
           "evidence-2"
         ],
-        "reasoning": "The passage allows online upload before the visit.",
-        "rationale": "reverses the passage's permission to upload forms before the visit"
+        "reasoning": "The passage says volunteers transcribed labels, not operated scanners.",
+        "rationale": "contradicts the volunteers' stated role"
       },
       {
         "option": "E",
@@ -793,15 +825,15 @@
         "evidence": [
           "evidence-1"
         ],
-        "reasoning": "The passage directly states this requirement.",
+        "reasoning": "The passage explicitly gives the quality check as a prior step.",
         "rationale": ""
       }
     ],
     "distractors": [
       {
         "option": "A",
-        "reason": "confuses the staffing change with an extension of opening hours",
-        "description": "confuses the staffing change with an extension of opening hours",
+        "reason": "contradicts the stated location of originals",
+        "description": "contradicts the stated location of originals",
         "status": "contradicted",
         "claimId": "claim-3",
         "evidence": [
@@ -810,18 +842,18 @@
       },
       {
         "option": "B",
-        "reason": "treats online form upload as removal of the appointment and identity check",
-        "description": "treats online form upload as removal of the appointment and identity check",
+        "reason": "changes a stated subset into every map and every label",
+        "description": "changes a stated subset into every map and every label",
         "status": "not-stated",
         "claimId": "claim-5",
         "evidence": [
-          "evidence-2"
+          "evidence-5"
         ]
       },
       {
         "option": "C",
-        "reason": "uses the earlier average as if it were the current one",
-        "description": "uses the earlier average as if it were the current one",
+        "reason": "reverses the archive's prioritisation",
+        "description": "reverses the archive's prioritisation",
         "status": "contradicted",
         "claimId": "claim-4",
         "evidence": [
@@ -830,8 +862,8 @@
       },
       {
         "option": "D",
-        "reason": "reverses the passage's permission to upload forms before the visit",
-        "description": "reverses the passage's permission to upload forms before the visit",
+        "reason": "contradicts the volunteers' stated role",
+        "description": "contradicts the volunteers' stated role",
         "status": "contradicted",
         "claimId": "claim-2",
         "evidence": [
@@ -842,8 +874,8 @@
     "distractorRationale": [
       {
         "option": "A",
-        "reason": "confuses the staffing change with an extension of opening hours",
-        "description": "confuses the staffing change with an extension of opening hours",
+        "reason": "contradicts the stated location of originals",
+        "description": "contradicts the stated location of originals",
         "status": "contradicted",
         "claimId": "claim-3",
         "evidence": [
@@ -852,18 +884,18 @@
       },
       {
         "option": "B",
-        "reason": "treats online form upload as removal of the appointment and identity check",
-        "description": "treats online form upload as removal of the appointment and identity check",
+        "reason": "changes a stated subset into every map and every label",
+        "description": "changes a stated subset into every map and every label",
         "status": "not-stated",
         "claimId": "claim-5",
         "evidence": [
-          "evidence-2"
+          "evidence-5"
         ]
       },
       {
         "option": "C",
-        "reason": "uses the earlier average as if it were the current one",
-        "description": "uses the earlier average as if it were the current one",
+        "reason": "reverses the archive's prioritisation",
+        "description": "reverses the archive's prioritisation",
         "status": "contradicted",
         "claimId": "claim-4",
         "evidence": [
@@ -872,8 +904,8 @@
       },
       {
         "option": "D",
-        "reason": "reverses the passage's permission to upload forms before the visit",
-        "description": "reverses the passage's permission to upload forms before the visit",
+        "reason": "contradicts the volunteers' stated role",
+        "description": "contradicts the volunteers' stated role",
         "status": "contradicted",
         "claimId": "claim-2",
         "evidence": [
@@ -882,38 +914,42 @@
       }
     ],
     "explanationFragments": [
-      "Identify the claim tested by option E: Present original identity documents for verification.",
-      "Cite evidence evidence-1: “but an officer still verifies original identity documents at the appointment.”",
+      "Identify the claim tested by option E: A quality check is completed.",
+      "Cite evidence evidence-1: “a quality check is completed before a public access copy is posted”",
       "This is an explicit fact stated in the passage, so no extra assumption is needed.",
       "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
     ],
     "reasoningSteps": [
-      "Identify the claim tested by option E: Present original identity documents for verification.",
-      "Cite evidence evidence-1: “but an officer still verifies original identity documents at the appointment.”",
+      "Identify the claim tested by option E: A quality check is completed.",
+      "Cite evidence evidence-1: “a quality check is completed before a public access copy is posted”",
       "This is an explicit fact stated in the passage, so no extra assumption is needed.",
       "Reject each distractor because its evaluation records a contradiction, missing detail, or invalid inference."
     ],
     "answerClaim": {
       "id": "claim-1",
-      "text": "Present original identity documents for verification.",
+      "text": "A quality check is completed.",
       "claimType": "explicit-fact",
       "status": "supported",
       "evidence": [
         "evidence-1"
       ],
-      "reasoning": "The passage directly states this requirement.",
+      "reasoning": "The passage explicitly gives the quality check as a prior step.",
       "explicit": true
     },
     "answerEvidence": [
       {
         "id": "evidence-1",
-        "start": 143,
-        "end": 220,
-        "text": "but an officer still verifies original identity documents at the appointment.",
+        "start": 130,
+        "end": 196,
+        "text": "a quality check is completed before a public access copy is posted",
         "paragraph": 1,
         "source": "passage"
       }
     ],
-    "answerSignature": "claim-1"
+    "answerSignature": "dd74e3011bcf88ed8406",
+    "answerValueSignature": "1f07b25a10562875bab0",
+    "evidenceSignature": "dd74e3011bcf88ed8406",
+    "methodSignature": "e719a5312b64baf8410f",
+    "explanationSignature": "3c80444edfb50d3d1f4b"
   }
 }

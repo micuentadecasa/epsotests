@@ -23,6 +23,28 @@ class VerbalGeneratorTests(unittest.TestCase):
             self.assertEqual(first["questionType"], question_type)
             self.assertEqual(first["exam"], "verbal")
 
+    def test_adjacent_catalog_seeds_change_evidence_and_explanations(self):
+        for question_type in SUPPORTED_VERBAL_QUESTION_TYPES:
+            first = generate_verbal_question(question_type, seed=42)
+            second = generate_verbal_question(question_type, seed=43)
+            with self.subTest(question_type=question_type):
+                self.assertNotEqual(
+                    first["metadata"]["evidenceSignature"],
+                    second["metadata"]["evidenceSignature"],
+                )
+                self.assertNotEqual(
+                    first["metadata"]["answerSignature"],
+                    second["metadata"]["answerSignature"],
+                )
+                self.assertNotEqual(
+                    first["metadata"]["explanationSignature"],
+                    second["metadata"]["explanationSignature"],
+                )
+                self.assertNotEqual(
+                    first["metadata"]["methodSignature"],
+                    second["metadata"]["methodSignature"],
+                )
+
     def test_profiles_have_unique_options_and_one_supported_answer(self):
         for question_type in SUPPORTED_VERBAL_QUESTION_TYPES:
             for profile, count in (("standard", 4), ("five-option", 5)):

@@ -942,6 +942,10 @@
         "source": "passage"
       }
     ],
-    "answerSignature": "claim-1"
+    "answerSignature": "deafd4e18250c9591ff8",
+    "answerValueSignature": "b6a6e988b1726c079c71",
+    "evidenceSignature": "deafd4e18250c9591ff8",
+    "methodSignature": "c675b1603d0a54966693",
+    "explanationSignature": "ac696bb932fc48c28e5f"
   }
 }

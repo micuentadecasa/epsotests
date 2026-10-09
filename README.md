@@ -33,7 +33,13 @@ Each returned question is portable JSON containing:
   reveals the rule, answer reasoning, and one failure reason for every
   distractor only after the learner requests it;
 - `metadata` containing the seed, serialized rules, generated figures,
-  distractor metadata, explanation fragments, and the answer figure/signature.
+  distractor metadata, explanation fragments, the answer figure/signature,
+  and opaque method/answer/explanation signatures used to audit variation.
+
+Adjacent catalog seeds select explicit visual rule profiles (rotation/movement,
+reflection/fill, count/symmetry, and nesting/shape), so a new drawing is not
+just a cosmetic change. Numerical items likewise record operation and
+calculation signatures; verbal items record evidence-path signatures.
 
 Rules can be supplied for controlled fixtures and difficulty tuning:
 
@@ -56,7 +62,9 @@ substitutions, intermediate values, units, rounding, visual shortcuts, and
 specific distractor rationales. Supported operations are percentage change,
 ratios, proportions, totals, growth, comparisons, and multi-step calculations.
 They use the same four-option `standard` and five-option `five-option` profiles
-and hidden `Explain Logic` / `Ver solución` action contract as visual items:
+and hidden `Explain Logic` / `Ver solución` action contract as visual items.
+Each operation has explicit calculation templates, so adjacent seeds change
+both the worked path and the answer value:
 
 ```python
 from epsotests import generate_numerical_question

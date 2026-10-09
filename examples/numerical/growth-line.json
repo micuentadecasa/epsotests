@@ -31,7 +31,8 @@
       "parameters": {
         "initial": 300,
         "rate": 8,
-        "periods": 4
+        "periods": 4,
+        "template": 1
       }
     },
     "chart": {
@@ -140,16 +141,16 @@
     }
   ],
   "correctOption": "D",
-  "explanation": "Read the values from the chart and apply the stated operation. Formula: initial × (1 + rate ÷ 100)^years. Growth factor: 1 + rate ÷ 100; substitute 1 + 8 ÷ 100 = 1.08 factor; exact. After year 1: previous value × growth factor; substitute 300.00 × 1.080 = 324 thousand EUR; rounded to 2 decimal places. After year 2: previous value × growth factor; substitute 324.00 × 1.080 = 349.92 thousand EUR; rounded to 2 decimal places. After year 3: previous value × growth factor; substitute 349.92 × 1.080 = 377.91 thousand EUR; rounded to 2 decimal places. After year 4: previous value × growth factor; substitute 377.91 × 1.080 = 408.15 thousand EUR; rounded to 2 decimal places. Final result: 408.15 thousand EUR (rounded to 2 decimal places where needed). Option D is correct. Visual shortcut: Follow the line trend, then apply the same multiplier for each additional year. Each distractor records the specific calculation mistake it makes.",
+  "explanation": "Read the values from the chart and apply the stated operation. Formula: initial × (1 + rate ÷ 100)^years. Growth factor: 1 + rate ÷ 100; substitute 1 + 8 ÷ 100 = 1.08 factor; exact. After year 1: previous value + (previous value × rate ÷ 100); substitute 300.00 + (300.00 × 8 ÷ 100) = 324 thousand EUR; rounded to 2 decimal places. After year 2: previous value + (previous value × rate ÷ 100); substitute 324.00 + (324.00 × 8 ÷ 100) = 349.92 thousand EUR; rounded to 2 decimal places. After year 3: previous value + (previous value × rate ÷ 100); substitute 349.92 + (349.92 × 8 ÷ 100) = 377.91 thousand EUR; rounded to 2 decimal places. After year 4: previous value + (previous value × rate ÷ 100); substitute 377.91 + (377.91 × 8 ÷ 100) = 408.15 thousand EUR; rounded to 2 decimal places. Final result: 408.15 thousand EUR (rounded to 2 decimal places where needed). Option D is correct. Visual shortcut: Follow the trend and apply the same multiplier for each additional year. Each distractor records the specific calculation mistake it makes.",
   "explanationFragments": [
     "Formula: initial × (1 + rate ÷ 100)^years.",
     "Growth factor: 1 + rate ÷ 100; substitute 1 + 8 ÷ 100 = 1.08 factor; exact.",
-    "After year 1: previous value × growth factor; substitute 300.00 × 1.080 = 324 thousand EUR; rounded to 2 decimal places.",
-    "After year 2: previous value × growth factor; substitute 324.00 × 1.080 = 349.92 thousand EUR; rounded to 2 decimal places.",
-    "After year 3: previous value × growth factor; substitute 349.92 × 1.080 = 377.91 thousand EUR; rounded to 2 decimal places.",
-    "After year 4: previous value × growth factor; substitute 377.91 × 1.080 = 408.15 thousand EUR; rounded to 2 decimal places.",
+    "After year 1: previous value + (previous value × rate ÷ 100); substitute 300.00 + (300.00 × 8 ÷ 100) = 324 thousand EUR; rounded to 2 decimal places.",
+    "After year 2: previous value + (previous value × rate ÷ 100); substitute 324.00 + (324.00 × 8 ÷ 100) = 349.92 thousand EUR; rounded to 2 decimal places.",
+    "After year 3: previous value + (previous value × rate ÷ 100); substitute 349.92 + (349.92 × 8 ÷ 100) = 377.91 thousand EUR; rounded to 2 decimal places.",
+    "After year 4: previous value + (previous value × rate ÷ 100); substitute 377.91 + (377.91 × 8 ÷ 100) = 408.15 thousand EUR; rounded to 2 decimal places.",
     "Final result: 408.15 thousand EUR.",
-    "Visual shortcut: Follow the line trend, then apply the same multiplier for each additional year."
+    "Visual shortcut: Follow the trend and apply the same multiplier for each additional year."
   ],
   "actions": {
     "explainLogic": {
@@ -191,8 +192,8 @@
           {
             "id": "2",
             "label": "After year 1",
-            "formula": "previous value × growth factor",
-            "substitution": "300.00 × 1.080",
+            "formula": "previous value + (previous value × rate ÷ 100)",
+            "substitution": "300.00 + (300.00 × 8 ÷ 100)",
             "result": 324,
             "unit": "thousand EUR",
             "rounding": "2 decimal places",
@@ -201,8 +202,8 @@
           {
             "id": "3",
             "label": "After year 2",
-            "formula": "previous value × growth factor",
-            "substitution": "324.00 × 1.080",
+            "formula": "previous value + (previous value × rate ÷ 100)",
+            "substitution": "324.00 + (324.00 × 8 ÷ 100)",
             "result": 349.92,
             "unit": "thousand EUR",
             "rounding": "2 decimal places",
@@ -211,8 +212,8 @@
           {
             "id": "4",
             "label": "After year 3",
-            "formula": "previous value × growth factor",
-            "substitution": "349.92 × 1.080",
+            "formula": "previous value + (previous value × rate ÷ 100)",
+            "substitution": "349.92 + (349.92 × 8 ÷ 100)",
             "result": 377.91,
             "unit": "thousand EUR",
             "rounding": "2 decimal places",
@@ -221,15 +222,15 @@
           {
             "id": "5",
             "label": "After year 4",
-            "formula": "previous value × growth factor",
-            "substitution": "377.91 × 1.080",
+            "formula": "previous value + (previous value × rate ÷ 100)",
+            "substitution": "377.91 + (377.91 × 8 ÷ 100)",
             "result": 408.15,
             "unit": "thousand EUR",
             "rounding": "2 decimal places",
             "note": ""
           }
         ],
-        "visualShortcut": "Follow the line trend, then apply the same multiplier for each additional year.",
+        "visualShortcut": "Follow the trend and apply the same multiplier for each additional year.",
         "sourceData": {
           "type": "table",
           "title": "Revenue growth",
@@ -251,10 +252,11 @@
           "parameters": {
             "initial": 300,
             "rate": 8,
-            "periods": 4
+            "periods": 4,
+            "template": 1
           }
         },
-        "explanation": "Read the values from the chart and apply the stated operation. Formula: initial × (1 + rate ÷ 100)^years. Growth factor: 1 + rate ÷ 100; substitute 1 + 8 ÷ 100 = 1.08 factor; exact. After year 1: previous value × growth factor; substitute 300.00 × 1.080 = 324 thousand EUR; rounded to 2 decimal places. After year 2: previous value × growth factor; substitute 324.00 × 1.080 = 349.92 thousand EUR; rounded to 2 decimal places. After year 3: previous value × growth factor; substitute 349.92 × 1.080 = 377.91 thousand EUR; rounded to 2 decimal places. After year 4: previous value × growth factor; substitute 377.91 × 1.080 = 408.15 thousand EUR; rounded to 2 decimal places. Final result: 408.15 thousand EUR (rounded to 2 decimal places where needed). Option D is correct. Visual shortcut: Follow the line trend, then apply the same multiplier for each additional year. Each distractor records the specific calculation mistake it makes.",
+        "explanation": "Read the values from the chart and apply the stated operation. Formula: initial × (1 + rate ÷ 100)^years. Growth factor: 1 + rate ÷ 100; substitute 1 + 8 ÷ 100 = 1.08 factor; exact. After year 1: previous value + (previous value × rate ÷ 100); substitute 300.00 + (300.00 × 8 ÷ 100) = 324 thousand EUR; rounded to 2 decimal places. After year 2: previous value + (previous value × rate ÷ 100); substitute 324.00 + (324.00 × 8 ÷ 100) = 349.92 thousand EUR; rounded to 2 decimal places. After year 3: previous value + (previous value × rate ÷ 100); substitute 349.92 + (349.92 × 8 ÷ 100) = 377.91 thousand EUR; rounded to 2 decimal places. After year 4: previous value + (previous value × rate ÷ 100); substitute 377.91 + (377.91 × 8 ÷ 100) = 408.15 thousand EUR; rounded to 2 decimal places. Final result: 408.15 thousand EUR (rounded to 2 decimal places where needed). Option D is correct. Visual shortcut: Follow the trend and apply the same multiplier for each additional year. Each distractor records the specific calculation mistake it makes.",
         "correctOption": "D",
         "correctReason": "Option D is correct because it follows the formula and all intermediate steps.",
         "distractors": [
@@ -312,7 +314,8 @@
       "parameters": {
         "initial": 300,
         "rate": 8,
-        "periods": 4
+        "periods": 4,
+        "template": 1
       }
     },
     "table": {
@@ -337,7 +340,8 @@
     "sourceParameters": {
       "initial": 300,
       "rate": 8,
-      "periods": 4
+      "periods": 4,
+      "template": 1
     },
     "representation": {
       "type": "line-chart",
@@ -398,8 +402,8 @@
       {
         "id": "2",
         "label": "After year 1",
-        "formula": "previous value × growth factor",
-        "substitution": "300.00 × 1.080",
+        "formula": "previous value + (previous value × rate ÷ 100)",
+        "substitution": "300.00 + (300.00 × 8 ÷ 100)",
         "result": 324,
         "unit": "thousand EUR",
         "rounding": "2 decimal places",
@@ -408,8 +412,8 @@
       {
         "id": "3",
         "label": "After year 2",
-        "formula": "previous value × growth factor",
-        "substitution": "324.00 × 1.080",
+        "formula": "previous value + (previous value × rate ÷ 100)",
+        "substitution": "324.00 + (324.00 × 8 ÷ 100)",
         "result": 349.92,
         "unit": "thousand EUR",
         "rounding": "2 decimal places",
@@ -418,8 +422,8 @@
       {
         "id": "4",
         "label": "After year 3",
-        "formula": "previous value × growth factor",
-        "substitution": "349.92 × 1.080",
+        "formula": "previous value + (previous value × rate ÷ 100)",
+        "substitution": "349.92 + (349.92 × 8 ÷ 100)",
         "result": 377.91,
         "unit": "thousand EUR",
         "rounding": "2 decimal places",
@@ -428,8 +432,8 @@
       {
         "id": "5",
         "label": "After year 4",
-        "formula": "previous value × growth factor",
-        "substitution": "377.91 × 1.080",
+        "formula": "previous value + (previous value × rate ÷ 100)",
+        "substitution": "377.91 + (377.91 × 8 ÷ 100)",
         "result": 408.15,
         "unit": "thousand EUR",
         "rounding": "2 decimal places",
@@ -437,7 +441,7 @@
       }
     ],
     "rounding": "2 decimal places",
-    "visualShortcut": "Follow the line trend, then apply the same multiplier for each additional year.",
+    "visualShortcut": "Follow the trend and apply the same multiplier for each additional year.",
     "generatedFigures": [
       {
         "type": "line-chart",
@@ -491,15 +495,20 @@
     "explanationFragments": [
       "Formula: initial × (1 + rate ÷ 100)^years.",
       "Growth factor: 1 + rate ÷ 100; substitute 1 + 8 ÷ 100 = 1.08 factor; exact.",
-      "After year 1: previous value × growth factor; substitute 300.00 × 1.080 = 324 thousand EUR; rounded to 2 decimal places.",
-      "After year 2: previous value × growth factor; substitute 324.00 × 1.080 = 349.92 thousand EUR; rounded to 2 decimal places.",
-      "After year 3: previous value × growth factor; substitute 349.92 × 1.080 = 377.91 thousand EUR; rounded to 2 decimal places.",
-      "After year 4: previous value × growth factor; substitute 377.91 × 1.080 = 408.15 thousand EUR; rounded to 2 decimal places.",
+      "After year 1: previous value + (previous value × rate ÷ 100); substitute 300.00 + (300.00 × 8 ÷ 100) = 324 thousand EUR; rounded to 2 decimal places.",
+      "After year 2: previous value + (previous value × rate ÷ 100); substitute 324.00 + (324.00 × 8 ÷ 100) = 349.92 thousand EUR; rounded to 2 decimal places.",
+      "After year 3: previous value + (previous value × rate ÷ 100); substitute 349.92 + (349.92 × 8 ÷ 100) = 377.91 thousand EUR; rounded to 2 decimal places.",
+      "After year 4: previous value + (previous value × rate ÷ 100); substitute 377.91 + (377.91 × 8 ÷ 100) = 408.15 thousand EUR; rounded to 2 decimal places.",
       "Final result: 408.15 thousand EUR.",
-      "Visual shortcut: Follow the line trend, then apply the same multiplier for each additional year."
+      "Visual shortcut: Follow the trend and apply the same multiplier for each additional year."
     ],
     "answerValue": 408.15,
     "answerUnit": "thousand EUR",
-    "answerSignature": "{\"unit\":\"thousand EUR\",\"value\":408.15}"
+    "answerSignature": "{\"unit\":\"thousand EUR\",\"value\":408.15}",
+    "answerValueSignature": "f216a2665b333749f5c7",
+    "operationSignature": "f6543f9484f90d0a3991",
+    "calculationSignature": "27109dd3477eaca5c33d",
+    "methodSignature": "f6543f9484f90d0a3991",
+    "explanationSignature": "aeca0bbbba471ed61d7c"
   }
 }
