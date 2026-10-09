@@ -34,6 +34,7 @@ const state = {
 
 const $ = (selector) => document.querySelector(selector);
 const controlsForm = $("#controls-form");
+const generateButton = controlsForm.querySelector('button[type="submit"]');
 const answerForm = $("#answer-form");
 const family = $("#family");
 const variant = $("#variant");
@@ -44,6 +45,7 @@ const difficulty = $("#difficulty");
 const profile = $("#profile");
 const seed = $("#seed");
 const status = $("#status");
+const questionSection = $("#question");
 const stimulus = $("#stimulus");
 const answerOptions = $("#answer-options");
 const explainButton = $("#explain-button");
@@ -64,6 +66,13 @@ function element(tag, className, text) {
 function setStatus(message, isError = false) {
   status.textContent = message;
   status.classList.toggle("error", isError);
+}
+
+function setQuestionLoading(loading) {
+  state.loading = loading;
+  generateButton.disabled = loading;
+  nextButton.disabled = loading;
+  questionSection.setAttribute("aria-busy", String(loading));
 }
 
 function updateVariantOptions() {
@@ -221,7 +230,12 @@ function renderOptions(question) {
   explainButton.disabled = !question.options.length;
 }
 
-function renderQuestion(question, token, staticSolution = null) {
+function renderQuestion(
+  question,
+  token,
+  staticSolution = null,
+  { scrollToSolution = true } = {},
+) {
   state.question = question;
   state.solutionToken = token;
   state.staticSolution = staticSolution;
@@ -240,7 +254,7 @@ function renderQuestion(question, token, staticSolution = null) {
   updateToggleLabel();
   renderStimulus(question);
   renderOptions(question);
-  if (state.solutionPreference) revealSolution();
+  if (state.solutionPreference) revealSolution("", { scrollToSolution });
 }
 
 function selectedOption() {
@@ -288,9 +302,9 @@ function staticCatalogEntry(catalog, params) {
   return candidates[index];
 }
 
-async function fetchQuestion() {
+async function fetchQuestion({ scrollToQuestion = false } = {}) {
   if (state.loading) return;
-  state.loading = true;
+  setQuestionLoading(true);
   setStatus("Generating a deterministic question…");
   const params = questionParams();
   const apiParams = new URLSearchParams({
@@ -310,19 +324,21 @@ async function fetchQuestion() {
       const catalog = await loadStaticCatalog();
       const entry = staticCatalogEntry(catalog, params);
       if (!entry) throw new Error("No matching question in the static catalog");
-      renderQuestion(entry.question, null, entry.solution);
+      renderQuestion(entry.question, null, entry.solution, { scrollToSolution: false });
+      if (scrollToQuestion) $("#question-prompt").scrollIntoView({ block: "start", behavior: "auto" });
       setStatus(`${entry.question.optionCount}-option question ready from the static catalog. Select an answer, then review the logic when you are ready.`);
       return;
     }
     const response = await fetch(`/api/question?${apiParams.toString()}`, { headers: { Accept: "application/json" } });
     const payload = await response.json();
     if (!response.ok) throw new Error(payload.error || "Question generation failed");
-    renderQuestion(payload.question, payload.solutionToken);
+    renderQuestion(payload.question, payload.solutionToken, null, { scrollToSolution: false });
+    if (scrollToQuestion) $("#question-prompt").scrollIntoView({ block: "start", behavior: "auto" });
     setStatus(`${payload.question.optionCount}-option question ready. Select an answer, then review the logic when you are ready.`);
   } catch (error) {
-    setStatus(error.message, true);
+    setStatus(error.message || "Question generation failed. Try again.", true);
   } finally {
-    state.loading = false;
+    setQuestionLoading(false);
   }
 }
 
@@ -343,7 +359,7 @@ function setSolutionPreference(enabled) {
   updateToggleLabel();
 }
 
-function renderSolution(result) {
+function renderSolution(result, { scrollToSolution = true } = {}) {
   state.solution = result;
   solutionPanel.hidden = false;
   solutionContent.replaceChildren();
@@ -388,7 +404,11 @@ function renderSolution(result) {
     appendSolutionBlock("Why the other options fail", list);
   }
   hideButton.hidden = false;
-  solutionPanel.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  if (scrollToSolution) {
+    solutionPanel.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  } else {
+    $("#question-prompt").scrollIntoView({ block: "start", behavior: "auto" });
+  }
 }
 
 function appendSolutionBlock(title, content) {
@@ -397,7 +417,7 @@ function appendSolutionBlock(title, content) {
   solutionContent.append(block);
 }
 
-async function revealSolution(optionId = selectedOption()) {
+async function revealSolution(optionId = selectedOption(), { scrollToSolution = true } = {}) {
   if (STATIC_MODE) {
     if (!state.staticSolution) return;
     const result = JSON.parse(JSON.stringify(state.staticSolution));
@@ -408,7 +428,7 @@ async function revealSolution(optionId = selectedOption()) {
       : optionId
         ? `You selected option ${optionId}; the correct answer is option ${result.correctOption}.`
         : "Solution preference is enabled. Select an answer to check your response.";
-    renderSolution(result);
+    renderSolution(result, { scrollToSolution });
     if (result.selectedOption) {
       answerFeedback.textContent = result.isCorrect ? `Option ${result.selectedOption} is correct.` : `Option ${result.selectedOption} is recorded. Compare it with the worked solution below.`;
       answerFeedback.className = `answer-feedback ${result.isCorrect ? "correct" : "incorrect"}`;
@@ -426,7 +446,7 @@ async function revealSolution(optionId = selectedOption()) {
     });
     const payload = await response.json();
     if (!response.ok) throw new Error(payload.error || "Solution unavailable");
-    renderSolution(payload.solution);
+    renderSolution(payload.solution, { scrollToSolution });
     const selected = payload.solution.selectedOption;
     if (selected) {
       answerFeedback.textContent = payload.solution.isCorrect ? `Option ${selected} is correct.` : `Option ${selected} is recorded. Compare it with the worked solution below.`;
@@ -464,9 +484,10 @@ answerForm.addEventListener("submit", (event) => {
   }
 });
 hideButton.addEventListener("click", disableSolution);
-nextButton.addEventListener("click", () => {
+nextButton.addEventListener("click", (event) => {
+  event.preventDefault();
   seed.value = String(Number(seed.value || 0) + 1);
-  fetchQuestion();
+  fetchQuestion({ scrollToQuestion: true });
 });
 
 updateVariantOptions();
